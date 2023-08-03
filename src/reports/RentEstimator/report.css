@@ -1,0 +1,143 @@
+body {
+  padding: 0;
+  width: 1100px;
+  overflow-x: hidden;
+}
+
+#app {
+  padding: 0px 50px;
+}
+
+.wrapper {
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.rent-estimator {
+ margin: 0;
+}
+
+/* DOCUMENT HEADER */
+
+.header {
+  justify-content: space-between;
+  align-content: center;
+  align-items: center;
+}
+.header .ofirio-logo {
+  width: 187px;
+}
+.header .title {
+  font-size: 1.875rem;
+  font-weight: 800;
+}
+.header .links {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+.header .links a {
+  display: block;
+  margin-bottom: 14px;
+}
+
+/* DOCUMENT FOOTER */
+
+.footer {
+  align-items: center;
+  margin-top: 22px;
+  position: relative;
+  color: #999999;
+  justify-self: end;
+}
+.footer .ofirio-logo {
+  width: 100px;
+  margin-right: 65px;
+}
+.footer a {
+  margin-right: 20px;
+}
+.footer .copyright {
+  position: absolute;
+  right: 0;
+}
+
+/* HIGHLIGHTS */
+
+.highlights .fin-table .rich-prop svg {
+  margin-top: 10px;
+  display: block;
+  height: 1.125rem;
+  width: 100%;
+}
+
+.highlights .map > img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+/* PLOTS */
+
+.ui-plot .ui-plot-legend .item + .item {
+  margin-left: 20px;
+}
+
+.rent-estimator .wrapper > .rent-estimator-results > .plots .ui-plot {
+  width: calc(50% - 20px);
+  min-height: auto;
+}
+
+.ui-plot > img {
+  width: 100%;
+  /* height: 265px; */
+}
+
+/* MAP LIST */
+
+.rent-estimator .wrapper > .rent-estimator-results .map-list {
+  margin: 0 0 20px;
+}
+
+.rent-estimator .map { box-shadow: none; }
+
+.rent-estimator .wrapper > .rent-estimator-results .map-list > .map {
+  margin-bottom: 15px;
+}
+
+.map-list .map > img {
+  width: 100%;
+  height: 100%;
+}
+
+.map-list .markers-description .marker-info {
+  margin-right: 22px;
+  white-space: nowrap;
+}
+
+.map-list .markers-description .marker-info > svg {
+  min-width: 18px;
+  margin-right: 10px;
+}
+
+/* NEAREST PROPS */
+
+.nearest-props table tr td,
+.nearest-props table tr th  {
+  padding: 12px 15px;
+}
+.nearest-props table tr th {
+  white-space: nowrap;
+}
+
+.nearest-props table tr td:first-child svg  {
+  height: 24px;
+  width: 24px;
+}
+
+.rent-estimator .wrapper > .rent-estimator-results .nearest-props .heading {
+  margin-bottom: 0;
+}

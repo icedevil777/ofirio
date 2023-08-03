@@ -1,0 +1,62 @@
+{
+  "name": "ofirio-fe",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "build:dev": "vue-cli-service build --mode development",
+    "build:stage": "vue-cli-service build --mode stage",
+    "build:prod": "npm run build",
+    "lint": "vue-cli-service lint"
+  },
+  "dependencies": {
+    "@googlemaps/markerclustererplus": "^1.1.2",
+    "@j-t-mcc/vue3-chartjs": "^1.1.1",
+    "@stripe/stripe-js": "^1.15.1",
+    "@vueform/slider": "^1.0.3",
+    "await-of": "^3.1.0",
+    "axios": "^0.21.1",
+    "chart.js": "^3.5.1",
+    "chartjs-plugin-datalabels": "^2.0.0-rc.1",
+    "core-js": "^3.6.5",
+    "imask": "^6.0.7",
+    "intl": "^1.2.5",
+    "query-string": "^7.0.0",
+    "swiper": "^6.6.1",
+    "throttle-debounce-ts": "^1.1.1",
+    "ts-debounce": "^3.0.0",
+    "vue": "^3.1.5",
+    "vue-class-store": "^3.0.0",
+    "vue-next-select": "^2.6.0",
+    "vue-router": "^4.0.0-0",
+    "vue-template-compiler": "^2.7.14",
+    "vue3-google-map": "^0.7.9",
+    "yup": "^0.32.9"
+  },
+  "devDependencies": {
+    "@googlemaps/js-api-loader": "^1.12.3",
+    "@types/google.maps": "^3.45.6",
+    "@types/webpack-env": "^1.16.2",
+    "@vue/cli": "^4.5.12",
+    "@vue/cli-plugin-babel": "~4.5.0",
+    "@vue/cli-plugin-router": "~4.5.0",
+    "@vue/cli-plugin-typescript": "~4.5.0",
+    "@vue/cli-service": "~4.5.0",
+    "@vue/compiler-sfc": "^3.0.0",
+    "img-optimize-loader": "^1.0.7",
+    "less": "^3.0.4",
+    "less-loader": "^5.0.0",
+    "style-resources-loader": "^1.4.1",
+    "svgo": "^1.1.0",
+    "svgo-loader": "^2.1.0",
+    "typescript": "~4.1.5",
+    "vue-cli-plugin-style-resources-loader": "~0.1.5",
+    "vue-cli-plugin-svg-sprite": "~1.0.0"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 10 versions",
+    "not dead"
+  ]
+}

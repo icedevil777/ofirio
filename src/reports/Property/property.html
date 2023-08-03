@@ -1,0 +1,2403 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../reset.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="report.css">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </head>
+  <body>
+    
+<div id="app" data-v-app="">
+  <div class="header flex">
+    <svg class="ofirio-logo" viewBox="0 0 97 37" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMinYMin">
+<path d="M2.46038 20.1712C2.46038 17.2134 3.43615 14.774 5.38767 12.853C7.34936 10.9218 9.67187 9.95618 12.3552 9.95618C15.3232 9.95618 17.7778 10.9269 19.7192 12.8682C21.6605 14.7994 22.6312 17.2439 22.6312 20.2017C22.6312 23.1391 21.6707 25.5785 19.7497 27.5199C17.8286 29.4612 15.4096 30.4319 12.4924 30.4319C9.57531 30.4319 7.17148 29.4663 5.28095 27.5351C3.40057 25.6039 2.46038 23.1493 2.46038 20.1712ZM12.5534 13.9507C10.8763 13.9202 9.52449 14.4996 8.49791 15.6888C7.47133 16.878 6.95804 18.4128 6.95804 20.2932C6.95804 22.0719 7.48149 23.5457 8.5284 24.7146C9.57531 25.8835 10.8967 26.4679 12.4924 26.4679C14.1695 26.4679 15.5214 25.8936 16.5479 24.7451C17.5847 23.5863 18.1031 22.0617 18.1031 20.1712C18.1031 18.3111 17.5949 16.817 16.5784 15.6888C15.5722 14.5606 14.2305 13.9812 12.5534 13.9507ZM26.2598 10.1696H37.5268V14.0422H30.544V18.1282H37.5268V22.0312H30.5745V30.188H26.2598V10.1696ZM40.9877 10.1696H45.2872V30.188H40.9877V10.1696ZM49.2817 10.1696H55.8681C57.8704 10.1696 59.451 10.6982 60.6097 11.7552C61.7786 12.8123 62.363 14.2404 62.363 16.0394C62.363 17.066 62.0937 18.1333 61.555 19.2412C61.0264 20.3491 60.0456 21.2181 58.6124 21.8483L64.2078 30.188H59.268L54.0843 22.4429H53.5964V30.188H49.2817V10.1696ZM53.6269 13.7373V18.9515H54.5569C56.8032 18.9515 57.9263 18.0316 57.9263 16.1919C57.9263 15.4398 57.6316 14.8451 57.0421 14.4081C56.4627 13.9609 55.6547 13.7373 54.6179 13.7373H53.6269ZM67.3028 10.1696H71.6023V30.188H67.3028V10.1696ZM74.9717 20.1712C74.9717 17.2134 75.9475 14.774 77.899 12.853C79.8607 10.9218 82.1832 9.95618 84.8665 9.95618C87.8345 9.95618 90.2891 10.9269 92.2305 12.8682C94.1718 14.7994 95.1425 17.2439 95.1425 20.2017C95.1425 23.1391 94.182 25.5785 92.261 27.5199C90.3399 29.4612 87.9209 30.4319 85.0037 30.4319C82.0866 30.4319 79.6828 29.4663 77.7923 27.5351C75.9119 25.6039 74.9717 23.1493 74.9717 20.1712ZM85.0647 13.9507C83.3876 13.9202 82.0358 14.4996 81.0092 15.6888C79.9826 16.878 79.4693 18.4128 79.4693 20.2932C79.4693 22.0719 79.9928 23.5457 81.0397 24.7146C82.0866 25.8835 83.408 26.4679 85.0037 26.4679C86.6808 26.4679 88.0327 25.8936 89.0593 24.7451C90.096 23.5863 90.6144 22.0617 90.6144 20.1712C90.6144 18.3111 90.1062 16.817 89.0897 15.6888C88.0835 14.5606 86.7418 13.9812 85.0647 13.9507Z" fill="#222222"/>
+<path d="M2.50281 6.70747C4.09036 8.30773 4.08971 8.30838 4.08907 8.30902C4.08887 8.30921 4.08824 8.30984 4.08785 8.31022C4.08706 8.311 4.08633 8.31172 4.08566 8.31239C4.08431 8.31372 4.08317 8.31483 4.08225 8.31573C4.08041 8.31753 4.07943 8.31848 4.07932 8.31859C4.07908 8.31882 4.08228 8.31573 4.08886 8.30955C4.10205 8.29717 4.12875 8.27247 4.1687 8.23716C4.24869 8.16647 4.38114 8.05381 4.56387 7.91282C4.93022 7.63015 5.49276 7.2381 6.23428 6.84198C7.71622 6.05035 9.88905 5.25414 12.6465 5.25414V0.745857C8.99734 0.745857 6.09835 1.80339 4.11009 2.86549C3.11652 3.39625 2.34437 3.93106 1.8098 4.34354C1.54207 4.55012 1.33251 4.72712 1.1831 4.85917C1.10835 4.92524 1.04851 4.98019 1.00382 5.02212C0.981471 5.0431 0.962898 5.06083 0.948131 5.07508C0.940746 5.08221 0.934312 5.08847 0.928831 5.09384C0.926091 5.09652 0.923588 5.09898 0.921325 5.10121C0.920193 5.10233 0.919121 5.10338 0.918109 5.10438C0.917603 5.10488 0.916887 5.10559 0.916635 5.10584C0.915935 5.10654 0.91525 5.10722 2.50281 6.70747ZM12.6465 5.25414C15.4039 5.25414 17.5767 6.05035 19.0586 6.84198C19.8001 7.2381 20.3627 7.63015 20.729 7.91282C20.9118 8.05381 21.0442 8.16647 21.1242 8.23716C21.1642 8.27247 21.1909 8.29717 21.204 8.30955C21.2106 8.31573 21.2138 8.31882 21.2136 8.31859C21.2135 8.31848 21.2125 8.31753 21.2107 8.31573C21.2097 8.31483 21.2086 8.31372 21.2073 8.31239C21.2066 8.31172 21.2058 8.311 21.2051 8.31022C21.2047 8.30984 21.204 8.30921 21.2038 8.30902C21.2032 8.30838 21.2025 8.30773 22.7901 6.70747C24.3777 5.10722 24.377 5.10654 24.3763 5.10584C24.376 5.10559 24.3753 5.10488 24.3748 5.10438C24.3738 5.10338 24.3727 5.10233 24.3716 5.10121C24.3693 5.09898 24.3668 5.09652 24.3641 5.09384C24.3586 5.08847 24.3522 5.08221 24.3448 5.07508C24.33 5.06083 24.3114 5.0431 24.2891 5.02212C24.2444 4.98019 24.1846 4.92524 24.1098 4.85917C23.9604 4.72712 23.7508 4.55012 23.4831 4.34354C22.9485 3.93106 22.1764 3.39625 21.1828 2.86549C19.1946 1.80339 16.2956 0.745857 12.6465 0.745857V5.25414Z" fill="#01D092"/>
+</svg>
+
+    <span class="title">Property report</span>
+    <div class="links">
+      <a href="www.ofirio.com">www.ofirio.com</a>
+      <a href="info@ofirio.com">info@ofirio.com</a>
+      <span>+1 888-550-5978</span>
+    </div>
+  </div>
+  <div class="ui-divider"></div>
+  <div class="property wrapper" data-v-7f952888="">
+    <div class="flex sided">
+      <div class="left-side">
+    <div class="top-bar" data-v-7f952888="">
+      <div class="heading-row" data-v-7f952888="">
+        <div class="wrapper flex header-bar" data-v-7f952888="">
+          <div class="address" data-v-7f952888=""><span class="street" data-v-7f952888="">365 Corbett Dr</span><span class="location" data-v-7f952888="">The Villages, Florida 32162</span></div>
+          <div class="small-props flex" data-v-7f952888="">
+            <div class="ui-small-prop" data-v-002a1ab0="" data-v-7f952888=""><span class="value" data-v-002a1ab0="">$339,000.0</span><span class="label" data-v-002a1ab0="">List price</span></div>
+            <div class="ui-small-prop hide-mobile-sticked" data-v-002a1ab0="" data-v-7f952888=""><span class="value" data-v-002a1ab0="">3</span><span class="label" data-v-002a1ab0="">Beds</span></div>
+            <div class="ui-small-prop hide-mobile-sticked" data-v-002a1ab0="" data-v-7f952888=""><span class="value" data-v-002a1ab0="">2</span><span class="label" data-v-002a1ab0="">Baths</span></div>
+            <div class="ui-small-prop" data-v-002a1ab0="" data-v-7f952888=""><span class="value" data-v-002a1ab0="" style="color: #ef4b44;">-4.44%</span><span class="label" data-v-002a1ab0="">Cash On Cash</span></div>
+            <div class="ui-small-prop" data-v-002a1ab0="" data-v-7f952888=""><span class="value" data-v-002a1ab0="" style="color: #ff9900;">2.89%</span><span class="label" data-v-002a1ab0="">Cap Rate</span></div>
+          </div>
+        </div>
+        <div class="wrapper flex tabs" data-v-7f952888="">
+          <div class="mobile-mm" data-v-7f952888=""></div>
+          <label class="ui-radio-chip selected" required="" name="radio-active-tab" value="summary" data-v-1b708be6="" data-v-7f952888=""><input type="radio" required="" name="radio-active-tab" value="summary" data-v-1b708be6="">Summary</label><label class="ui-radio-chip" required="" name="radio-active-tab" value="financial" data-v-1b708be6="" data-v-7f952888=""><input type="radio" required="" name="radio-active-tab" value="financial" data-v-1b708be6="">Financial</label><label class="ui-radio-chip" required="" name="radio-active-tab" value="tax-history" data-v-1b708be6="" data-v-7f952888=""><input type="radio" required="" name="radio-active-tab" value="tax-history" data-v-1b708be6="">Tax History</label><label class="ui-radio-chip" required="" name="radio-active-tab" value="prop-history" data-v-1b708be6="" data-v-7f952888=""><input type="radio" required="" name="radio-active-tab" value="prop-history" data-v-1b708be6="">Property History</label><label class="ui-radio-chip" required="" name="radio-active-tab" value="schools" data-v-1b708be6="" data-v-7f952888=""><input type="radio" required="" name="radio-active-tab" value="schools" data-v-1b708be6="">Schools</label>
+          <div class="mobile-mm" data-v-7f952888=""></div>
+        </div>
+      </div>
+    </div>
+    <div class="ui-divider"></div>
+    <div class="basic-info flex" data-v-7f952888="">
+      <div class="info" data-v-7f952888="">
+        <div class="chars-row flex" data-v-7f952888="">
+          <div class="char" data-v-7f952888=""><span class="title" data-v-7f952888="">List Price</span><span class="value" data-v-7f952888="">$339,000</span></div>
+          <div class="char" data-v-7f952888=""><span class="title" data-v-7f952888="">Beds</span><span class="value" data-v-7f952888="">3</span></div>
+          <div class="char" data-v-7f952888=""><span class="title" data-v-7f952888="">Baths</span><span class="value" data-v-7f952888="">2</span></div>
+          <div class="char" data-v-7f952888=""><span class="title" data-v-7f952888="">Sq Ft</span><span class="value" data-v-7f952888="">1,572</span></div>
+        </div>
+        <table class="fin-table" data-v-7f952888="">
+          <tr data-v-7f952888="">
+            <td data-v-7f952888="">
+              <div class="char" data-v-7f952888="">
+                <span class="value" data-v-7f952888="">$20,574</span>
+                <span class="title" data-v-7f952888="">Rental Income</span>
+              </div>
+            </td>
+            <td data-v-7f952888="">
+              <div class="char" data-v-7f952888="">
+                <span class="value" data-v-7f952888="">$10,490</span>
+                <span class="title" data-v-7f952888="">Expenses</span>
+              </div>
+            </td>
+            <td data-v-7f952888="">
+              <div class="char" data-v-7f952888="">
+                <span class="value" data-v-7f952888="">$-3,461</span>
+                <span class="title" data-v-7f952888="">Cash Flow</span>
+              </div>
+            </td>
+          </tr>
+          <tr data-v-7f952888="">
+            <td data-v-7f952888="">
+              <div class="char" data-v-7f952888="">
+                <span class="value" data-v-7f952888="" style="color: #ef4b44;">-4.44%</span>
+                <span class="title" data-v-7f952888="">Cash On Cash</span>
+              </div>
+            </td>
+            <td data-v-7f952888="">
+              <div class="char" data-v-7f952888="">
+                <span class="value" data-v-7f952888="" style="color: #ff9900;">2.89%</span>
+                <span class="title" data-v-7f952888="">CAP Rate</span>
+              </div>
+            </td>
+            <td data-v-7f952888="">
+              <div class="char" data-v-7f952888="">
+                <span class="value" data-v-7f952888="">10.89%</span>
+                <span class="title" data-v-7f952888="">Total Return</span>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+      </div>
+      <div class="right-side" style="background-image: url('https://ap.rdcpix.com/6bd0b8ae411680e867334b498a04f032l-m528421259x.jpg')"></div>
+    </div>
+
+    <div class="tab tab-summary" data-v-7f952888="">
+      <div class="sided-info flex" data-v-7f952888="">
+        <div class="text-side" data-v-7f952888="">
+          <p class="description ui-text-justify" data-v-7f952888="">Spectacular 3/2 Amarillo with golf cart garage in the Village of Amelia. Spacious open floor plan with vaulted ceilings and luxury vinyl plank floors. Glass enclosed and tiled lanai with sliding doors to wrap around birdcage. Amazing outdoor space for entertaining! You&#x27;ll love the PRIVACY in the back with mature landscaping! Open Kitchen has gas range and breakfast bar. Spacious Master Bedroom with walk in closet. Master bath has tiled shower with bench, water closet and dual vanities. HVAC was replaced in 2018 and roof in 2011. Oversized lot with Plenty of Room for a Pool. Beautiful Paver Driveway. Garage has additional storage. THIS HOME IS A MUST SEE! Short cart ride to Sumter Landing and easy access to all the Entertainment, Restaurants &amp; Shopping The Villages has to offer. Please watch our 3D Video of this beautiful home.</p>
+        </div>
+        <div class="location" data-v-7f952888="">
+          <div class="map">
+            <img src="https://maps.googleapis.com/maps/api/staticmap?center=28.891263,-81.953994&size=500x400&maptype=roadmap
+            &markers=color:red%7C28.891263,-81.953994
+            &key=AIzaSyBLpCFp3KrBK9eWtqj1QzTXCA48qZqJAoA" alt="">
+          </div>
+        </div>
+      </div>
+
+      <div class="additional-info" data-v-7f952888="">
+        <div class="feature-block no-page-break" data-v-7f952888="">
+          <div class="feature-header flex" data-v-7f952888="">
+            <svg class="svg-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 1.99902C11.8363 1.99902 11.6727 2.05266 11.5352 2.16016L4.42969 7.75977C3.51969 8.47477 3 9.55008 3 10.7051V20.25C3 20.94 3.56 21.5 4.25 21.5H12.3799C12.0199 21.045 11.725 20.54 11.5 20H4.5V10.7051C4.5 10.0101 4.81035 9.37043 5.36035 8.94043L12 3.70508L18.6396 8.94043C19.1896 9.37043 19.5 10.0101 19.5 10.7051V11.3154C20.035 11.4854 20.535 11.7254 21 12.0254V10.7051C21 9.55008 20.4803 8.47477 19.5703 7.75977L12.4648 2.16016C12.3273 2.05266 12.1637 1.99902 12 1.99902ZM17.5 12C14.4625 12 12 14.4625 12 17.5C12 20.5375 14.4625 23 17.5 23C20.5375 23 23 20.5375 23 17.5C23 14.4625 20.5375 12 17.5 12ZM20.5 15C20.6279 15 20.7558 15.0487 20.8535 15.1465C21.049 15.342 21.049 15.658 20.8535 15.8535L16.8535 19.8535C16.756 19.951 16.628 20 16.5 20C16.372 20 16.244 19.951 16.1465 19.8535L14.1465 17.8535C13.951 17.658 13.951 17.342 14.1465 17.1465C14.342 16.951 14.658 16.951 14.8535 17.1465L16.5 18.793L20.1465 15.1465C20.2442 15.0487 20.3721 15 20.5 15Z" />
+</svg>
+
+            Summary
+          </div>
+          <div class="feature-section" data-v-7f952888="">
+            <ul class="features-section-list" data-v-7f952888="">
+              
+              <li data-v-7f952888=""><span class="title" data-v-7f952888="">Status:</span><span class="value" data-v-7f952888="">pending</span></li>
+              
+              <li data-v-7f952888=""><span class="title" data-v-7f952888="">Bedrooms:</span><span class="value" data-v-7f952888="">3</span></li>
+              
+              <li data-v-7f952888=""><span class="title" data-v-7f952888="">Bathrooms:</span><span class="value" data-v-7f952888="">2</span></li>
+              
+              <li data-v-7f952888=""><span class="title" data-v-7f952888="">Year Built:</span><span class="value" data-v-7f952888="">2008</span></li>
+              
+              <li data-v-7f952888=""><span class="title" data-v-7f952888="">List Price:</span><span class="value" data-v-7f952888="">$339,000</span></li>
+              
+              <li data-v-7f952888=""><span class="title" data-v-7f952888="">Last Sold:</span><span class="value" data-v-7f952888="">2021-05-07T17:00:00Z</span></li>
+              
+              <li data-v-7f952888=""><span class="title" data-v-7f952888="">Last Sold Price:</span><span class="value" data-v-7f952888="">$339,000</span></li>
+              
+              <li data-v-7f952888=""><span class="title" data-v-7f952888="">Property Type:</span><span class="value" data-v-7f952888="">single_family</span></li>
+              
+              <li data-v-7f952888=""><span class="title" data-v-7f952888="">Size:</span><span class="value" data-v-7f952888="">1572.0</span></li>
+              
+              <li data-v-7f952888=""><span class="title" data-v-7f952888="">Price Per Sqft:</span><span class="value" data-v-7f952888="">$216</span></li>
+              
+              <li data-v-7f952888=""><span class="title" data-v-7f952888="">Property Taxes:</span><span class="value" data-v-7f952888="">$306</span></li>
+              
+              <li data-v-7f952888=""><span class="title" data-v-7f952888="">Property Insurance/mo:</span><span class="value" data-v-7f952888="">$127</span></li>
+              
+              <li data-v-7f952888=""><span class="title" data-v-7f952888="">HOA Fees:</span><span class="value" data-v-7f952888="">$164</span></li>
+              
+              <li data-v-7f952888=""><span class="title" data-v-7f952888="">Garage and Parking:</span><span class="value" data-v-7f952888="">2 Spaces</span></li>
+              
+              <li data-v-7f952888=""><span class="title" data-v-7f952888="">Pool:</span><span class="value" data-v-7f952888="">Yes</span></li>
+              
+            </ul>
+          </div>
+        </div>
+
+        
+        <div class="feature-block no-page-break" data-v-7f952888="">
+          <div class="feature-header flex" data-v-7f952888="">
+            
+              <svg class="svg-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 2.51367C11.4256 2.51367 10.8515 2.7005 10.3769 3.07422C10.3766 3.07422 10.3763 3.07422 10.3759 3.07422L4.42964 7.75977C3.52769 8.47058 2.99996 9.55675 2.99996 10.7051C2.99855 10.8045 3.01691 10.9031 3.05397 10.9954C3.09103 11.0876 3.14605 11.1715 3.21584 11.2423C3.28562 11.3131 3.36877 11.3693 3.46047 11.4076C3.55216 11.446 3.65056 11.4658 3.74996 11.4658C3.84935 11.4658 3.94775 11.446 4.03944 11.4076C4.13114 11.3693 4.21429 11.3131 4.28408 11.2423C4.35386 11.1715 4.40888 11.0876 4.44594 10.9954C4.483 10.9031 4.50136 10.8045 4.49995 10.7051C4.49995 10.0154 4.81533 9.36566 5.35738 8.93848L11.3046 4.25293C11.7155 3.92937 12.2844 3.92937 12.6953 4.25293L18.6425 8.93848C19.1846 9.36566 19.5 10.0154 19.5 10.7051C19.4985 10.8045 19.5169 10.9031 19.554 10.9954C19.591 11.0876 19.646 11.1715 19.7158 11.2423C19.7856 11.3131 19.8688 11.3693 19.9605 11.4076C20.0522 11.446 20.1506 11.4658 20.25 11.4658C20.3493 11.4658 20.4478 11.446 20.5394 11.4076C20.6311 11.3693 20.7143 11.3131 20.7841 11.2423C20.8539 11.1715 20.9089 11.0876 20.9459 10.9954C20.983 10.9031 21.0014 10.8045 21 10.7051C21 9.55675 20.4722 8.47058 19.5703 7.75977L13.623 3.07422C13.1484 2.7005 12.5743 2.51367 12 2.51367ZM3.73824 12.4893C3.53949 12.4924 3.35011 12.5742 3.21168 12.7169C3.07326 12.8595 2.9971 13.0513 2.99996 13.25V13.75C2.99855 13.8494 3.01691 13.9481 3.05397 14.0403C3.09103 14.1325 3.14605 14.2164 3.21584 14.2872C3.28562 14.358 3.36877 14.4142 3.46047 14.4526C3.55216 14.4909 3.65056 14.5107 3.74996 14.5107C3.84935 14.5107 3.94775 14.4909 4.03944 14.4526C4.13114 14.4142 4.21429 14.358 4.28408 14.2872C4.35386 14.2164 4.40888 14.1325 4.44594 14.0403C4.483 13.9481 4.50136 13.8494 4.49995 13.75V13.25C4.50139 13.1496 4.48267 13.05 4.44489 12.957C4.4071 12.8639 4.35103 12.7795 4.28 12.7085C4.20897 12.6376 4.12441 12.5816 4.03135 12.544C3.93829 12.5063 3.83862 12.4877 3.73824 12.4893ZM20.2382 12.4893C20.0395 12.4924 19.8501 12.5742 19.7117 12.7169C19.5733 12.8595 19.4971 13.0513 19.5 13.25V13.75C19.4985 13.8494 19.5169 13.9481 19.554 14.0403C19.591 14.1325 19.646 14.2164 19.7158 14.2872C19.7856 14.358 19.8688 14.4142 19.9605 14.4526C20.0522 14.4909 20.1506 14.5107 20.25 14.5107C20.3493 14.5107 20.4478 14.4909 20.5394 14.4526C20.6311 14.4142 20.7143 14.358 20.7841 14.2872C20.8539 14.2164 20.9089 14.1325 20.9459 14.0403C20.983 13.9481 21.0014 13.8494 21 13.75V13.25C21.0014 13.1496 20.9827 13.05 20.9449 12.957C20.9071 12.8639 20.851 12.7795 20.78 12.7085C20.709 12.6376 20.6244 12.5816 20.5314 12.5439C20.4383 12.5063 20.3386 12.4877 20.2382 12.4893ZM3.59468 15.8838L3.08199 16.2764L2.99996 16.6182V17.5742L3.2773 18.1562L3.90523 18.3076L4.41792 17.916L4.49995 17.5742V16.6182L4.22261 16.0352L3.59468 15.8838ZM20.0947 15.8848L19.582 16.2764L19.5 16.6182V17.5742L19.7773 18.1572L20.4052 18.3076L20.9179 17.916L21 17.5742V16.6182L20.7226 16.0352L20.0947 15.8848ZM3.97749 19.6357L3.39742 19.9189L3.25191 20.5478L3.40523 20.8633L3.46382 20.9346L3.56538 21.0361L3.71382 21.1582L3.83296 21.2383L4.00288 21.3311L4.13863 21.3877L4.32613 21.4463L4.47359 21.4756L4.67476 21.4961L4.74995 21.5H4.83003L5.41206 21.2227L5.56343 20.5947L5.17085 20.082L4.83003 20H4.78706L4.69722 19.9912L4.65328 19.9775L4.61128 19.9541L4.57417 19.9238L4.56245 19.9092L4.54976 19.9033L4.52046 19.8789L4.5146 19.8867L3.97749 19.6357ZM19.7177 19.6982L19.4375 19.9092L19.4257 19.9238L19.3886 19.9541L19.3466 19.9775L19.3027 19.9912L19.2128 20H19.1699L18.5878 20.2773L18.4365 20.9053L18.8281 21.418L19.1699 21.5H19.25L19.3251 21.4961L19.5263 21.4756L19.6738 21.4463L19.8613 21.3877L19.997 21.3311L20.1669 21.2383L20.2861 21.1582L20.4345 21.0361L20.5361 20.9346L20.5937 20.8633L20.7509 20.2373L20.3632 19.7217L19.7177 19.6982ZM7.69722 20L7.11519 20.2773L6.96382 20.9053L7.3564 21.418L7.69722 21.5H8.65328L9.23628 21.2227L9.38765 20.5947L8.99507 20.082L8.65328 20H7.69722ZM11.5214 20L10.9394 20.2773L10.788 20.9053L11.1806 21.418L11.5214 21.5H12.4775L13.0605 21.2227L13.2119 20.5947L12.8193 20.082L12.4775 20H11.5214ZM15.3457 20L14.7636 20.2773L14.6123 20.9053L15.0048 21.418L15.3457 21.5H16.3017L16.8847 21.2227L17.0361 20.5947L16.6435 20.082L16.3017 20H15.3457Z"/>
+</svg>
+
+            
+            Building and Construction
+          </div>
+          
+            <div class="feature-section" data-v-7f952888="">
+              <ul class="features-section-list" data-v-7f952888="">
+                
+                  <li data-v-7f952888="">
+                    <span class="title" data-v-7f952888="">Total Square Feet Living:</span>
+                    <span class="value" data-v-7f952888="">1572</span>
+                  </li>
+                
+                  <li data-v-7f952888="">
+                    <span class="title" data-v-7f952888="">Year Built:</span>
+                    <span class="value" data-v-7f952888="">2008</span>
+                  </li>
+                
+                  <li data-v-7f952888="">
+                    <span class="title" data-v-7f952888="">Construction Materials:</span>
+                    <span class="value" data-v-7f952888="">Vinyl Siding</span>
+                  </li>
+                
+                  <li data-v-7f952888="">
+                    <span class="title" data-v-7f952888="">Direction Faces:</span>
+                    <span class="value" data-v-7f952888="">Southwest</span>
+                  </li>
+                
+                  <li data-v-7f952888="">
+                    <span class="title" data-v-7f952888="">Foundation Details:</span>
+                    <span class="value" data-v-7f952888="">Slab</span>
+                  </li>
+                
+                  <li data-v-7f952888="">
+                    <span class="title" data-v-7f952888="">Property Age:</span>
+                    <span class="value" data-v-7f952888="">13</span>
+                  </li>
+                
+                  <li data-v-7f952888="">
+                    <span class="title" data-v-7f952888="">Roof:</span>
+                    <span class="value" data-v-7f952888="">Shingle</span>
+                  </li>
+                
+                  <li data-v-7f952888="">
+                    <span class="title" data-v-7f952888="">Levels or Stories:</span>
+                    <span class="value" data-v-7f952888="">1</span>
+                  </li>
+                
+                  <li data-v-7f952888="">
+                    <span class="title" data-v-7f952888="">House Style:</span>
+                    <span class="value" data-v-7f952888="">Contemporary</span>
+                  </li>
+                
+                  <li data-v-7f952888="">
+                    <span class="title" data-v-7f952888="">Architectural Style:</span>
+                    <span class="value" data-v-7f952888="">Contemporary</span>
+                  </li>
+                
+              </ul>
+            </div>
+          
+        </div>
+        
+        <div class="feature-block no-page-break" data-v-7f952888="">
+          <div class="feature-header flex" data-v-7f952888="">
+            
+              <svg class="svg-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M7.25 3C5.46403 3 4 4.46403 4 6.25V8.0127C2.60593 8.14081 1.5 9.32457 1.5 10.75C1.5 11.9944 2.35851 13.012 3.5 13.3467V16.75C3.5 18.1808 4.31373 19.4299 5.5 20.0615V21.25C5.49859 21.3494 5.51696 21.4481 5.55402 21.5403C5.59108 21.6325 5.6461 21.7164 5.71588 21.7872C5.78566 21.858 5.86882 21.9142 5.96051 21.9526C6.0522 21.9909 6.15061 22.0107 6.25 22.0107C6.34939 22.0107 6.4478 21.9909 6.53949 21.9526C6.63118 21.9142 6.71434 21.858 6.78412 21.7872C6.8539 21.7164 6.90892 21.6325 6.94598 21.5403C6.98304 21.4481 7.00141 21.3494 7 21.25V20.4873C7.08304 20.4929 7.16561 20.5 7.25 20.5H16.7578C16.8396 20.5 16.9194 20.4925 17 20.4873V21.25C16.9986 21.3494 17.017 21.4481 17.054 21.5403C17.0911 21.6325 17.1461 21.7164 17.2159 21.7872C17.2857 21.858 17.3688 21.9142 17.4605 21.9526C17.5522 21.9909 17.6506 22.0107 17.75 22.0107C17.8494 22.0107 17.9478 21.9909 18.0395 21.9526C18.1312 21.9142 18.2143 21.858 18.2841 21.7872C18.3539 21.7164 18.4089 21.6325 18.446 21.5403C18.483 21.4481 18.5014 21.3494 18.5 21.25V20.0654C19.6881 19.4368 20.5044 18.1904 20.5078 16.7598C20.5078 16.7588 20.5078 16.7578 20.5078 16.7568L20.5049 13.3457C21.6439 13.0095 22.5 11.993 22.5 10.75C22.5 9.32457 21.3941 8.14081 20 8.0127V6.25C20 4.46403 18.536 3 16.75 3H7.25ZM7.25 4.5H16.75C17.725 4.5 18.5 5.27497 18.5 6.25V8.0918C17.0725 8.43366 16 9.7224 16 11.25V12.8066C15.6239 12.6123 15.1996 12.5 14.75 12.5H9.25C8.8004 12.5 8.37614 12.6123 8 12.8066V11.25C8 9.7224 6.92749 8.43366 5.5 8.0918V6.25C5.5 5.27497 6.27497 4.5 7.25 4.5ZM10.25 8C10.0511 8 9.86032 8.07902 9.71967 8.21967C9.57902 8.36032 9.5 8.55109 9.5 8.75C9.5 8.94891 9.57902 9.13968 9.71967 9.28033C9.86032 9.42098 10.0511 9.5 10.25 9.5C10.4489 9.5 10.6397 9.42098 10.7803 9.28033C10.921 9.13968 11 8.94891 11 8.75C11 8.55109 10.921 8.36032 10.7803 8.21967C10.6397 8.07902 10.4489 8 10.25 8ZM13.75 8C13.5511 8 13.3603 8.07902 13.2197 8.21967C13.079 8.36032 13 8.55109 13 8.75C13 8.94891 13.079 9.13968 13.2197 9.28033C13.3603 9.42098 13.5511 9.5 13.75 9.5C13.9489 9.5 14.1397 9.42098 14.2803 9.28033C14.421 9.13968 14.5 8.94891 14.5 8.75C14.5 8.55109 14.421 8.36032 14.2803 8.21967C14.1397 8.07902 13.9489 8 13.75 8ZM4.25 9.5H4.62695C4.69084 9.51062 4.75583 9.51291 4.82031 9.50684C5.76125 9.54386 6.5 10.2991 6.5 11.25V15.25V16.25V16.75C6.50002 16.9489 6.57904 17.1397 6.71969 17.2803C6.86034 17.421 7.05109 17.5 7.25 17.5H16.75C16.9489 17.5 17.1397 17.421 17.2803 17.2803C17.421 17.1397 17.5 16.9489 17.5 16.75V16.25V15.25V11.25C17.5 10.2991 18.2388 9.54386 19.1797 9.50684C19.2432 9.51266 19.3072 9.51037 19.3701 9.5H19.75C20.4491 9.5 21 10.0509 21 10.75C21 11.4487 20.4499 11.9984 19.752 12C19.5532 12.0005 19.3628 12.0799 19.2226 12.2207C19.0823 12.3615 19.0037 12.5522 19.0039 12.751L19.0078 16.7578C19.0037 18.0062 18.0065 19 16.7578 19H7.25C5.99825 19 5 18.0017 5 16.75V12.75C4.99998 12.5511 4.92096 12.3603 4.78031 12.2197C4.63966 12.079 4.44891 12 4.25 12C3.55089 12 3 11.4491 3 10.75C3 10.0509 3.55089 9.5 4.25 9.5ZM9.25 14H14.75C15.4491 14 16 14.5509 16 15.25V16H8V15.25C8 14.5509 8.55089 14 9.25 14Z" />
+</svg>
+
+            
+            Interior
+          </div>
+          
+            
+              <div class="feature-section" data-v-7f952888="">
+                <div class="feature-subheading" data-v-7f952888="">Bedrooms</div>
+                
+                <ul class="features-section-list" data-v-7f952888="">
+                  
+                  <li data-v-7f952888=""><span class="title" data-v-7f952888="">Bedrooms:</span><span class="value" data-v-7f952888="">3</span></li>
+                  
+                  <li data-v-7f952888=""><span class="title" data-v-7f952888="">Master Bedroom Dimensions:</span><span class="value" data-v-7f952888="">15 x 13</span></li>
+                  
+                  <li data-v-7f952888=""><span class="title" data-v-7f952888="">Bedroom 2 Dimensions:</span><span class="value" data-v-7f952888="">13 x 11</span></li>
+                  
+                  <li data-v-7f952888=""><span class="title" data-v-7f952888="">Bedroom 3 Dimensions:</span><span class="value" data-v-7f952888="">13 x 11</span></li>
+                  
+                  <li data-v-7f952888=""><span class="title" data-v-7f952888="">Master Bedroom Level:</span><span class="value" data-v-7f952888="">First</span></li>
+                  
+                  <li data-v-7f952888=""><span class="title" data-v-7f952888="">Bedroom 2 Level:</span><span class="value" data-v-7f952888="">First</span></li>
+                  
+                  <li data-v-7f952888=""><span class="title" data-v-7f952888="">Bedroom 3 Level:</span><span class="value" data-v-7f952888="">First</span></li>
+                  
+                  <li data-v-7f952888=""><span class="title" data-v-7f952888="">Master Bedroom Features:</span><span class="value" data-v-7f952888="">Ceiling Fan(s), Dual Sinks, Shower No Tub</span></li>
+                  
+                  <li data-v-7f952888=""><span class="title" data-v-7f952888="">Bedroom 2 Features:</span><span class="value" data-v-7f952888="">Ceiling Fan(s)</span></li>
+                  
+                  <li data-v-7f952888=""><span class="title" data-v-7f952888="">Bedroom 3 Features:</span><span class="value" data-v-7f952888="">Ceiling Fan(s)</span></li>
+                  
+                </ul>
+                
+              </div>
+            
+              <div class="feature-section" data-v-7f952888="">
+                <div class="feature-subheading" data-v-7f952888="">Bathrooms</div>
+                
+                <ul class="features-section-list" data-v-7f952888="">
+                  
+                  <li data-v-7f952888=""><span class="title" data-v-7f952888="">Total Bathrooms:</span><span class="value" data-v-7f952888="">2</span></li>
+                  
+                  <li data-v-7f952888=""><span class="title" data-v-7f952888="">Full Bathrooms:</span><span class="value" data-v-7f952888="">2</span></li>
+                  
+                </ul>
+                
+              </div>
+            
+              <div class="feature-section" data-v-7f952888="">
+                <div class="feature-subheading" data-v-7f952888="">Appliances</div>
+                
+                <ul class="features-section-list" data-v-7f952888="">
+                  <li data-v-7f952888=""><span class="value" data-v-7f952888="">Dishwasher, Disposal, Dryer, Microwave, Range, Refrigerator, Washer</span></li>
+                </ul>
+                
+              </div>
+            
+              <div class="feature-section" data-v-7f952888="">
+                <div class="feature-subheading" data-v-7f952888="">Other Rooms</div>
+                
+                <ul class="features-section-list" data-v-7f952888="">
+                  
+                  <li data-v-7f952888=""><span class="title" data-v-7f952888="">Total Rooms:</span><span class="value" data-v-7f952888="">7</span></li>
+                  
+                  <li data-v-7f952888=""><span class="title" data-v-7f952888="">Florida Room Dimensions:</span><span class="value" data-v-7f952888="">15 x 12</span></li>
+                  
+                  <li data-v-7f952888=""><span class="title" data-v-7f952888="">Living Room Dimensions:</span><span class="value" data-v-7f952888="">15 x 11</span></li>
+                  
+                  <li data-v-7f952888=""><span class="title" data-v-7f952888="">Florida Room Level:</span><span class="value" data-v-7f952888="">First</span></li>
+                  
+                  <li data-v-7f952888=""><span class="title" data-v-7f952888="">Living Room Level:</span><span class="value" data-v-7f952888="">First</span></li>
+                  
+                  <li data-v-7f952888=""><span class="title" data-v-7f952888="">Florida Room Features:</span><span class="value" data-v-7f952888="">Ceiling Fan(s)</span></li>
+                  
+                </ul>
+                
+              </div>
+            
+              <div class="feature-section" data-v-7f952888="">
+                <div class="feature-subheading" data-v-7f952888="">Interior Features</div>
+                
+                <ul class="features-section-list" data-v-7f952888="">
+                  
+                  <li data-v-7f952888=""><span class="title" data-v-7f952888="">Flooring:</span><span class="value" data-v-7f952888="">Carpet, Ceramic Tile, Vinyl</span></li>
+                  
+                  <li data-v-7f952888=""><span class="title" data-v-7f952888="">Window Features:</span><span class="value" data-v-7f952888="">Blinds</span></li>
+                  
+                  <li data-v-7f952888=""><span class="title" data-v-7f952888="">Other:</span><span class="value" data-v-7f952888="">Ceiling Fans(s), High Ceiling(s), Open Floorplan, Split Bedroom, Stone Counters, Vaulted Ceiling(s), Walk-In Closet(s), Window Treatments</span></li>
+                  
+                </ul>
+                
+              </div>
+            
+              <div class="feature-section" data-v-7f952888="">
+                <div class="feature-subheading" data-v-7f952888="">Kitchen and Dining</div>
+                
+                <ul class="features-section-list" data-v-7f952888="">
+                  
+                  <li data-v-7f952888=""><span class="title" data-v-7f952888="">Dining Room Dimensions:</span><span class="value" data-v-7f952888="">11 x 10</span></li>
+                  
+                  <li data-v-7f952888=""><span class="title" data-v-7f952888="">Dining Room Level:</span><span class="value" data-v-7f952888="">First</span></li>
+                  
+                  <li data-v-7f952888=""><span class="title" data-v-7f952888="">Kitchen Dimensions:</span><span class="value" data-v-7f952888="">10 x 10</span></li>
+                  
+                  <li data-v-7f952888=""><span class="title" data-v-7f952888="">Kitchen Features:</span><span class="value" data-v-7f952888="">Breakfast Bar</span></li>
+                  
+                  <li data-v-7f952888=""><span class="title" data-v-7f952888="">Kitchen Level:</span><span class="value" data-v-7f952888="">First</span></li>
+                  
+                </ul>
+                
+              </div>
+            
+              <div class="feature-section" data-v-7f952888="">
+                <div class="feature-subheading" data-v-7f952888="">Heating and Cooling</div>
+                
+                <ul class="features-section-list" data-v-7f952888="">
+                  
+                  <li data-v-7f952888=""><span class="title" data-v-7f952888="">Cooling Features:</span><span class="value" data-v-7f952888="">Central Air</span></li>
+                  
+                  <li data-v-7f952888=""><span class="title" data-v-7f952888="">Heating Features:</span><span class="value" data-v-7f952888="">Central</span></li>
+                  
+                </ul>
+                
+              </div>
+            
+          
+        </div>
+        
+        <div class="feature-block no-page-break" data-v-7f952888="">
+          <div class="feature-header flex" data-v-7f952888="">
+            
+              <svg class="svg-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M7.25 2C5.46403 2 4 3.46403 4 5.25C4 5.4199 4.0464 5.55348 4.07227 5.70605C3.45978 6.20889 3 6.89771 3 7.75C3 8.8979 3.72997 9.85332 4.73828 10.2617C5.05319 11.0392 5.68777 11.6345 6.5 11.8691V13.0713C3.32909 13.4319 2.06543 15.9434 2.06543 15.9434C2.02226 16.0398 1.99996 16.1443 2 16.25V21.25C2.00002 21.4489 2.07904 21.6397 2.21969 21.7803C2.36034 21.921 2.55109 22 2.75 22H21.127C21.2352 22.018 21.3461 22.012 21.4518 21.9825C21.5576 21.9529 21.6555 21.9006 21.7388 21.829C21.822 21.7575 21.8886 21.6686 21.9337 21.5685C21.9788 21.4685 22.0015 21.3598 22 21.25V13.75C22 13.5511 21.921 13.3603 21.7803 13.2197C21.6397 13.079 21.4489 13 21.25 13C21.25 13 18.6968 12.9958 16.1025 13.5146C14.7887 13.7773 13.5439 14.3003 12.3242 14.8975C11.0194 14.0061 9.60317 13.3052 8 13.1221V11.8467C9.06758 11.5337 9.85324 10.617 9.95312 9.47754C10.8712 8.90175 11.5 7.90694 11.5 6.75C11.5 5.77403 11.0203 4.93673 10.3359 4.3418C9.93771 2.99609 8.71725 2 7.25 2ZM7.25 3.5C8.09375 3.5 8.78334 4.0876 8.95605 4.87109C8.99605 5.05343 9.1026 5.2143 9.25488 5.32227C9.70663 5.64152 10 6.15541 10 6.75C10 7.47976 9.56004 8.09371 8.93555 8.36035C8.78891 8.42292 8.66602 8.5306 8.58472 8.66774C8.50341 8.80488 8.46792 8.96437 8.4834 9.12305C8.49508 9.24252 8.5 9.28004 8.5 9.25C8.5 9.94018 7.95884 10.4764 7.27246 10.4902C7.25586 10.4897 7.23925 10.4897 7.22266 10.4902C6.6364 10.4761 6.15971 10.0747 6.03516 9.5293C6.00375 9.39162 5.93411 9.2656 5.83425 9.16575C5.7344 9.06589 5.60838 8.99625 5.4707 8.96484C4.91557 8.83808 4.5 8.35068 4.5 7.75C4.5 7.2554 4.78358 6.84296 5.19922 6.63672C5.35778 6.55817 5.48346 6.42608 5.55405 6.26382C5.62464 6.10155 5.63559 5.91956 5.58496 5.75C5.52993 5.56549 5.5 5.404 5.5 5.25C5.5 4.27497 6.27497 3.5 7.25 3.5ZM17.25 6C16.3958 6 15.6602 6.34732 15.1895 6.87695C14.7187 7.40659 14.5 8.08333 14.5 8.75C14.5 9.41667 14.7187 10.0934 15.1895 10.623C15.6602 11.1527 16.3958 11.5 17.25 11.5C18.1042 11.5 18.8398 11.1527 19.3105 10.623C19.7813 10.0934 20 9.41667 20 8.75C20 8.08333 19.7813 7.40659 19.3105 6.87695C18.8398 6.34732 18.1042 6 17.25 6ZM17.25 7.5C17.7292 7.5 17.9936 7.65268 18.1895 7.87305C18.3853 8.09341 18.5 8.41667 18.5 8.75C18.5 9.08333 18.3853 9.40659 18.1895 9.62695C17.9936 9.84732 17.7292 10 17.25 10C16.7708 10 16.5064 9.84732 16.3105 9.62695C16.1147 9.40659 16 9.08333 16 8.75C16 8.41667 16.1147 8.09341 16.3105 7.87305C16.5064 7.65268 16.7708 7.5 17.25 7.5ZM7.18945 14.5078C7.2226 14.5103 7.25587 14.5107 7.28906 14.5088C9.68333 14.5344 11.7677 16.2129 13.9297 18.0693C14.9224 18.9217 15.9446 19.7817 17.0205 20.5H3.5V16.4697C3.56721 16.3116 4.36737 14.5318 7.18945 14.5078ZM20.5 14.5303V20.4307C18.6273 20.0995 16.8397 18.59 14.9072 16.9307C14.5093 16.589 14.1013 16.2469 13.6855 15.9121C14.6044 15.4971 15.5064 15.1635 16.3975 14.9854C18.2114 14.6226 19.7057 14.5534 20.5 14.5303Z" />
+</svg>
+
+            
+            Exterior
+          </div>
+          
+            
+              <div class="feature-section" data-v-7f952888="">
+                <div class="feature-subheading" data-v-7f952888="">Land Info</div>
+                
+                <ul class="features-section-list" data-v-7f952888="">
+                  
+                  <li data-v-7f952888=""><span class="title" data-v-7f952888="">Lot Description:</span><span class="value" data-v-7f952888="">Oversized Lot</span></li>
+                  
+                  <li data-v-7f952888=""><span class="title" data-v-7f952888="">Lot Size Acres:</span><span class="value" data-v-7f952888="">0.27</span></li>
+                  
+                  <li data-v-7f952888=""><span class="title" data-v-7f952888="">Vegetation:</span><span class="value" data-v-7f952888="">Trees/Landscaped</span></li>
+                  
+                  <li data-v-7f952888=""><span class="title" data-v-7f952888="">Lot Size Square Feet:</span><span class="value" data-v-7f952888="">11761</span></li>
+                  
+                </ul>
+                
+              </div>
+            
+              <div class="feature-section" data-v-7f952888="">
+                <div class="feature-subheading" data-v-7f952888="">Garage and Parking</div>
+                
+                <ul class="features-section-list" data-v-7f952888="">
+                  
+                  <li data-v-7f952888=""><span class="title" data-v-7f952888="">Garage Spaces:</span><span class="value" data-v-7f952888="">2</span></li>
+                  
+                  <li data-v-7f952888=""><span class="title" data-v-7f952888="">Garage Features:</span><span class="value" data-v-7f952888="">Garage Dimensions: 22x19</span></li>
+                  
+                  <li data-v-7f952888=""><span class="title" data-v-7f952888="">Parking Features:</span><span class="value" data-v-7f952888="">Driveway, Golf Cart Parking</span></li>
+                  
+                </ul>
+                
+              </div>
+            
+              <div class="feature-section" data-v-7f952888="">
+                <div class="feature-subheading" data-v-7f952888="">Exterior and Lot Features</div>
+                
+                <ul class="features-section-list" data-v-7f952888="">
+                  
+                  <li data-v-7f952888=""><span class="title" data-v-7f952888="">Patio And Porch Features:</span><span class="value" data-v-7f952888="">Covered, Enclosed, Front Porch, Patio, Screened</span></li>
+                  
+                  <li data-v-7f952888=""><span class="title" data-v-7f952888="">Road Surface Type:</span><span class="value" data-v-7f952888="">Paved</span></li>
+                  
+                </ul>
+                
+              </div>
+            
+          
+        </div>
+        
+        <div class="feature-block no-page-break" data-v-7f952888="">
+          <div class="feature-header flex" data-v-7f952888="">
+            
+              <svg class="svg-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10.25 1.5C9.1017 1.5 8.15285 2.38331 8.02539 3.5H6.25C5.0095 3.5 4 4.509 4 5.75V19.25C4 20.4905 5.0095 21.5 6.25 21.5H12.3838C12.0268 21.044 11.726 20.542 11.5 20H6.25C5.8365 20 5.5 19.6635 5.5 19.25V5.75C5.5 5.3365 5.8365 5 6.25 5H8.38477C8.79062 5.60095 9.47736 6 10.25 6H13.75C14.5226 6 15.2094 5.60095 15.6152 5H17.75C18.1635 5 18.5 5.3365 18.5 5.75V11.085C19.0225 11.166 19.5265 11.3015 20 11.499V5.75C20 4.509 18.9905 3.5 17.75 3.5H15.9746C15.8471 2.38331 14.8983 1.5 13.75 1.5H10.25ZM10.25 3H13.75C14.1732 3 14.5 3.32675 14.5 3.75C14.5 4.17325 14.1732 4.5 13.75 4.5H10.25C9.82675 4.5 9.5 4.17325 9.5 3.75C9.5 3.32675 9.82675 3 10.25 3ZM8.25 8C8.15062 7.99859 8.05194 8.01696 7.95972 8.05402C7.86749 8.09108 7.78355 8.1461 7.71277 8.21588C7.642 8.28566 7.58579 8.36882 7.54743 8.46051C7.50907 8.5522 7.48932 8.65061 7.48932 8.75C7.48932 8.84939 7.50907 8.9478 7.54743 9.03949C7.58579 9.13118 7.642 9.21434 7.71277 9.28412C7.78355 9.3539 7.86749 9.40892 7.95972 9.44598C8.05194 9.48304 8.15062 9.50141 8.25 9.5H15.75C15.8494 9.50141 15.9481 9.48304 16.0403 9.44598C16.1325 9.40892 16.2164 9.3539 16.2872 9.28412C16.358 9.21434 16.4142 9.13118 16.4526 9.03949C16.4909 8.9478 16.5107 8.84939 16.5107 8.75C16.5107 8.65061 16.4909 8.5522 16.4526 8.46051C16.4142 8.36882 16.358 8.28566 16.2872 8.21588C16.2164 8.1461 16.1325 8.09108 16.0403 8.05402C15.9481 8.01696 15.8494 7.99859 15.75 8H8.25ZM8.25 11C8.15062 10.9986 8.05194 11.017 7.95972 11.054C7.86749 11.0911 7.78355 11.1461 7.71277 11.2159C7.642 11.2857 7.58579 11.3688 7.54743 11.4605C7.50907 11.5522 7.48932 11.6506 7.48932 11.75C7.48932 11.8494 7.50907 11.9478 7.54743 12.0395C7.58579 12.1312 7.642 12.2143 7.71277 12.2841C7.78355 12.3539 7.86749 12.4089 7.95972 12.446C8.05194 12.483 8.15062 12.5014 8.25 12.5H11.75C11.8494 12.5014 11.9481 12.483 12.0403 12.446C12.1325 12.4089 12.2164 12.3539 12.2872 12.2841C12.358 12.2143 12.4142 12.1312 12.4526 12.0395C12.4909 11.9478 12.5107 11.8494 12.5107 11.75C12.5107 11.6506 12.4909 11.5522 12.4526 11.4605C12.4142 11.3688 12.358 11.2857 12.2872 11.2159C12.2164 11.1461 12.1325 11.0911 12.0403 11.054C11.9481 11.017 11.8494 10.9986 11.75 11H8.25ZM17.5 12C14.4625 12 12 14.4625 12 17.5C12 20.5375 14.4625 23 17.5 23C20.5375 23 23 20.5375 23 17.5C23 14.4625 20.5375 12 17.5 12ZM20.5 15C20.6279 15 20.7558 15.0487 20.8535 15.1465C21.049 15.342 21.049 15.658 20.8535 15.8535L16.8535 19.8535C16.756 19.951 16.628 20 16.5 20C16.372 20 16.244 19.951 16.1465 19.8535L14.1465 17.8535C13.951 17.658 13.951 17.342 14.1465 17.1465C14.342 16.951 14.658 16.951 14.8535 17.1465L16.5 18.793L20.1465 15.1465C20.2442 15.0487 20.3721 15 20.5 15Z"/>
+</svg>
+
+            
+            Listing
+          </div>
+          
+            
+              <div class="feature-section" data-v-7f952888="">
+                <div class="feature-subheading" data-v-7f952888="">Other Property Info</div>
+                
+                <ul class="features-section-list" data-v-7f952888="">
+                  
+                  <li data-v-7f952888=""><span class="title" data-v-7f952888="">Tax Other Annual Assessment Amount:</span><span class="value" data-v-7f952888="">503</span></li>
+                  
+                  <li data-v-7f952888=""><span class="title" data-v-7f952888="">Annual Tax Amount:</span><span class="value" data-v-7f952888="">3673.36</span></li>
+                  
+                  <li data-v-7f952888=""><span class="title" data-v-7f952888="">Source Listing Status:</span><span class="value" data-v-7f952888="">Pending</span></li>
+                  
+                  <li data-v-7f952888=""><span class="title" data-v-7f952888="">County:</span><span class="value" data-v-7f952888="">Sumter</span></li>
+                  
+                  <li data-v-7f952888=""><span class="title" data-v-7f952888="">Directions:</span><span class="value" data-v-7f952888="">Take Morse Blvd to Odell Circle and go East. Go to Corbett Drive (about 1.5 miles) and turn left. Home will be on the left</span></li>
+                  
+                  <li data-v-7f952888=""><span class="title" data-v-7f952888="">Ownership:</span><span class="value" data-v-7f952888="">Fee Simple</span></li>
+                  
+                  <li data-v-7f952888=""><span class="title" data-v-7f952888="">Source Property Type:</span><span class="value" data-v-7f952888="">Residential</span></li>
+                  
+                  <li data-v-7f952888=""><span class="title" data-v-7f952888="">Area:</span><span class="value" data-v-7f952888="">32162 - Lady Lake/The Villages</span></li>
+                  
+                  <li data-v-7f952888=""><span class="title" data-v-7f952888="">Source Neighborhood:</span><span class="value" data-v-7f952888="">VILLAGES OF SUMTER</span></li>
+                  
+                  <li data-v-7f952888=""><span class="title" data-v-7f952888="">Postal Code Plus 4:</span><span class="value" data-v-7f952888="">1037</span></li>
+                  
+                  <li data-v-7f952888=""><span class="title" data-v-7f952888="">Subdivision:</span><span class="value" data-v-7f952888="">VILLAGES OF SUMTER</span></li>
+                  
+                  <li data-v-7f952888=""><span class="title" data-v-7f952888="">Zoning:</span><span class="value" data-v-7f952888="">R-1</span></li>
+                  
+                  <li data-v-7f952888=""><span class="title" data-v-7f952888="">Property Subtype:</span><span class="value" data-v-7f952888="">Single Family Residence</span></li>
+                  
+                  <li data-v-7f952888=""><span class="title" data-v-7f952888="">Source System Name:</span><span class="value" data-v-7f952888="">C2C</span></li>
+                  
+                </ul>
+                
+              </div>
+            
+          
+        </div>
+        
+        <div class="feature-block no-page-break" data-v-7f952888="">
+          <div class="feature-header flex" data-v-7f952888="">
+            
+              <svg class="svg-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 2.51367C11.4257 2.51367 10.8515 2.7005 10.377 3.07422C10.3766 3.07422 10.3763 3.07422 10.376 3.07422L4.42969 7.75977C3.52774 8.47058 3 9.55675 3 10.7051V19.75C3 20.7075 3.79252 21.5 4.75 21.5H19.25C20.2075 21.5 21 20.7075 21 19.75V10.7051C21 9.55675 20.4723 8.47058 19.5703 7.75977L13.623 3.07422C13.1485 2.7005 12.5743 2.51367 12 2.51367ZM12 4.00977C12.2449 4.00977 12.4899 4.09115 12.6953 4.25293L18.6426 8.93848C19.1846 9.36566 19.5 10.0154 19.5 10.7051V19.75C19.5 19.8975 19.3975 20 19.25 20H4.75C4.60248 20 4.5 19.8975 4.5 19.75V10.7051C4.5 10.0154 4.81537 9.36566 5.35742 8.93848L11.3047 4.25293C11.5101 4.09115 11.7551 4.00977 12 4.00977ZM12 8.5C11.7335 8.5 11.4713 8.52243 11.2168 8.56543L11.0596 9.2168C10.8156 10.2278 9.77484 10.8287 8.77734 10.5342L8.23047 10.3721C7.90097 10.7961 7.63758 11.2778 7.45508 11.7988L7.86133 12.1904C8.60483 12.9059 8.60483 14.095 7.86133 14.8105L7.45508 15.2012C7.63758 15.7227 7.90097 16.2039 8.23047 16.6279L8.77734 16.4668C9.77484 16.1718 10.8156 16.7727 11.0596 17.7842L11.2168 18.4346C11.4713 18.4771 11.7335 18.5 12 18.5C12.2665 18.5 12.5282 18.4776 12.7832 18.4346L12.9404 17.7832C13.1844 16.7717 14.2252 16.1713 15.2227 16.4658L15.7695 16.6279C16.099 16.2039 16.3624 15.7222 16.5449 15.2012L16.1387 14.8096C15.3952 14.0946 15.3952 12.9054 16.1387 12.1904L16.5449 11.7988C16.3624 11.2773 16.099 10.7961 15.7695 10.3721L15.2227 10.5342C14.2252 10.8292 13.1844 10.2283 12.9404 9.2168L12.7832 8.56543C12.5282 8.52243 12.2665 8.5 12 8.5ZM12 12C12.8285 12 13.5 12.6715 13.5 13.5C13.5 14.3285 12.8285 15 12 15C11.1715 15 10.5 14.3285 10.5 13.5C10.5 12.6715 11.1715 12 12 12Z" />
+</svg>
+
+            
+            Features
+          </div>
+          
+            
+              <div class="feature-section" data-v-7f952888="">
+                <div class="feature-subheading" data-v-7f952888="">Utilities</div>
+                
+                <ul class="features-section-list" data-v-7f952888="">
+                  
+                  <li data-v-7f952888=""><span class="title" data-v-7f952888="">Sewer:</span><span class="value" data-v-7f952888="">Public Sewer</span></li>
+                  
+                  <li data-v-7f952888=""><span class="title" data-v-7f952888="">Water Source:</span><span class="value" data-v-7f952888="">Public</span></li>
+                  
+                  <li data-v-7f952888=""><span class="title" data-v-7f952888="">Other:</span><span class="value" data-v-7f952888="">Electricity Available</span></li>
+                  
+                </ul>
+                
+              </div>
+            
+          
+        </div>
+        
+        <div class="feature-block no-page-break" data-v-7f952888="">
+          <div class="feature-header flex" data-v-7f952888="">
+            
+              <svg class="svg-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M8 2.5C6.07589 2.5 4.5 4.07589 4.5 6C4.5 7.92411 6.07589 9.5 8 9.5C9.92411 9.5 11.5 7.92411 11.5 6C11.5 4.07589 9.92411 2.5 8 2.5ZM16 2.5C14.076 2.5 12.5 4.076 12.5 6C12.5 7.924 14.076 9.5 16 9.5C17.3784 9.5 18.6321 8.70468 19.6113 7.97656C20.5906 7.24845 21.29 6.52051 21.29 6.52051C21.4248 6.38072 21.5 6.19414 21.5 6C21.5 5.80586 21.4248 5.61928 21.29 5.47949C21.29 5.47949 20.5906 4.75155 19.6113 4.02344C18.6321 3.29532 17.3784 2.5 16 2.5ZM8 4C9.11345 4 10 4.88655 10 6C10 7.11345 9.11345 8 8 8C6.88655 8 6 7.11345 6 6C6 4.88655 6.88655 4 8 4ZM16 4C16.7246 4 17.8458 4.57968 18.7158 5.22656C19.236 5.61334 19.346 5.75164 19.6094 6C19.346 6.24836 19.236 6.38666 18.7158 6.77344C17.8458 7.42032 16.7246 8 16 8C14.887 8 14 7.113 14 6C14 4.887 14.887 4 16 4ZM4.75 10.5C3.785 10.5 3 11.285 3 12.25V17C3 19.757 5.243 22 8 22C9.271 22 10.4295 21.5199 11.3125 20.7354C10.9945 20.3369 10.7261 19.8973 10.5166 19.4258C9.8796 20.0868 8.988 20.5 8 20.5C6.07 20.5 4.5 18.93 4.5 17V12.25C4.5 12.112 4.612 12 4.75 12H10.0127C10.0642 11.4335 10.2864 10.9155 10.6299 10.5H4.75ZM12.75 10.5C11.7925 10.5 11 11.2925 11 12.25V17C11 19.7524 13.2476 22 16 22C18.7524 22 21 19.7524 21 17V12.25C21 11.2925 20.2075 10.5 19.25 10.5H12.75ZM12.75 12H19.25C19.3975 12 19.5 12.1025 19.5 12.25V17C19.5 18.9416 17.9416 20.5 16 20.5C14.0584 20.5 12.5 18.9416 12.5 17V12.25C12.5 12.1025 12.6025 12 12.75 12Z" />
+</svg>
+
+            
+            Community
+          </div>
+          
+            
+              <div class="feature-section" data-v-7f952888="">
+                <div class="feature-subheading" data-v-7f952888="">Condo Info</div>
+                
+                <ul class="features-section-list" data-v-7f952888="">
+                  
+                  <li data-v-7f952888=""><span class="title" data-v-7f952888="">Unit Floor In Building:</span><span class="value" data-v-7f952888="">1</span></li>
+                  
+                </ul>
+                
+              </div>
+            
+              <div class="feature-section" data-v-7f952888="">
+                <div class="feature-subheading" data-v-7f952888="">Rental Info</div>
+                
+                <ul class="features-section-list" data-v-7f952888="">
+                  
+                  <li data-v-7f952888=""><span class="title" data-v-7f952888="">Lease Term:</span><span class="value" data-v-7f952888="">Minimum Lease: No Minimum</span></li>
+                  
+                </ul>
+                
+              </div>
+            
+              <div class="feature-section" data-v-7f952888="">
+                <div class="feature-subheading" data-v-7f952888="">Homeowners Association</div>
+                
+                <ul class="features-section-list" data-v-7f952888="">
+                  
+                  <li data-v-7f952888=""><span class="title" data-v-7f952888="">Association:</span><span class="value" data-v-7f952888="">Yes</span></li>
+                  
+                  <li data-v-7f952888=""><span class="title" data-v-7f952888="">Association Amenities:</span><span class="value" data-v-7f952888="">Golf Course, Pickleball Court(s), Pool, Racquet Ball, Recreation Facilities, Shuffleboard Court, Tennis Court(s), Trails</span></li>
+                  
+                  <li data-v-7f952888=""><span class="title" data-v-7f952888="">Association Fee Includes:</span><span class="value" data-v-7f952888="">Community Pool, Maintenance Grounds, Recreational Facilities</span></li>
+                  
+                  <li data-v-7f952888=""><span class="title" data-v-7f952888="">Calculated Total Monthly Association Fees:</span><span class="value" data-v-7f952888="">164</span></li>
+                  
+                  <li data-v-7f952888=""><span class="title" data-v-7f952888="">Pets Allowed:</span><span class="value" data-v-7f952888="">Yes</span></li>
+                  
+                  <li data-v-7f952888=""><span class="title" data-v-7f952888="">Senior Community:</span><span class="value" data-v-7f952888="">Yes</span></li>
+                  
+                </ul>
+                
+              </div>
+            
+              <div class="feature-section" data-v-7f952888="">
+                <div class="feature-subheading" data-v-7f952888="">Amenities and Community Features</div>
+                
+                <ul class="features-section-list" data-v-7f952888="">
+                  
+                  <li data-v-7f952888=""><span class="title" data-v-7f952888="">Community Features:</span><span class="value" data-v-7f952888="">Deed Restrictions, Gated Community, Golf Carts OK, Pool</span></li>
+                  
+                </ul>
+                
+              </div>
+            
+          
+        </div>
+        
+        <div class="feature-block no-page-break" data-v-7f952888="">
+          <div class="feature-header flex" data-v-7f952888="">
+            
+              <svg class="svg-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 2.04785C11.3978 2.04785 10.7954 2.24371 10.2979 2.63574L4.42969 7.25977C3.52774 7.97058 3 9.05675 3 10.2051V18.75C3 19.9837 4.01625 21 5.25 21H18.75C19.9838 21 21 19.9837 21 18.75V10.2051C21 9.05675 20.4723 7.97058 19.5703 7.25977L13.7012 2.63574C13.2036 2.24371 12.6022 2.04785 12 2.04785ZM12 3.54395C12.2726 3.54395 12.545 3.63448 12.7734 3.81445L18.6426 8.43848C19.1846 8.86566 19.5 9.5154 19.5 10.2051V18.75C19.5 19.1732 19.1733 19.5 18.75 19.5H5.25C4.82675 19.5 4.5 19.1732 4.5 18.75V10.2051C4.5 9.5154 4.81537 8.86566 5.35742 8.43848L11.2266 3.81445C11.455 3.63448 11.7274 3.54395 12 3.54395ZM12 7C11.62 7 11.313 7.30848 11.3135 7.68848V8.39258C10.068 8.48258 9.07812 9.51423 9.07812 10.7822C9.07812 12.1087 10.1579 13.1885 11.4844 13.1885H12.6875C13.256 13.1885 13.7188 13.6502 13.7188 14.2187C13.7188 14.7872 13.256 15.25 12.6875 15.25H11.3389C10.7004 15.25 10.3006 14.9852 10.0791 14.7637C9.8106 14.4952 9.37592 14.4952 9.10742 14.7637C8.83892 15.0322 8.83892 15.4678 9.10742 15.7363C9.67492 16.3038 10.4575 16.6156 11.3125 16.6221V17.3125C11.3125 17.692 11.62 18 12 18C12.38 18 12.6875 17.692 12.6875 17.3125V16.625C14.014 16.625 15.0928 15.5443 15.0928 14.2178C15.0928 12.8913 14.013 11.8115 12.6865 11.8115H11.4844C10.9159 11.8115 10.4531 11.3497 10.4531 10.7812C10.4531 10.2127 10.9159 9.75 11.4844 9.75H12.541C13.1856 9.75 13.4821 10.1205 13.4854 10.1221V10.123C13.6905 10.4415 14.1153 10.5315 14.4346 10.3271C14.7536 10.1211 14.8456 9.69595 14.6396 9.37695C14.4256 9.04595 13.7485 8.43877 12.6875 8.38476V7.6875C12.6875 7.308 12.38 7 12 7Z" />
+</svg>
+
+            
+            Legal and finance
+          </div>
+          
+            <div class="feature-section" data-v-7f952888="">
+              <ul class="features-section-list" data-v-7f952888="">
+                
+                  <li data-v-7f952888="">
+                    <span class="title" data-v-7f952888="">HOA Frequency:</span>
+                    <span class="value" data-v-7f952888="">Monthly/164</span>
+                  </li>
+                
+                  <li data-v-7f952888="">
+                    <span class="title" data-v-7f952888="">HOA fee:</span>
+                    <span class="value" data-v-7f952888="">$164</span>
+                  </li>
+                
+              </ul>
+            </div>
+          
+        </div>
+        
+
+    </div>
+    <div class="tab tab-financial" data-v-7f952888="">
+      <div class="no-page-break">
+        <span class="heading" data-v-7f952888="">Basic assumptions</span>
+        <div class="params flex" data-v-7f952888="">
+          <div class="ui-drop" data-v-9b6c558e="" data-v-7f952888="">
+            <div class="ui-drop-label flex" data-v-9b6c558e="">
+              <div class="param-data" data-v-7f952888=""><span class="param-name" data-v-7f952888="">Purchase Price</span><span class="param-value" data-v-7f952888="">$339,000</span></div>
+            </div>
+          </div>
+          <div class="ui-drop" data-v-9b6c558e="" data-v-7f952888="">
+            <div class="ui-drop-label flex" data-v-9b6c558e="">
+              <div class="param-data" data-v-7f952888=""><span class="param-name" data-v-7f952888="">Rent</span><span class="param-value" data-v-7f952888="">$1,788</span></div>
+            </div>
+          </div>
+          <div class="ui-drop" data-v-9b6c558e="" data-v-7f952888="">
+            <div class="ui-drop-label flex" data-v-9b6c558e="">
+              <div class="param-data" data-v-7f952888=""><span class="param-name" data-v-7f952888="">Down Payment</span><span class="param-value" data-v-7f952888="">20%</span></div>
+            </div>
+          </div>
+          <div class="ui-drop" data-v-9b6c558e="" data-v-7f952888="">
+            <div class="ui-drop-label flex" data-v-9b6c558e="">
+              <div class="param-data" data-v-7f952888=""><span class="param-name" data-v-7f952888="">Financing Years</span><span class="param-value" data-v-7f952888="">30 years</span></div>
+            </div>
+          </div>
+          <div class="ui-drop" data-v-9b6c558e="" data-v-7f952888="">
+            <div class="ui-drop-label flex" data-v-9b6c558e="">
+              <div class="param-data" data-v-7f952888=""><span class="param-name" data-v-7f952888="">Interest Rate</span><span class="param-value" data-v-7f952888="">2.90%</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="flex fin-details no-page-break" data-v-7f952888="">
+        <div class="monthly-cash-flow side no-page-break" data-v-7f952888="">
+          <span class="heading" data-v-7f952888="">Monthly Cash Flow (Year 1)</span>
+          <table class="fin-table" data-v-7f952888="">
+            <tr data-v-7f952888="">
+              <td class="title" data-v-7f952888="">Income</td>
+              <td class="name" data-v-7f952888="">Rent (After Vacancy)</td>
+              <td class="value" data-v-7f952888="">$20,574</td>
+            </tr>
+            <tr class="divider stripped" data-v-7f952888="">
+              <td colspan="3" data-v-7f952888=""></td>
+            </tr>
+            <tr data-v-7f952888="">
+              <td class="title" data-v-7f952888="">Expenses</td>
+              <td class="name" data-v-7f952888="">Management Fees</td>
+              <td class="value" data-v-7f952888="">-$107</td>
+            </tr>
+            <tr data-v-7f952888="">
+              <td class="title" data-v-7f952888=""></td>
+              <td class="name" data-v-7f952888="">Maintenance / Reserves</td>
+              <td class="value" data-v-7f952888="">-$45</td>
+            </tr>
+            <tr data-v-7f952888="">
+              <td class="title" data-v-7f952888=""></td>
+              <td class="name" data-v-7f952888="">HOA Fees</td>
+              <td class="value" data-v-7f952888="">-$164</td>
+            </tr>
+            <tr data-v-7f952888="">
+              <td class="title" data-v-7f952888=""></td>
+              <td class="name" data-v-7f952888="">Insurance</td>
+              <td class="value" data-v-7f952888="">-$127</td>
+            </tr>
+            <tr data-v-7f952888="">
+              <td class="title" data-v-7f952888=""></td>
+              <td class="name" data-v-7f952888="">Property Taxes</td>
+              <td class="value" data-v-7f952888="">-$306</td>
+            </tr>
+            <tr data-v-7f952888="">
+              <td class="title" data-v-7f952888=""></td>
+              <td class="name" data-v-7f952888="">Agent Leasing Fees</td>
+              <td class="value" data-v-7f952888="">-$89</td>
+            </tr>
+            <tr data-v-7f952888="">
+              <td class="title" data-v-7f952888=""></td>
+              <td class="name" data-v-7f952888="">Overhead / Miscellanous</td>
+              <td class="value" data-v-7f952888="">-$36</td>
+            </tr>
+            <tr class="divider solid" data-v-7f952888="">
+              <td colspan="3" data-v-7f952888=""></td>
+            </tr>
+            <tr data-v-7f952888="">
+              <td class="title" data-v-7f952888=""></td>
+              <td class="name" data-v-7f952888="">Operating Income</td>
+              <td class="value" data-v-7f952888="">$840</td>
+            </tr>
+            <tr data-v-7f952888="">
+              <td class="title" data-v-7f952888=""></td>
+              <td class="name" data-v-7f952888="">Loan Payments</td>
+              <td class="value" data-v-7f952888="">$1,129</td>
+            </tr>
+            <tr data-v-7f952888="">
+              <td class="title" data-v-7f952888=""></td>
+              <td class="name" data-v-7f952888="">Net Income</td>
+              <td class="value" data-v-7f952888="">$191</td>
+            </tr>
+            <tr data-v-7f952888="">
+              <td class="title" data-v-7f952888=""></td>
+              <td class="name ui-text-bold" data-v-7f952888="">Cash Flow</td>
+              <td class="value" data-v-7f952888="" style="color: rgb(1, 208, 146);">$-3,461</td>
+            </tr>
+          </table>
+        </div>
+        <div class="detailed-assumptions side no-page-break" data-v-7f952888="">
+          <span class="heading hide-mobile" data-v-7f952888="">Detailed Assumptions</span><span class="heading hide-desktop" data-v-7f952888="">Assumptions</span>
+          <table class="fin-table" data-v-7f952888="">
+            <tr data-v-7f952888="">
+              <td class="title title-bigger" colspan="3" data-v-7f952888="">Price And Market Related</td>
+            </tr>
+            <tr data-v-7f952888="">
+              <td class="name" data-v-7f952888="">Annual Increase In Rent</td>
+              <td class="value" data-v-7f952888="">5%</td>
+            </tr>
+            <tr data-v-7f952888="">
+              <td class="name" data-v-7f952888="">Annual Increase In Property Value</td>
+              <td class="value" data-v-7f952888="">2%</td>
+            </tr>
+            <tr data-v-7f952888="">
+              <td class="name" data-v-7f952888="">General Inflation</td>
+              <td class="value" data-v-7f952888="">1.50%</td>
+            </tr>
+            <tr data-v-7f952888="">
+              <td class="title title-bigger" colspan="3" data-v-7f952888="">Property Related</td>
+            </tr>
+            <tr data-v-7f952888="">
+              <td class="name" data-v-7f952888="">Average Length Of Tenant Stay</td>
+              <td class="value" data-v-7f952888="">2</td>
+              <td class="unit" data-v-7f952888="">years</td>
+            </tr>
+            <tr data-v-7f952888="">
+              <td class="name" data-v-7f952888="">Management Fees</td>
+              <td class="value" data-v-7f952888="">6%</td>
+              <td class="unit" data-v-7f952888="">of revenue</td>
+            </tr>
+            <tr data-v-7f952888="">
+              <td class="name" data-v-7f952888="">Maintenance / Reserves</td>
+              <td class="value" data-v-7f952888="">2.50%</td>
+              <td class="unit" data-v-7f952888="">of property value</td>
+            </tr>
+            <tr data-v-7f952888="">
+              <td class="name" data-v-7f952888="">Overhead / Miscellanous</td>
+              <td class="value" data-v-7f952888="">2%</td>
+              <td class="unit" data-v-7f952888="">of revenue</td>
+            </tr>
+            <tr data-v-7f952888="">
+              <td class="name" data-v-7f952888="">Closing Costs On Purchase</td>
+              <td class="value" data-v-7f952888="">3%</td>
+              <td class="unit" data-v-7f952888="">of property purhase price</td>
+            </tr>
+            <tr data-v-7f952888="">
+              <td class="name" data-v-7f952888="">Closing Costs On Sale</td>
+              <td class="value" data-v-7f952888="">7.30%</td>
+              <td class="unit" data-v-7f952888="">of property sales price</td>
+            </tr>
+          </table>
+        </div>
+        <div class="perfomance-dashboard side no-page-break" data-v-7f952888="">
+          <span class="heading" data-v-7f952888="">Perfomance Dashboard</span>
+          <div class="flex" data-v-7f952888="">
+            <div class="side" data-v-7f952888="">
+              <table class="fin-table" data-v-7f952888="">
+                <tr data-v-7f952888="">
+                  <td class="title" colspan="2" data-v-7f952888="">Investment </td>
+                </tr>
+                <tr data-v-7f952888="">
+                  <td class="name" data-v-7f952888="">Down Payment / Equity Investment</td>
+                  <td class="value" data-v-7f952888="">$77,970</td>
+                </tr>
+                <tr data-v-7f952888="">
+                  <td class="name" data-v-7f952888="">Loan Value, Incl. Closing Costs</td>
+                  <td class="value" data-v-7f952888="">$271,200</td>
+                </tr>
+                <tr class="divider solid" data-v-7f952888="">
+                  <td colspan="2" data-v-7f952888=""></td>
+                </tr>
+                <tr data-v-7f952888="">
+                  <td class="name" data-v-7f952888="">Total Investment (Assets)</td>
+                  <td class="value total" data-v-7f952888="">$349,170</td>
+                </tr>
+              </table>
+              <table class="fin-table" data-v-7f952888="">
+                <tr data-v-7f952888="">
+                  <td class="title" colspan="3" data-v-7f952888="">Income</td>
+                </tr>
+                <tr data-v-7f952888="">
+                  <td class="name" data-v-7f952888="">Operating Income (Year 1)</td>
+                  <td class="value" data-v-7f952888="">$10,085</td>
+                </tr>
+                <tr data-v-7f952888="">
+                  <td class="name" data-v-7f952888="">Net Income (Year 1)</td>
+                  <td class="value" data-v-7f952888="">$2,296</td>
+                </tr>
+                <tr data-v-7f952888="">
+                  <td class="name" data-v-7f952888="">Cash Flow (Year 1)</td>
+                  <td class="value" data-v-7f952888="" style="color: rgb(1, 208, 146);">$-3,461</td>
+                </tr>
+              </table>
+            </div>
+            <div class="side" data-v-7f952888="">
+              <table class="fin-table" data-v-7f952888="">
+                <tr data-v-7f952888="">
+                  <td class="title" colspan="2" data-v-7f952888="">Basic Indicators</td>
+                </tr>
+                <tr data-v-7f952888="">
+                  <td class="name" data-v-7f952888="">Cap Rate (Year 1)</td>
+                  <td class="value" data-v-7f952888="" style="color: rgb(1, 208, 146);">2.89%</td>
+                </tr>
+                <tr data-v-7f952888="">
+                  <td class="name" data-v-7f952888="">Cash On Cash (Year 1)</td>
+                  <td class="value" data-v-7f952888="" style="color: rgb(1, 208, 146);">-4.44%</td>
+                </tr>
+                <tr data-v-7f952888="">
+                  <td class="name" data-v-7f952888="">1% Rule</td>
+                  <td class="value" data-v-7f952888="">0.63%</td>
+                </tr>
+                <tr data-v-7f952888="">
+                  <td class="name" data-v-7f952888="">Gross Yield (Year 1)</td>
+                  <td class="value" data-v-7f952888="">6.33%</td>
+                </tr>
+              </table>
+              <table class="fin-table" data-v-7f952888="">
+                <tr data-v-7f952888="">
+                  <td class="title" colspan="3" data-v-7f952888="">Advanced Indicators</td>
+                </tr>
+                <tr data-v-7f952888="">
+                  <td class="name" data-v-7f952888="">Total Return (IRR)</td>
+                  <td class="value" data-v-7f952888="" style="color: rgb(1, 208, 146);">10.89%</td>
+                </tr>
+                <tr data-v-7f952888="">
+                  <td class="name" data-v-7f952888="">Operating Expense Ratio (Year 1)</td>
+                  <td class="value" data-v-7f952888="">50.98%</td>
+                </tr>
+                <tr data-v-7f952888="">
+                  <td class="name" data-v-7f952888="">Debt Service Coverage (Year 1)</td>
+                  <td class="value" data-v-7f952888="">0.744</td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="full-pro-forma no-page-break" data-v-7f952888="">
+        <div class="head-row flex" data-v-7f952888="">
+          <span class="heading" data-v-7f952888="">Full Pro Forma</span>
+        </div>
+        <div class="table-wrapper" data-v-7f952888="">
+          <table class="fin-table" data-v-7f952888="">
+            <tr data-v-7f952888="">
+              <td class="head" data-v-7f952888="">Parameters</td>
+              
+              <td class="head" data-v-7f952888="">Year 1</td>
+              
+              <td class="head" data-v-7f952888="">Year 2</td>
+              
+              <td class="head" data-v-7f952888="">Year 3</td>
+              
+              <td class="head" data-v-7f952888="">Year 5</td>
+              
+              <td class="head" data-v-7f952888="">Year 10</td>
+              
+              <td class="head" data-v-7f952888="">Year 20</td>
+              
+              <td class="head" data-v-7f952888="">Year 30</td>
+              
+            </tr>
+            <tr class="" data-v-7f952888="">
+              <td colspan="8" data-v-7f952888=""></td>
+            </tr>
+            <tr class="high" data-v-7f952888="">
+              <td class="title title-bigger" data-v-7f952888="">Gross Income</td>
+            <tr class="" data-v-7f952888="">
+              <td class="name" data-v-7f952888="">Rent</td>
+              
+              <td class="value interim" data-v-7f952888="">$21,456</td>
+              
+              <td class="value interim" data-v-7f952888="">$22,529</td>
+              
+              <td class="value interim" data-v-7f952888="">$23,655</td>
+              
+              <td class="value interim" data-v-7f952888="">$26,080</td>
+              
+              <td class="value interim" data-v-7f952888="">$33,285</td>
+              
+              <td class="value interim" data-v-7f952888="">$54,218</td>
+              
+              <td class="value interim" data-v-7f952888="">$88,316</td>
+              
+            </tr>
+            <tr class="" data-v-7f952888="">
+              <td class="name" data-v-7f952888="">Vacancy</td>
+              
+              <td class="value interim" data-v-7f952888="">$882</td>
+              
+              <td class="value interim" data-v-7f952888="">$926</td>
+              
+              <td class="value interim" data-v-7f952888="">$972</td>
+              
+              <td class="value interim" data-v-7f952888="">$1,072</td>
+              
+              <td class="value interim" data-v-7f952888="">$1,368</td>
+              
+              <td class="value interim" data-v-7f952888="">$2,228</td>
+              
+              <td class="value interim" data-v-7f952888="">$3,629</td>
+              
+            </tr>
+            <tr class="divider solid" data-v-7f952888="">
+              <td colspan="8" data-v-7f952888=""></td>
+            </tr>
+            <tr class="high" data-v-7f952888="">
+              <td class="title" data-v-7f952888="">Rent Less Vacancy</td>
+              
+              <td class="value" data-v-7f952888="">$20,574</td>
+              
+              <td class="value" data-v-7f952888="">$21,603</td>
+              
+              <td class="value" data-v-7f952888="">$22,683</td>
+              
+              <td class="value" data-v-7f952888="">$25,008</td>
+              
+              <td class="value" data-v-7f952888="">$31,917</td>
+              
+              <td class="value" data-v-7f952888="">$51,990</td>
+              
+              <td class="value" data-v-7f952888="">$84,686</td>
+              
+            </tr>
+            <tr class="" data-v-7f952888="">
+              <td colspan="8" data-v-7f952888=""></td>
+            </tr>
+            <tr class="strip" data-v-7f952888="">
+              <td colspan="8" data-v-7f952888=""></td>
+            </tr>
+            <tr class="strip high" data-v-7f952888="">
+              <td class="title title-bigger" data-v-7f952888="">Operating Expenses</td>
+              
+              <td class="value trans-opacity" data-v-7f952888=""></td>
+              
+              <td class="value trans-opacity" data-v-7f952888=""></td>
+              
+              <td class="value trans-opacity" data-v-7f952888=""></td>
+              
+              <td class="value trans-opacity" data-v-7f952888=""></td>
+              
+              <td class="value trans-opacity" data-v-7f952888=""></td>
+              
+              <td class="value trans-opacity" data-v-7f952888=""></td>
+              
+              <td class="value trans-opacity" data-v-7f952888=""></td>
+              
+            </tr>
+            <tr class="strip" data-v-7f952888="">
+              <td class="name" data-v-7f952888="">Management Fees</td>
+              
+              <td class="value interim" data-v-7f952888="">$1,287</td>
+              
+              <td class="value interim" data-v-7f952888="">$1,307</td>
+              
+              <td class="value interim" data-v-7f952888="">$1,326</td>
+              
+              <td class="value interim" data-v-7f952888="">$1,366</td>
+              
+              <td class="value interim" data-v-7f952888="">$1,472</td>
+              
+              <td class="value interim" data-v-7f952888="">$1,708</td>
+              
+              <td class="value interim" data-v-7f952888="">$1,983</td>
+              
+            </tr>
+            <tr class="strip" data-v-7f952888="">
+              <td class="name" data-v-7f952888="">Maintenance / Reserves</td>
+              
+              <td class="value interim" data-v-7f952888="">$536</td>
+              
+              <td class="value interim" data-v-7f952888="">$544</td>
+              
+              <td class="value interim" data-v-7f952888="">$553</td>
+              
+              <td class="value interim" data-v-7f952888="">$569</td>
+              
+              <td class="value interim" data-v-7f952888="">$613</td>
+              
+              <td class="value interim" data-v-7f952888="">$712</td>
+              
+              <td class="value interim" data-v-7f952888="">$826</td>
+              
+            </tr>
+            <tr class="strip" data-v-7f952888="">
+              <td class="name" data-v-7f952888="">HOA Fees</td>
+              
+              <td class="value interim" data-v-7f952888="">$1,968</td>
+              
+              <td class="value interim" data-v-7f952888="">$1,998</td>
+              
+              <td class="value interim" data-v-7f952888="">$2,027</td>
+              
+              <td class="value interim" data-v-7f952888="">$2,089</td>
+              
+              <td class="value interim" data-v-7f952888="">$2,250</td>
+              
+              <td class="value interim" data-v-7f952888="">$2,611</td>
+              
+              <td class="value interim" data-v-7f952888="">$3,031</td>
+              
+            </tr>
+            <tr class="strip" data-v-7f952888="">
+              <td class="name" data-v-7f952888="">Insurance</td>
+              
+              <td class="value interim" data-v-7f952888="">$1,524</td>
+              
+              <td class="value interim" data-v-7f952888="">$1,547</td>
+              
+              <td class="value interim" data-v-7f952888="">$1,570</td>
+              
+              <td class="value interim" data-v-7f952888="">$1,618</td>
+              
+              <td class="value interim" data-v-7f952888="">$1,743</td>
+              
+              <td class="value interim" data-v-7f952888="">$2,022</td>
+              
+              <td class="value interim" data-v-7f952888="">$2,347</td>
+              
+            </tr>
+            <tr class="strip" data-v-7f952888="">
+              <td class="name" data-v-7f952888="">Property Taxes</td>
+              
+              <td class="value interim" data-v-7f952888="">$3,672</td>
+              
+              <td class="value interim" data-v-7f952888="">$3,727</td>
+              
+              <td class="value interim" data-v-7f952888="">$3,783</td>
+              
+              <td class="value interim" data-v-7f952888="">$3,897</td>
+              
+              <td class="value interim" data-v-7f952888="">$4,199</td>
+              
+              <td class="value interim" data-v-7f952888="">$4,873</td>
+              
+              <td class="value interim" data-v-7f952888="">$5,655</td>
+              
+            </tr>
+            <tr class="strip" data-v-7f952888="">
+              <td class="name" data-v-7f952888="">Agent Leasing Fees</td>
+              
+              <td class="value interim" data-v-7f952888="">$1,073</td>
+              
+              <td class="value interim" data-v-7f952888="">$1,126</td>
+              
+              <td class="value interim" data-v-7f952888="">$1,183</td>
+              
+              <td class="value interim" data-v-7f952888="">$1,304</td>
+              
+              <td class="value interim" data-v-7f952888="">$1,664</td>
+              
+              <td class="value interim" data-v-7f952888="">$2,711</td>
+              
+              <td class="value interim" data-v-7f952888="">$4,416</td>
+              
+            </tr>
+            <tr class="strip" data-v-7f952888="">
+              <td class="name" data-v-7f952888="">Overhead / Miscellanous</td>
+              
+              <td class="value interim" data-v-7f952888="">$429</td>
+              
+              <td class="value interim" data-v-7f952888="">$436</td>
+              
+              <td class="value interim" data-v-7f952888="">$442</td>
+              
+              <td class="value interim" data-v-7f952888="">$455</td>
+              
+              <td class="value interim" data-v-7f952888="">$491</td>
+              
+              <td class="value interim" data-v-7f952888="">$569</td>
+              
+              <td class="value interim" data-v-7f952888="">$661</td>
+              
+            </tr>
+            <tr class="strip divider solid" data-v-7f952888="">
+              <td colspan="8" data-v-7f952888=""></td>
+            </tr>
+            <tr class="strip high" data-v-7f952888="">
+              <td class="title" data-v-7f952888="">Total Operating Expenses</td>
+              
+              <td class="value" data-v-7f952888="">$10,490</td>
+              
+              <td class="value" data-v-7f952888="">$10,685</td>
+              
+              <td class="value" data-v-7f952888="">$10,884</td>
+              
+              <td class="value" data-v-7f952888="">$11,299</td>
+              
+              <td class="value" data-v-7f952888="">$12,431</td>
+              
+              <td class="value" data-v-7f952888="">$15,207</td>
+              
+              <td class="value" data-v-7f952888="">$18,918</td>
+              
+            </tr>
+            <tr class="strip" data-v-7f952888="">
+              <td colspan="8" data-v-7f952888=""></td>
+            </tr>
+            <tr class="" data-v-7f952888="">
+              <td colspan="8" data-v-7f952888=""></td>
+            </tr>
+            <tr class="high" data-v-7f952888="">
+              <td class="title title-bigger" data-v-7f952888="">Operating Income</td>
+            </tr>
+            <tr class="" data-v-7f952888="">
+              <td class="name" data-v-7f952888="">Income</td>
+              
+              <td class="value interim" data-v-7f952888="">$2,296</td>
+              
+              <td class="value interim" data-v-7f952888="">$3,299</td>
+              
+              <td class="value interim" data-v-7f952888="">$4,354</td>
+              
+              <td class="value interim" data-v-7f952888="">$6,628</td>
+              
+              <td class="value interim" data-v-7f952888="">$13,412</td>
+              
+              <td class="value interim" data-v-7f952888="">$33,220</td>
+              
+              <td class="value interim" data-v-7f952888="">$65,558</td>
+              
+            </tr>
+            <tr class="" data-v-7f952888="">
+              <td class="name" data-v-7f952888="">Operating Expenses</td>
+              
+              <td class="value interim" data-v-7f952888="">$10,490</td>
+              
+              <td class="value interim" data-v-7f952888="">$10,685</td>
+              
+              <td class="value interim" data-v-7f952888="">$10,884</td>
+              
+              <td class="value interim" data-v-7f952888="">$11,299</td>
+              
+              <td class="value interim" data-v-7f952888="">$12,431</td>
+              
+              <td class="value interim" data-v-7f952888="">$15,207</td>
+              
+              <td class="value interim" data-v-7f952888="">$18,918</td>
+              
+            </tr>
+            <tr class="divider solid" data-v-7f952888="">
+              <td colspan="8" data-v-7f952888=""></td>
+            </tr>
+            <tr class="high" data-v-7f952888="">
+              <td class="title" data-v-7f952888="">Operating Income</td>
+              
+              <td class="value" data-v-7f952888="">$10,085</td>
+              
+              <td class="value" data-v-7f952888="">$10,918</td>
+              
+              <td class="value" data-v-7f952888="">$11,799</td>
+              
+              <td class="value" data-v-7f952888="">$13,709</td>
+              
+              <td class="value" data-v-7f952888="">$19,486</td>
+              
+              <td class="value" data-v-7f952888="">$36,783</td>
+              
+              <td class="value" data-v-7f952888="">$65,769</td>
+              
+            </tr>
+            <tr class="" data-v-7f952888="">
+              <td class="name" data-v-7f952888="">Operating Income Margin</td>
+              
+              <td class="value interim" data-v-7f952888="">47%</td>
+              
+              <td class="value interim" data-v-7f952888="">48%</td>
+              
+              <td class="value interim" data-v-7f952888="">50%</td>
+              
+              <td class="value interim" data-v-7f952888="">53%</td>
+              
+              <td class="value interim" data-v-7f952888="">59%</td>
+              
+              <td class="value interim" data-v-7f952888="">68%</td>
+              
+              <td class="value interim" data-v-7f952888="">74%</td>
+              
+            </tr>
+            <tr class="" data-v-7f952888="">
+              <td colspan="8" data-v-7f952888=""></td>
+            </tr>
+            <tr class="strip" data-v-7f952888="">
+              <td colspan="8" data-v-7f952888=""></td>
+            </tr>
+            <tr class="strip high" data-v-7f952888="">
+              <td class="title title-bigger" data-v-7f952888="">Net Income</td>
+              
+              <td class="value trans-opacity" data-v-7f952888=""></td>
+              
+              <td class="value trans-opacity" data-v-7f952888=""></td>
+              
+              <td class="value trans-opacity" data-v-7f952888=""></td>
+              
+              <td class="value trans-opacity" data-v-7f952888=""></td>
+              
+              <td class="value trans-opacity" data-v-7f952888=""></td>
+              
+              <td class="value trans-opacity" data-v-7f952888=""></td>
+              
+              <td class="value trans-opacity" data-v-7f952888=""></td>
+              
+            </tr>
+            <tr class="strip" data-v-7f952888="">
+              <td class="name" data-v-7f952888="">Operating Income</td>
+              
+              <td class="value interim" data-v-7f952888="">$10,085</td>
+              
+              <td class="value interim" data-v-7f952888="">$10,918</td>
+              
+              <td class="value interim" data-v-7f952888="">$11,799</td>
+              
+              <td class="value interim" data-v-7f952888="">$13,709</td>
+              
+              <td class="value interim" data-v-7f952888="">$19,486</td>
+              
+              <td class="value interim" data-v-7f952888="">$36,783</td>
+              
+              <td class="value interim" data-v-7f952888="">$65,769</td>
+              
+            </tr>
+            <tr class="strip" data-v-7f952888="">
+              <td class="name" data-v-7f952888="">Interest Payments</td>
+              
+              <td class="value interim" data-v-7f952888="">$7,789</td>
+              
+              <td class="value interim" data-v-7f952888="">$7,619</td>
+              
+              <td class="value interim" data-v-7f952888="">$7,445</td>
+              
+              <td class="value interim" data-v-7f952888="">$7,081</td>
+              
+              <td class="value interim" data-v-7f952888="">$6,074</td>
+              
+              <td class="value interim" data-v-7f952888="">$3,564</td>
+              
+              <td class="value interim" data-v-7f952888="">$210</td>
+              
+            </tr>
+            <tr class="strip divider solid" data-v-7f952888="">
+              <td colspan="8" data-v-7f952888=""></td>
+            </tr>
+            <tr class="strip high" data-v-7f952888="">
+              <td class="title" data-v-7f952888="">Net Income</td>
+              
+              <td class="value" data-v-7f952888="">$2,296</td>
+              
+              <td class="value" data-v-7f952888="">$3,299</td>
+              
+              <td class="value" data-v-7f952888="">$4,354</td>
+              
+              <td class="value" data-v-7f952888="">$6,628</td>
+              
+              <td class="value" data-v-7f952888="">$13,412</td>
+              
+              <td class="value" data-v-7f952888="">$33,220</td>
+              
+              <td class="value" data-v-7f952888="">$65,558</td>
+              
+            </tr>
+            <tr class="strip" data-v-7f952888="">
+              <td class="name" data-v-7f952888="">Net Income Margin</td>
+              
+              <td class="value interim" data-v-7f952888="">11%</td>
+              
+              <td class="value interim" data-v-7f952888="">15%</td>
+              
+              <td class="value interim" data-v-7f952888="">18%</td>
+              
+              <td class="value interim" data-v-7f952888="">25%</td>
+              
+              <td class="value interim" data-v-7f952888="">40%</td>
+              
+              <td class="value interim" data-v-7f952888="">61%</td>
+              
+              <td class="value interim" data-v-7f952888="">74%</td>
+              
+            </tr>
+            <tr class="strip" data-v-7f952888="">
+              <td colspan="8" data-v-7f952888=""></td>
+            </tr>
+            <tr class="" data-v-7f952888="">
+              <td colspan="8" data-v-7f952888=""></td>
+            </tr>
+            <tr class="high" data-v-7f952888="">
+              <td class="title title-bigger" data-v-7f952888="">Cash Flow</td>
+            </tr>
+            <tr class="" data-v-7f952888="">
+              <td class="name" data-v-7f952888="">Operating Income</td>
+              
+              <td class="value interim" data-v-7f952888="">$10,085</td>
+              
+              <td class="value interim" data-v-7f952888="">$10,918</td>
+              
+              <td class="value interim" data-v-7f952888="">$11,799</td>
+              
+              <td class="value interim" data-v-7f952888="">$13,709</td>
+              
+              <td class="value interim" data-v-7f952888="">$19,486</td>
+              
+              <td class="value interim" data-v-7f952888="">$36,783</td>
+              
+              <td class="value interim" data-v-7f952888="">$65,769</td>
+              
+            </tr>
+            <tr class="" data-v-7f952888="">
+              <td class="name" data-v-7f952888="">Interest Payments</td>
+              
+              <td class="value interim" data-v-7f952888="">$7,789</td>
+              
+              <td class="value interim" data-v-7f952888="">$7,619</td>
+              
+              <td class="value interim" data-v-7f952888="">$7,445</td>
+              
+              <td class="value interim" data-v-7f952888="">$7,081</td>
+              
+              <td class="value interim" data-v-7f952888="">$6,074</td>
+              
+              <td class="value interim" data-v-7f952888="">$3,564</td>
+              
+              <td class="value interim" data-v-7f952888="">$210</td>
+              
+            </tr>
+            <tr class="" data-v-7f952888="">
+              <td class="name" data-v-7f952888="">Principal Payments</td>
+              
+              <td class="value interim" data-v-7f952888="">$13,546</td>
+              
+              <td class="value interim" data-v-7f952888="">$13,546</td>
+              
+              <td class="value interim" data-v-7f952888="">$13,546</td>
+              
+              <td class="value interim" data-v-7f952888="">$13,546</td>
+              
+              <td class="value interim" data-v-7f952888="">$13,546</td>
+              
+              <td class="value interim" data-v-7f952888="">$13,546</td>
+              
+              <td class="value interim" data-v-7f952888="">$13,546</td>
+              
+            </tr>
+            <tr class="divider solid" data-v-7f952888="">
+              <td colspan="8" data-v-7f952888=""></td>
+            </tr>
+            <tr class="high" data-v-7f952888="">
+              <td class="title" data-v-7f952888="">Cash Flow</td>
+              
+              <td class="value" data-v-7f952888="">$-3,461</td>
+              
+              <td class="value" data-v-7f952888="">$-2,627</td>
+              
+              <td class="value" data-v-7f952888="">$-1,747</td>
+              
+              <td class="value" data-v-7f952888="">$164</td>
+              
+              <td class="value" data-v-7f952888="">$5,940</td>
+              
+              <td class="value" data-v-7f952888="">$23,238</td>
+              
+              <td class="value" data-v-7f952888="">$52,223</td>
+              
+            </tr>
+            <tr class="" data-v-7f952888="">
+              <td colspan="8" data-v-7f952888=""></td>
+            </tr>
+          </table>
+        </div>
+      </div>
+      <div class="property-financial-plots no-page-break" data-v-7f952888="">
+        <div class="plot-item flex" data-v-7f952888="">
+          <div class="side-data" data-v-7f952888="">
+            <div class="data-row" data-v-7f952888="">
+              <span class="value" data-v-7f952888="">$1,149,834</span>
+              <div class="description" data-v-7f952888="">Projected Accumulated Wealth</div>
+            </div>
+            <div class="data-row" data-v-7f952888="">
+              <span class="value" data-v-7f952888="">$535,783</span>
+              <div class="description" data-v-7f952888="">Projected Cash Flow</div>
+            </div>
+            <div class="data-row" data-v-7f952888="">
+              <span class="value" data-v-7f952888="">$339,000</span>
+              <div class="description" data-v-7f952888="">Projected Equity</span></div>
+            </div>
+            <div class="data-row" data-v-7f952888="">
+              <span class="value" data-v-7f952888="">$13,335</span>
+              <div class="description" data-v-7f952888="">Loan Balance</div>
+            </div>
+          </div>
+          <div class="ui-plot" data-v-7f952888="">
+            <div class="ui-plot-title" data-v-7f952888="">Projected Accumulated Wealth</div>
+            <div class="ui-plot-legend flex" data-v-7f952888="">
+              <div class="item flex" data-v-7f952888="">
+                <div class="flex" data-v-7f952888=""><span class="color" data-v-7f952888="" style="background: rgb(1, 208, 146); border-color: rgb(1, 208, 146);"></span><span class="title" data-v-7f952888="">Cash Flow</span></div>
+              </div>
+              <div class="item flex" data-v-7f952888="">
+                <div class="flex" data-v-7f952888=""><span class="color" data-v-7f952888="" style="background: rgb(100, 84, 195); border-color: rgb(100, 84, 195);"></span><span class="title" data-v-7f952888="">Appreciation</span></div>
+              </div>
+              <div class="item flex" data-v-7f952888="">
+                <div class="flex" data-v-7f952888=""><span class="color" data-v-7f952888="" style="background: rgb(0, 163, 255); border-color: rgb(0, 163, 255);"></span><span class="title" data-v-7f952888="">Equity</span></div>
+              </div>
+              <div class="item flex" data-v-7f952888="">
+                <div class="flex" data-v-7f952888=""><span class="color" data-v-7f952888="" style="border-color: rgb(34, 34, 34);"></span><span class="title" data-v-7f952888="">Loan Balance</span></div>
+              </div>
+            </div>
+            <div class="ui-plot-subdesc" data-v-7f952888="">30 years projection</div>
+            <div class="ui-plot-wrapper" data-v-7f952888="">
+              <canvas id="finance-accumulated-wealth-plot"></canvas>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="tab tab-tax-history" data-v-3ecb51e8="">
+      
+      <span class="heading" data-v-3ecb51e8="">Tax History</span>
+      <div class="ui-plot no-page-break" data-v-3ecb51e8="">
+         <div class="ui-plot-legend" data-v-3ecb51e8="">
+            <div class="item flex" data-v-3ecb51e8="">
+               <div class="flex" data-v-3ecb51e8=""><span class="color" data-v-3ecb51e8="" style="background: rgb(100, 84, 195); border-color: rgb(100, 84, 195);"></span><span class="title" data-v-3ecb51e8="">Property Tax</span></div>
+            </div>
+         </div>
+         <div class="ui-plot-wrapper" data-v-3ecb51e8="">
+          <canvas id="tax-history-plot"></canvas>
+         </div>
+      </div>
+      <div class="no-page-break">
+        <span class="heading" data-v-3ecb51e8="">Assessment History</span>
+        <div class="table-wrapper" data-v-3ecb51e8="">
+           <table class="prop-list-table" data-v-3ecb51e8="">
+              
+              <tr data-v-3ecb51e8="">
+                 <td data-v-3ecb51e8="">
+                    <div class="point" data-v-3ecb51e8=""></div>
+                 </td>
+                 <td data-v-3ecb51e8="">
+                    <div class="prop-block" data-v-3ecb51e8=""><span class="prop-name" data-v-3ecb51e8="">Year</span><span class="prop-value" data-v-3ecb51e8="">2020</span></div>
+                 </td>
+                 <td data-v-3ecb51e8="">
+                    <div class="prop-block" data-v-3ecb51e8=""><span class="prop-name" data-v-3ecb51e8="">Tax</span><span class="prop-value ui-text-bolder" data-v-3ecb51e8="">$3,673 <span class="smaller" data-v-3ecb51e8="" style=
+                    "color: rgb(1, 208, 146);">
+                    (-0.08%)</span></span></div>
+                 </td>
+                 <td data-v-3ecb51e8="">
+                    <div class="prop-block" data-v-3ecb51e8=""><span class="prop-name" data-v-3ecb51e8="">Building Assessment</span><span class="prop-value" data-v-3ecb51e8="">
+                    
+                      0
+                    
+                    </span></div>
+                 </td>
+                 <td class="operation" data-v-3ecb51e8="">+</td>
+                 <td data-v-3ecb51e8="">
+                    <div class="prop-block" data-v-3ecb51e8=""><span class="prop-name" data-v-3ecb51e8="">Land Assessment</span><span class="prop-value" data-v-3ecb51e8="">
+                    
+                      0
+                    
+                    </span></div>
+                 </td>
+                 <td class="operation" data-v-3ecb51e8="">=</td>
+                 <td data-v-3ecb51e8="">
+                    <div class="prop-block" data-v-3ecb51e8=""><span class="prop-name" data-v-3ecb51e8="">Total</span><span class="prop-value" data-v-3ecb51e8="">
+                    
+                      $176,880
+                    
+                    </span></div>
+                 </td>
+              </tr>
+              
+              <tr data-v-3ecb51e8="">
+                 <td data-v-3ecb51e8="">
+                    <div class="point" data-v-3ecb51e8=""></div>
+                 </td>
+                 <td data-v-3ecb51e8="">
+                    <div class="prop-block" data-v-3ecb51e8=""><span class="prop-name" data-v-3ecb51e8="">Year</span><span class="prop-value" data-v-3ecb51e8="">2019</span></div>
+                 </td>
+                 <td data-v-3ecb51e8="">
+                    <div class="prop-block" data-v-3ecb51e8=""><span class="prop-name" data-v-3ecb51e8="">Tax</span><span class="prop-value ui-text-bolder" data-v-3ecb51e8="">$3,676 <span class="smaller" data-v-3ecb51e8="" style=
+                    "color: rgb(239, 75, 68);">
+                    (+5.11%)</span></span></div>
+                 </td>
+                 <td data-v-3ecb51e8="">
+                    <div class="prop-block" data-v-3ecb51e8=""><span class="prop-name" data-v-3ecb51e8="">Building Assessment</span><span class="prop-value" data-v-3ecb51e8="">
+                    
+                      0
+                    
+                    </span></div>
+                 </td>
+                 <td class="operation" data-v-3ecb51e8="">+</td>
+                 <td data-v-3ecb51e8="">
+                    <div class="prop-block" data-v-3ecb51e8=""><span class="prop-name" data-v-3ecb51e8="">Land Assessment</span><span class="prop-value" data-v-3ecb51e8="">
+                    
+                      0
+                    
+                    </span></div>
+                 </td>
+                 <td class="operation" data-v-3ecb51e8="">=</td>
+                 <td data-v-3ecb51e8="">
+                    <div class="prop-block" data-v-3ecb51e8=""><span class="prop-name" data-v-3ecb51e8="">Total</span><span class="prop-value" data-v-3ecb51e8="">
+                    
+                      $172,910
+                    
+                    </span></div>
+                 </td>
+              </tr>
+              
+              <tr data-v-3ecb51e8="">
+                 <td data-v-3ecb51e8="">
+                    <div class="point" data-v-3ecb51e8=""></div>
+                 </td>
+                 <td data-v-3ecb51e8="">
+                    <div class="prop-block" data-v-3ecb51e8=""><span class="prop-name" data-v-3ecb51e8="">Year</span><span class="prop-value" data-v-3ecb51e8="">2018</span></div>
+                 </td>
+                 <td data-v-3ecb51e8="">
+                    <div class="prop-block" data-v-3ecb51e8=""><span class="prop-name" data-v-3ecb51e8="">Tax</span><span class="prop-value ui-text-bolder" data-v-3ecb51e8="">$3,488 <span class="smaller" data-v-3ecb51e8="" style=
+                    "color: rgb(1, 208, 146);">
+                    (-0.40%)</span></span></div>
+                 </td>
+                 <td data-v-3ecb51e8="">
+                    <div class="prop-block" data-v-3ecb51e8=""><span class="prop-name" data-v-3ecb51e8="">Building Assessment</span><span class="prop-value" data-v-3ecb51e8="">
+                    
+                      0
+                    
+                    </span></div>
+                 </td>
+                 <td class="operation" data-v-3ecb51e8="">+</td>
+                 <td data-v-3ecb51e8="">
+                    <div class="prop-block" data-v-3ecb51e8=""><span class="prop-name" data-v-3ecb51e8="">Land Assessment</span><span class="prop-value" data-v-3ecb51e8="">
+                    
+                      0
+                    
+                    </span></div>
+                 </td>
+                 <td class="operation" data-v-3ecb51e8="">=</td>
+                 <td data-v-3ecb51e8="">
+                    <div class="prop-block" data-v-3ecb51e8=""><span class="prop-name" data-v-3ecb51e8="">Total</span><span class="prop-value" data-v-3ecb51e8="">
+                    
+                      $169,690
+                    
+                    </span></div>
+                 </td>
+              </tr>
+              
+              <tr data-v-3ecb51e8="">
+                 <td data-v-3ecb51e8="">
+                    <div class="point" data-v-3ecb51e8=""></div>
+                 </td>
+                 <td data-v-3ecb51e8="">
+                    <div class="prop-block" data-v-3ecb51e8=""><span class="prop-name" data-v-3ecb51e8="">Year</span><span class="prop-value" data-v-3ecb51e8="">2017</span></div>
+                 </td>
+                 <td data-v-3ecb51e8="">
+                    <div class="prop-block" data-v-3ecb51e8=""><span class="prop-name" data-v-3ecb51e8="">Tax</span><span class="prop-value ui-text-bolder" data-v-3ecb51e8="">$3,502 <span class="smaller" data-v-3ecb51e8="" style=
+                    "color: rgb(1, 208, 146);">
+                    (-1.17%)</span></span></div>
+                 </td>
+                 <td data-v-3ecb51e8="">
+                    <div class="prop-block" data-v-3ecb51e8=""><span class="prop-name" data-v-3ecb51e8="">Building Assessment</span><span class="prop-value" data-v-3ecb51e8="">
+                    
+                      0
+                    
+                    </span></div>
+                 </td>
+                 <td class="operation" data-v-3ecb51e8="">+</td>
+                 <td data-v-3ecb51e8="">
+                    <div class="prop-block" data-v-3ecb51e8=""><span class="prop-name" data-v-3ecb51e8="">Land Assessment</span><span class="prop-value" data-v-3ecb51e8="">
+                    
+                      0
+                    
+                    </span></div>
+                 </td>
+                 <td class="operation" data-v-3ecb51e8="">=</td>
+                 <td data-v-3ecb51e8="">
+                    <div class="prop-block" data-v-3ecb51e8=""><span class="prop-name" data-v-3ecb51e8="">Total</span><span class="prop-value" data-v-3ecb51e8="">
+                    
+                      $166,200
+                    
+                    </span></div>
+                 </td>
+              </tr>
+              
+              <tr data-v-3ecb51e8="">
+                 <td data-v-3ecb51e8="">
+                    <div class="point" data-v-3ecb51e8=""></div>
+                 </td>
+                 <td data-v-3ecb51e8="">
+                    <div class="prop-block" data-v-3ecb51e8=""><span class="prop-name" data-v-3ecb51e8="">Year</span><span class="prop-value" data-v-3ecb51e8="">2016</span></div>
+                 </td>
+                 <td data-v-3ecb51e8="">
+                    <div class="prop-block" data-v-3ecb51e8=""><span class="prop-name" data-v-3ecb51e8="">Tax</span><span class="prop-value ui-text-bolder" data-v-3ecb51e8="">$3,543 <span class="smaller" data-v-3ecb51e8="" style=
+                    "color: rgb(1, 208, 146);">
+                    (-0.31%)</span></span></div>
+                 </td>
+                 <td data-v-3ecb51e8="">
+                    <div class="prop-block" data-v-3ecb51e8=""><span class="prop-name" data-v-3ecb51e8="">Building Assessment</span><span class="prop-value" data-v-3ecb51e8="">
+                    
+                      0
+                    
+                    </span></div>
+                 </td>
+                 <td class="operation" data-v-3ecb51e8="">+</td>
+                 <td data-v-3ecb51e8="">
+                    <div class="prop-block" data-v-3ecb51e8=""><span class="prop-name" data-v-3ecb51e8="">Land Assessment</span><span class="prop-value" data-v-3ecb51e8="">
+                    
+                      0
+                    
+                    </span></div>
+                 </td>
+                 <td class="operation" data-v-3ecb51e8="">=</td>
+                 <td data-v-3ecb51e8="">
+                    <div class="prop-block" data-v-3ecb51e8=""><span class="prop-name" data-v-3ecb51e8="">Total</span><span class="prop-value" data-v-3ecb51e8="">
+                    
+                      $162,790
+                    
+                    </span></div>
+                 </td>
+              </tr>
+              
+              <tr data-v-3ecb51e8="">
+                 <td data-v-3ecb51e8="">
+                    <div class="point" data-v-3ecb51e8=""></div>
+                 </td>
+                 <td data-v-3ecb51e8="">
+                    <div class="prop-block" data-v-3ecb51e8=""><span class="prop-name" data-v-3ecb51e8="">Year</span><span class="prop-value" data-v-3ecb51e8="">2015</span></div>
+                 </td>
+                 <td data-v-3ecb51e8="">
+                    <div class="prop-block" data-v-3ecb51e8=""><span class="prop-name" data-v-3ecb51e8="">Tax</span><span class="prop-value ui-text-bolder" data-v-3ecb51e8="">$3,554 <span class="smaller" data-v-3ecb51e8="" style=
+                    "color: rgb(1, 208, 146);">
+                    (-1.66%)</span></span></div>
+                 </td>
+                 <td data-v-3ecb51e8="">
+                    <div class="prop-block" data-v-3ecb51e8=""><span class="prop-name" data-v-3ecb51e8="">Building Assessment</span><span class="prop-value" data-v-3ecb51e8="">
+                    
+                      0
+                    
+                    </span></div>
+                 </td>
+                 <td class="operation" data-v-3ecb51e8="">+</td>
+                 <td data-v-3ecb51e8="">
+                    <div class="prop-block" data-v-3ecb51e8=""><span class="prop-name" data-v-3ecb51e8="">Land Assessment</span><span class="prop-value" data-v-3ecb51e8="">
+                    
+                      0
+                    
+                    </span></div>
+                 </td>
+                 <td class="operation" data-v-3ecb51e8="">=</td>
+                 <td data-v-3ecb51e8="">
+                    <div class="prop-block" data-v-3ecb51e8=""><span class="prop-name" data-v-3ecb51e8="">Total</span><span class="prop-value" data-v-3ecb51e8="">
+                    
+                      $161,660
+                    
+                    </span></div>
+                 </td>
+              </tr>
+              
+              <tr data-v-3ecb51e8="">
+                 <td data-v-3ecb51e8="">
+                    <div class="point" data-v-3ecb51e8=""></div>
+                 </td>
+                 <td data-v-3ecb51e8="">
+                    <div class="prop-block" data-v-3ecb51e8=""><span class="prop-name" data-v-3ecb51e8="">Year</span><span class="prop-value" data-v-3ecb51e8="">2014</span></div>
+                 </td>
+                 <td data-v-3ecb51e8="">
+                    <div class="prop-block" data-v-3ecb51e8=""><span class="prop-name" data-v-3ecb51e8="">Tax</span><span class="prop-value ui-text-bolder" data-v-3ecb51e8="">$3,613 <span class="smaller" data-v-3ecb51e8="" style=
+                    "color: rgb(1, 208, 146);">
+                    (-1.38%)</span></span></div>
+                 </td>
+                 <td data-v-3ecb51e8="">
+                    <div class="prop-block" data-v-3ecb51e8=""><span class="prop-name" data-v-3ecb51e8="">Building Assessment</span><span class="prop-value" data-v-3ecb51e8="">
+                    
+                      0
+                    
+                    </span></div>
+                 </td>
+                 <td class="operation" data-v-3ecb51e8="">+</td>
+                 <td data-v-3ecb51e8="">
+                    <div class="prop-block" data-v-3ecb51e8=""><span class="prop-name" data-v-3ecb51e8="">Land Assessment</span><span class="prop-value" data-v-3ecb51e8="">
+                    
+                      0
+                    
+                    </span></div>
+                 </td>
+                 <td class="operation" data-v-3ecb51e8="">=</td>
+                 <td data-v-3ecb51e8="">
+                    <div class="prop-block" data-v-3ecb51e8=""><span class="prop-name" data-v-3ecb51e8="">Total</span><span class="prop-value" data-v-3ecb51e8="">
+                    
+                      $160,380
+                    
+                    </span></div>
+                 </td>
+              </tr>
+              
+              <tr data-v-3ecb51e8="">
+                 <td data-v-3ecb51e8="">
+                    <div class="point" data-v-3ecb51e8=""></div>
+                 </td>
+                 <td data-v-3ecb51e8="">
+                    <div class="prop-block" data-v-3ecb51e8=""><span class="prop-name" data-v-3ecb51e8="">Year</span><span class="prop-value" data-v-3ecb51e8="">2013</span></div>
+                 </td>
+                 <td data-v-3ecb51e8="">
+                    <div class="prop-block" data-v-3ecb51e8=""><span class="prop-name" data-v-3ecb51e8="">Tax</span><span class="prop-value ui-text-bolder" data-v-3ecb51e8="">$3,663 <span class="smaller" data-v-3ecb51e8="" style=
+                    "color: rgb(239, 75, 68);">
+                    (+0.55%)</span></span></div>
+                 </td>
+                 <td data-v-3ecb51e8="">
+                    <div class="prop-block" data-v-3ecb51e8=""><span class="prop-name" data-v-3ecb51e8="">Building Assessment</span><span class="prop-value" data-v-3ecb51e8="">
+                    
+                      -
+                    
+                    </span></div>
+                 </td>
+                 <td class="operation" data-v-3ecb51e8="">+</td>
+                 <td data-v-3ecb51e8="">
+                    <div class="prop-block" data-v-3ecb51e8=""><span class="prop-name" data-v-3ecb51e8="">Land Assessment</span><span class="prop-value" data-v-3ecb51e8="">
+                    
+                      -
+                    
+                    </span></div>
+                 </td>
+                 <td class="operation" data-v-3ecb51e8="">=</td>
+                 <td data-v-3ecb51e8="">
+                    <div class="prop-block" data-v-3ecb51e8=""><span class="prop-name" data-v-3ecb51e8="">Total</span><span class="prop-value" data-v-3ecb51e8="">
+                    
+                      $158,010
+                    
+                    </span></div>
+                 </td>
+              </tr>
+              
+              <tr data-v-3ecb51e8="">
+                 <td data-v-3ecb51e8="">
+                    <div class="point" data-v-3ecb51e8=""></div>
+                 </td>
+                 <td data-v-3ecb51e8="">
+                    <div class="prop-block" data-v-3ecb51e8=""><span class="prop-name" data-v-3ecb51e8="">Year</span><span class="prop-value" data-v-3ecb51e8="">2012</span></div>
+                 </td>
+                 <td data-v-3ecb51e8="">
+                    <div class="prop-block" data-v-3ecb51e8=""><span class="prop-name" data-v-3ecb51e8="">Tax</span><span class="prop-value ui-text-bolder" data-v-3ecb51e8="">$3,643 <span class="smaller" data-v-3ecb51e8="" style=
+                    "color: rgb(1, 208, 146);">
+                    (-0.47%)</span></span></div>
+                 </td>
+                 <td data-v-3ecb51e8="">
+                    <div class="prop-block" data-v-3ecb51e8=""><span class="prop-name" data-v-3ecb51e8="">Building Assessment</span><span class="prop-value" data-v-3ecb51e8="">
+                    
+                      -
+                    
+                    </span></div>
+                 </td>
+                 <td class="operation" data-v-3ecb51e8="">+</td>
+                 <td data-v-3ecb51e8="">
+                    <div class="prop-block" data-v-3ecb51e8=""><span class="prop-name" data-v-3ecb51e8="">Land Assessment</span><span class="prop-value" data-v-3ecb51e8="">
+                    
+                      -
+                    
+                    </span></div>
+                 </td>
+                 <td class="operation" data-v-3ecb51e8="">=</td>
+                 <td data-v-3ecb51e8="">
+                    <div class="prop-block" data-v-3ecb51e8=""><span class="prop-name" data-v-3ecb51e8="">Total</span><span class="prop-value" data-v-3ecb51e8="">
+                    
+                      $154,080
+                    
+                    </span></div>
+                 </td>
+              </tr>
+              
+              <tr data-v-3ecb51e8="">
+                 <td data-v-3ecb51e8="">
+                    <div class="point" data-v-3ecb51e8=""></div>
+                 </td>
+                 <td data-v-3ecb51e8="">
+                    <div class="prop-block" data-v-3ecb51e8=""><span class="prop-name" data-v-3ecb51e8="">Year</span><span class="prop-value" data-v-3ecb51e8="">2011</span></div>
+                 </td>
+                 <td data-v-3ecb51e8="">
+                    <div class="prop-block" data-v-3ecb51e8=""><span class="prop-name" data-v-3ecb51e8="">Tax</span><span class="prop-value ui-text-bolder" data-v-3ecb51e8="">$3,660 <span class="smaller" data-v-3ecb51e8="" style=
+                    "color: rgb(1, 208, 146);">
+                    (-19.32%)</span></span></div>
+                 </td>
+                 <td data-v-3ecb51e8="">
+                    <div class="prop-block" data-v-3ecb51e8=""><span class="prop-name" data-v-3ecb51e8="">Building Assessment</span><span class="prop-value" data-v-3ecb51e8="">
+                    
+                      -
+                    
+                    </span></div>
+                 </td>
+                 <td class="operation" data-v-3ecb51e8="">+</td>
+                 <td data-v-3ecb51e8="">
+                    <div class="prop-block" data-v-3ecb51e8=""><span class="prop-name" data-v-3ecb51e8="">Land Assessment</span><span class="prop-value" data-v-3ecb51e8="">
+                    
+                      -
+                    
+                    </span></div>
+                 </td>
+                 <td class="operation" data-v-3ecb51e8="">=</td>
+                 <td data-v-3ecb51e8="">
+                    <div class="prop-block" data-v-3ecb51e8=""><span class="prop-name" data-v-3ecb51e8="">Total</span><span class="prop-value" data-v-3ecb51e8="">
+                    
+                      $155,383
+                    
+                    </span></div>
+                 </td>
+              </tr>
+              
+              <tr data-v-3ecb51e8="">
+                 <td data-v-3ecb51e8="">
+                    <div class="point" data-v-3ecb51e8=""></div>
+                 </td>
+                 <td data-v-3ecb51e8="">
+                    <div class="prop-block" data-v-3ecb51e8=""><span class="prop-name" data-v-3ecb51e8="">Year</span><span class="prop-value" data-v-3ecb51e8="">2010</span></div>
+                 </td>
+                 <td data-v-3ecb51e8="">
+                    <div class="prop-block" data-v-3ecb51e8=""><span class="prop-name" data-v-3ecb51e8="">Tax</span><span class="prop-value ui-text-bolder" data-v-3ecb51e8="">$4,367 <span class="smaller" data-v-3ecb51e8="" style=
+                    "color: rgb(1, 208, 146);">
+                    (-3.21%)</span></span></div>
+                 </td>
+                 <td data-v-3ecb51e8="">
+                    <div class="prop-block" data-v-3ecb51e8=""><span class="prop-name" data-v-3ecb51e8="">Building Assessment</span><span class="prop-value" data-v-3ecb51e8="">
+                    
+                      -
+                    
+                    </span></div>
+                 </td>
+                 <td class="operation" data-v-3ecb51e8="">+</td>
+                 <td data-v-3ecb51e8="">
+                    <div class="prop-block" data-v-3ecb51e8=""><span class="prop-name" data-v-3ecb51e8="">Land Assessment</span><span class="prop-value" data-v-3ecb51e8="">
+                    
+                      -
+                    
+                    </span></div>
+                 </td>
+                 <td class="operation" data-v-3ecb51e8="">=</td>
+                 <td data-v-3ecb51e8="">
+                    <div class="prop-block" data-v-3ecb51e8=""><span class="prop-name" data-v-3ecb51e8="">Total</span><span class="prop-value" data-v-3ecb51e8="">
+                    
+                      $156,683
+                    
+                    </span></div>
+                 </td>
+              </tr>
+              
+              <tr data-v-3ecb51e8="">
+                 <td data-v-3ecb51e8="">
+                    <div class="point" data-v-3ecb51e8=""></div>
+                 </td>
+                 <td data-v-3ecb51e8="">
+                    <div class="prop-block" data-v-3ecb51e8=""><span class="prop-name" data-v-3ecb51e8="">Year</span><span class="prop-value" data-v-3ecb51e8="">2009</span></div>
+                 </td>
+                 <td data-v-3ecb51e8="">
+                    <div class="prop-block" data-v-3ecb51e8=""><span class="prop-name" data-v-3ecb51e8="">Tax</span><span class="prop-value ui-text-bolder" data-v-3ecb51e8="">$4,507 <span class="smaller" data-v-3ecb51e8="" style=
+                    "color: rgb(239, 75, 68);">
+                    (+44.00%)</span></span></div>
+                 </td>
+                 <td data-v-3ecb51e8="">
+                    <div class="prop-block" data-v-3ecb51e8=""><span class="prop-name" data-v-3ecb51e8="">Building Assessment</span><span class="prop-value" data-v-3ecb51e8="">
+                    
+                      -
+                    
+                    </span></div>
+                 </td>
+                 <td class="operation" data-v-3ecb51e8="">+</td>
+                 <td data-v-3ecb51e8="">
+                    <div class="prop-block" data-v-3ecb51e8=""><span class="prop-name" data-v-3ecb51e8="">Land Assessment</span><span class="prop-value" data-v-3ecb51e8="">
+                    
+                      -
+                    
+                    </span></div>
+                 </td>
+                 <td class="operation" data-v-3ecb51e8="">=</td>
+                 <td data-v-3ecb51e8="">
+                    <div class="prop-block" data-v-3ecb51e8=""><span class="prop-name" data-v-3ecb51e8="">Total</span><span class="prop-value" data-v-3ecb51e8="">
+                    
+                      $170,483
+                    
+                    </span></div>
+                 </td>
+              </tr>
+              
+              <tr data-v-3ecb51e8="">
+                 <td data-v-3ecb51e8="">
+                    <div class="point" data-v-3ecb51e8=""></div>
+                 </td>
+                 <td data-v-3ecb51e8="">
+                    <div class="prop-block" data-v-3ecb51e8=""><span class="prop-name" data-v-3ecb51e8="">Year</span><span class="prop-value" data-v-3ecb51e8="">2008</span></div>
+                 </td>
+                 <td data-v-3ecb51e8="">
+                    <div class="prop-block" data-v-3ecb51e8=""><span class="prop-name" data-v-3ecb51e8="">Tax</span><span class="prop-value ui-text-bolder" data-v-3ecb51e8="">$2,524 <span class="smaller" data-v-3ecb51e8="" style=
+                    "color: rgb(239, 75, 68);">
+                    </span></span></div>
+                 </td>
+                 <td data-v-3ecb51e8="">
+                    <div class="prop-block" data-v-3ecb51e8=""><span class="prop-name" data-v-3ecb51e8="">Building Assessment</span><span class="prop-value" data-v-3ecb51e8="">
+                    
+                      -
+                    
+                    </span></div>
+                 </td>
+                 <td class="operation" data-v-3ecb51e8="">+</td>
+                 <td data-v-3ecb51e8="">
+                    <div class="prop-block" data-v-3ecb51e8=""><span class="prop-name" data-v-3ecb51e8="">Land Assessment</span><span class="prop-value" data-v-3ecb51e8="">
+                    
+                      -
+                    
+                    </span></div>
+                 </td>
+                 <td class="operation" data-v-3ecb51e8="">=</td>
+                 <td data-v-3ecb51e8="">
+                    <div class="prop-block" data-v-3ecb51e8=""><span class="prop-name" data-v-3ecb51e8="">Total</span><span class="prop-value" data-v-3ecb51e8="">
+                    
+                      $36,333
+                    
+                    </span></div>
+                 </td>
+              </tr>
+              
+           </table>
+        </div>
+      </div>
+      
+   </div>
+    <div class="tab tab-schools no-page-break" data-v-7f952888="">
+      <span class="heading">Scools</span>
+      <div class="table-wrapper" data-v-7f952888="">
+        <table class="ui-table ui-table--stripped" data-v-7f952888="">
+          <tr data-v-7f952888="">
+            <th data-v-7f952888="">School</th>
+            <th data-v-7f952888="">Type</th>
+            <th data-v-7f952888="">Grades</th>
+            <th data-v-7f952888="">Distance</th>
+            <th data-v-7f952888="">Rating</th>
+            <th data-v-7f952888="">Parent Rating</th>
+          </tr>
+
+          
+          <tr data-v-7f952888="">
+            <td data-v-7f952888="">Wildwood Elementary School</td>
+            <td data-v-7f952888="">public</td>
+            <td data-v-7f952888="">PK-5</td>
+            <td data-v-7f952888="">5.7mi</td>
+            <td class="rating" data-v-7f952888="">
+              <span data-v-7f952888="" style="color: ;">
+              
+                5</span>/10
+              
+            </td>
+            <td data-v-7f952888="">
+              
+                
+                <svg class="svg-icon svg-icon--star active" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M8.00279 1.66651C7.90934 1.66593 7.8176 1.69154 7.73797 1.74045C7.65834 1.78936 7.59401 1.8596 7.55227 1.94321L5.83482 5.3781L1.7567 6.00571C1.66541 6.01981 1.57982 6.05892 1.50941 6.11871C1.439 6.17849 1.38652 6.25661 1.3578 6.34439C1.32908 6.43218 1.32523 6.52621 1.34669 6.61605C1.36814 6.70589 1.41406 6.78803 1.47935 6.85336L4.30032 9.67432L3.67206 13.757C3.65801 13.8483 3.66954 13.9418 3.70538 14.027C3.74122 14.1122 3.79996 14.1858 3.87509 14.2396C3.95022 14.2934 4.0388 14.3253 4.13098 14.3319C4.22317 14.3384 4.31536 14.3192 4.39732 14.2765L7.99953 12.397L11.6017 14.2765C11.6837 14.3192 11.7759 14.3384 11.8681 14.3319C11.9603 14.3253 12.0488 14.2934 12.124 14.2396C12.1991 14.1858 12.2579 14.1122 12.2937 14.027C12.3295 13.9418 12.3411 13.8483 12.327 13.757L11.6988 9.67432L14.5197 6.85336C14.585 6.78803 14.6309 6.70589 14.6524 6.61605C14.6738 6.52621 14.67 6.43218 14.6413 6.34439C14.6125 6.25661 14.5601 6.17849 14.4897 6.11871C14.4192 6.05892 14.3337 6.01981 14.2424 6.00571L10.1642 5.3781L8.4468 1.94321C8.40555 1.86059 8.34224 1.791 8.26387 1.74216C8.1855 1.69332 8.09513 1.66714 8.00279 1.66651Z" />
+                </svg>
+                
+                <svg class="svg-icon svg-icon--star active" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M8.00279 1.66651C7.90934 1.66593 7.8176 1.69154 7.73797 1.74045C7.65834 1.78936 7.59401 1.8596 7.55227 1.94321L5.83482 5.3781L1.7567 6.00571C1.66541 6.01981 1.57982 6.05892 1.50941 6.11871C1.439 6.17849 1.38652 6.25661 1.3578 6.34439C1.32908 6.43218 1.32523 6.52621 1.34669 6.61605C1.36814 6.70589 1.41406 6.78803 1.47935 6.85336L4.30032 9.67432L3.67206 13.757C3.65801 13.8483 3.66954 13.9418 3.70538 14.027C3.74122 14.1122 3.79996 14.1858 3.87509 14.2396C3.95022 14.2934 4.0388 14.3253 4.13098 14.3319C4.22317 14.3384 4.31536 14.3192 4.39732 14.2765L7.99953 12.397L11.6017 14.2765C11.6837 14.3192 11.7759 14.3384 11.8681 14.3319C11.9603 14.3253 12.0488 14.2934 12.124 14.2396C12.1991 14.1858 12.2579 14.1122 12.2937 14.027C12.3295 13.9418 12.3411 13.8483 12.327 13.757L11.6988 9.67432L14.5197 6.85336C14.585 6.78803 14.6309 6.70589 14.6524 6.61605C14.6738 6.52621 14.67 6.43218 14.6413 6.34439C14.6125 6.25661 14.5601 6.17849 14.4897 6.11871C14.4192 6.05892 14.3337 6.01981 14.2424 6.00571L10.1642 5.3781L8.4468 1.94321C8.40555 1.86059 8.34224 1.791 8.26387 1.74216C8.1855 1.69332 8.09513 1.66714 8.00279 1.66651Z" />
+                </svg>
+                
+                
+                <svg class="svg-icon svg-icon--star" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M8.00279 1.66651C7.90934 1.66593 7.8176 1.69154 7.73797 1.74045C7.65834 1.78936 7.59401 1.8596 7.55227 1.94321L5.83482 5.3781L1.7567 6.00571C1.66541 6.01981 1.57982 6.05892 1.50941 6.11871C1.439 6.17849 1.38652 6.25661 1.3578 6.34439C1.32908 6.43218 1.32523 6.52621 1.34669 6.61605C1.36814 6.70589 1.41406 6.78803 1.47935 6.85336L4.30032 9.67432L3.67206 13.757C3.65801 13.8483 3.66954 13.9418 3.70538 14.027C3.74122 14.1122 3.79996 14.1858 3.87509 14.2396C3.95022 14.2934 4.0388 14.3253 4.13098 14.3319C4.22317 14.3384 4.31536 14.3192 4.39732 14.2765L7.99953 12.397L11.6017 14.2765C11.6837 14.3192 11.7759 14.3384 11.8681 14.3319C11.9603 14.3253 12.0488 14.2934 12.124 14.2396C12.1991 14.1858 12.2579 14.1122 12.2937 14.027C12.3295 13.9418 12.3411 13.8483 12.327 13.757L11.6988 9.67432L14.5197 6.85336C14.585 6.78803 14.6309 6.70589 14.6524 6.61605C14.6738 6.52621 14.67 6.43218 14.6413 6.34439C14.6125 6.25661 14.5601 6.17849 14.4897 6.11871C14.4192 6.05892 14.3337 6.01981 14.2424 6.00571L10.1642 5.3781L8.4468 1.94321C8.40555 1.86059 8.34224 1.791 8.26387 1.74216C8.1855 1.69332 8.09513 1.66714 8.00279 1.66651Z" />
+                </svg>
+                
+                <svg class="svg-icon svg-icon--star" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M8.00279 1.66651C7.90934 1.66593 7.8176 1.69154 7.73797 1.74045C7.65834 1.78936 7.59401 1.8596 7.55227 1.94321L5.83482 5.3781L1.7567 6.00571C1.66541 6.01981 1.57982 6.05892 1.50941 6.11871C1.439 6.17849 1.38652 6.25661 1.3578 6.34439C1.32908 6.43218 1.32523 6.52621 1.34669 6.61605C1.36814 6.70589 1.41406 6.78803 1.47935 6.85336L4.30032 9.67432L3.67206 13.757C3.65801 13.8483 3.66954 13.9418 3.70538 14.027C3.74122 14.1122 3.79996 14.1858 3.87509 14.2396C3.95022 14.2934 4.0388 14.3253 4.13098 14.3319C4.22317 14.3384 4.31536 14.3192 4.39732 14.2765L7.99953 12.397L11.6017 14.2765C11.6837 14.3192 11.7759 14.3384 11.8681 14.3319C11.9603 14.3253 12.0488 14.2934 12.124 14.2396C12.1991 14.1858 12.2579 14.1122 12.2937 14.027C12.3295 13.9418 12.3411 13.8483 12.327 13.757L11.6988 9.67432L14.5197 6.85336C14.585 6.78803 14.6309 6.70589 14.6524 6.61605C14.6738 6.52621 14.67 6.43218 14.6413 6.34439C14.6125 6.25661 14.5601 6.17849 14.4897 6.11871C14.4192 6.05892 14.3337 6.01981 14.2424 6.00571L10.1642 5.3781L8.4468 1.94321C8.40555 1.86059 8.34224 1.791 8.26387 1.74216C8.1855 1.69332 8.09513 1.66714 8.00279 1.66651Z" />
+                </svg>
+                
+                <svg class="svg-icon svg-icon--star" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M8.00279 1.66651C7.90934 1.66593 7.8176 1.69154 7.73797 1.74045C7.65834 1.78936 7.59401 1.8596 7.55227 1.94321L5.83482 5.3781L1.7567 6.00571C1.66541 6.01981 1.57982 6.05892 1.50941 6.11871C1.439 6.17849 1.38652 6.25661 1.3578 6.34439C1.32908 6.43218 1.32523 6.52621 1.34669 6.61605C1.36814 6.70589 1.41406 6.78803 1.47935 6.85336L4.30032 9.67432L3.67206 13.757C3.65801 13.8483 3.66954 13.9418 3.70538 14.027C3.74122 14.1122 3.79996 14.1858 3.87509 14.2396C3.95022 14.2934 4.0388 14.3253 4.13098 14.3319C4.22317 14.3384 4.31536 14.3192 4.39732 14.2765L7.99953 12.397L11.6017 14.2765C11.6837 14.3192 11.7759 14.3384 11.8681 14.3319C11.9603 14.3253 12.0488 14.2934 12.124 14.2396C12.1991 14.1858 12.2579 14.1122 12.2937 14.027C12.3295 13.9418 12.3411 13.8483 12.327 13.757L11.6988 9.67432L14.5197 6.85336C14.585 6.78803 14.6309 6.70589 14.6524 6.61605C14.6738 6.52621 14.67 6.43218 14.6413 6.34439C14.6125 6.25661 14.5601 6.17849 14.4897 6.11871C14.4192 6.05892 14.3337 6.01981 14.2424 6.00571L10.1642 5.3781L8.4468 1.94321C8.40555 1.86059 8.34224 1.791 8.26387 1.74216C8.1855 1.69332 8.09513 1.66714 8.00279 1.66651Z" />
+                </svg>
+                
+              
+            </td>
+          </tr>
+          
+          <tr data-v-7f952888="">
+            <td data-v-7f952888="">Wildwood Middle/ High School</td>
+            <td data-v-7f952888="">public</td>
+            <td data-v-7f952888="">6-12</td>
+            <td data-v-7f952888="">5.3mi</td>
+            <td class="rating" data-v-7f952888="">
+              <span data-v-7f952888="" style="color: ;">
+              
+                3</span>/10
+              
+            </td>
+            <td data-v-7f952888="">
+              
+                
+                <svg class="svg-icon svg-icon--star active" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M8.00279 1.66651C7.90934 1.66593 7.8176 1.69154 7.73797 1.74045C7.65834 1.78936 7.59401 1.8596 7.55227 1.94321L5.83482 5.3781L1.7567 6.00571C1.66541 6.01981 1.57982 6.05892 1.50941 6.11871C1.439 6.17849 1.38652 6.25661 1.3578 6.34439C1.32908 6.43218 1.32523 6.52621 1.34669 6.61605C1.36814 6.70589 1.41406 6.78803 1.47935 6.85336L4.30032 9.67432L3.67206 13.757C3.65801 13.8483 3.66954 13.9418 3.70538 14.027C3.74122 14.1122 3.79996 14.1858 3.87509 14.2396C3.95022 14.2934 4.0388 14.3253 4.13098 14.3319C4.22317 14.3384 4.31536 14.3192 4.39732 14.2765L7.99953 12.397L11.6017 14.2765C11.6837 14.3192 11.7759 14.3384 11.8681 14.3319C11.9603 14.3253 12.0488 14.2934 12.124 14.2396C12.1991 14.1858 12.2579 14.1122 12.2937 14.027C12.3295 13.9418 12.3411 13.8483 12.327 13.757L11.6988 9.67432L14.5197 6.85336C14.585 6.78803 14.6309 6.70589 14.6524 6.61605C14.6738 6.52621 14.67 6.43218 14.6413 6.34439C14.6125 6.25661 14.5601 6.17849 14.4897 6.11871C14.4192 6.05892 14.3337 6.01981 14.2424 6.00571L10.1642 5.3781L8.4468 1.94321C8.40555 1.86059 8.34224 1.791 8.26387 1.74216C8.1855 1.69332 8.09513 1.66714 8.00279 1.66651Z" />
+                </svg>
+                
+                <svg class="svg-icon svg-icon--star active" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M8.00279 1.66651C7.90934 1.66593 7.8176 1.69154 7.73797 1.74045C7.65834 1.78936 7.59401 1.8596 7.55227 1.94321L5.83482 5.3781L1.7567 6.00571C1.66541 6.01981 1.57982 6.05892 1.50941 6.11871C1.439 6.17849 1.38652 6.25661 1.3578 6.34439C1.32908 6.43218 1.32523 6.52621 1.34669 6.61605C1.36814 6.70589 1.41406 6.78803 1.47935 6.85336L4.30032 9.67432L3.67206 13.757C3.65801 13.8483 3.66954 13.9418 3.70538 14.027C3.74122 14.1122 3.79996 14.1858 3.87509 14.2396C3.95022 14.2934 4.0388 14.3253 4.13098 14.3319C4.22317 14.3384 4.31536 14.3192 4.39732 14.2765L7.99953 12.397L11.6017 14.2765C11.6837 14.3192 11.7759 14.3384 11.8681 14.3319C11.9603 14.3253 12.0488 14.2934 12.124 14.2396C12.1991 14.1858 12.2579 14.1122 12.2937 14.027C12.3295 13.9418 12.3411 13.8483 12.327 13.757L11.6988 9.67432L14.5197 6.85336C14.585 6.78803 14.6309 6.70589 14.6524 6.61605C14.6738 6.52621 14.67 6.43218 14.6413 6.34439C14.6125 6.25661 14.5601 6.17849 14.4897 6.11871C14.4192 6.05892 14.3337 6.01981 14.2424 6.00571L10.1642 5.3781L8.4468 1.94321C8.40555 1.86059 8.34224 1.791 8.26387 1.74216C8.1855 1.69332 8.09513 1.66714 8.00279 1.66651Z" />
+                </svg>
+                
+                <svg class="svg-icon svg-icon--star active" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M8.00279 1.66651C7.90934 1.66593 7.8176 1.69154 7.73797 1.74045C7.65834 1.78936 7.59401 1.8596 7.55227 1.94321L5.83482 5.3781L1.7567 6.00571C1.66541 6.01981 1.57982 6.05892 1.50941 6.11871C1.439 6.17849 1.38652 6.25661 1.3578 6.34439C1.32908 6.43218 1.32523 6.52621 1.34669 6.61605C1.36814 6.70589 1.41406 6.78803 1.47935 6.85336L4.30032 9.67432L3.67206 13.757C3.65801 13.8483 3.66954 13.9418 3.70538 14.027C3.74122 14.1122 3.79996 14.1858 3.87509 14.2396C3.95022 14.2934 4.0388 14.3253 4.13098 14.3319C4.22317 14.3384 4.31536 14.3192 4.39732 14.2765L7.99953 12.397L11.6017 14.2765C11.6837 14.3192 11.7759 14.3384 11.8681 14.3319C11.9603 14.3253 12.0488 14.2934 12.124 14.2396C12.1991 14.1858 12.2579 14.1122 12.2937 14.027C12.3295 13.9418 12.3411 13.8483 12.327 13.757L11.6988 9.67432L14.5197 6.85336C14.585 6.78803 14.6309 6.70589 14.6524 6.61605C14.6738 6.52621 14.67 6.43218 14.6413 6.34439C14.6125 6.25661 14.5601 6.17849 14.4897 6.11871C14.4192 6.05892 14.3337 6.01981 14.2424 6.00571L10.1642 5.3781L8.4468 1.94321C8.40555 1.86059 8.34224 1.791 8.26387 1.74216C8.1855 1.69332 8.09513 1.66714 8.00279 1.66651Z" />
+                </svg>
+                
+                <svg class="svg-icon svg-icon--star active" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M8.00279 1.66651C7.90934 1.66593 7.8176 1.69154 7.73797 1.74045C7.65834 1.78936 7.59401 1.8596 7.55227 1.94321L5.83482 5.3781L1.7567 6.00571C1.66541 6.01981 1.57982 6.05892 1.50941 6.11871C1.439 6.17849 1.38652 6.25661 1.3578 6.34439C1.32908 6.43218 1.32523 6.52621 1.34669 6.61605C1.36814 6.70589 1.41406 6.78803 1.47935 6.85336L4.30032 9.67432L3.67206 13.757C3.65801 13.8483 3.66954 13.9418 3.70538 14.027C3.74122 14.1122 3.79996 14.1858 3.87509 14.2396C3.95022 14.2934 4.0388 14.3253 4.13098 14.3319C4.22317 14.3384 4.31536 14.3192 4.39732 14.2765L7.99953 12.397L11.6017 14.2765C11.6837 14.3192 11.7759 14.3384 11.8681 14.3319C11.9603 14.3253 12.0488 14.2934 12.124 14.2396C12.1991 14.1858 12.2579 14.1122 12.2937 14.027C12.3295 13.9418 12.3411 13.8483 12.327 13.757L11.6988 9.67432L14.5197 6.85336C14.585 6.78803 14.6309 6.70589 14.6524 6.61605C14.6738 6.52621 14.67 6.43218 14.6413 6.34439C14.6125 6.25661 14.5601 6.17849 14.4897 6.11871C14.4192 6.05892 14.3337 6.01981 14.2424 6.00571L10.1642 5.3781L8.4468 1.94321C8.40555 1.86059 8.34224 1.791 8.26387 1.74216C8.1855 1.69332 8.09513 1.66714 8.00279 1.66651Z" />
+                </svg>
+                
+                
+                <svg class="svg-icon svg-icon--star" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M8.00279 1.66651C7.90934 1.66593 7.8176 1.69154 7.73797 1.74045C7.65834 1.78936 7.59401 1.8596 7.55227 1.94321L5.83482 5.3781L1.7567 6.00571C1.66541 6.01981 1.57982 6.05892 1.50941 6.11871C1.439 6.17849 1.38652 6.25661 1.3578 6.34439C1.32908 6.43218 1.32523 6.52621 1.34669 6.61605C1.36814 6.70589 1.41406 6.78803 1.47935 6.85336L4.30032 9.67432L3.67206 13.757C3.65801 13.8483 3.66954 13.9418 3.70538 14.027C3.74122 14.1122 3.79996 14.1858 3.87509 14.2396C3.95022 14.2934 4.0388 14.3253 4.13098 14.3319C4.22317 14.3384 4.31536 14.3192 4.39732 14.2765L7.99953 12.397L11.6017 14.2765C11.6837 14.3192 11.7759 14.3384 11.8681 14.3319C11.9603 14.3253 12.0488 14.2934 12.124 14.2396C12.1991 14.1858 12.2579 14.1122 12.2937 14.027C12.3295 13.9418 12.3411 13.8483 12.327 13.757L11.6988 9.67432L14.5197 6.85336C14.585 6.78803 14.6309 6.70589 14.6524 6.61605C14.6738 6.52621 14.67 6.43218 14.6413 6.34439C14.6125 6.25661 14.5601 6.17849 14.4897 6.11871C14.4192 6.05892 14.3337 6.01981 14.2424 6.00571L10.1642 5.3781L8.4468 1.94321C8.40555 1.86059 8.34224 1.791 8.26387 1.74216C8.1855 1.69332 8.09513 1.66714 8.00279 1.66651Z" />
+                </svg>
+                
+              
+            </td>
+          </tr>
+          
+          <tr data-v-7f952888="">
+            <td data-v-7f952888="">Villages Charter School</td>
+            <td data-v-7f952888="">public</td>
+            <td data-v-7f952888="">PK-12</td>
+            <td data-v-7f952888="">4.6mi</td>
+            <td class="rating" data-v-7f952888="">
+              <span data-v-7f952888="" style="color: #01d092;">
+              
+                9</span>/10
+              
+            </td>
+            <td data-v-7f952888="">
+              
+                
+                <svg class="svg-icon svg-icon--star active" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M8.00279 1.66651C7.90934 1.66593 7.8176 1.69154 7.73797 1.74045C7.65834 1.78936 7.59401 1.8596 7.55227 1.94321L5.83482 5.3781L1.7567 6.00571C1.66541 6.01981 1.57982 6.05892 1.50941 6.11871C1.439 6.17849 1.38652 6.25661 1.3578 6.34439C1.32908 6.43218 1.32523 6.52621 1.34669 6.61605C1.36814 6.70589 1.41406 6.78803 1.47935 6.85336L4.30032 9.67432L3.67206 13.757C3.65801 13.8483 3.66954 13.9418 3.70538 14.027C3.74122 14.1122 3.79996 14.1858 3.87509 14.2396C3.95022 14.2934 4.0388 14.3253 4.13098 14.3319C4.22317 14.3384 4.31536 14.3192 4.39732 14.2765L7.99953 12.397L11.6017 14.2765C11.6837 14.3192 11.7759 14.3384 11.8681 14.3319C11.9603 14.3253 12.0488 14.2934 12.124 14.2396C12.1991 14.1858 12.2579 14.1122 12.2937 14.027C12.3295 13.9418 12.3411 13.8483 12.327 13.757L11.6988 9.67432L14.5197 6.85336C14.585 6.78803 14.6309 6.70589 14.6524 6.61605C14.6738 6.52621 14.67 6.43218 14.6413 6.34439C14.6125 6.25661 14.5601 6.17849 14.4897 6.11871C14.4192 6.05892 14.3337 6.01981 14.2424 6.00571L10.1642 5.3781L8.4468 1.94321C8.40555 1.86059 8.34224 1.791 8.26387 1.74216C8.1855 1.69332 8.09513 1.66714 8.00279 1.66651Z" />
+                </svg>
+                
+                <svg class="svg-icon svg-icon--star active" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M8.00279 1.66651C7.90934 1.66593 7.8176 1.69154 7.73797 1.74045C7.65834 1.78936 7.59401 1.8596 7.55227 1.94321L5.83482 5.3781L1.7567 6.00571C1.66541 6.01981 1.57982 6.05892 1.50941 6.11871C1.439 6.17849 1.38652 6.25661 1.3578 6.34439C1.32908 6.43218 1.32523 6.52621 1.34669 6.61605C1.36814 6.70589 1.41406 6.78803 1.47935 6.85336L4.30032 9.67432L3.67206 13.757C3.65801 13.8483 3.66954 13.9418 3.70538 14.027C3.74122 14.1122 3.79996 14.1858 3.87509 14.2396C3.95022 14.2934 4.0388 14.3253 4.13098 14.3319C4.22317 14.3384 4.31536 14.3192 4.39732 14.2765L7.99953 12.397L11.6017 14.2765C11.6837 14.3192 11.7759 14.3384 11.8681 14.3319C11.9603 14.3253 12.0488 14.2934 12.124 14.2396C12.1991 14.1858 12.2579 14.1122 12.2937 14.027C12.3295 13.9418 12.3411 13.8483 12.327 13.757L11.6988 9.67432L14.5197 6.85336C14.585 6.78803 14.6309 6.70589 14.6524 6.61605C14.6738 6.52621 14.67 6.43218 14.6413 6.34439C14.6125 6.25661 14.5601 6.17849 14.4897 6.11871C14.4192 6.05892 14.3337 6.01981 14.2424 6.00571L10.1642 5.3781L8.4468 1.94321C8.40555 1.86059 8.34224 1.791 8.26387 1.74216C8.1855 1.69332 8.09513 1.66714 8.00279 1.66651Z" />
+                </svg>
+                
+                <svg class="svg-icon svg-icon--star active" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M8.00279 1.66651C7.90934 1.66593 7.8176 1.69154 7.73797 1.74045C7.65834 1.78936 7.59401 1.8596 7.55227 1.94321L5.83482 5.3781L1.7567 6.00571C1.66541 6.01981 1.57982 6.05892 1.50941 6.11871C1.439 6.17849 1.38652 6.25661 1.3578 6.34439C1.32908 6.43218 1.32523 6.52621 1.34669 6.61605C1.36814 6.70589 1.41406 6.78803 1.47935 6.85336L4.30032 9.67432L3.67206 13.757C3.65801 13.8483 3.66954 13.9418 3.70538 14.027C3.74122 14.1122 3.79996 14.1858 3.87509 14.2396C3.95022 14.2934 4.0388 14.3253 4.13098 14.3319C4.22317 14.3384 4.31536 14.3192 4.39732 14.2765L7.99953 12.397L11.6017 14.2765C11.6837 14.3192 11.7759 14.3384 11.8681 14.3319C11.9603 14.3253 12.0488 14.2934 12.124 14.2396C12.1991 14.1858 12.2579 14.1122 12.2937 14.027C12.3295 13.9418 12.3411 13.8483 12.327 13.757L11.6988 9.67432L14.5197 6.85336C14.585 6.78803 14.6309 6.70589 14.6524 6.61605C14.6738 6.52621 14.67 6.43218 14.6413 6.34439C14.6125 6.25661 14.5601 6.17849 14.4897 6.11871C14.4192 6.05892 14.3337 6.01981 14.2424 6.00571L10.1642 5.3781L8.4468 1.94321C8.40555 1.86059 8.34224 1.791 8.26387 1.74216C8.1855 1.69332 8.09513 1.66714 8.00279 1.66651Z" />
+                </svg>
+                
+                
+                <svg class="svg-icon svg-icon--star" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M8.00279 1.66651C7.90934 1.66593 7.8176 1.69154 7.73797 1.74045C7.65834 1.78936 7.59401 1.8596 7.55227 1.94321L5.83482 5.3781L1.7567 6.00571C1.66541 6.01981 1.57982 6.05892 1.50941 6.11871C1.439 6.17849 1.38652 6.25661 1.3578 6.34439C1.32908 6.43218 1.32523 6.52621 1.34669 6.61605C1.36814 6.70589 1.41406 6.78803 1.47935 6.85336L4.30032 9.67432L3.67206 13.757C3.65801 13.8483 3.66954 13.9418 3.70538 14.027C3.74122 14.1122 3.79996 14.1858 3.87509 14.2396C3.95022 14.2934 4.0388 14.3253 4.13098 14.3319C4.22317 14.3384 4.31536 14.3192 4.39732 14.2765L7.99953 12.397L11.6017 14.2765C11.6837 14.3192 11.7759 14.3384 11.8681 14.3319C11.9603 14.3253 12.0488 14.2934 12.124 14.2396C12.1991 14.1858 12.2579 14.1122 12.2937 14.027C12.3295 13.9418 12.3411 13.8483 12.327 13.757L11.6988 9.67432L14.5197 6.85336C14.585 6.78803 14.6309 6.70589 14.6524 6.61605C14.6738 6.52621 14.67 6.43218 14.6413 6.34439C14.6125 6.25661 14.5601 6.17849 14.4897 6.11871C14.4192 6.05892 14.3337 6.01981 14.2424 6.00571L10.1642 5.3781L8.4468 1.94321C8.40555 1.86059 8.34224 1.791 8.26387 1.74216C8.1855 1.69332 8.09513 1.66714 8.00279 1.66651Z" />
+                </svg>
+                
+                <svg class="svg-icon svg-icon--star" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M8.00279 1.66651C7.90934 1.66593 7.8176 1.69154 7.73797 1.74045C7.65834 1.78936 7.59401 1.8596 7.55227 1.94321L5.83482 5.3781L1.7567 6.00571C1.66541 6.01981 1.57982 6.05892 1.50941 6.11871C1.439 6.17849 1.38652 6.25661 1.3578 6.34439C1.32908 6.43218 1.32523 6.52621 1.34669 6.61605C1.36814 6.70589 1.41406 6.78803 1.47935 6.85336L4.30032 9.67432L3.67206 13.757C3.65801 13.8483 3.66954 13.9418 3.70538 14.027C3.74122 14.1122 3.79996 14.1858 3.87509 14.2396C3.95022 14.2934 4.0388 14.3253 4.13098 14.3319C4.22317 14.3384 4.31536 14.3192 4.39732 14.2765L7.99953 12.397L11.6017 14.2765C11.6837 14.3192 11.7759 14.3384 11.8681 14.3319C11.9603 14.3253 12.0488 14.2934 12.124 14.2396C12.1991 14.1858 12.2579 14.1122 12.2937 14.027C12.3295 13.9418 12.3411 13.8483 12.327 13.757L11.6988 9.67432L14.5197 6.85336C14.585 6.78803 14.6309 6.70589 14.6524 6.61605C14.6738 6.52621 14.67 6.43218 14.6413 6.34439C14.6125 6.25661 14.5601 6.17849 14.4897 6.11871C14.4192 6.05892 14.3337 6.01981 14.2424 6.00571L10.1642 5.3781L8.4468 1.94321C8.40555 1.86059 8.34224 1.791 8.26387 1.74216C8.1855 1.69332 8.09513 1.66714 8.00279 1.66651Z" />
+                </svg>
+                
+              
+            </td>
+          </tr>
+          
+          <tr data-v-7f952888="">
+            <td data-v-7f952888="">Sumter County Adult Center</td>
+            <td data-v-7f952888="">public</td>
+            <td data-v-7f952888="">-</td>
+            <td data-v-7f952888="">12.5mi</td>
+            <td class="rating" data-v-7f952888="">
+              <span data-v-7f952888="" style="color: ;">
+              
+                </span>-
+              
+            </td>
+            <td data-v-7f952888="">
+              
+                
+                
+                <svg class="svg-icon svg-icon--star" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M8.00279 1.66651C7.90934 1.66593 7.8176 1.69154 7.73797 1.74045C7.65834 1.78936 7.59401 1.8596 7.55227 1.94321L5.83482 5.3781L1.7567 6.00571C1.66541 6.01981 1.57982 6.05892 1.50941 6.11871C1.439 6.17849 1.38652 6.25661 1.3578 6.34439C1.32908 6.43218 1.32523 6.52621 1.34669 6.61605C1.36814 6.70589 1.41406 6.78803 1.47935 6.85336L4.30032 9.67432L3.67206 13.757C3.65801 13.8483 3.66954 13.9418 3.70538 14.027C3.74122 14.1122 3.79996 14.1858 3.87509 14.2396C3.95022 14.2934 4.0388 14.3253 4.13098 14.3319C4.22317 14.3384 4.31536 14.3192 4.39732 14.2765L7.99953 12.397L11.6017 14.2765C11.6837 14.3192 11.7759 14.3384 11.8681 14.3319C11.9603 14.3253 12.0488 14.2934 12.124 14.2396C12.1991 14.1858 12.2579 14.1122 12.2937 14.027C12.3295 13.9418 12.3411 13.8483 12.327 13.757L11.6988 9.67432L14.5197 6.85336C14.585 6.78803 14.6309 6.70589 14.6524 6.61605C14.6738 6.52621 14.67 6.43218 14.6413 6.34439C14.6125 6.25661 14.5601 6.17849 14.4897 6.11871C14.4192 6.05892 14.3337 6.01981 14.2424 6.00571L10.1642 5.3781L8.4468 1.94321C8.40555 1.86059 8.34224 1.791 8.26387 1.74216C8.1855 1.69332 8.09513 1.66714 8.00279 1.66651Z" />
+                </svg>
+                
+                <svg class="svg-icon svg-icon--star" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M8.00279 1.66651C7.90934 1.66593 7.8176 1.69154 7.73797 1.74045C7.65834 1.78936 7.59401 1.8596 7.55227 1.94321L5.83482 5.3781L1.7567 6.00571C1.66541 6.01981 1.57982 6.05892 1.50941 6.11871C1.439 6.17849 1.38652 6.25661 1.3578 6.34439C1.32908 6.43218 1.32523 6.52621 1.34669 6.61605C1.36814 6.70589 1.41406 6.78803 1.47935 6.85336L4.30032 9.67432L3.67206 13.757C3.65801 13.8483 3.66954 13.9418 3.70538 14.027C3.74122 14.1122 3.79996 14.1858 3.87509 14.2396C3.95022 14.2934 4.0388 14.3253 4.13098 14.3319C4.22317 14.3384 4.31536 14.3192 4.39732 14.2765L7.99953 12.397L11.6017 14.2765C11.6837 14.3192 11.7759 14.3384 11.8681 14.3319C11.9603 14.3253 12.0488 14.2934 12.124 14.2396C12.1991 14.1858 12.2579 14.1122 12.2937 14.027C12.3295 13.9418 12.3411 13.8483 12.327 13.757L11.6988 9.67432L14.5197 6.85336C14.585 6.78803 14.6309 6.70589 14.6524 6.61605C14.6738 6.52621 14.67 6.43218 14.6413 6.34439C14.6125 6.25661 14.5601 6.17849 14.4897 6.11871C14.4192 6.05892 14.3337 6.01981 14.2424 6.00571L10.1642 5.3781L8.4468 1.94321C8.40555 1.86059 8.34224 1.791 8.26387 1.74216C8.1855 1.69332 8.09513 1.66714 8.00279 1.66651Z" />
+                </svg>
+                
+                <svg class="svg-icon svg-icon--star" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M8.00279 1.66651C7.90934 1.66593 7.8176 1.69154 7.73797 1.74045C7.65834 1.78936 7.59401 1.8596 7.55227 1.94321L5.83482 5.3781L1.7567 6.00571C1.66541 6.01981 1.57982 6.05892 1.50941 6.11871C1.439 6.17849 1.38652 6.25661 1.3578 6.34439C1.32908 6.43218 1.32523 6.52621 1.34669 6.61605C1.36814 6.70589 1.41406 6.78803 1.47935 6.85336L4.30032 9.67432L3.67206 13.757C3.65801 13.8483 3.66954 13.9418 3.70538 14.027C3.74122 14.1122 3.79996 14.1858 3.87509 14.2396C3.95022 14.2934 4.0388 14.3253 4.13098 14.3319C4.22317 14.3384 4.31536 14.3192 4.39732 14.2765L7.99953 12.397L11.6017 14.2765C11.6837 14.3192 11.7759 14.3384 11.8681 14.3319C11.9603 14.3253 12.0488 14.2934 12.124 14.2396C12.1991 14.1858 12.2579 14.1122 12.2937 14.027C12.3295 13.9418 12.3411 13.8483 12.327 13.757L11.6988 9.67432L14.5197 6.85336C14.585 6.78803 14.6309 6.70589 14.6524 6.61605C14.6738 6.52621 14.67 6.43218 14.6413 6.34439C14.6125 6.25661 14.5601 6.17849 14.4897 6.11871C14.4192 6.05892 14.3337 6.01981 14.2424 6.00571L10.1642 5.3781L8.4468 1.94321C8.40555 1.86059 8.34224 1.791 8.26387 1.74216C8.1855 1.69332 8.09513 1.66714 8.00279 1.66651Z" />
+                </svg>
+                
+                <svg class="svg-icon svg-icon--star" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M8.00279 1.66651C7.90934 1.66593 7.8176 1.69154 7.73797 1.74045C7.65834 1.78936 7.59401 1.8596 7.55227 1.94321L5.83482 5.3781L1.7567 6.00571C1.66541 6.01981 1.57982 6.05892 1.50941 6.11871C1.439 6.17849 1.38652 6.25661 1.3578 6.34439C1.32908 6.43218 1.32523 6.52621 1.34669 6.61605C1.36814 6.70589 1.41406 6.78803 1.47935 6.85336L4.30032 9.67432L3.67206 13.757C3.65801 13.8483 3.66954 13.9418 3.70538 14.027C3.74122 14.1122 3.79996 14.1858 3.87509 14.2396C3.95022 14.2934 4.0388 14.3253 4.13098 14.3319C4.22317 14.3384 4.31536 14.3192 4.39732 14.2765L7.99953 12.397L11.6017 14.2765C11.6837 14.3192 11.7759 14.3384 11.8681 14.3319C11.9603 14.3253 12.0488 14.2934 12.124 14.2396C12.1991 14.1858 12.2579 14.1122 12.2937 14.027C12.3295 13.9418 12.3411 13.8483 12.327 13.757L11.6988 9.67432L14.5197 6.85336C14.585 6.78803 14.6309 6.70589 14.6524 6.61605C14.6738 6.52621 14.67 6.43218 14.6413 6.34439C14.6125 6.25661 14.5601 6.17849 14.4897 6.11871C14.4192 6.05892 14.3337 6.01981 14.2424 6.00571L10.1642 5.3781L8.4468 1.94321C8.40555 1.86059 8.34224 1.791 8.26387 1.74216C8.1855 1.69332 8.09513 1.66714 8.00279 1.66651Z" />
+                </svg>
+                
+                <svg class="svg-icon svg-icon--star" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M8.00279 1.66651C7.90934 1.66593 7.8176 1.69154 7.73797 1.74045C7.65834 1.78936 7.59401 1.8596 7.55227 1.94321L5.83482 5.3781L1.7567 6.00571C1.66541 6.01981 1.57982 6.05892 1.50941 6.11871C1.439 6.17849 1.38652 6.25661 1.3578 6.34439C1.32908 6.43218 1.32523 6.52621 1.34669 6.61605C1.36814 6.70589 1.41406 6.78803 1.47935 6.85336L4.30032 9.67432L3.67206 13.757C3.65801 13.8483 3.66954 13.9418 3.70538 14.027C3.74122 14.1122 3.79996 14.1858 3.87509 14.2396C3.95022 14.2934 4.0388 14.3253 4.13098 14.3319C4.22317 14.3384 4.31536 14.3192 4.39732 14.2765L7.99953 12.397L11.6017 14.2765C11.6837 14.3192 11.7759 14.3384 11.8681 14.3319C11.9603 14.3253 12.0488 14.2934 12.124 14.2396C12.1991 14.1858 12.2579 14.1122 12.2937 14.027C12.3295 13.9418 12.3411 13.8483 12.327 13.757L11.6988 9.67432L14.5197 6.85336C14.585 6.78803 14.6309 6.70589 14.6524 6.61605C14.6738 6.52621 14.67 6.43218 14.6413 6.34439C14.6125 6.25661 14.5601 6.17849 14.4897 6.11871C14.4192 6.05892 14.3337 6.01981 14.2424 6.00571L10.1642 5.3781L8.4468 1.94321C8.40555 1.86059 8.34224 1.791 8.26387 1.74216C8.1855 1.69332 8.09513 1.66714 8.00279 1.66651Z" />
+                </svg>
+                
+              
+            </td>
+          </tr>
+          
+          <tr data-v-7f952888="">
+            <td data-v-7f952888="">Sumter Alternatives</td>
+            <td data-v-7f952888="">public</td>
+            <td data-v-7f952888="">3-12</td>
+            <td data-v-7f952888="">18.5mi</td>
+            <td class="rating" data-v-7f952888="">
+              <span data-v-7f952888="" style="color: ;">
+              
+                </span>-
+              
+            </td>
+            <td data-v-7f952888="">
+              
+                
+                <svg class="svg-icon svg-icon--star active" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M8.00279 1.66651C7.90934 1.66593 7.8176 1.69154 7.73797 1.74045C7.65834 1.78936 7.59401 1.8596 7.55227 1.94321L5.83482 5.3781L1.7567 6.00571C1.66541 6.01981 1.57982 6.05892 1.50941 6.11871C1.439 6.17849 1.38652 6.25661 1.3578 6.34439C1.32908 6.43218 1.32523 6.52621 1.34669 6.61605C1.36814 6.70589 1.41406 6.78803 1.47935 6.85336L4.30032 9.67432L3.67206 13.757C3.65801 13.8483 3.66954 13.9418 3.70538 14.027C3.74122 14.1122 3.79996 14.1858 3.87509 14.2396C3.95022 14.2934 4.0388 14.3253 4.13098 14.3319C4.22317 14.3384 4.31536 14.3192 4.39732 14.2765L7.99953 12.397L11.6017 14.2765C11.6837 14.3192 11.7759 14.3384 11.8681 14.3319C11.9603 14.3253 12.0488 14.2934 12.124 14.2396C12.1991 14.1858 12.2579 14.1122 12.2937 14.027C12.3295 13.9418 12.3411 13.8483 12.327 13.757L11.6988 9.67432L14.5197 6.85336C14.585 6.78803 14.6309 6.70589 14.6524 6.61605C14.6738 6.52621 14.67 6.43218 14.6413 6.34439C14.6125 6.25661 14.5601 6.17849 14.4897 6.11871C14.4192 6.05892 14.3337 6.01981 14.2424 6.00571L10.1642 5.3781L8.4468 1.94321C8.40555 1.86059 8.34224 1.791 8.26387 1.74216C8.1855 1.69332 8.09513 1.66714 8.00279 1.66651Z" />
+                </svg>
+                
+                <svg class="svg-icon svg-icon--star active" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M8.00279 1.66651C7.90934 1.66593 7.8176 1.69154 7.73797 1.74045C7.65834 1.78936 7.59401 1.8596 7.55227 1.94321L5.83482 5.3781L1.7567 6.00571C1.66541 6.01981 1.57982 6.05892 1.50941 6.11871C1.439 6.17849 1.38652 6.25661 1.3578 6.34439C1.32908 6.43218 1.32523 6.52621 1.34669 6.61605C1.36814 6.70589 1.41406 6.78803 1.47935 6.85336L4.30032 9.67432L3.67206 13.757C3.65801 13.8483 3.66954 13.9418 3.70538 14.027C3.74122 14.1122 3.79996 14.1858 3.87509 14.2396C3.95022 14.2934 4.0388 14.3253 4.13098 14.3319C4.22317 14.3384 4.31536 14.3192 4.39732 14.2765L7.99953 12.397L11.6017 14.2765C11.6837 14.3192 11.7759 14.3384 11.8681 14.3319C11.9603 14.3253 12.0488 14.2934 12.124 14.2396C12.1991 14.1858 12.2579 14.1122 12.2937 14.027C12.3295 13.9418 12.3411 13.8483 12.327 13.757L11.6988 9.67432L14.5197 6.85336C14.585 6.78803 14.6309 6.70589 14.6524 6.61605C14.6738 6.52621 14.67 6.43218 14.6413 6.34439C14.6125 6.25661 14.5601 6.17849 14.4897 6.11871C14.4192 6.05892 14.3337 6.01981 14.2424 6.00571L10.1642 5.3781L8.4468 1.94321C8.40555 1.86059 8.34224 1.791 8.26387 1.74216C8.1855 1.69332 8.09513 1.66714 8.00279 1.66651Z" />
+                </svg>
+                
+                <svg class="svg-icon svg-icon--star active" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M8.00279 1.66651C7.90934 1.66593 7.8176 1.69154 7.73797 1.74045C7.65834 1.78936 7.59401 1.8596 7.55227 1.94321L5.83482 5.3781L1.7567 6.00571C1.66541 6.01981 1.57982 6.05892 1.50941 6.11871C1.439 6.17849 1.38652 6.25661 1.3578 6.34439C1.32908 6.43218 1.32523 6.52621 1.34669 6.61605C1.36814 6.70589 1.41406 6.78803 1.47935 6.85336L4.30032 9.67432L3.67206 13.757C3.65801 13.8483 3.66954 13.9418 3.70538 14.027C3.74122 14.1122 3.79996 14.1858 3.87509 14.2396C3.95022 14.2934 4.0388 14.3253 4.13098 14.3319C4.22317 14.3384 4.31536 14.3192 4.39732 14.2765L7.99953 12.397L11.6017 14.2765C11.6837 14.3192 11.7759 14.3384 11.8681 14.3319C11.9603 14.3253 12.0488 14.2934 12.124 14.2396C12.1991 14.1858 12.2579 14.1122 12.2937 14.027C12.3295 13.9418 12.3411 13.8483 12.327 13.757L11.6988 9.67432L14.5197 6.85336C14.585 6.78803 14.6309 6.70589 14.6524 6.61605C14.6738 6.52621 14.67 6.43218 14.6413 6.34439C14.6125 6.25661 14.5601 6.17849 14.4897 6.11871C14.4192 6.05892 14.3337 6.01981 14.2424 6.00571L10.1642 5.3781L8.4468 1.94321C8.40555 1.86059 8.34224 1.791 8.26387 1.74216C8.1855 1.69332 8.09513 1.66714 8.00279 1.66651Z" />
+                </svg>
+                
+                <svg class="svg-icon svg-icon--star active" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M8.00279 1.66651C7.90934 1.66593 7.8176 1.69154 7.73797 1.74045C7.65834 1.78936 7.59401 1.8596 7.55227 1.94321L5.83482 5.3781L1.7567 6.00571C1.66541 6.01981 1.57982 6.05892 1.50941 6.11871C1.439 6.17849 1.38652 6.25661 1.3578 6.34439C1.32908 6.43218 1.32523 6.52621 1.34669 6.61605C1.36814 6.70589 1.41406 6.78803 1.47935 6.85336L4.30032 9.67432L3.67206 13.757C3.65801 13.8483 3.66954 13.9418 3.70538 14.027C3.74122 14.1122 3.79996 14.1858 3.87509 14.2396C3.95022 14.2934 4.0388 14.3253 4.13098 14.3319C4.22317 14.3384 4.31536 14.3192 4.39732 14.2765L7.99953 12.397L11.6017 14.2765C11.6837 14.3192 11.7759 14.3384 11.8681 14.3319C11.9603 14.3253 12.0488 14.2934 12.124 14.2396C12.1991 14.1858 12.2579 14.1122 12.2937 14.027C12.3295 13.9418 12.3411 13.8483 12.327 13.757L11.6988 9.67432L14.5197 6.85336C14.585 6.78803 14.6309 6.70589 14.6524 6.61605C14.6738 6.52621 14.67 6.43218 14.6413 6.34439C14.6125 6.25661 14.5601 6.17849 14.4897 6.11871C14.4192 6.05892 14.3337 6.01981 14.2424 6.00571L10.1642 5.3781L8.4468 1.94321C8.40555 1.86059 8.34224 1.791 8.26387 1.74216C8.1855 1.69332 8.09513 1.66714 8.00279 1.66651Z" />
+                </svg>
+                
+                <svg class="svg-icon svg-icon--star active" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M8.00279 1.66651C7.90934 1.66593 7.8176 1.69154 7.73797 1.74045C7.65834 1.78936 7.59401 1.8596 7.55227 1.94321L5.83482 5.3781L1.7567 6.00571C1.66541 6.01981 1.57982 6.05892 1.50941 6.11871C1.439 6.17849 1.38652 6.25661 1.3578 6.34439C1.32908 6.43218 1.32523 6.52621 1.34669 6.61605C1.36814 6.70589 1.41406 6.78803 1.47935 6.85336L4.30032 9.67432L3.67206 13.757C3.65801 13.8483 3.66954 13.9418 3.70538 14.027C3.74122 14.1122 3.79996 14.1858 3.87509 14.2396C3.95022 14.2934 4.0388 14.3253 4.13098 14.3319C4.22317 14.3384 4.31536 14.3192 4.39732 14.2765L7.99953 12.397L11.6017 14.2765C11.6837 14.3192 11.7759 14.3384 11.8681 14.3319C11.9603 14.3253 12.0488 14.2934 12.124 14.2396C12.1991 14.1858 12.2579 14.1122 12.2937 14.027C12.3295 13.9418 12.3411 13.8483 12.327 13.757L11.6988 9.67432L14.5197 6.85336C14.585 6.78803 14.6309 6.70589 14.6524 6.61605C14.6738 6.52621 14.67 6.43218 14.6413 6.34439C14.6125 6.25661 14.5601 6.17849 14.4897 6.11871C14.4192 6.05892 14.3337 6.01981 14.2424 6.00571L10.1642 5.3781L8.4468 1.94321C8.40555 1.86059 8.34224 1.791 8.26387 1.74216C8.1855 1.69332 8.09513 1.66714 8.00279 1.66651Z" />
+                </svg>
+                
+                
+              
+            </td>
+          </tr>
+          
+          <tr data-v-7f952888="">
+            <td data-v-7f952888="">South Sumter High School</td>
+            <td data-v-7f952888="">public</td>
+            <td data-v-7f952888="">9-12</td>
+            <td data-v-7f952888="">17.9mi</td>
+            <td class="rating" data-v-7f952888="">
+              <span data-v-7f952888="" style="color: ;">
+              
+                4</span>/10
+              
+            </td>
+            <td data-v-7f952888="">
+              
+                
+                <svg class="svg-icon svg-icon--star active" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M8.00279 1.66651C7.90934 1.66593 7.8176 1.69154 7.73797 1.74045C7.65834 1.78936 7.59401 1.8596 7.55227 1.94321L5.83482 5.3781L1.7567 6.00571C1.66541 6.01981 1.57982 6.05892 1.50941 6.11871C1.439 6.17849 1.38652 6.25661 1.3578 6.34439C1.32908 6.43218 1.32523 6.52621 1.34669 6.61605C1.36814 6.70589 1.41406 6.78803 1.47935 6.85336L4.30032 9.67432L3.67206 13.757C3.65801 13.8483 3.66954 13.9418 3.70538 14.027C3.74122 14.1122 3.79996 14.1858 3.87509 14.2396C3.95022 14.2934 4.0388 14.3253 4.13098 14.3319C4.22317 14.3384 4.31536 14.3192 4.39732 14.2765L7.99953 12.397L11.6017 14.2765C11.6837 14.3192 11.7759 14.3384 11.8681 14.3319C11.9603 14.3253 12.0488 14.2934 12.124 14.2396C12.1991 14.1858 12.2579 14.1122 12.2937 14.027C12.3295 13.9418 12.3411 13.8483 12.327 13.757L11.6988 9.67432L14.5197 6.85336C14.585 6.78803 14.6309 6.70589 14.6524 6.61605C14.6738 6.52621 14.67 6.43218 14.6413 6.34439C14.6125 6.25661 14.5601 6.17849 14.4897 6.11871C14.4192 6.05892 14.3337 6.01981 14.2424 6.00571L10.1642 5.3781L8.4468 1.94321C8.40555 1.86059 8.34224 1.791 8.26387 1.74216C8.1855 1.69332 8.09513 1.66714 8.00279 1.66651Z" />
+                </svg>
+                
+                <svg class="svg-icon svg-icon--star active" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M8.00279 1.66651C7.90934 1.66593 7.8176 1.69154 7.73797 1.74045C7.65834 1.78936 7.59401 1.8596 7.55227 1.94321L5.83482 5.3781L1.7567 6.00571C1.66541 6.01981 1.57982 6.05892 1.50941 6.11871C1.439 6.17849 1.38652 6.25661 1.3578 6.34439C1.32908 6.43218 1.32523 6.52621 1.34669 6.61605C1.36814 6.70589 1.41406 6.78803 1.47935 6.85336L4.30032 9.67432L3.67206 13.757C3.65801 13.8483 3.66954 13.9418 3.70538 14.027C3.74122 14.1122 3.79996 14.1858 3.87509 14.2396C3.95022 14.2934 4.0388 14.3253 4.13098 14.3319C4.22317 14.3384 4.31536 14.3192 4.39732 14.2765L7.99953 12.397L11.6017 14.2765C11.6837 14.3192 11.7759 14.3384 11.8681 14.3319C11.9603 14.3253 12.0488 14.2934 12.124 14.2396C12.1991 14.1858 12.2579 14.1122 12.2937 14.027C12.3295 13.9418 12.3411 13.8483 12.327 13.757L11.6988 9.67432L14.5197 6.85336C14.585 6.78803 14.6309 6.70589 14.6524 6.61605C14.6738 6.52621 14.67 6.43218 14.6413 6.34439C14.6125 6.25661 14.5601 6.17849 14.4897 6.11871C14.4192 6.05892 14.3337 6.01981 14.2424 6.00571L10.1642 5.3781L8.4468 1.94321C8.40555 1.86059 8.34224 1.791 8.26387 1.74216C8.1855 1.69332 8.09513 1.66714 8.00279 1.66651Z" />
+                </svg>
+                
+                <svg class="svg-icon svg-icon--star active" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M8.00279 1.66651C7.90934 1.66593 7.8176 1.69154 7.73797 1.74045C7.65834 1.78936 7.59401 1.8596 7.55227 1.94321L5.83482 5.3781L1.7567 6.00571C1.66541 6.01981 1.57982 6.05892 1.50941 6.11871C1.439 6.17849 1.38652 6.25661 1.3578 6.34439C1.32908 6.43218 1.32523 6.52621 1.34669 6.61605C1.36814 6.70589 1.41406 6.78803 1.47935 6.85336L4.30032 9.67432L3.67206 13.757C3.65801 13.8483 3.66954 13.9418 3.70538 14.027C3.74122 14.1122 3.79996 14.1858 3.87509 14.2396C3.95022 14.2934 4.0388 14.3253 4.13098 14.3319C4.22317 14.3384 4.31536 14.3192 4.39732 14.2765L7.99953 12.397L11.6017 14.2765C11.6837 14.3192 11.7759 14.3384 11.8681 14.3319C11.9603 14.3253 12.0488 14.2934 12.124 14.2396C12.1991 14.1858 12.2579 14.1122 12.2937 14.027C12.3295 13.9418 12.3411 13.8483 12.327 13.757L11.6988 9.67432L14.5197 6.85336C14.585 6.78803 14.6309 6.70589 14.6524 6.61605C14.6738 6.52621 14.67 6.43218 14.6413 6.34439C14.6125 6.25661 14.5601 6.17849 14.4897 6.11871C14.4192 6.05892 14.3337 6.01981 14.2424 6.00571L10.1642 5.3781L8.4468 1.94321C8.40555 1.86059 8.34224 1.791 8.26387 1.74216C8.1855 1.69332 8.09513 1.66714 8.00279 1.66651Z" />
+                </svg>
+                
+                
+                <svg class="svg-icon svg-icon--star" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M8.00279 1.66651C7.90934 1.66593 7.8176 1.69154 7.73797 1.74045C7.65834 1.78936 7.59401 1.8596 7.55227 1.94321L5.83482 5.3781L1.7567 6.00571C1.66541 6.01981 1.57982 6.05892 1.50941 6.11871C1.439 6.17849 1.38652 6.25661 1.3578 6.34439C1.32908 6.43218 1.32523 6.52621 1.34669 6.61605C1.36814 6.70589 1.41406 6.78803 1.47935 6.85336L4.30032 9.67432L3.67206 13.757C3.65801 13.8483 3.66954 13.9418 3.70538 14.027C3.74122 14.1122 3.79996 14.1858 3.87509 14.2396C3.95022 14.2934 4.0388 14.3253 4.13098 14.3319C4.22317 14.3384 4.31536 14.3192 4.39732 14.2765L7.99953 12.397L11.6017 14.2765C11.6837 14.3192 11.7759 14.3384 11.8681 14.3319C11.9603 14.3253 12.0488 14.2934 12.124 14.2396C12.1991 14.1858 12.2579 14.1122 12.2937 14.027C12.3295 13.9418 12.3411 13.8483 12.327 13.757L11.6988 9.67432L14.5197 6.85336C14.585 6.78803 14.6309 6.70589 14.6524 6.61605C14.6738 6.52621 14.67 6.43218 14.6413 6.34439C14.6125 6.25661 14.5601 6.17849 14.4897 6.11871C14.4192 6.05892 14.3337 6.01981 14.2424 6.00571L10.1642 5.3781L8.4468 1.94321C8.40555 1.86059 8.34224 1.791 8.26387 1.74216C8.1855 1.69332 8.09513 1.66714 8.00279 1.66651Z" />
+                </svg>
+                
+                <svg class="svg-icon svg-icon--star" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M8.00279 1.66651C7.90934 1.66593 7.8176 1.69154 7.73797 1.74045C7.65834 1.78936 7.59401 1.8596 7.55227 1.94321L5.83482 5.3781L1.7567 6.00571C1.66541 6.01981 1.57982 6.05892 1.50941 6.11871C1.439 6.17849 1.38652 6.25661 1.3578 6.34439C1.32908 6.43218 1.32523 6.52621 1.34669 6.61605C1.36814 6.70589 1.41406 6.78803 1.47935 6.85336L4.30032 9.67432L3.67206 13.757C3.65801 13.8483 3.66954 13.9418 3.70538 14.027C3.74122 14.1122 3.79996 14.1858 3.87509 14.2396C3.95022 14.2934 4.0388 14.3253 4.13098 14.3319C4.22317 14.3384 4.31536 14.3192 4.39732 14.2765L7.99953 12.397L11.6017 14.2765C11.6837 14.3192 11.7759 14.3384 11.8681 14.3319C11.9603 14.3253 12.0488 14.2934 12.124 14.2396C12.1991 14.1858 12.2579 14.1122 12.2937 14.027C12.3295 13.9418 12.3411 13.8483 12.327 13.757L11.6988 9.67432L14.5197 6.85336C14.585 6.78803 14.6309 6.70589 14.6524 6.61605C14.6738 6.52621 14.67 6.43218 14.6413 6.34439C14.6125 6.25661 14.5601 6.17849 14.4897 6.11871C14.4192 6.05892 14.3337 6.01981 14.2424 6.00571L10.1642 5.3781L8.4468 1.94321C8.40555 1.86059 8.34224 1.791 8.26387 1.74216C8.1855 1.69332 8.09513 1.66714 8.00279 1.66651Z" />
+                </svg>
+                
+              
+            </td>
+          </tr>
+          
+          <tr data-v-7f952888="">
+            <td data-v-7f952888="">Holy Trinity Episcopal School</td>
+            <td data-v-7f952888="">private</td>
+            <td data-v-7f952888="">6-12</td>
+            <td data-v-7f952888="">2.5mi</td>
+            <td class="rating" data-v-7f952888="">
+              <span data-v-7f952888="" style="color: ;">
+              
+                </span>-
+              
+            </td>
+            <td data-v-7f952888="">
+              
+                
+                <svg class="svg-icon svg-icon--star active" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M8.00279 1.66651C7.90934 1.66593 7.8176 1.69154 7.73797 1.74045C7.65834 1.78936 7.59401 1.8596 7.55227 1.94321L5.83482 5.3781L1.7567 6.00571C1.66541 6.01981 1.57982 6.05892 1.50941 6.11871C1.439 6.17849 1.38652 6.25661 1.3578 6.34439C1.32908 6.43218 1.32523 6.52621 1.34669 6.61605C1.36814 6.70589 1.41406 6.78803 1.47935 6.85336L4.30032 9.67432L3.67206 13.757C3.65801 13.8483 3.66954 13.9418 3.70538 14.027C3.74122 14.1122 3.79996 14.1858 3.87509 14.2396C3.95022 14.2934 4.0388 14.3253 4.13098 14.3319C4.22317 14.3384 4.31536 14.3192 4.39732 14.2765L7.99953 12.397L11.6017 14.2765C11.6837 14.3192 11.7759 14.3384 11.8681 14.3319C11.9603 14.3253 12.0488 14.2934 12.124 14.2396C12.1991 14.1858 12.2579 14.1122 12.2937 14.027C12.3295 13.9418 12.3411 13.8483 12.327 13.757L11.6988 9.67432L14.5197 6.85336C14.585 6.78803 14.6309 6.70589 14.6524 6.61605C14.6738 6.52621 14.67 6.43218 14.6413 6.34439C14.6125 6.25661 14.5601 6.17849 14.4897 6.11871C14.4192 6.05892 14.3337 6.01981 14.2424 6.00571L10.1642 5.3781L8.4468 1.94321C8.40555 1.86059 8.34224 1.791 8.26387 1.74216C8.1855 1.69332 8.09513 1.66714 8.00279 1.66651Z" />
+                </svg>
+                
+                <svg class="svg-icon svg-icon--star active" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M8.00279 1.66651C7.90934 1.66593 7.8176 1.69154 7.73797 1.74045C7.65834 1.78936 7.59401 1.8596 7.55227 1.94321L5.83482 5.3781L1.7567 6.00571C1.66541 6.01981 1.57982 6.05892 1.50941 6.11871C1.439 6.17849 1.38652 6.25661 1.3578 6.34439C1.32908 6.43218 1.32523 6.52621 1.34669 6.61605C1.36814 6.70589 1.41406 6.78803 1.47935 6.85336L4.30032 9.67432L3.67206 13.757C3.65801 13.8483 3.66954 13.9418 3.70538 14.027C3.74122 14.1122 3.79996 14.1858 3.87509 14.2396C3.95022 14.2934 4.0388 14.3253 4.13098 14.3319C4.22317 14.3384 4.31536 14.3192 4.39732 14.2765L7.99953 12.397L11.6017 14.2765C11.6837 14.3192 11.7759 14.3384 11.8681 14.3319C11.9603 14.3253 12.0488 14.2934 12.124 14.2396C12.1991 14.1858 12.2579 14.1122 12.2937 14.027C12.3295 13.9418 12.3411 13.8483 12.327 13.757L11.6988 9.67432L14.5197 6.85336C14.585 6.78803 14.6309 6.70589 14.6524 6.61605C14.6738 6.52621 14.67 6.43218 14.6413 6.34439C14.6125 6.25661 14.5601 6.17849 14.4897 6.11871C14.4192 6.05892 14.3337 6.01981 14.2424 6.00571L10.1642 5.3781L8.4468 1.94321C8.40555 1.86059 8.34224 1.791 8.26387 1.74216C8.1855 1.69332 8.09513 1.66714 8.00279 1.66651Z" />
+                </svg>
+                
+                <svg class="svg-icon svg-icon--star active" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M8.00279 1.66651C7.90934 1.66593 7.8176 1.69154 7.73797 1.74045C7.65834 1.78936 7.59401 1.8596 7.55227 1.94321L5.83482 5.3781L1.7567 6.00571C1.66541 6.01981 1.57982 6.05892 1.50941 6.11871C1.439 6.17849 1.38652 6.25661 1.3578 6.34439C1.32908 6.43218 1.32523 6.52621 1.34669 6.61605C1.36814 6.70589 1.41406 6.78803 1.47935 6.85336L4.30032 9.67432L3.67206 13.757C3.65801 13.8483 3.66954 13.9418 3.70538 14.027C3.74122 14.1122 3.79996 14.1858 3.87509 14.2396C3.95022 14.2934 4.0388 14.3253 4.13098 14.3319C4.22317 14.3384 4.31536 14.3192 4.39732 14.2765L7.99953 12.397L11.6017 14.2765C11.6837 14.3192 11.7759 14.3384 11.8681 14.3319C11.9603 14.3253 12.0488 14.2934 12.124 14.2396C12.1991 14.1858 12.2579 14.1122 12.2937 14.027C12.3295 13.9418 12.3411 13.8483 12.327 13.757L11.6988 9.67432L14.5197 6.85336C14.585 6.78803 14.6309 6.70589 14.6524 6.61605C14.6738 6.52621 14.67 6.43218 14.6413 6.34439C14.6125 6.25661 14.5601 6.17849 14.4897 6.11871C14.4192 6.05892 14.3337 6.01981 14.2424 6.00571L10.1642 5.3781L8.4468 1.94321C8.40555 1.86059 8.34224 1.791 8.26387 1.74216C8.1855 1.69332 8.09513 1.66714 8.00279 1.66651Z" />
+                </svg>
+                
+                <svg class="svg-icon svg-icon--star active" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M8.00279 1.66651C7.90934 1.66593 7.8176 1.69154 7.73797 1.74045C7.65834 1.78936 7.59401 1.8596 7.55227 1.94321L5.83482 5.3781L1.7567 6.00571C1.66541 6.01981 1.57982 6.05892 1.50941 6.11871C1.439 6.17849 1.38652 6.25661 1.3578 6.34439C1.32908 6.43218 1.32523 6.52621 1.34669 6.61605C1.36814 6.70589 1.41406 6.78803 1.47935 6.85336L4.30032 9.67432L3.67206 13.757C3.65801 13.8483 3.66954 13.9418 3.70538 14.027C3.74122 14.1122 3.79996 14.1858 3.87509 14.2396C3.95022 14.2934 4.0388 14.3253 4.13098 14.3319C4.22317 14.3384 4.31536 14.3192 4.39732 14.2765L7.99953 12.397L11.6017 14.2765C11.6837 14.3192 11.7759 14.3384 11.8681 14.3319C11.9603 14.3253 12.0488 14.2934 12.124 14.2396C12.1991 14.1858 12.2579 14.1122 12.2937 14.027C12.3295 13.9418 12.3411 13.8483 12.327 13.757L11.6988 9.67432L14.5197 6.85336C14.585 6.78803 14.6309 6.70589 14.6524 6.61605C14.6738 6.52621 14.67 6.43218 14.6413 6.34439C14.6125 6.25661 14.5601 6.17849 14.4897 6.11871C14.4192 6.05892 14.3337 6.01981 14.2424 6.00571L10.1642 5.3781L8.4468 1.94321C8.40555 1.86059 8.34224 1.791 8.26387 1.74216C8.1855 1.69332 8.09513 1.66714 8.00279 1.66651Z" />
+                </svg>
+                
+                <svg class="svg-icon svg-icon--star active" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M8.00279 1.66651C7.90934 1.66593 7.8176 1.69154 7.73797 1.74045C7.65834 1.78936 7.59401 1.8596 7.55227 1.94321L5.83482 5.3781L1.7567 6.00571C1.66541 6.01981 1.57982 6.05892 1.50941 6.11871C1.439 6.17849 1.38652 6.25661 1.3578 6.34439C1.32908 6.43218 1.32523 6.52621 1.34669 6.61605C1.36814 6.70589 1.41406 6.78803 1.47935 6.85336L4.30032 9.67432L3.67206 13.757C3.65801 13.8483 3.66954 13.9418 3.70538 14.027C3.74122 14.1122 3.79996 14.1858 3.87509 14.2396C3.95022 14.2934 4.0388 14.3253 4.13098 14.3319C4.22317 14.3384 4.31536 14.3192 4.39732 14.2765L7.99953 12.397L11.6017 14.2765C11.6837 14.3192 11.7759 14.3384 11.8681 14.3319C11.9603 14.3253 12.0488 14.2934 12.124 14.2396C12.1991 14.1858 12.2579 14.1122 12.2937 14.027C12.3295 13.9418 12.3411 13.8483 12.327 13.757L11.6988 9.67432L14.5197 6.85336C14.585 6.78803 14.6309 6.70589 14.6524 6.61605C14.6738 6.52621 14.67 6.43218 14.6413 6.34439C14.6125 6.25661 14.5601 6.17849 14.4897 6.11871C14.4192 6.05892 14.3337 6.01981 14.2424 6.00571L10.1642 5.3781L8.4468 1.94321C8.40555 1.86059 8.34224 1.791 8.26387 1.74216C8.1855 1.69332 8.09513 1.66714 8.00279 1.66651Z" />
+                </svg>
+                
+                
+              
+            </td>
+          </tr>
+          
+
+        </table>
+      </div>
+    </div>
+  </div>
+  <div class="ui-divider"></div>
+  <div class="footer flex">
+    <svg class="ofirio-logo" viewBox="0 0 97 37" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMinYMin">
+<path d="M2.46038 20.1712C2.46038 17.2134 3.43615 14.774 5.38767 12.853C7.34936 10.9218 9.67187 9.95618 12.3552 9.95618C15.3232 9.95618 17.7778 10.9269 19.7192 12.8682C21.6605 14.7994 22.6312 17.2439 22.6312 20.2017C22.6312 23.1391 21.6707 25.5785 19.7497 27.5199C17.8286 29.4612 15.4096 30.4319 12.4924 30.4319C9.57531 30.4319 7.17148 29.4663 5.28095 27.5351C3.40057 25.6039 2.46038 23.1493 2.46038 20.1712ZM12.5534 13.9507C10.8763 13.9202 9.52449 14.4996 8.49791 15.6888C7.47133 16.878 6.95804 18.4128 6.95804 20.2932C6.95804 22.0719 7.48149 23.5457 8.5284 24.7146C9.57531 25.8835 10.8967 26.4679 12.4924 26.4679C14.1695 26.4679 15.5214 25.8936 16.5479 24.7451C17.5847 23.5863 18.1031 22.0617 18.1031 20.1712C18.1031 18.3111 17.5949 16.817 16.5784 15.6888C15.5722 14.5606 14.2305 13.9812 12.5534 13.9507ZM26.2598 10.1696H37.5268V14.0422H30.544V18.1282H37.5268V22.0312H30.5745V30.188H26.2598V10.1696ZM40.9877 10.1696H45.2872V30.188H40.9877V10.1696ZM49.2817 10.1696H55.8681C57.8704 10.1696 59.451 10.6982 60.6097 11.7552C61.7786 12.8123 62.363 14.2404 62.363 16.0394C62.363 17.066 62.0937 18.1333 61.555 19.2412C61.0264 20.3491 60.0456 21.2181 58.6124 21.8483L64.2078 30.188H59.268L54.0843 22.4429H53.5964V30.188H49.2817V10.1696ZM53.6269 13.7373V18.9515H54.5569C56.8032 18.9515 57.9263 18.0316 57.9263 16.1919C57.9263 15.4398 57.6316 14.8451 57.0421 14.4081C56.4627 13.9609 55.6547 13.7373 54.6179 13.7373H53.6269ZM67.3028 10.1696H71.6023V30.188H67.3028V10.1696ZM74.9717 20.1712C74.9717 17.2134 75.9475 14.774 77.899 12.853C79.8607 10.9218 82.1832 9.95618 84.8665 9.95618C87.8345 9.95618 90.2891 10.9269 92.2305 12.8682C94.1718 14.7994 95.1425 17.2439 95.1425 20.2017C95.1425 23.1391 94.182 25.5785 92.261 27.5199C90.3399 29.4612 87.9209 30.4319 85.0037 30.4319C82.0866 30.4319 79.6828 29.4663 77.7923 27.5351C75.9119 25.6039 74.9717 23.1493 74.9717 20.1712ZM85.0647 13.9507C83.3876 13.9202 82.0358 14.4996 81.0092 15.6888C79.9826 16.878 79.4693 18.4128 79.4693 20.2932C79.4693 22.0719 79.9928 23.5457 81.0397 24.7146C82.0866 25.8835 83.408 26.4679 85.0037 26.4679C86.6808 26.4679 88.0327 25.8936 89.0593 24.7451C90.096 23.5863 90.6144 22.0617 90.6144 20.1712C90.6144 18.3111 90.1062 16.817 89.0897 15.6888C88.0835 14.5606 86.7418 13.9812 85.0647 13.9507Z" fill="#222222"/>
+<path d="M2.50281 6.70747C4.09036 8.30773 4.08971 8.30838 4.08907 8.30902C4.08887 8.30921 4.08824 8.30984 4.08785 8.31022C4.08706 8.311 4.08633 8.31172 4.08566 8.31239C4.08431 8.31372 4.08317 8.31483 4.08225 8.31573C4.08041 8.31753 4.07943 8.31848 4.07932 8.31859C4.07908 8.31882 4.08228 8.31573 4.08886 8.30955C4.10205 8.29717 4.12875 8.27247 4.1687 8.23716C4.24869 8.16647 4.38114 8.05381 4.56387 7.91282C4.93022 7.63015 5.49276 7.2381 6.23428 6.84198C7.71622 6.05035 9.88905 5.25414 12.6465 5.25414V0.745857C8.99734 0.745857 6.09835 1.80339 4.11009 2.86549C3.11652 3.39625 2.34437 3.93106 1.8098 4.34354C1.54207 4.55012 1.33251 4.72712 1.1831 4.85917C1.10835 4.92524 1.04851 4.98019 1.00382 5.02212C0.981471 5.0431 0.962898 5.06083 0.948131 5.07508C0.940746 5.08221 0.934312 5.08847 0.928831 5.09384C0.926091 5.09652 0.923588 5.09898 0.921325 5.10121C0.920193 5.10233 0.919121 5.10338 0.918109 5.10438C0.917603 5.10488 0.916887 5.10559 0.916635 5.10584C0.915935 5.10654 0.91525 5.10722 2.50281 6.70747ZM12.6465 5.25414C15.4039 5.25414 17.5767 6.05035 19.0586 6.84198C19.8001 7.2381 20.3627 7.63015 20.729 7.91282C20.9118 8.05381 21.0442 8.16647 21.1242 8.23716C21.1642 8.27247 21.1909 8.29717 21.204 8.30955C21.2106 8.31573 21.2138 8.31882 21.2136 8.31859C21.2135 8.31848 21.2125 8.31753 21.2107 8.31573C21.2097 8.31483 21.2086 8.31372 21.2073 8.31239C21.2066 8.31172 21.2058 8.311 21.2051 8.31022C21.2047 8.30984 21.204 8.30921 21.2038 8.30902C21.2032 8.30838 21.2025 8.30773 22.7901 6.70747C24.3777 5.10722 24.377 5.10654 24.3763 5.10584C24.376 5.10559 24.3753 5.10488 24.3748 5.10438C24.3738 5.10338 24.3727 5.10233 24.3716 5.10121C24.3693 5.09898 24.3668 5.09652 24.3641 5.09384C24.3586 5.08847 24.3522 5.08221 24.3448 5.07508C24.33 5.06083 24.3114 5.0431 24.2891 5.02212C24.2444 4.98019 24.1846 4.92524 24.1098 4.85917C23.9604 4.72712 23.7508 4.55012 23.4831 4.34354C22.9485 3.93106 22.1764 3.39625 21.1828 2.86549C19.1946 1.80339 16.2956 0.745857 12.6465 0.745857V5.25414Z" fill="#01D092"/>
+</svg>
+
+      <a href="www.ofirio.com">www.ofirio.com</a>
+      <a href="info@ofirio.com">info@ofirio.com</a>
+      <span>+1 888-550-5978</span>
+    <span class="copyright">Copywrite &copy; 2021 Ofirio, Inc</span>
+  </div>
+</div>
+<script>
+  function processData(data, years) {
+    let res = [];
+    for (let y of years)
+      res.push(data[y]);
+      
+    return res;
+  }
+
+  const acw = {'year': {'1': 1, '2': 2, '3': 3, '4': 4, '5': 5, '6': 6, '7': 7, '8': 8, '9': 9, '10': 10, '11': 11, '12': 12, '13': 13, '14': 14, '15': 15, '16': 16, '17': 17, '18': 18, '19': 19, '20': 20, '21': 21, '22': 22, '23': 23, '24': 24, '25': 25, '26': 26, '27': 27, '28': 28, '29': 29, '30': 30}, 'cash_flow_from_operations': {'1': -3461.21, '2': -6088.62, '3': -7835.59, '4': -8653.02, '5': -8489.38, '6': -7290.5, '7': -4999.3, '8': -1555.87, '9': 3102.81, '10': 9043.0, '11': 16334.37, '12': 25050.05, '13': 35267.07, '14': 47066.31, '15': 60532.75, '16': 75755.77, '17': 92829.3, '18': 111852.03, '19': 132927.72, '20': 156165.37, '21': 181679.56, '22': 209590.62, '23': 240025.14, '24': 273116.02, '25': 309002.8699999999, '26': 347832.52, '27': 389759.1799999999, '28': 434944.84, '29': 483559.75, '30': 535782.74}, 'property_appreciation': {'1': 6780.0, '2': 13695.6, '3': 20749.51, '4': 27944.5, '5': 35283.39, '6': 42769.06, '7': 50404.44, '8': 58192.53, '9': 66136.38, '10': 74239.11, '11': 82503.89, '12': 90933.97, '13': 99532.65, '14': 108303.3, '15': 117249.37, '16': 126374.35, '17': 135681.84, '18': 145175.48, '19': 154858.99, '20': 164736.17, '21': 174810.89, '22': 185087.11, '23': 195568.85, '24': 206260.23, '25': 217165.43, '26': 228288.74, '27': 239634.52, '28': 251207.21, '29': 263011.35, '30': 275051.58}, 'eqity': {'1': 73557.11, '2': 79483.42, '3': 85583.9, '4': 91863.64, '5': 98327.93, '6': 104982.21, '7': 111832.05, '8': 118883.2, '9': 126141.57, '10': 133613.26, '11': 141304.52, '12': 149221.84, '13': 157371.82, '14': 165761.31, '15': 174397.38, '16': 183287.24, '17': 192438.36, '18': 201858.42, '19': 211555.33, '20': 221537.21, '21': 231812.43, '22': 242389.64, '23': 253277.68, '24': 264485.7, '25': 276023.13, '26': 287899.62, '27': 300125.13, '28': 312709.95, '29': 325664.62, '30': 339000.01}, 'loan_balance': {'1': 271200.0, '2': 265442.89, '3': 259516.58, '4': 253416.1, '5': 247136.36, '6': 240672.07, '7': 234017.79, '8': 227167.95, '9': 220116.8, '10': 212858.43, '11': 205386.74, '12': 197695.48, '13': 189778.16, '14': 181628.18, '15': 173238.69, '16': 164602.62, '17': 155712.76, '18': 146561.64, '19': 137141.58, '20': 127444.67, '21': 117462.79, '22': 107187.57, '23': 96610.36, '24': 85722.32, '25': 74514.3, '26': 62976.87, '27': 51100.38, '28': 38874.87, '29': 26290.05, '30': 13335.38}, 'projected_accummulated_wealth': {'1': 76875.9, '2': 87090.4, '3': 98497.82, '4': 111155.12, '5': 125121.94, '6': 140460.77, '7': 157237.19, '8': 175519.86, '9': 195380.76, '10': 216895.37, '11': 240142.78, '12': 265205.86, '13': 292171.54, '14': 321130.92, '15': 352179.5, '16': 385417.36, '17': 420949.5, '18': 458885.9300000001, '19': 499342.04, '20': 542438.75, '21': 588302.88, '22': 637067.37, '23': 688871.6699999999, '24': 743861.95, '25': 802191.4299999999, '26': 864020.88, '27': 929518.83, '28': 998862.0, '29': 1072235.72, '30': 1149834.33}};
+  let labels = [];
+  for (let y in acw.year)
+    labels.push(acw.year[y]);
+
+  const FinanceAccumulatedWealthPlot = new Chart(
+    document.getElementById('finance-accumulated-wealth-plot'),
+    {
+      __maxYears: labels[labels.length - 1],
+      type: 'line',
+      data: {
+        labels: labels.map(l => l == 1 || l % 5 == 0 ? l : ''),
+        datasets: [{
+          __autoLegendOff: true,
+          label: 'Loan Balance',
+          __attrName: 'loan_balance',
+          fill: false,
+          borderColor: '#222222',
+          borderDash: [8, 8],
+          pointRadius: 0,
+          data: processData(acw.loan_balance, labels),
+          datalabels: { display: false }
+        }, {
+          label: 'Cash Flow',
+          __attrName: 'cash_flow_from_operations',
+          fill: true,
+          borderColor: '#01D092',
+          backgroundColor: 'rgba(192, 243, 228, 0.5)',
+          pointRadius: 0,
+          stack: 'combined',
+          data: processData(acw.cash_flow_from_operations, labels),
+          datalabels: { display: false }
+        }, {
+          label: 'Appreciation',
+          __attrName: 'property_appreciation',
+          fill: true,
+          borderColor: '#6454C3',
+          backgroundColor: 'rgba(216, 212, 240, 0.5)',
+          pointRadius: 0,
+          stack: 'combined',
+          data: processData(acw.property_appreciation, labels),
+          datalabels: { display: false }
+        }, {
+          label: 'Equity',
+          __attrName: 'eqity',
+          fill: true,
+          borderColor: '#00A3FF',
+          backgroundColor: 'rgba(191, 232, 255, 0.5)',
+          pointRadius: 0,
+          stack: 'combined',
+          data: processData(acw.eqity, labels),
+          datalabels: { display: false }
+        }]
+      },
+      options: {
+        interaction: {
+          intersect: false,
+          mode: 'index',
+        },
+        aspectRatio: 3,
+        scales: {
+          x: {
+            grid: {
+              display: false,
+              drawBorder: false,
+              drawTicks: false
+            }
+          },
+          y: {
+            position: 'right',
+            grid: {
+              drawBorder: false,
+              color: "rgba(0, 0, 0, 0.02)"
+            },
+            stacked: true
+          }
+        },
+        elements: {
+          line: {
+            tension: 0.4
+          }
+        },
+        plugins: {
+          legend: {
+            display: false
+          }
+        },
+        animation: {
+          duration: 0
+        }
+      }
+    }
+  );
+
+
+  const TaxHistoryPlotLabels = ['2020', '2019', '2018', '2017', '2016', '2015', '2014', '2013', '2012', '2011', '2010', '2009', '2008'];
+  const TaxHistoryPlotData = [3673, 3676, 3488, 3502, 3543, 3554, 3613, 3663, 3643, 3660, 4367, 4507, 2524];
+
+
+  const TaxHistoryPlot = new Chart(
+    document.getElementById('tax-history-plot'),
+    {
+      type: 'line',
+      data: {
+        labels: TaxHistoryPlotLabels,
+        datasets: [{
+          label: 'Property Tax',
+          fill: false,
+          borderColor: '#6454C3',
+          pointRadius: 0,
+          data: TaxHistoryPlotData,
+          datalabels: { display: false },
+        }]
+      },
+      options: {
+        aspectRatio: 3,
+        scales: {
+          x: {
+            grid: {
+              display: false,
+              drawBorder: false,
+              drawTicks: false
+            },
+            ticks: { padding: 20 }
+          },
+          y: {
+            grid: {
+              drawBorder: false,
+              color: "rgba(0, 0, 0, 0.02)"
+            },
+            ticks: { padding: 20 }
+          }
+        },
+        elements: {
+          line: {
+            tension: 0.4
+          }
+        },
+        plugins: {
+          legend: {
+            display: false,
+            align: 'start'
+          }
+        },
+        animation: {
+          duration: 0
+        }
+      }
+    }
+  );
+
+</script>
+
+  </body>
+</html>
