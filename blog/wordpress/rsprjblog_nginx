@@ -1,0 +1,51 @@
+server {
+    server_name rsprjblog.ofirio.com;
+    client_max_body_size 32m;
+    root /var/www/wordpress;
+    index index.php index.html index.htm;
+
+    location / {
+        try_files $uri $uri/ /index.php?$args;
+        auth_basic off;
+        allow all; # Allow all to see content
+    }
+
+    location = / {
+        return 404;
+    }
+    location ~ /\. {
+        deny all;
+    }
+    location ~* /(?:uploads|files)/.*\.php$ {
+        deny all;
+    }
+    location = /xmlrpc.php {
+        deny all;
+    }
+
+    location ~ \.php$ {
+        include snippets/fastcgi-php.conf;
+        include fastcgi_params;
+        fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+        fastcgi_pass unix:/var/run/php/php8.1-fpm.sock;
+        fastcgi_keep_conn on;
+
+        auth_basic off;
+        allow all; # Allow all to see content
+    }
+
+    location ~* \.(js|css|png|jpg|jpeg|gif|ico|ogg|ogv|svg|eot|otf|woff|mp4|ttf|rss|atom|zip|tgz|gz|rar|bz2|doc|xls|ppt|tar|mid|midi|wav|bmp|rtf)$ {
+        expires max;
+        log_not_found off;
+        access_log off;
+
+        auth_basic off;
+        allow all; # Allow all to see content
+    }
+}
+
+
+# PLACE THIS TO server LOCATION OF THE MAIN WEBSITE
+#    location /blogfiles/ {
+#        alias /var/www/wordpress/wp-content/uploads/;
+#    }

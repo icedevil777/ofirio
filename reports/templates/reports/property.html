@@ -1,0 +1,974 @@
+{% extends 'reports/base.html' %}
+{% load humanize %}
+{% load custom_tags %}
+
+{% block content %}
+<div id="app" data-v-app="">
+  <div class="header flex">
+    {{ logo_full_svg }}
+    <span class="title">Property report</span>
+    <div class="links">
+      <a href="www.ofirio.com">www.ofirio.com</a>
+      <a href="help@ofirio.com">help@ofirio.com</a>
+      <span>+1 888-550-5978</span>
+    </div>
+  </div>
+  <div class="ui-divider"></div>
+  <div class="property wrapper" data-v-7f952888="">
+    <div class="flex sided">
+      <div class="left-side">
+    <div class="top-bar" data-v-7f952888="">
+      <div class="heading-row" data-v-7f952888="">
+        <div class="wrapper flex header-bar" data-v-7f952888="">
+          <div class="address" data-v-7f952888=""><span class="street" data-v-7f952888="">{{ data.prop.address.line }}</span><span class="location" data-v-7f952888="">{{ data.prop.address.city }}, {{ data.prop.address.state }} {{ data.prop.address.zip }}</span></div>
+          <div class="small-props flex" data-v-7f952888="">
+            <div class="ui-small-prop" data-v-002a1ab0="" data-v-7f952888=""><span class="value" data-v-002a1ab0="">${{ data.prop.data.price|intcomma }}</span><span class="label" data-v-002a1ab0="">List price</span></div>
+            <div class="ui-small-prop hide-mobile-sticked" data-v-002a1ab0="" data-v-7f952888=""><span class="value" data-v-002a1ab0="">{{ data.prop.data.beds|floatformat:"0" }}</span><span class="label" data-v-002a1ab0="">Beds</span></div>
+            <div class="ui-small-prop hide-mobile-sticked" data-v-002a1ab0="" data-v-7f952888=""><span class="value" data-v-002a1ab0="">{{ data.prop.data.baths|floatformat:"0" }}</span><span class="label" data-v-002a1ab0="">Baths</span></div>
+            <div class="ui-small-prop" data-v-002a1ab0="" data-v-7f952888=""><span class="value" data-v-002a1ab0="" style="color: {{ data.cash_on_cash|front_color_cap_coc }};">{{ data.cash_on_cash|mult:100|floatformat:"-2" }}%</span><span class="label" data-v-002a1ab0="">Cash On Cash</span></div>
+            <div class="ui-small-prop" data-v-002a1ab0="" data-v-7f952888=""><span class="value" data-v-002a1ab0="" style="color: {{ data.cap_rate|front_color_cap_coc }};">{{ data.cap_rate|mult:100|floatformat:"-2" }}%</span><span class="label" data-v-002a1ab0="">Cap Rate</span></div>
+          </div>
+        </div>
+        <div class="wrapper flex tabs" data-v-7f952888="">
+          <div class="mobile-mm" data-v-7f952888=""></div>
+          <label class="ui-radio-chip selected" required="" name="radio-active-tab" value="summary" data-v-1b708be6="" data-v-7f952888=""><input type="radio" required="" name="radio-active-tab" value="summary" data-v-1b708be6="">Summary</label><label class="ui-radio-chip" required="" name="radio-active-tab" value="financial" data-v-1b708be6="" data-v-7f952888=""><input type="radio" required="" name="radio-active-tab" value="financial" data-v-1b708be6="">Financial</label><label class="ui-radio-chip" required="" name="radio-active-tab" value="tax-history" data-v-1b708be6="" data-v-7f952888=""><input type="radio" required="" name="radio-active-tab" value="tax-history" data-v-1b708be6="">Tax History</label><label class="ui-radio-chip" required="" name="radio-active-tab" value="prop-history" data-v-1b708be6="" data-v-7f952888=""><input type="radio" required="" name="radio-active-tab" value="prop-history" data-v-1b708be6="">Property History</label><label class="ui-radio-chip" required="" name="radio-active-tab" value="schools" data-v-1b708be6="" data-v-7f952888=""><input type="radio" required="" name="radio-active-tab" value="schools" data-v-1b708be6="">Schools</label>
+          <div class="mobile-mm" data-v-7f952888=""></div>
+        </div>
+      </div>
+    </div>
+    <div class="ui-divider"></div>
+    <div class="basic-info flex" data-v-7f952888="">
+      <div class="info" data-v-7f952888="">
+        <div class="chars-row flex" data-v-7f952888="">
+          <div class="char" data-v-7f952888=""><span class="title" data-v-7f952888="">List Price</span><span class="value" data-v-7f952888="">${{ data.prop.data.price|floatformat:"0"|intcomma }}</span></div>
+          <div class="char" data-v-7f952888=""><span class="title" data-v-7f952888="">Beds</span><span class="value" data-v-7f952888="">{{ data.prop.data.beds|floatformat:"0" }}</span></div>
+          <div class="char" data-v-7f952888=""><span class="title" data-v-7f952888="">Baths</span><span class="value" data-v-7f952888="">{{ data.prop.data.baths|floatformat:"0" }}</span></div>
+          <div class="char" data-v-7f952888=""><span class="title" data-v-7f952888="">Sq Ft</span><span class="value" data-v-7f952888="">{{ data.prop.data.building_size|floatformat:"-2"|intcomma }}</span></div>
+        </div>
+        <table class="fin-table" data-v-7f952888="">
+          <tr data-v-7f952888="">
+            <td data-v-7f952888="">
+              <div class="char" data-v-7f952888="">
+                <span class="value" data-v-7f952888="">${{ data.rental_income|floatformat:"0"|intcomma }}</span>
+                <span class="title" data-v-7f952888="">Rental Income</span>
+              </div>
+            </td>
+            <td data-v-7f952888="">
+              <div class="char" data-v-7f952888="">
+                <span class="value" data-v-7f952888="">${{ data.expenses|floatformat:"0"|intcomma }}</span>
+                <span class="title" data-v-7f952888="">Expenses</span>
+              </div>
+            </td>
+            <td data-v-7f952888="">
+              <div class="char" data-v-7f952888="">
+                <span class="value" data-v-7f952888="">${{ data.cash_flow|floatformat:"0"|intcomma }}</span>
+                <span class="title" data-v-7f952888="">Cash Flow</span>
+              </div>
+            </td>
+          </tr>
+          <tr data-v-7f952888="">
+            <td data-v-7f952888="">
+              <div class="char" data-v-7f952888="">
+                <span class="value" data-v-7f952888="" style="color: {{ data.cash_on_cash|front_color_cap_coc }};">{{ data.cash_on_cash|mult:100|floatformat:"-2" }}%</span>
+                <span class="title" data-v-7f952888="">Cash On Cash</span>
+              </div>
+            </td>
+            <td data-v-7f952888="">
+              <div class="char" data-v-7f952888="">
+                <span class="value" data-v-7f952888="" style="color: {{ data.cap_rate|front_color_cap_coc }};">{{ data.cap_rate|mult:100|floatformat:"-2" }}%</span>
+                <span class="title" data-v-7f952888="">CAP Rate</span>
+              </div>
+            </td>
+            <td data-v-7f952888="">
+              <div class="char" data-v-7f952888="">
+                <span class="value" data-v-7f952888="">{{ data.total_return|mult:100|floatformat:"-2" }}%</span>
+                <span class="title" data-v-7f952888="">Total Return</span>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+      </div>
+      <div class="right-side" style="background-image: url('{{ data.prop.photos.0 }}')"></div>
+    </div>
+
+    <div class="tab tab-summary" data-v-7f952888="">
+      <div class="sided-info flex" data-v-7f952888="">
+        <div class="text-side" data-v-7f952888="">
+          <p class="description ui-text-justify" data-v-7f952888="">{{ data.prop.data.description }}</p>
+        </div>
+        <div class="location" data-v-7f952888="">
+          <div class="map">
+            <img src="https://maps.googleapis.com/maps/api/staticmap?center={{ data.prop.address.lat }},{{ data.prop.address.lon }}&size=500x400&maptype=roadmap
+            &markers=color:red%7C{{ data.prop.address.lat }},{{ data.prop.address.lon }}
+            &key=AIzaSyBLpCFp3KrBK9eWtqj1QzTXCA48qZqJAoA" alt="">
+          </div>
+        </div>
+      </div>
+
+      <div class="additional-info" data-v-7f952888="">
+        <div class="feature-block no-page-break" data-v-7f952888="">
+          <div class="feature-header flex" data-v-7f952888="">
+            {{ house_checkmark_svg }}
+            Summary
+          </div>
+          <div class="feature-section" data-v-7f952888="">
+            <ul class="features-section-list" data-v-7f952888="">
+              {% for key, value in data.prop.summary.items %}
+              <li data-v-7f952888=""><span class="title" data-v-7f952888="">{{ key }}:
+              </span><span class="value" data-v-7f952888="">{{ value }}</span></li>
+              {% endfor %}
+            </ul>
+          </div>
+        </div>
+
+        {% for section_name, section in data.prop.features.items %}
+        <div class="feature-block no-page-break" data-v-7f952888="">
+          <div class="feature-header flex" data-v-7f952888="">
+            {% if section_name == 'Building and Construction' %}
+              {{ house_foundament_structural_svg }}
+            {% elif section_name == 'Interior' %}
+              {{ rich_chair_svg }}
+            {% elif section_name == 'Exterior' %}
+              {{ nature_svg }}
+            {% elif section_name == 'Listing' %}
+              {{ clipboard_checkmark_svg }}
+            {% elif section_name == 'Features' %}
+              {{ house_gear_inside_svg }}
+            {% elif section_name == 'Community' %}
+              {{ team_svg }}
+            {% elif section_name == 'Legal and finance' %}
+              {{ house_dollar_inside_svg }}
+            {% endif %}
+            {{ section_name }}
+          </div>
+          {% if section|is_deep %}
+            {% for subsection_name, subsection in section.items %}
+              <div class="feature-section" data-v-7f952888="">
+                <div class="feature-subheading" data-v-7f952888="">{{ subsection_name }}</div>
+                {% if subsection|is_dict %}
+                <ul class="features-section-list" data-v-7f952888="">
+                  {% for subsection_item_name, subsection_item_value in subsection.items %}
+                  <li data-v-7f952888=""><span class="title" data-v-7f952888="">{{ subsection_item_name }}:</span><span class="value" data-v-7f952888="">{{ subsection_item_value }}</span></li>
+                  {% endfor %}
+                </ul>
+                {% else %}
+                <ul class="features-section-list" data-v-7f952888="">
+                  <li data-v-7f952888=""><span class="value" data-v-7f952888="">{{ subsection }}</span></li>
+                </ul>
+                {% endif %}
+              </div>
+            {% endfor %}
+          {% else %}
+            <div class="feature-section" data-v-7f952888="">
+              <ul class="features-section-list" data-v-7f952888="">
+                {% for section_item_name, section_item_value in section.items %}
+                  <li data-v-7f952888="">
+                    <span class="title" data-v-7f952888="">{{ section_item_name }}:</span>
+                    <span class="value" data-v-7f952888="">{{ section_item_value }}</span>
+                  </li>
+                {% endfor %}
+              </ul>
+            </div>
+          {% endif %}
+        </div>
+        {% endfor %}
+
+    </div>
+    <div class="tab tab-financial no-page-break" data-v-7f952888="">
+      <div class="">
+        <span class="heading" data-v-7f952888="">Basic assumptions</span>
+        <div class="params flex" data-v-7f952888="">
+          <div class="ui-drop" data-v-9b6c558e="" data-v-7f952888="">
+            <div class="ui-drop-label flex" data-v-9b6c558e="">
+              <div class="param-data" data-v-7f952888=""><span class="param-name" data-v-7f952888="">Purchase Price</span><span class="param-value" data-v-7f952888="">${{ data.price|floatformat:"0"|intcomma }}</span></div>
+            </div>
+          </div>
+          <div class="ui-drop" data-v-9b6c558e="" data-v-7f952888="">
+            <div class="ui-drop-label flex" data-v-9b6c558e="">
+              <div class="param-data" data-v-7f952888=""><span class="param-name" data-v-7f952888="">Rent</span><span class="param-value" data-v-7f952888="">${{ data.monthly_rent|floatformat:"0"|intcomma }}</span></div>
+            </div>
+          </div>
+          <div class="ui-drop" data-v-9b6c558e="" data-v-7f952888="">
+            <div class="ui-drop-label flex" data-v-9b6c558e="">
+              <div class="param-data" data-v-7f952888=""><span class="param-name" data-v-7f952888="">Down Payment</span><span class="param-value" data-v-7f952888="">{{ data.down_payment|mult:100|floatformat:"-2" }}%</span></div>
+            </div>
+          </div>
+          <div class="ui-drop" data-v-9b6c558e="" data-v-7f952888="">
+            <div class="ui-drop-label flex" data-v-9b6c558e="">
+              <div class="param-data" data-v-7f952888=""><span class="param-name" data-v-7f952888="">Financing Years</span><span class="param-value" data-v-7f952888="">{{ data.financing_years }} years</span></div>
+            </div>
+          </div>
+          <div class="ui-drop" data-v-9b6c558e="" data-v-7f952888="">
+            <div class="ui-drop-label flex" data-v-9b6c558e="">
+              <div class="param-data" data-v-7f952888=""><span class="param-name" data-v-7f952888="">Interest Rate</span><span class="param-value" data-v-7f952888="">{{ data.interest_rate|mult:100|floatformat:"-2" }}%</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="flex fin-details no-page-break" data-v-7f952888="">
+        <div class="monthly-cash-flow side no-page-break" data-v-7f952888="">
+          <span class="heading" data-v-7f952888="">Monthly Cash Flow (Year 1)</span>
+          <table class="fin-table" data-v-7f952888="">
+            <tr data-v-7f952888="">
+              <td class="title" data-v-7f952888="">Income</td>
+              <td class="name" data-v-7f952888="">Rent (After Vacancy)</td>
+              <td class="value" data-v-7f952888="">${{ data.month_rent_less_vacancy|floatformat:"0"|intcomma }}</td>
+            </tr>
+            <tr class="divider stripped" data-v-7f952888="">
+              <td colspan="3" data-v-7f952888=""></td>
+            </tr>
+            <tr data-v-7f952888="">
+              <td class="title" data-v-7f952888="">Expenses</td>
+              <td class="name" data-v-7f952888="">Management Fees</td>
+              <td class="value" data-v-7f952888="">-${{ data.management_fees|floatformat:"0"|intcomma }}</td>
+            </tr>
+            <tr data-v-7f952888="">
+              <td class="title" data-v-7f952888=""></td>
+              <td class="name" data-v-7f952888="">Maintenance / Reserves</td>
+              <td class="value" data-v-7f952888="">-${{ data.month_maintenance_reserves|floatformat:"0"|intcomma }}</td>
+            </tr>
+            <tr data-v-7f952888="">
+              <td class="title" data-v-7f952888=""></td>
+              <td class="name" data-v-7f952888="">HOA Fees</td>
+              <td class="value" data-v-7f952888="">-${{ data.month_hoa_fees|floatformat:"0"|intcomma }}</td>
+            </tr>
+            <tr data-v-7f952888="">
+              <td class="title" data-v-7f952888=""></td>
+              <td class="name" data-v-7f952888="">Insurance</td>
+              <td class="value" data-v-7f952888="">-${{ data.month_insurance|floatformat:"0"|intcomma }}</td>
+            </tr>
+            <tr data-v-7f952888="">
+              <td class="title" data-v-7f952888=""></td>
+              <td class="name" data-v-7f952888="">Property Taxes</td>
+              <td class="value" data-v-7f952888="">-${{ data.month_property_taxes|floatformat:"0"|intcomma }}</td>
+            </tr>
+            <tr data-v-7f952888="">
+              <td class="title" data-v-7f952888=""></td>
+              <td class="name" data-v-7f952888="">Agent Leasing Fees</td>
+              <td class="value" data-v-7f952888="">-${{ data.month_re_lease_fees|floatformat:"0"|intcomma }}</td>
+            </tr>
+            <tr data-v-7f952888="">
+              <td class="title" data-v-7f952888=""></td>
+              <td class="name" data-v-7f952888="">Overhead / Miscellanous</td>
+              <td class="value" data-v-7f952888="">-${{ data.month_overhead_miscellanous|floatformat:"0"|intcomma }}</td>
+            </tr>
+            <tr class="divider solid" data-v-7f952888="">
+              <td colspan="3" data-v-7f952888=""></td>
+            </tr>
+            <tr data-v-7f952888="">
+              <td class="title" data-v-7f952888=""></td>
+              <td class="name" data-v-7f952888="">Operating Income</td>
+              <td class="value" data-v-7f952888="">${{ data.month_operating_income|floatformat:"0"|intcomma }}</td>
+            </tr>
+            <tr data-v-7f952888="">
+              <td class="title" data-v-7f952888=""></td>
+              <td class="name" data-v-7f952888="">Loan Payments</td>
+              <td class="value" data-v-7f952888="">${{ data.month_loan_payments|floatformat:"0"|intcomma }}</td>
+            </tr>
+            <tr data-v-7f952888="">
+              <td class="title" data-v-7f952888=""></td>
+              <td class="name" data-v-7f952888="">Net Income</td>
+              <td class="value" data-v-7f952888="">${{ data.net_income|floatformat:"0"|intcomma }}</td>
+            </tr>
+            <tr data-v-7f952888="">
+              <td class="title" data-v-7f952888=""></td>
+              <td class="name ui-text-bold" data-v-7f952888="">Cash Flow</td>
+              <td class="value" data-v-7f952888="" style="color: {{ data.month_cash_income_loss|front_color_pos_neg }};">${{ data.month_cash_income_loss|floatformat:"0"|intcomma }}</td>
+            </tr>
+          </table>
+        </div>
+        <div class="detailed-assumptions side no-page-break" data-v-7f952888="">
+          <span class="heading hide-mobile" data-v-7f952888="">Detailed Assumptions</span>
+          <table class="fin-table" data-v-7f952888="">
+            <tr data-v-7f952888="">
+              <td class="title title-bigger" colspan="3" data-v-7f952888="">Price And Market Related</td>
+            </tr>
+            <tr data-v-7f952888="">
+              <td class="name" data-v-7f952888="">Annual Increase In Rent</td>
+              <td class="value" data-v-7f952888="">{{ data.annual_increase_rent|mult:100|floatformat:"-2" }}%</td>
+            </tr>
+            <tr data-v-7f952888="">
+              <td class="name" data-v-7f952888="">Annual Increase In Property Value</td>
+              <td class="value" data-v-7f952888="">{{ data.annual_increase_prop|mult:100|floatformat:"-2" }}%</td>
+            </tr>
+            <tr data-v-7f952888="">
+              <td class="name" data-v-7f952888="">General Inflation</td>
+              <td class="value" data-v-7f952888="">{{ data.general_inflation|mult:100|floatformat:"-2" }}%</td>
+            </tr>
+            <tr data-v-7f952888="">
+              <td class="title title-bigger" colspan="3" data-v-7f952888="">Property Related</td>
+            </tr>
+            <tr data-v-7f952888="">
+              <td class="name" data-v-7f952888="">Average Length Of Tenant Stay</td>
+              <td class="value" data-v-7f952888="">{{ data.average_length_stay_years }}</td>
+              <td class="unit" data-v-7f952888="">years</td>
+            </tr>
+            <tr data-v-7f952888="">
+              <td class="name" data-v-7f952888="">Management Fees</td>
+              <td class="value" data-v-7f952888="">{{ data.management_fees_percent|mult:100|floatformat:"-2" }}%</td>
+              <td class="unit" data-v-7f952888="">of revenue</td>
+            </tr>
+            <tr data-v-7f952888="">
+              <td class="name" data-v-7f952888="">Maintenance / Reserves</td>
+              <td class="value" data-v-7f952888="">${{ data.maintenance_cost_amount|floatformat:"0"|intcomma }}</td>
+            </tr>
+            <tr data-v-7f952888="">
+              <td class="name" data-v-7f952888="">Overhead / Miscellanous</td>
+              <td class="value" data-v-7f952888="">${{ data.overhead_cost_amount|floatformat:"0"|intcomma }}</td>
+            </tr>
+            <tr data-v-7f952888="">
+              <td class="name" data-v-7f952888="">Closing Costs On Purchase</td>
+              <td class="value" data-v-7f952888="">{{ data.closing_cost_on_purchase_percent|mult:100|floatformat:"-2" }}%</td>
+              <td class="unit" data-v-7f952888="">of property purchase price</td>
+            </tr>
+            <tr data-v-7f952888="">
+              <td class="name" data-v-7f952888="">Closing Costs On Sale</td>
+              <td class="value" data-v-7f952888="">{{ data.closing_cost_on_sale_percent|mult:100|floatformat:"-2" }}%</td>
+              <td class="unit" data-v-7f952888="">of property sales price</td>
+            </tr>
+          </table>
+        </div>
+        <div class="perfomance-dashboard side no-page-break" data-v-7f952888="">
+          <span class="heading" data-v-7f952888="">Perfomance Dashboard</span>
+          <div class="flex" data-v-7f952888="">
+            <div class="side" data-v-7f952888="">
+              <table class="fin-table" data-v-7f952888="">
+                <tr data-v-7f952888="">
+                  <td class="title" colspan="2" data-v-7f952888="">Investment </td>
+                </tr>
+                <tr data-v-7f952888="">
+                  <td class="name" data-v-7f952888="">Down Payment / Equity Investment</td>
+                  <td class="value" data-v-7f952888="">${{ data.equity_investment|floatformat:"0"|intcomma }}</td>
+                </tr>
+                <tr data-v-7f952888="">
+                  <td class="name" data-v-7f952888="">Loan Value, Incl. Closing Costs</td>
+                  <td class="value" data-v-7f952888="">${{ data.loan_value|floatformat:"0"|intcomma }}</td>
+                </tr>
+                <tr class="divider solid" data-v-7f952888="">
+                  <td colspan="2" data-v-7f952888=""></td>
+                </tr>
+                <tr data-v-7f952888="">
+                  <td class="name" data-v-7f952888="">Total Investment (Assets)</td>
+                  <td class="value total" data-v-7f952888="">${{ data.total_investment|floatformat:"0"|intcomma }}</td>
+                </tr>
+              </table>
+              <table class="fin-table" data-v-7f952888="">
+                <tr data-v-7f952888="">
+                  <td class="title" colspan="3" data-v-7f952888="">Income</td>
+                </tr>
+                <tr data-v-7f952888="">
+                  <td class="name" data-v-7f952888="">Operating Income (Year 1)</td>
+                  <td class="value" data-v-7f952888="">${{ data.operating_income_year1|floatformat:"0"|intcomma }}</td>
+                </tr>
+                <tr data-v-7f952888="">
+                  <td class="name" data-v-7f952888="">Net Income (Year 1)</td>
+                  <td class="value" data-v-7f952888="">${{ data.net_income_year1|floatformat:"0"|intcomma }}</td>
+                </tr>
+                <tr data-v-7f952888="">
+                  <td class="name" data-v-7f952888="">Cash Flow (Year 1)</td>
+                  <td class="value" data-v-7f952888="" style="color: {{ data.cash_flow_year1|front_color_pos_neg }};">${{ data.cash_flow_year1|floatformat:"0"|intcomma }}</td>
+                </tr>
+              </table>
+            </div>
+            <div class="side" data-v-7f952888="">
+              <table class="fin-table" data-v-7f952888="">
+                <tr data-v-7f952888="">
+                  <td class="title" colspan="2" data-v-7f952888="">Basic Indicators</td>
+                </tr>
+                <tr data-v-7f952888="">
+                  <td class="name" data-v-7f952888="">Cap Rate (Year 1)</td>
+                  <td class="value" data-v-7f952888="" style="color: {{ data.cap_rate_year1|front_color_cap_coc }};">{{ data.cap_rate_year1|mult:100|floatformat:"-2" }}%</td>
+                </tr>
+                <tr data-v-7f952888="">
+                  <td class="name" data-v-7f952888="">Cash On Cash (Year 1)</td>
+                  <td class="value" data-v-7f952888="" style="color: {{ data.cash_on_cash_year1|front_color_cap_coc }};">{{ data.cash_on_cash_year1|mult:100|floatformat:"-2" }}%</td>
+                </tr>
+                <tr data-v-7f952888="">
+                  <td class="name" data-v-7f952888="">1% Rule</td>
+                  <td class="value" data-v-7f952888="">{{ data.one_percent_rule|mult:100|floatformat:"-2" }}%</td>
+                </tr>
+                <tr data-v-7f952888="">
+                  <td class="name" data-v-7f952888="">Gross Yield (Year 1)</td>
+                  <td class="value" data-v-7f952888="">{{ data.gross_yield|mult:100|floatformat:"-2" }}%</td>
+                </tr>
+              </table>
+              <table class="fin-table" data-v-7f952888="">
+                <tr data-v-7f952888="">
+                  <td class="title" colspan="3" data-v-7f952888="">Advanced Indicators</td>
+                </tr>
+                <tr data-v-7f952888="">
+                  <td class="name" data-v-7f952888="">Total Return (IRR)</td>
+                  <td class="value" data-v-7f952888="" style="color: {{ data.irr|front_color_cap_coc }};">{{ data.irr|mult:100|floatformat:"-2" }}%</td>
+                </tr>
+                <tr data-v-7f952888="">
+                  <td class="name" data-v-7f952888="">Operating Expense Ratio (Year 1)</td>
+                  <td class="value" data-v-7f952888="">{{ data.operating_expense_ratio_year1|mult:100|floatformat:"-2" }}%</td>
+                </tr>
+                <tr data-v-7f952888="">
+                  <td class="name" data-v-7f952888="">Debt Service Coverage (Year 1)</td>
+                  <td class="value" data-v-7f952888="">{{ data.debt_service_coverage_year1|floatformat:"-3" }}</td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="full-pro-forma no-page-break" data-v-7f952888="">
+        <div class="head-row flex" data-v-7f952888="">
+          <span class="heading" data-v-7f952888="">Full Pro Forma</span>
+        </div>
+        <div class="table-wrapper" data-v-7f952888="">
+          <table class="fin-table" data-v-7f952888="">
+            <tr data-v-7f952888="">
+              <td class="head" data-v-7f952888="">Parameters</td>
+              {% for val in data.proforma.year.values %}
+              <td class="head" data-v-7f952888="">Year {{ val }}</td>
+              {% endfor %}
+            </tr>
+            <tr class="" data-v-7f952888="">
+              <td colspan="8" data-v-7f952888=""></td>
+            </tr>
+            <tr class="high" data-v-7f952888="">
+              <td class="title title-bigger" data-v-7f952888="">Gross Income</td>
+            <tr class="" data-v-7f952888="">
+              <td class="name" data-v-7f952888="">Rent</td>
+              {% for val in data.proforma.rent.values %}
+              <td class="value interim" data-v-7f952888="">${{ val|floatformat:"0"|intcomma }}</td>
+              {% endfor %}
+            </tr>
+            <tr class="" data-v-7f952888="">
+              <td class="name" data-v-7f952888="">Vacancy</td>
+              {% for val in data.proforma.vacancy_costs_empty.values %}
+              <td class="value interim" data-v-7f952888="">${{ val|floatformat:"0"|intcomma }}</td>
+              {% endfor %}
+            </tr>
+            <tr class="divider solid" data-v-7f952888="">
+              <td colspan="8" data-v-7f952888=""></td>
+            </tr>
+            <tr class="high" data-v-7f952888="">
+              <td class="title" data-v-7f952888="">Rent Less Vacancy</td>
+              {% for val in data.proforma.rent_less_vacancy.values %}
+              <td class="value" data-v-7f952888="">${{ val|floatformat:"0"|intcomma }}</td>
+              {% endfor %}
+            </tr>
+            <tr class="" data-v-7f952888="">
+              <td colspan="8" data-v-7f952888=""></td>
+            </tr>
+            <tr class="strip" data-v-7f952888="">
+              <td colspan="8" data-v-7f952888=""></td>
+            </tr>
+            <tr class="strip high" data-v-7f952888="">
+              <td class="title title-bigger" data-v-7f952888="">Operating Expenses</td>
+              {% for val in data.proforma.year.values %}
+              <td class="value trans-opacity" data-v-7f952888=""></td>
+              {% endfor %}
+            </tr>
+            <tr class="strip" data-v-7f952888="">
+              <td class="name" data-v-7f952888="">Management Fees</td>
+              {% for val in data.proforma.management_fees.values %}
+              <td class="value interim" data-v-7f952888="">${{ val|floatformat:"0"|intcomma }}</td>
+              {% endfor %}
+            </tr>
+            <tr class="strip" data-v-7f952888="">
+              <td class="name" data-v-7f952888="">Maintenance / Reserves</td>
+              {% for val in data.proforma.maintenance_reserves.values %}
+              <td class="value interim" data-v-7f952888="">${{ val|floatformat:"0"|intcomma }}</td>
+              {% endfor %}
+            </tr>
+            <tr class="strip" data-v-7f952888="">
+              <td class="name" data-v-7f952888="">HOA Fees</td>
+              {% for val in data.proforma.hoa_fees.values %}
+              <td class="value interim" data-v-7f952888="">${{ val|floatformat:"0"|intcomma }}</td>
+              {% endfor %}
+            </tr>
+            <tr class="strip" data-v-7f952888="">
+              <td class="name" data-v-7f952888="">Insurance</td>
+              {% for val in data.proforma.insurance.values %}
+              <td class="value interim" data-v-7f952888="">${{ val|floatformat:"0"|intcomma }}</td>
+              {% endfor %}
+            </tr>
+            <tr class="strip" data-v-7f952888="">
+              <td class="name" data-v-7f952888="">Property Taxes</td>
+              {% for val in data.proforma.property_taxes.values %}
+              <td class="value interim" data-v-7f952888="">${{ val|floatformat:"0"|intcomma }}</td>
+              {% endfor %}
+            </tr>
+            <tr class="strip" data-v-7f952888="">
+              <td class="name" data-v-7f952888="">Agent Leasing Fees</td>
+              {% for val in data.proforma.re_lease_fees.values %}
+              <td class="value interim" data-v-7f952888="">${{ val|floatformat:"0"|intcomma }}</td>
+              {% endfor %}
+            </tr>
+            <tr class="strip" data-v-7f952888="">
+              <td class="name" data-v-7f952888="">Overhead / Miscellanous</td>
+              {% for val in data.proforma.overhead_miscellanous.values %}
+              <td class="value interim" data-v-7f952888="">${{ val|floatformat:"0"|intcomma }}</td>
+              {% endfor %}
+            </tr>
+            <tr class="strip divider solid" data-v-7f952888="">
+              <td colspan="8" data-v-7f952888=""></td>
+            </tr>
+            <tr class="strip high" data-v-7f952888="">
+              <td class="title" data-v-7f952888="">Total Operating Expenses</td>
+              {% for val in data.proforma.operating_expenses.values %}
+              <td class="value" data-v-7f952888="">${{ val|floatformat:"0"|intcomma }}</td>
+              {% endfor %}
+            </tr>
+            <tr class="strip" data-v-7f952888="">
+              <td colspan="8" data-v-7f952888=""></td>
+            </tr>
+            <tr class="" data-v-7f952888="">
+              <td colspan="8" data-v-7f952888=""></td>
+            </tr>
+            <tr class="high" data-v-7f952888="">
+              <td class="title title-bigger" data-v-7f952888="">Operating Income</td>
+            </tr>
+            <tr class="" data-v-7f952888="">
+              <td class="name" data-v-7f952888="">Income</td>
+              {% for val in data.proforma.net_income.values %}
+              <td class="value interim" data-v-7f952888="">${{ val|floatformat:"0"|intcomma }}</td>
+              {% endfor %}
+            </tr>
+            <tr class="" data-v-7f952888="">
+              <td class="name" data-v-7f952888="">Operating Expenses</td>
+              {% for val in data.proforma.operating_expenses.values %}
+              <td class="value interim" data-v-7f952888="">${{ val|floatformat:"0"|intcomma }}</td>
+              {% endfor %}
+            </tr>
+            <tr class="divider solid" data-v-7f952888="">
+              <td colspan="8" data-v-7f952888=""></td>
+            </tr>
+            <tr class="high" data-v-7f952888="">
+              <td class="title" data-v-7f952888="">Operating Income</td>
+              {% for val in data.proforma.operating_income.values %}
+              <td class="value" data-v-7f952888="">${{ val|floatformat:"0"|intcomma }}</td>
+              {% endfor %}
+            </tr>
+            <tr class="" data-v-7f952888="">
+              <td class="name" data-v-7f952888="">Operating Income Margin</td>
+              {% for val in data.proforma.operating_income_margin.values %}
+              <td class="value interim" data-v-7f952888="">{{ val|mult:100|floatformat:"-2" }}%</td>
+              {% endfor %}
+            </tr>
+            <tr class="" data-v-7f952888="">
+              <td colspan="8" data-v-7f952888=""></td>
+            </tr>
+            <tr class="strip" data-v-7f952888="">
+              <td colspan="8" data-v-7f952888=""></td>
+            </tr>
+            <tr class="strip high" data-v-7f952888="">
+              <td class="title title-bigger" data-v-7f952888="">Net Income</td>
+              {% for val in data.proforma.year.values %}
+              <td class="value trans-opacity" data-v-7f952888=""></td>
+              {% endfor %}
+            </tr>
+            <tr class="strip" data-v-7f952888="">
+              <td class="name" data-v-7f952888="">Operating Income</td>
+              {% for val in data.proforma.operating_income.values %}
+              <td class="value interim" data-v-7f952888="">${{ val|floatformat:"0"|intcomma }}</td>
+              {% endfor %}
+            </tr>
+            <tr class="strip" data-v-7f952888="">
+              <td class="name" data-v-7f952888="">Interest Payments</td>
+              {% for val in data.proforma.interest_payments.values %}
+              <td class="value interim" data-v-7f952888="">${{ val|floatformat:"0"|intcomma }}</td>
+              {% endfor %}
+            </tr>
+            <tr class="strip divider solid" data-v-7f952888="">
+              <td colspan="8" data-v-7f952888=""></td>
+            </tr>
+            <tr class="strip high" data-v-7f952888="">
+              <td class="title" data-v-7f952888="">Net Income</td>
+              {% for val in data.proforma.net_income.values %}
+              <td class="value" data-v-7f952888="">${{ val|floatformat:"0"|intcomma }}</td>
+              {% endfor %}
+            </tr>
+            <tr class="strip" data-v-7f952888="">
+              <td class="name" data-v-7f952888="">Net Income Margin</td>
+              {% for val in data.proforma.net_income_margin.values %}
+              <td class="value interim" data-v-7f952888="">{{ val|mult:100|floatformat:"-2" }}%</td>
+              {% endfor %}
+            </tr>
+            <tr class="strip" data-v-7f952888="">
+              <td colspan="8" data-v-7f952888=""></td>
+            </tr>
+            <tr class="" data-v-7f952888="">
+              <td colspan="8" data-v-7f952888=""></td>
+            </tr>
+            <tr class="high" data-v-7f952888="">
+              <td class="title title-bigger" data-v-7f952888="">Cash Flow</td>
+            </tr>
+            <tr class="" data-v-7f952888="">
+              <td class="name" data-v-7f952888="">Operating Income</td>
+              {% for val in data.proforma.operating_income.values %}
+              <td class="value interim" data-v-7f952888="">${{ val|floatformat:"0"|intcomma }}</td>
+              {% endfor %}
+            </tr>
+            <tr class="" data-v-7f952888="">
+              <td class="name" data-v-7f952888="">Interest Payments</td>
+              {% for val in data.proforma.interest_payments.values %}
+              <td class="value interim" data-v-7f952888="">${{ val|floatformat:"0"|intcomma }}</td>
+              {% endfor %}
+            </tr>
+            <tr class="" data-v-7f952888="">
+              <td class="name" data-v-7f952888="">Principal Payments</td>
+              {% for val in data.proforma.loan_payments.values %}
+              <td class="value interim" data-v-7f952888="">${{ val|floatformat:"0"|intcomma }}</td>
+              {% endfor %}
+            </tr>
+            <tr class="divider solid" data-v-7f952888="">
+              <td colspan="8" data-v-7f952888=""></td>
+            </tr>
+            <tr class="high" data-v-7f952888="">
+              <td class="title" data-v-7f952888="">Cash Flow</td>
+              {% for val in data.proforma.cash_flow.values %}
+              <td class="value" data-v-7f952888="">${{ val|floatformat:"0"|intcomma }}</td>
+              {% endfor %}
+            </tr>
+            <tr class="" data-v-7f952888="">
+              <td colspan="8" data-v-7f952888=""></td>
+            </tr>
+          </table>
+        </div>
+      </div>
+      <div class="property-financial-plots no-page-break" data-v-7f952888="">
+        <div class="plot-item flex" data-v-7f952888="">
+          <div class="side-data" data-v-7f952888="">
+            <div class="data-row" data-v-7f952888="">
+              <span class="value" data-v-7f952888="">${{ data.accumulated_wealth.projected_accummulated_wealth|keyvalue:data.acc_wealth_last_year|floatformat:"0"|intcomma }}</span>
+              <div class="description" data-v-7f952888="">Projected Accumulated Wealth</div>
+            </div>
+            <div class="data-row" data-v-7f952888="">
+              <span class="value" data-v-7f952888="">${{ data.accumulated_wealth.cash_flow_from_operations|keyvalue:data.acc_wealth_last_year|floatformat:"0"|intcomma }}</span>
+              <div class="description" data-v-7f952888="">Projected Cash Flow</div>
+            </div>
+            <div class="data-row" data-v-7f952888="">
+              <span class="value" data-v-7f952888="">${{ data.accumulated_wealth.eqity|keyvalue:data.acc_wealth_last_year|floatformat:"0"|intcomma }}</span>
+              <div class="description" data-v-7f952888="">Projected Equity</span></div>
+            </div>
+            <div class="data-row" data-v-7f952888="">
+              <span class="value" data-v-7f952888="">${{ data.accumulated_wealth.loan_balance|keyvalue:data.acc_wealth_last_year|floatformat:"0"|intcomma }}</span>
+              <div class="description" data-v-7f952888="">Loan Balance</div>
+            </div>
+          </div>
+          <div class="ui-plot" data-v-7f952888="">
+            <div class="ui-plot-title" data-v-7f952888="">Projected Accumulated Wealth</div>
+            <div class="ui-plot-legend flex" data-v-7f952888="">
+              <div class="item flex" data-v-7f952888="">
+                <div class="flex" data-v-7f952888=""><span class="color" data-v-7f952888="" style="background: rgb(1, 208, 146); border-color: rgb(1, 208, 146);"></span><span class="title" data-v-7f952888="">Cash Flow</span></div>
+              </div>
+              <div class="item flex" data-v-7f952888="">
+                <div class="flex" data-v-7f952888=""><span class="color" data-v-7f952888="" style="background: rgb(100, 84, 195); border-color: rgb(100, 84, 195);"></span><span class="title" data-v-7f952888="">Appreciation</span></div>
+              </div>
+              <div class="item flex" data-v-7f952888="">
+                <div class="flex" data-v-7f952888=""><span class="color" data-v-7f952888="" style="background: rgb(0, 163, 255); border-color: rgb(0, 163, 255);"></span><span class="title" data-v-7f952888="">Equity</span></div>
+              </div>
+              <div class="item flex" data-v-7f952888="">
+                <div class="flex" data-v-7f952888=""><span class="color" data-v-7f952888="" style="border-color: rgb(34, 34, 34);"></span><span class="title" data-v-7f952888="">Loan Balance</span></div>
+              </div>
+            </div>
+            <div class="ui-plot-subdesc" data-v-7f952888="">{{ data.acc_wealth_last_year }} years projection</div>
+            <div class="ui-plot-wrapper" data-v-7f952888="">
+              <canvas id="finance-accumulated-wealth-plot"></canvas>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="tab tab-tax-history" data-v-3ecb51e8="">
+      {% if data.prop.tax_history %}
+      {% if data.prop.tax_history|length > 1 %}
+      <span class="heading" data-v-3ecb51e8="">Tax History</span>
+      <div class="ui-plot no-page-break" data-v-3ecb51e8="">
+         <div class="ui-plot-legend" data-v-3ecb51e8="">
+            <div class="item flex" data-v-3ecb51e8="">
+               <div class="flex" data-v-3ecb51e8=""><span class="color" data-v-3ecb51e8="" style="background: rgb(100, 84, 195); border-color: rgb(100, 84, 195);"></span><span class="title" data-v-3ecb51e8="">Property Tax</span></div>
+            </div>
+         </div>
+         <div class="ui-plot-wrapper" data-v-3ecb51e8="">
+          <canvas id="tax-history-plot"></canvas>
+         </div>
+      </div>
+      {% endif %}
+      <div class="no-page-break">
+        <span class="heading" data-v-3ecb51e8="">Assessment History</span>
+        <div class="table-wrapper" data-v-3ecb51e8="">
+           <table class="prop-list-table" data-v-3ecb51e8="">
+              {% for ass in data.prop.tax_history %}
+              <tr data-v-3ecb51e8="">
+                 <td data-v-3ecb51e8="">
+                    <div class="point" data-v-3ecb51e8=""></div>
+                 </td>
+                 <td data-v-3ecb51e8="">
+                    <div class="prop-block" data-v-3ecb51e8=""><span class="prop-name" data-v-3ecb51e8="">Year</span><span class="prop-value" data-v-3ecb51e8="">{{ ass.year }}</span></div>
+                 </td>
+                 <td data-v-3ecb51e8="">
+                    <div class="prop-block" data-v-3ecb51e8=""><span class="prop-name" data-v-3ecb51e8="">Tax</span><span class="prop-value ui-text-bolder" data-v-3ecb51e8="">${{ ass.tax|intcomma }} <span class="smaller" data-v-3ecb51e8="" style=
+                    {% if ass.percent|first in '+' %}"color: rgb(239, 75, 68);"{% else %}"color: rgb(1, 208, 146);"{% endif %}>
+                    {% if ass.percent %}({{ ass.percent }}%){% endif %}</span></span></div>
+                 </td>
+                 <td data-v-3ecb51e8="">
+                    <div class="prop-block" data-v-3ecb51e8=""><span class="prop-name" data-v-3ecb51e8="">Building Assessment</span><span class="prop-value" data-v-3ecb51e8="">
+                    {% if ass.assessment.building %}
+                      ${{ ass.assessment.building|intcomma }}
+                    {% elif ass.assessment.building == 0 %}
+                      0
+                    {% else %}
+                      -
+                    {% endif %}
+                    </span></div>
+                 </td>
+                 <td class="operation" data-v-3ecb51e8="">+</td>
+                 <td data-v-3ecb51e8="">
+                    <div class="prop-block" data-v-3ecb51e8=""><span class="prop-name" data-v-3ecb51e8="">Land Assessment</span><span class="prop-value" data-v-3ecb51e8="">
+                    {% if ass.assessment.land %}
+                      ${{ ass.assessment.land|intcomma }}
+                    {% elif ass.assessment.land == 0 %}
+                      0
+                    {% else %}
+                      -
+                    {% endif %}
+                    </span></div>
+                 </td>
+                 <td class="operation" data-v-3ecb51e8="">=</td>
+                 <td data-v-3ecb51e8="">
+                    <div class="prop-block" data-v-3ecb51e8=""><span class="prop-name" data-v-3ecb51e8="">Total</span><span class="prop-value" data-v-3ecb51e8="">
+                    {% if ass.assessment.total %}
+                      ${{ ass.assessment.total|intcomma }}
+                    {% elif ass.assessment.total == 0 %}
+                      0
+                    {% else %}
+                      -
+                    {% endif %}
+                    </span></div>
+                 </td>
+              </tr>
+              {% endfor %}
+           </table>
+        </div>
+      </div>
+      {% endif %}
+   </div>
+   <div class="tab tab-schools no-page-break" data-v-7f952888="">
+     {% if data.prop.schools %}
+     <span class="heading">Schools</span>
+     <div class="table-wrapper" data-v-7f952888="">
+       <table class="ui-table ui-table--stripped" data-v-7f952888="">
+         <tr data-v-7f952888="">
+           <th data-v-7f952888="">School</th>
+           <th data-v-7f952888="">Type</th>
+           <th data-v-7f952888="">Grades</th>
+           <th data-v-7f952888="">Distance</th>
+           <th data-v-7f952888="">Rating</th>
+           <th data-v-7f952888="">Parent Rating</th>
+         </tr>
+
+         {% for school in data.prop.schools %}
+         <tr data-v-7f952888="">
+           <td data-v-7f952888="">{{ school.name }}</td>
+           <td data-v-7f952888="">{{ school.funding_type }}</td>
+           <td data-v-7f952888="">{{ school.grades.range.low|default:"" }}-{{ school.grades.range.high|default:"" }}</td>
+           <td data-v-7f952888="">{{ school.distance_in_miles }}mi</td>
+           <td class="rating" data-v-7f952888="">
+             <span data-v-7f952888="" style="color: {{ school.ratings.great_schools_rating|front_color_ten_point_rating }};">
+             {% if school.ratings.great_schools_rating %}
+               {{ school.ratings.great_schools_rating }}</span>/10
+             {% else %}
+               </span>-
+             {% endif %}
+           </td>
+           <td data-v-7f952888="">
+             {% with parent_rating=school.ratings.parent_rating|default:0 %}
+               {% for i in parent_rating|times %}
+               <svg class="svg-icon svg-icon--star active" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                 <path d="M8.00279 1.66651C7.90934 1.66593 7.8176 1.69154 7.73797 1.74045C7.65834 1.78936 7.59401 1.8596 7.55227 1.94321L5.83482 5.3781L1.7567 6.00571C1.66541 6.01981 1.57982 6.05892 1.50941 6.11871C1.439 6.17849 1.38652 6.25661 1.3578 6.34439C1.32908 6.43218 1.32523 6.52621 1.34669 6.61605C1.36814 6.70589 1.41406 6.78803 1.47935 6.85336L4.30032 9.67432L3.67206 13.757C3.65801 13.8483 3.66954 13.9418 3.70538 14.027C3.74122 14.1122 3.79996 14.1858 3.87509 14.2396C3.95022 14.2934 4.0388 14.3253 4.13098 14.3319C4.22317 14.3384 4.31536 14.3192 4.39732 14.2765L7.99953 12.397L11.6017 14.2765C11.6837 14.3192 11.7759 14.3384 11.8681 14.3319C11.9603 14.3253 12.0488 14.2934 12.124 14.2396C12.1991 14.1858 12.2579 14.1122 12.2937 14.027C12.3295 13.9418 12.3411 13.8483 12.327 13.757L11.6988 9.67432L14.5197 6.85336C14.585 6.78803 14.6309 6.70589 14.6524 6.61605C14.6738 6.52621 14.67 6.43218 14.6413 6.34439C14.6125 6.25661 14.5601 6.17849 14.4897 6.11871C14.4192 6.05892 14.3337 6.01981 14.2424 6.00571L10.1642 5.3781L8.4468 1.94321C8.40555 1.86059 8.34224 1.791 8.26387 1.74216C8.1855 1.69332 8.09513 1.66714 8.00279 1.66651Z" />
+               </svg>
+               {% endfor %}
+               {% for i in 5|subt:parent_rating|times %}
+               <svg class="svg-icon svg-icon--star" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                 <path d="M8.00279 1.66651C7.90934 1.66593 7.8176 1.69154 7.73797 1.74045C7.65834 1.78936 7.59401 1.8596 7.55227 1.94321L5.83482 5.3781L1.7567 6.00571C1.66541 6.01981 1.57982 6.05892 1.50941 6.11871C1.439 6.17849 1.38652 6.25661 1.3578 6.34439C1.32908 6.43218 1.32523 6.52621 1.34669 6.61605C1.36814 6.70589 1.41406 6.78803 1.47935 6.85336L4.30032 9.67432L3.67206 13.757C3.65801 13.8483 3.66954 13.9418 3.70538 14.027C3.74122 14.1122 3.79996 14.1858 3.87509 14.2396C3.95022 14.2934 4.0388 14.3253 4.13098 14.3319C4.22317 14.3384 4.31536 14.3192 4.39732 14.2765L7.99953 12.397L11.6017 14.2765C11.6837 14.3192 11.7759 14.3384 11.8681 14.3319C11.9603 14.3253 12.0488 14.2934 12.124 14.2396C12.1991 14.1858 12.2579 14.1122 12.2937 14.027C12.3295 13.9418 12.3411 13.8483 12.327 13.757L11.6988 9.67432L14.5197 6.85336C14.585 6.78803 14.6309 6.70589 14.6524 6.61605C14.6738 6.52621 14.67 6.43218 14.6413 6.34439C14.6125 6.25661 14.5601 6.17849 14.4897 6.11871C14.4192 6.05892 14.3337 6.01981 14.2424 6.00571L10.1642 5.3781L8.4468 1.94321C8.40555 1.86059 8.34224 1.791 8.26387 1.74216C8.1855 1.69332 8.09513 1.66714 8.00279 1.66651Z" />
+               </svg>
+               {% endfor %}
+             {% endwith %}
+           </td>
+         </tr>
+         {% endfor %}
+
+       </table>
+     </div>
+     {% endif %}
+   </div>
+  </div>
+  <div class="ui-divider"></div>
+  <div class="footer flex">
+    {{ logo_full_svg }}
+      <a href="www.ofirio.com">www.ofirio.com</a>
+      <a href="help@ofirio.com">help@ofirio.com</a>
+      <span>+1 888-550-5978</span>
+    <span class="copyright">Copyright &copy; 2021 Ofirio, Inc</span>
+  </div>
+</div>
+<script>
+  function processData(data, years) {
+    let res = [];
+    for (let y of years)
+      res.push(data[y]);
+      
+    return res;
+  }
+
+  const acw = {{ data.accumulated_wealth|safe }};
+  let labels = [];
+  for (let y in acw.year)
+    labels.push(acw.year[y]);
+
+  const FinanceAccumulatedWealthPlot = new Chart(
+    document.getElementById('finance-accumulated-wealth-plot'),
+    {
+      __maxYears: labels[labels.length - 1],
+      type: 'line',
+      data: {
+        labels: labels.map(l => l == 1 || l % 5 == 0 ? l : ''),
+        datasets: [{
+          __autoLegendOff: true,
+          label: 'Loan Balance',
+          __attrName: 'loan_balance',
+          fill: false,
+          borderColor: '#222222',
+          borderDash: [8, 8],
+          pointRadius: 0,
+          data: processData(acw.loan_balance, labels),
+          datalabels: { display: false }
+        }, {
+          label: 'Cash Flow',
+          __attrName: 'cash_flow_from_operations',
+          fill: true,
+          borderColor: '#01D092',
+          backgroundColor: 'rgba(192, 243, 228, 0.5)',
+          pointRadius: 0,
+          stack: 'combined',
+          data: processData(acw.cash_flow_from_operations, labels),
+          datalabels: { display: false }
+        }, {
+          label: 'Appreciation',
+          __attrName: 'property_appreciation',
+          fill: true,
+          borderColor: '#6454C3',
+          backgroundColor: 'rgba(216, 212, 240, 0.5)',
+          pointRadius: 0,
+          stack: 'combined',
+          data: processData(acw.property_appreciation, labels),
+          datalabels: { display: false }
+        }, {
+          label: 'Equity',
+          __attrName: 'eqity',
+          fill: true,
+          borderColor: '#00A3FF',
+          backgroundColor: 'rgba(191, 232, 255, 0.5)',
+          pointRadius: 0,
+          stack: 'combined',
+          data: processData(acw.eqity, labels),
+          datalabels: { display: false }
+        }]
+      },
+      options: {
+        interaction: {
+          intersect: false,
+          mode: 'index',
+        },
+        aspectRatio: 3,
+        scales: {
+          x: {
+            grid: {
+              display: false,
+              drawBorder: false,
+              drawTicks: false
+            }
+          },
+          y: {
+            position: 'right',
+            grid: {
+              drawBorder: false,
+              color: "rgba(0, 0, 0, 0.02)"
+            },
+            stacked: true
+          }
+        },
+        elements: {
+          line: {
+            tension: 0.4
+          }
+        },
+        plugins: {
+          legend: {
+            display: false
+          }
+        },
+        animation: {
+          duration: 0
+        }
+      }
+    }
+  );
+
+
+  const TaxHistoryPlotLabels = {{ data.tax_history_years|safe }};
+  const TaxHistoryPlotData = {{ data.tax_history_taxes|safe }};
+
+{% if data.prop.tax_history %}
+  const TaxHistoryPlot = new Chart(
+    document.getElementById('tax-history-plot'),
+    {
+      type: 'line',
+      data: {
+        labels: TaxHistoryPlotLabels,
+        datasets: [{
+          label: 'Property Tax',
+          fill: false,
+          borderColor: '#6454C3',
+          pointRadius: 0,
+          data: TaxHistoryPlotData,
+          datalabels: { display: false },
+        }]
+      },
+      options: {
+        aspectRatio: 3,
+        scales: {
+          x: {
+            grid: {
+              display: false,
+              drawBorder: false,
+              drawTicks: false
+            },
+            ticks: { padding: 20 }
+          },
+          y: {
+            grid: {
+              drawBorder: false,
+              color: "rgba(0, 0, 0, 0.02)"
+            },
+            ticks: { padding: 20 }
+          }
+        },
+        elements: {
+          line: {
+            tension: 0.4
+          }
+        },
+        plugins: {
+          legend: {
+            display: false,
+            align: 'start'
+          }
+        },
+        animation: {
+          duration: 0
+        }
+      }
+    }
+  );
+{% endif %}
+</script>
+{% endblock %}

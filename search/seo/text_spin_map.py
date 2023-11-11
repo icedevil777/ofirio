@@ -1,0 +1,86 @@
+from search.enums import PropType3
+import search.seo.texts as txt
+
+
+SPIN_TEXTS = {
+    "/buy/city": {"text": txt.BUY_CITY},
+    "/buy/city/luxury": {"text": txt.BUY_CITY_LUXURY},
+    "/buy/city/condos": {"text": txt.BUY_CITY_CONDO_APT},
+    "/buy/city/houses": {"text": txt.BUY_CITY_HOUSE_DUPLEX},
+    "/buy/city/townhomes": {"text": txt.BUY_CITY_TOWNHOMES},
+    "/buy/state/cheap": {"text": txt.BUY_STATE_CHEAP},
+    "/buy/city/cheap": {"text": txt.BUY_CITY_CHEAP},
+    "/buy/zip": {"text": txt.BUY_ZIP},
+
+    "/invest/city": {"text": txt.INVEST_CITY},
+
+    "/rent/city/apartments": {"text": txt.RENT_CITY_CONDO_APT},
+    "/rent/county": {"text": txt.RENT_COUNTY},
+    "/rent/zip": {"text": txt.RENT_ZIP},
+}
+
+
+CONST_TEXTS = {
+    "/buy/ca": {"text": txt.CA_BUY, "faq": txt.FAQ_CA_BUY},
+    "/buy/fl": {"text": txt.FL_BUY, "faq": txt.FAQ_FL_BUY},
+    "/buy/ga": {"text": txt.GA_BUY, "faq": txt.FAQ_GA_BUY},
+    "/buy/il": {"text": txt.IL_BUY, "faq": txt.FAQ_IL_BUY},
+    "/buy/ny": {"text": txt.NY_BUY, "faq": txt.FAQ_NY_BUY},
+    "/buy/tx": {"text": txt.TX_BUY, "faq": txt.FAQ_TX_BUY},
+    "/buy/fl/miami": {"text": txt.MIAMI_BUY, "faq": txt.FAQ_MIAMI_BUY},
+    "/buy/fl/jacksonville": {"text": txt.JACKSONVILLE_BUY, "faq": txt.FAQ_JACKSONVILLE_BUY},
+    "/buy/ny/great-neck": {"text": None, "faq": txt.FAQ_GREAT_NECK_NY_BUY},
+    "/buy/ga/stone-mountain": {"text": None, "faq": txt.FAQ_STONE_MOUNTAIN_NY_BUY},
+    "/buy/ca/manteca" : {"text": None, "faq": txt.FAQ_MANTECA_CA_BUY},
+    "/buy/ca/modesto" : {"text": None, "faq": txt.FAQ_MODESTO_CA_BUY},
+    "/buy/tx/arlington" : {"text": None, "faq": txt.FAQ_ARLINGTON_TX_BUY},
+    "/buy/tx/pearland" : {"text": None, "faq": txt.FAQ_PEARLAND_TX_BUY},
+    "/buy/tx/flower-mound" : {"text": None, "faq": txt.FAQ_FLOWER_MOUND_TX_BUY},
+    "/buy/tx/greenville" : {"text": None, "faq": txt.FAQ_GREENVILLE_TX_BUY},
+    "/buy/tx/georgetown" : {"text": None, "faq": txt.FAQ_GEORGETOWN_TX_BUY},
+    "/buy/ga/dallas" : {"text": None, "faq": txt.FAQ_DALLAS_CA_BUY},
+    "/buy/ca/fallbrook" : {"text": None, "faq": txt.FAQ_FALLBROOK_CA_BUY},
+    "/buy/ca/stockton" : {"text": None, "faq": txt.FAQ_STOCKTON_CA_BUY},
+    "/buy/ca/san-mateo" : {"text": None, "faq": txt.FAQ_SAN_MATEO_CA_BUY},
+    "/buy/ca/chula-vista" : {"text": None, "faq": txt.FAQ_CHULA_VISTA_CA_BUY},
+    "/buy/il/evanston" : {"text": None, "faq": txt.FAQ_EVANSTON_IL_BUY},
+
+    "/buy/ca/escondido": {"text": None, "faq": txt.FAQ_ESCONDIDO_CA_BUY},
+    "/buy/fl/hollywood": {"text": None, "faq": txt.FAQ_HOLLYWOOD_FL_BUY},
+    "/buy/ny/new-rochelle": {"text": None, "faq": txt.FAQ_NEW_ROCHELLE_NY_BUY},
+    "/buy/ca/elk-grove": {"text": None, "faq": txt.FAQ_ELK_GROVE_CA_BUY},
+    "/buy/tx/katy": {"text": None, "faq": txt.FAQ_KATY_TX_BUY},
+    "/buy/ca/sacramento": {"text": None, "faq": txt.FAQ_SACRAMENTO_CA_BUY},
+    "/buy/tx/killeen": {"text": None, "faq": txt.FAQ_KILLEEN_TX_BUY},
+    "/buy/il/oak-lawn": {"text": None, "faq": txt.FAQ_OAK_LAWN_IL_BUY},
+    "/buy/ga/covington": {"text": None, "faq": txt.FAQ_COVINGTON_GA_BUY},
+    "/buy/il/elgin": {"text": None, "faq": txt.FAQ_ELGIN_IL_BUY},
+    "/buy/il/arlington-heights": {"text": None, "faq": txt.FAQ_ARLINGTON_HEIGHTS_IL_BUY},
+    "/buy/ga/mcdonough": {"text": None, "faq": txt.FAQ_MCDONOUGH_GA_BUY},
+    "/buy/tx/galveston": {"text": None, "faq": txt.FAQ_GALVESTON_TX_BUY},
+    "/buy/tx/new-braunfels": {"text": None, "faq": txt.FAQ_NEW_BRAUNFELS_TX_BUY},
+    "/buy/tx/leander": {"text": None, "faq": txt.FAQ_LEANDER_TX_BUY},
+    "/buy/ga/suwanee": {"text": None, "faq": txt.FAQ_SUWANEE_GA_BUY},
+    "/buy/ga/decatur": {"text": None, "faq": txt.FAQ_DECATUR_GA_BUY},
+    "/buy/tx/georgetown": {"text": None, "faq": txt.FAQ_GEORGETOWN_TX_BUY},
+    "/buy/il/des-plaines": {"text": None, "faq": txt.FAQ_DES_PLAINES_IL_BUY},
+
+    "/buy/ny/buffalo": {"text": None, "faq": txt.NY_BUFFALO},
+    "/buy/ga/cumming": {"text": None, "faq": txt.GA_CUMMING},
+    "/buy/ny/white-plains": {"text": None, "faq": txt.NY_WHITE_PLAINS},
+    "/buy/ga/lawrenceville": {"text": None, "faq": txt.GA_LAWRENCEVILLE},
+    "/buy/fl/lakeland": {"text": None, "faq": txt.FL_LAKELAND},
+    "/buy/tx/spring": {"text": None, "faq": txt.TX_SPRING},
+    "/buy/tx/conroe": {"text": None, "faq": txt.TX_CONROE},
+    "/buy/il/downers-grove": {"text": None, "faq": txt.IL_DOWNERS_GROVE},
+    "/buy/ga/canton": {"text": None, "faq": txt.GA_CANTON},
+    "/buy/ga/conyers": {"text": None, "faq": txt.GA_CONYERS},
+
+    "/invest/fl": {"text": txt.FL_INVEST, "faq": txt.FAQ_FL_INVEST},
+
+    "/rent/tx": {"text": txt.TX_BUY, "faq": txt.FAQ_TX_BUY},
+    "/rent/fl/apartments": {"text": txt.FL_RENT_CONDO_APT, "faq": txt.FAQ_FL_RENT_CONDO_APT},
+    "/rent/fl/miami/apartments": {"text": txt.MIAMI_APT_RENT, "faq": txt.FAQ_MIAMI_APT_RENT},
+    "/rent/fl/miami/houses": {"text": txt.MIAMI_HOUSE_RENT, "faq": txt.FAQ_MIAMI_HOUSE_RENT},
+    "/rent/fl/jacksonville/apartments": {"text": txt.JACKSONVILLE_APT_RENT, "faq": txt.FAQ_JACKSONVILLE_APT_RENT},
+}

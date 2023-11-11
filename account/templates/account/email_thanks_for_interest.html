@@ -1,0 +1,38 @@
+{% extends 'common/email_base.html' %}
+
+{% block content %}
+<tr>
+    <td align="center" style="border-collapse:collapse;padding:40px 0 20px 0;" valign="top">
+        <img alt="In Progress" border="0" src="https://d3k81ch9hvuctc.cloudfront.net/company/VZAFeL/images/c09445b8-f23d-4776-a414-38292517e917.png" width="48" height="48" style="height:auto;max-width:100%;text-align:center;border:0;display:block;outline:none">
+    </td>
+</tr>
+<tr>
+    <td align="left" style="border-collapse:collapse;color:#444444;font-family: 'Raleway', Arial, sans-serif;font-size:18px;line-height:26px;font-weight:normal;text-transform:inherit;" valign="top">
+        Hi {{name}},
+    </td>
+</tr>
+    <tr><td><br></td></tr>
+<tr>
+    <td align="left" style="border-collapse:collapse;color:#444444;font-family: 'Raleway', Arial, sans-serif;font-size:18px;line-height:26px;font-weight:normal;text-transform:inherit;" valign="top">
+        {% if property_address %}
+            Thank you for your interest in {{property_address}}
+        {% else %}
+            Thank you for your interest
+        {% endif %}
+    </td>
+</tr>
+    <tr><td><br></td></tr>
+<tr>
+    <td align="left" style="border-collapse:collapse;color:#444444;font-family: 'Raleway', Arial, sans-serif;font-size:18px;line-height:26px;font-weight:normal;text-transform:inherit;" valign="top">
+        An agent will reach to you shortly. In the meantime please review your contact information below to ensure that an agent can connect with you:
+        <br>{{email}}
+        <br>{{phone}}
+    </td>
+</tr>
+
+<tr>
+    <td align="center" style="border-collapse:collapse;color:#222222;font-family: 'Raleway', Arial, sans-serif;font-size:18px;line-height:21px;font-weight:800;text-transform:inherit;padding: 40px 0 40px 0;border-bottom: 1px solid #E1E1E1;" valign="top">
+        Thanks for choosing OFIRIO!
+    </td>
+</tr>
+{% endblock %}

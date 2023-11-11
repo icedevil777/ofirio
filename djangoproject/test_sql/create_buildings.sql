@@ -1,0 +1,23 @@
+CREATE TABLE buildings (
+    building_id character varying(128) NOT NULL,
+    city character varying(64),
+    data jsonb,
+    photos jsonb,
+    lat double precision,
+    lon double precision,
+    median_price integer,
+    active_count integer,
+    sold_count integer,
+    is_test boolean DEFAULT false NOT NULL,
+    address jsonb,
+    updated_at timestamp without time zone DEFAULT now(),
+    state_id character(2),
+    walkscore jsonb,
+    walkscore_ts timestamp without time zone,
+    zip character varying(5),
+    seo_srp character varying(64),
+    schools jsonb,
+    schools_ts timestamp without time zone,
+    poi jsonb,
+    poi_ts timestamp without time zone
+);

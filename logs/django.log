@@ -1,0 +1,245 @@
+2023-08-07 05:59:01 [WARNING ] (log.log_response) Not Found: /rent
+2023-08-07 05:59:01 [WARNING ] (basehttp.log_message) "GET /rent HTTP/1.1" 404 16799
+2023-08-07 05:59:01 [WARNING ] (log.log_response) Not Found: /favicon.ico
+2023-08-07 05:59:01 [WARNING ] (basehttp.log_message) "GET /favicon.ico HTTP/1.1" 404 16820
+2023-08-07 05:59:03 [WARNING ] (log.log_response) Not Found: /
+2023-08-07 05:59:03 [WARNING ] (basehttp.log_message) "GET / HTTP/1.1" 404 16769
+2023-08-07 05:59:27 [WARNING ] (log.log_response) Not Found: /api/
+2023-08-07 05:59:27 [WARNING ] (basehttp.log_message) "GET /api/ HTTP/1.1" 404 16799
+2023-08-07 05:59:33 [WARNING ] (log.log_response) Not Found: /api/blog
+2023-08-07 05:59:33 [WARNING ] (basehttp.log_message) "GET /api/blog HTTP/1.1" 404 16811
+2023-08-07 05:59:37 [ERROR   ] (log.log_response) Internal Server Error: /api/blog/home/
+Traceback (most recent call last):
+  File "/home/gregory/VSCodeProjects/portal/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/gregory/VSCodeProjects/portal/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/gregory/VSCodeProjects/portal/venv/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/gregory/VSCodeProjects/portal/venv/lib/python3.8/site-packages/django/views/generic/base.py", line 84, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/gregory/VSCodeProjects/portal/venv/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/gregory/VSCodeProjects/portal/venv/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/gregory/VSCodeProjects/portal/venv/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/gregory/VSCodeProjects/portal/venv/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/gregory/VSCodeProjects/portal/venv/lib/python3.8/site-packages/rest_framework/generics.py", line 208, in get
+    return self.retrieve(request, *args, **kwargs)
+  File "/home/gregory/VSCodeProjects/portal/blog/views.py", line 105, in retrieve
+    **self.get_common_data(),
+  File "/home/gregory/VSCodeProjects/portal/blog/views.py", line 56, in get_common_data
+    'side_categories': self.get_side_categories(),
+  File "/home/gregory/VSCodeProjects/portal/blog/views.py", line 34, in get_side_categories
+    for category in self.wp.get_categories(orderby='count', order='desc')['results']:
+TypeError: 'NoneType' object is not subscriptable
+2023-08-07 05:59:37 [ERROR   ] (basehttp.log_message) "GET /api/blog/home/ HTTP/1.1" 500 124486
+2023-11-11 07:10:53 [WARNING ] (log.log_response) Not Found: /
+2023-11-11 07:10:53 [WARNING ] (basehttp.log_message) "GET / HTTP/1.1" 404 16767
+2023-11-11 07:11:02 [ERROR   ] (log.log_response) Internal Server Error: /api/blog/home/
+Traceback (most recent call last):
+  File "/home/gregory/VSCodeProjects/portal/.venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/gregory/VSCodeProjects/portal/.venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/gregory/VSCodeProjects/portal/.venv/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/gregory/VSCodeProjects/portal/.venv/lib/python3.8/site-packages/django/views/generic/base.py", line 84, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/gregory/VSCodeProjects/portal/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/gregory/VSCodeProjects/portal/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/gregory/VSCodeProjects/portal/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/gregory/VSCodeProjects/portal/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/gregory/VSCodeProjects/portal/.venv/lib/python3.8/site-packages/rest_framework/generics.py", line 208, in get
+    return self.retrieve(request, *args, **kwargs)
+  File "/home/gregory/VSCodeProjects/portal/blog/views.py", line 105, in retrieve
+    **self.get_common_data(),
+  File "/home/gregory/VSCodeProjects/portal/blog/views.py", line 56, in get_common_data
+    'side_categories': self.get_side_categories(),
+  File "/home/gregory/VSCodeProjects/portal/blog/views.py", line 34, in get_side_categories
+    for category in self.wp.get_categories(orderby='count', order='desc')['results']:
+TypeError: 'NoneType' object is not subscriptable
+2023-11-11 07:11:02 [ERROR   ] (basehttp.log_message) "GET /api/blog/home/ HTTP/1.1" 500 123303
+2023-11-11 07:11:07 [WARNING ] (log.log_response) Not Found: /api/blog/home/2
+2023-11-11 07:11:07 [WARNING ] (basehttp.log_message) "GET /api/blog/home/2 HTTP/1.1" 404 16830
+2023-11-11 07:11:10 [WARNING ] (log.log_response) Not Found: /api/
+2023-11-11 07:11:10 [WARNING ] (basehttp.log_message) "GET /api/ HTTP/1.1" 404 16797
+2023-11-11 07:11:15 [WARNING ] (log.log_response) Unauthorized: /api/account
+2023-11-11 07:11:15 [WARNING ] (basehttp.log_message) "GET /api/account HTTP/1.1" 401 5121
+2023-11-11 07:11:46 [WARNING ] (log.log_response) Not Found: /admin
+2023-11-11 07:11:46 [WARNING ] (basehttp.log_message) "GET /admin HTTP/1.1" 404 16800
+2023-11-11 07:12:08 [WARNING ] (log.log_response) Not Found: /api/drfurls/
+2023-11-11 07:12:08 [WARNING ] (basehttp.log_message) "GET /api/drfurls/ HTTP/1.1" 404 17069
+2023-11-11 07:18:34 [WARNING ] (log.log_response) Not Found: /api/drfurls/login/
+2023-11-11 07:18:34 [WARNING ] (basehttp.log_message) "POST /api/drfurls/login/ HTTP/1.1" 404 16925
+2023-11-11 07:22:52 [WARNING ] (log.log_response) Not Found: /api/
+2023-11-11 07:22:52 [WARNING ] (basehttp.log_message) "GET /api/ HTTP/1.1" 404 16868
+2023-11-11 07:23:00 [WARNING ] (log.log_response) Not Found: /
+2023-11-11 07:23:00 [WARNING ] (basehttp.log_message) "GET / HTTP/1.1" 404 16817
+2023-11-11 07:23:20 [ERROR   ] (log.log_response) Internal Server Error: /api/blog/home/
+Traceback (most recent call last):
+  File "/home/gregory/VSCodeProjects/portal/.venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/gregory/VSCodeProjects/portal/.venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/gregory/VSCodeProjects/portal/.venv/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/gregory/VSCodeProjects/portal/.venv/lib/python3.8/site-packages/django/views/generic/base.py", line 84, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/gregory/VSCodeProjects/portal/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/gregory/VSCodeProjects/portal/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/gregory/VSCodeProjects/portal/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/gregory/VSCodeProjects/portal/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/gregory/VSCodeProjects/portal/.venv/lib/python3.8/site-packages/rest_framework/generics.py", line 208, in get
+    return self.retrieve(request, *args, **kwargs)
+  File "/home/gregory/VSCodeProjects/portal/blog/views.py", line 105, in retrieve
+    **self.get_common_data(),
+  File "/home/gregory/VSCodeProjects/portal/blog/views.py", line 56, in get_common_data
+    'side_categories': self.get_side_categories(),
+  File "/home/gregory/VSCodeProjects/portal/blog/views.py", line 34, in get_side_categories
+    for category in self.wp.get_categories(orderby='count', order='desc')['results']:
+TypeError: 'NoneType' object is not subscriptable
+2023-11-11 07:23:20 [ERROR   ] (basehttp.log_message) "GET /api/blog/home/ HTTP/1.1" 500 118808
+2023-11-11 07:23:41 [ERROR   ] (log.log_response) Internal Server Error: /api/blog/articles/2/
+Traceback (most recent call last):
+  File "/home/gregory/VSCodeProjects/portal/.venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/gregory/VSCodeProjects/portal/.venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/gregory/VSCodeProjects/portal/.venv/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/gregory/VSCodeProjects/portal/.venv/lib/python3.8/site-packages/django/views/generic/base.py", line 84, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/gregory/VSCodeProjects/portal/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/gregory/VSCodeProjects/portal/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/gregory/VSCodeProjects/portal/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/gregory/VSCodeProjects/portal/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/gregory/VSCodeProjects/portal/.venv/lib/python3.8/site-packages/rest_framework/generics.py", line 208, in get
+    return self.retrieve(request, *args, **kwargs)
+  File "/home/gregory/VSCodeProjects/portal/blog/views.py", line 172, in retrieve
+    common = self.get_common_data()
+  File "/home/gregory/VSCodeProjects/portal/blog/views.py", line 56, in get_common_data
+    'side_categories': self.get_side_categories(),
+  File "/home/gregory/VSCodeProjects/portal/blog/views.py", line 34, in get_side_categories
+    for category in self.wp.get_categories(orderby='count', order='desc')['results']:
+TypeError: 'NoneType' object is not subscriptable
+2023-11-11 07:23:41 [ERROR   ] (basehttp.log_message) "GET /api/blog/articles/2/ HTTP/1.1" 500 118942
+2023-11-11 07:24:43 [WARNING ] (log.log_response) Not Found: /adminRSPRJ
+2023-11-11 07:24:43 [WARNING ] (basehttp.log_message) "GET /adminRSPRJ HTTP/1.1" 404 16893
+2023-11-11 07:26:08 [WARNING ] (connection._info) No hostname was supplied. Reverting to default 'localhost'
+2023-11-11 07:38:41 [WARNING ] (log.log_response) Not Found: /api/csrf
+2023-11-11 07:38:41 [WARNING ] (basehttp.log_message) "GET /api/csrf HTTP/1.1" 404 16882
+2023-11-11 07:38:41 [WARNING ] (log.log_response) Unauthorized: /api/account
+2023-11-11 07:38:41 [WARNING ] (basehttp.log_message) "GET /api/account HTTP/1.1" 401 58
+2023-11-11 07:38:41 [WARNING ] (log.log_response) Not Found: /api/account/social_urls
+2023-11-11 07:38:41 [WARNING ] (basehttp.log_message) "GET /api/account/social_urls HTTP/1.1" 404 16942
+2023-11-11 07:38:41 [WARNING ] (log.log_response) Not Found: /api/account/subscription
+2023-11-11 07:38:41 [WARNING ] (basehttp.log_message) "GET /api/account/subscription HTTP/1.1" 404 16946
+2023-11-11 07:38:56 [WARNING ] (log.log_response) Not Found: /adminRSPRJ
+2023-11-11 07:38:56 [WARNING ] (basehttp.log_message) "GET /adminRSPRJ HTTP/1.1" 404 16890
+2023-11-11 07:39:40 [WARNING ] (log.log_response) Not Found: /adminRSPRJ
+2023-11-11 07:39:40 [WARNING ] (basehttp.log_message) "GET /adminRSPRJ HTTP/1.1" 404 16890
+2023-11-11 07:39:41 [WARNING ] (log.log_response) Not Found: /adminRSPRJ
+2023-11-11 07:39:41 [WARNING ] (basehttp.log_message) "GET /adminRSPRJ HTTP/1.1" 404 16890
+2023-11-11 07:39:45 [WARNING ] (log.log_response) Not Found: /api/csrf
+2023-11-11 07:39:45 [WARNING ] (basehttp.log_message) "GET /api/csrf HTTP/1.1" 404 16882
+2023-11-11 07:39:45 [WARNING ] (log.log_response) Unauthorized: /api/account
+2023-11-11 07:39:45 [WARNING ] (basehttp.log_message) "GET /api/account HTTP/1.1" 401 58
+2023-11-11 07:39:45 [WARNING ] (log.log_response) Not Found: /api/account/social_urls
+2023-11-11 07:39:45 [WARNING ] (basehttp.log_message) "GET /api/account/social_urls HTTP/1.1" 404 16942
+2023-11-11 07:39:45 [WARNING ] (log.log_response) Not Found: /api/account/subscription
+2023-11-11 07:39:45 [WARNING ] (basehttp.log_message) "GET /api/account/subscription HTTP/1.1" 404 16946
+2023-11-11 07:39:49 [WARNING ] (log.log_response) Not Found: /api
+2023-11-11 07:39:49 [WARNING ] (basehttp.log_message) "GET /api HTTP/1.1" 404 16862
+2023-11-11 07:39:51 [WARNING ] (log.log_response) Not Found: /adminRSPRJ
+2023-11-11 07:39:51 [WARNING ] (basehttp.log_message) "GET /adminRSPRJ HTTP/1.1" 404 16890
+2023-11-11 07:39:57 [WARNING ] (log.log_response) Not Found: /api/csrf
+2023-11-11 07:39:57 [WARNING ] (basehttp.log_message) "GET /api/csrf HTTP/1.1" 404 16882
+2023-11-11 07:39:57 [WARNING ] (log.log_response) Unauthorized: /api/account
+2023-11-11 07:39:57 [WARNING ] (basehttp.log_message) "GET /api/account HTTP/1.1" 401 58
+2023-11-11 07:39:57 [WARNING ] (log.log_response) Not Found: /api/account/social_urls
+2023-11-11 07:39:57 [WARNING ] (basehttp.log_message) "GET /api/account/social_urls HTTP/1.1" 404 16942
+2023-11-11 07:39:57 [WARNING ] (log.log_response) Not Found: /api/account/subscription
+2023-11-11 07:39:57 [WARNING ] (basehttp.log_message) "GET /api/account/subscription HTTP/1.1" 404 16946
+2023-11-11 07:39:59 [WARNING ] (log.log_response) Not Found: /adminRSPRJ
+2023-11-11 07:39:59 [WARNING ] (basehttp.log_message) "GET /adminRSPRJ HTTP/1.1" 404 16890
+2023-11-11 07:42:59 [WARNING ] (log.log_response) Not Found: /adminRSPRJ
+2023-11-11 07:42:59 [WARNING ] (basehttp.log_message) "GET /adminRSPRJ HTTP/1.1" 404 16890
+2023-11-11 07:43:19 [WARNING ] (log.log_response) Not Found: /adminRSPRJ
+2023-11-11 07:43:19 [WARNING ] (basehttp.log_message) "GET /adminRSPRJ HTTP/1.1" 404 16890
+2023-11-11 07:43:20 [WARNING ] (log.log_response) Not Found: /adminRSPRJ
+2023-11-11 07:43:20 [WARNING ] (basehttp.log_message) "GET /adminRSPRJ HTTP/1.1" 404 16890
+2023-11-11 07:43:21 [WARNING ] (log.log_response) Not Found: /adminRSPRJ
+2023-11-11 07:43:21 [WARNING ] (basehttp.log_message) "GET /adminRSPRJ HTTP/1.1" 404 16890
+2023-11-11 07:43:21 [WARNING ] (log.log_response) Not Found: /adminRSPRJ
+2023-11-11 07:43:21 [WARNING ] (basehttp.log_message) "GET /adminRSPRJ HTTP/1.1" 404 16890
+2023-11-11 07:43:22 [WARNING ] (log.log_response) Not Found: /adminRSPRJ
+2023-11-11 07:43:22 [WARNING ] (basehttp.log_message) "GET /adminRSPRJ HTTP/1.1" 404 16890
+2023-11-11 07:43:22 [WARNING ] (log.log_response) Not Found: /adminRSPRJ
+2023-11-11 07:43:22 [WARNING ] (basehttp.log_message) "GET /adminRSPRJ HTTP/1.1" 404 16890
+2023-11-11 07:43:23 [WARNING ] (log.log_response) Not Found: /adminRSPRJ
+2023-11-11 07:43:23 [WARNING ] (basehttp.log_message) "GET /adminRSPRJ HTTP/1.1" 404 16890
+2023-11-11 07:43:24 [WARNING ] (log.log_response) Not Found: /adminRSPRJ
+2023-11-11 07:43:24 [WARNING ] (basehttp.log_message) "GET /adminRSPRJ HTTP/1.1" 404 16890
+2023-11-11 07:43:30 [WARNING ] (log.log_response) Not Found: /
+2023-11-11 07:43:30 [WARNING ] (basehttp.log_message) "GET / HTTP/1.1" 404 16819
+2023-11-11 07:43:30 [WARNING ] (log.log_response) Not Found: /favicon.ico
+2023-11-11 07:43:30 [WARNING ] (basehttp.log_message) "GET /favicon.ico HTTP/1.1" 404 16899
+2023-11-11 07:43:33 [WARNING ] (log.log_response) Not Found: /adminRSPRJ
+2023-11-11 07:43:33 [WARNING ] (basehttp.log_message) "GET /adminRSPRJ HTTP/1.1" 404 16895
+2023-11-11 07:43:56 [WARNING ] (log.log_response) Not Found: /adminRSPRJ
+2023-11-11 07:43:56 [WARNING ] (basehttp.log_message) "GET /adminRSPRJ HTTP/1.1" 404 16893
+2023-11-11 07:44:43 [WARNING ] (log.log_response) Not Found: /admin
+2023-11-11 07:44:43 [WARNING ] (basehttp.log_message) "GET /admin HTTP/1.1" 404 16870
+2023-11-11 07:44:47 [WARNING ] (log.log_response) Not Found: /admin/
+2023-11-11 07:44:47 [WARNING ] (basehttp.log_message) "GET /admin/ HTTP/1.1" 404 16873
+2023-11-11 07:44:52 [WARNING ] (log.log_response) Not Found: /admin
+2023-11-11 07:44:52 [WARNING ] (basehttp.log_message) "GET /admin HTTP/1.1" 404 16873
+2023-11-11 07:45:54 [WARNING ] (log.log_response) Not Found: /admin
+2023-11-11 07:45:54 [WARNING ] (basehttp.log_message) "GET /admin HTTP/1.1" 404 16873
+2023-11-11 07:45:55 [WARNING ] (log.log_response) Not Found: /admin
+2023-11-11 07:45:55 [WARNING ] (basehttp.log_message) "GET /admin HTTP/1.1" 404 16873
+2023-11-11 07:45:55 [WARNING ] (log.log_response) Not Found: /admin
+2023-11-11 07:45:55 [WARNING ] (basehttp.log_message) "GET /admin HTTP/1.1" 404 16873
+2023-11-11 07:45:59 [WARNING ] (log.log_response) Not Found: /
+2023-11-11 07:45:59 [WARNING ] (basehttp.log_message) "GET / HTTP/1.1" 404 16817
+2023-11-11 07:46:05 [WARNING ] (log.log_response) Not Found: /admin/
+2023-11-11 07:46:05 [WARNING ] (basehttp.log_message) "GET /admin/ HTTP/1.1" 404 16873
+2023-11-11 07:46:07 [WARNING ] (log.log_response) Not Found: /admin
+2023-11-11 07:46:07 [WARNING ] (basehttp.log_message) "GET /admin HTTP/1.1" 404 16870
+2023-11-11 07:46:11 [WARNING ] (log.log_response) Not Found: /admin
+2023-11-11 07:46:11 [WARNING ] (basehttp.log_message) "GET /admin HTTP/1.1" 404 16873
+2023-11-11 07:46:45 [WARNING ] (log.log_response) Not Found: /adminRSPRJ
+2023-11-11 07:46:45 [WARNING ] (basehttp.log_message) "GET /adminRSPRJ HTTP/1.1" 404 16893
+2023-11-11 07:46:51 [WARNING ] (log.log_response) Not Found: /admin/
+2023-11-11 07:46:51 [WARNING ] (basehttp.log_message) "GET /admin/ HTTP/1.1" 404 16873
+2023-11-11 07:47:03 [WARNING ] (log.log_response) Forbidden (Origin checking failed - https://localhost does not match any trusted origins.): /adminRSPRJ/login/
+2023-11-11 07:47:03 [WARNING ] (basehttp.log_message) "POST /adminRSPRJ/login/?next=/adminRSPRJ/ HTTP/1.1" 403 2565
+2023-11-11 07:47:36 [WARNING ] (log.log_response) Forbidden (Origin checking failed - https://localhost does not match any trusted origins.): /adminRSPRJ/login/
+2023-11-11 07:47:36 [WARNING ] (basehttp.log_message) "POST /adminRSPRJ/login/?next=/adminRSPRJ/ HTTP/1.1" 403 2565
+2023-11-11 07:51:46 [WARNING ] (log.log_response) Not Found: /adminRSPRJ
+2023-11-11 07:51:46 [WARNING ] (basehttp.log_message) "GET /adminRSPRJ HTTP/1.1" 404 16890
+2023-11-11 07:51:52 [WARNING ] (log.log_response) Not Found: /admin
+2023-11-11 07:51:52 [WARNING ] (basehttp.log_message) "GET /admin HTTP/1.1" 404 16870
+2023-11-11 07:51:54 [WARNING ] (log.log_response) Not Found: /admin/
+2023-11-11 07:51:54 [WARNING ] (basehttp.log_message) "GET /admin/ HTTP/1.1" 404 16873
+2023-11-11 07:53:32 [WARNING ] (connection._info) No hostname was supplied. Reverting to default 'localhost'
+2023-11-11 08:28:59 [WARNING ] (log.log_response) Not Found: /
+2023-11-11 08:28:59 [WARNING ] (basehttp.log_message) "GET / HTTP/1.1" 404 16819
+2023-11-11 08:29:00 [WARNING ] (log.log_response) Not Found: /favicon.ico
+2023-11-11 08:29:06 [WARNING ] (log.log_response) Not Found: /adminRSPRJ
+2023-11-11 08:29:06 [WARNING ] (basehttp.log_message) "GET /adminRSPRJ HTTP/1.1" 404 16895

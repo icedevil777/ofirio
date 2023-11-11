@@ -1,0 +1,28 @@
+PROP_8BE = {
+    'prop_id': '8BE92C6B767350E9C428',
+    'prop_class': 'buy',
+    'status': 'for_sale',
+    'image': 'https://listing-images.homejunction.com/ntreis/420553021/photo_1.jpg',
+    'address_line': '10540 Lennox Lane',
+    'address_city': 'Dallas',
+    'address_state_code': 'TX',
+    'address_zip': '75229',
+    'price': '35000000',
+    'est_mort': '150310.0558',
+    'cap_rate': None,
+    'est_rent': '0.0',
+}
+PROP_673 = {
+    'prop_id': '67350E9C4288BE92C6B7',
+    'prop_class': 'buy',
+    'status': 'for_sale',
+    'image': 'https://ofirio-prop-images-s.b-cdn.net/onekey/H6215272/photo_1.jpg',
+    'address_line': '102 9Th Street Se',
+    'address_city': 'Washington',
+    'address_state_code': 'DC',
+    'address_zip': '20003',
+    'price': '1275000',
+    'est_mort': '90456.0558',
+    'cap_rate': None,
+    'est_rent': '0.0',
+}
