@@ -31,7 +31,7 @@ export default defineComponent({
   },
   mounted() {
     const loader = new Loader({
-      apiKey: "AIzaSyBLpCFp3KrBK9eWtqj1QzTXCA48qZqJAoA",
+      apiKey: "AIzaSyBATj60R98qYqjle9QsYFttUVi-b4Z2nPQ",
       ...this.loaderParams
     });
     loader.loadPromise().then(() => {
