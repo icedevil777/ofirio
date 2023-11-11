@@ -243,3 +243,9 @@ TypeError: 'NoneType' object is not subscriptable
 2023-11-11 08:29:00 [WARNING ] (log.log_response) Not Found: /favicon.ico
 2023-11-11 08:29:06 [WARNING ] (log.log_response) Not Found: /adminRSPRJ
 2023-11-11 08:29:06 [WARNING ] (basehttp.log_message) "GET /adminRSPRJ HTTP/1.1" 404 16895
+2023-11-11 08:56:34 [WARNING ] (log.log_response) Not Found: /api/csrf
+2023-11-11 08:56:34 [WARNING ] (basehttp.log_message) "GET /api/csrf HTTP/1.1" 404 16806
+2023-11-11 08:56:34 [WARNING ] (log.log_response) Not Found: /api/account/social_urls
+2023-11-11 08:56:34 [WARNING ] (basehttp.log_message) "GET /api/account/social_urls HTTP/1.1" 404 16851
+2023-11-11 08:56:34 [WARNING ] (log.log_response) Not Found: /api/account/subscription
+2023-11-11 08:56:34 [WARNING ] (basehttp.log_message) "GET /api/account/subscription HTTP/1.1" 404 16854

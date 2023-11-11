@@ -322,4 +322,13 @@ logging.config.dictConfig(LOGGING)
 
 CSRF_TRUSTED_ORIGINS = ['https://localhost']
 
-from .settings_local_ci import *
+
+# STATIC_URL = "static/"
+
+# STATICFILES_DIRS = [
+#     BASE_DIR / "djangoproject/static",
+# ]
+
+# STATIC_ROOT = f"{BASE_DIR}/static",
+
+from .settings_local import *

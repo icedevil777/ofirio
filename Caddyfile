@@ -1,0 +1,20 @@
+localhost {
+        log {
+                output stdout
+                level DEBUG
+        }
+
+        root * /home/gregory/VSCodeProjects/ofirio/frontend/dist
+
+        route {
+                reverse_proxy /admin* 0.0.0.0:8001
+                reverse_proxy /api* 0.0.0.0:8001
+                try_files {path} {path}/ /index.html
+                file_server
+        }
+
+        handle_path /static/* {
+                root * ./static/
+                file_server
+        }
+}

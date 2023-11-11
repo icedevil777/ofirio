@@ -1,0 +1,1086 @@
+html,
+body {
+	background: #ffffff;
+	color: #222222;
+	font-family: 'Raleway', 'Arial', sans-serif;
+	font-size: 16px;
+	height: 100%;
+}
+
+@media screen and (max-width: 480px) {
+	html,
+  body {
+		font-size: 14px;
+	}
+}
+
+body {
+	padding-top: 70px;
+	font-feature-settings: 'pnum' on, 'lnum' on;
+	font-weight: 500;
+}
+
+body.no-scroll {
+	overflow: hidden;
+}
+
+@media screen and (max-width: 480px) {
+	body {
+		padding-top: 50px;
+	}
+}
+
+.flex {
+	display: flex;
+	flex-wrap: nowrap;
+}
+
+.padded {
+	padding-left: 30px;
+	padding-right: 30px;
+}
+
+@media screen and (max-width: 480px) {
+	.padded {
+		padding-left: 20px;
+		padding-right: 20px;
+	}
+}
+
+.wrapper {
+	max-width: 1200px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+@media screen and (max-width: 480px) {
+	.wrapper {
+		max-width: 360px;
+	}
+}
+
+.wrapper-wide {
+	max-width: 1400px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+@media screen and (max-width: 480px) {
+	.wrapper-wide {
+		max-width: 400px;
+	}
+}
+
+@media screen and (max-width: 480px) {
+	.hide-mobile {
+		display: none !important;
+	}
+}
+
+@media screen and (min-width: 481px) {
+	.hide-desktop {
+		display: none !important;
+	}
+}
+
+.mobile-mm {
+	width: 20px;
+	min-width: 20px;
+	height: 1px;
+}
+
+@media screen and (min-width: 481px) {
+	.mobile-mm {
+		display: none;
+	}
+}
+
+input,
+select,
+button {
+	font-family: inherit;
+	font-size: inherit;
+	text-align: inherit;
+}
+
+button {
+	cursor: pointer;
+}
+
+.ui-text-justify {
+	text-align: justify;
+	text-align-last: left;
+}
+
+.ui-text-center {
+	text-align: center;
+}
+
+.ui-text-left {
+	text-align: left;
+}
+
+.ui-text-right {
+	text-align: right;
+}
+
+.ui-text-bolder {
+	font-weight: 600;
+}
+
+.ui-text-bold {
+	font-weight: 700;
+}
+
+.ui-text-boldest {
+	font-weight: 800;
+}
+
+.ui-href {
+	outline: none;
+}
+
+.ui-href-default {
+	color: #6454c3;
+	text-decoration: underline;
+	text-decoration-style: dashed;
+	text-decoration-color: transparent;
+	text-decoration-thickness: 1px;
+	transition: color ease 0.1s, text-decoration-color ease 0.1s;
+}
+
+.ui-href-default.ui-href-dark {
+	color: #bbbbbb;
+}
+
+.ui-href-default:hover,
+.ui-href-default:focus {
+	text-decoration-color: #6454c3;
+}
+
+.ui-href-default:hover.ui-href-dark,
+.ui-href-default:focus.ui-href-dark {
+	text-decoration-color: #ffffff;
+	color: #d9d9d9;
+}
+
+.ui-href-default:active {
+	text-decoration-color: #42339b;
+	color: #42339b;
+}
+
+.ui-href-default:active.ui-href-dark {
+	color: #ffffff;
+	text-decoration-color: #ffffff;
+}
+
+.ui-href-bold {
+	color: #222222;
+	transition: color ease .1s;
+	font-weight: bold;
+}
+
+.ui-href-bold:hover,
+.ui-href-bold:focus {
+	color: #6454c3;
+}
+
+.ui-href-bold:active {
+	color: #42339b;
+}
+
+.ui-href-gray {
+	color: #909090;
+	transition: color ease .1s;
+}
+
+.ui-href-gray:hover,
+.ui-href-gray:focus {
+	color: #222222;
+}
+
+.ui-href-gray:active {
+	color: #6454c3;
+}
+
+.ui-href-underline {
+	color: #6454c3;
+	text-decoration: underline;
+	text-decoration-style: solid;
+	text-decoration-color: #6454c3;
+	text-decoration-thickness: 1px;
+	transition: color ease 0.1s, text-decoration-color ease 0.1s;
+}
+
+.ui-href-underline.ui-href-dark {
+	color: #bbbbbb;
+	text-decoration-color: #bbbbbb;
+}
+
+.ui-href-underline:hover,
+.ui-href-underline:focus,
+.ui-href-underline:active {
+	text-decoration-color: #42339b;
+	color: #42339b;
+}
+
+.ui-href-underline:hover.ui-href-dark,
+.ui-href-underline:focus.ui-href-dark,
+.ui-href-underline:active.ui-href-dark {
+	color: #ffffff;
+	text-decoration-color: #ffffff;
+}
+
+.ui-counter {
+	padding: 0 2px;
+	min-width: 18px;
+	height: 18px;
+	line-height: 18px;
+	border-radius: 9px;
+	background: #909090;
+	color: #ffffff;
+	font-weight: bold;
+	font-size: 0.75rem;
+	display: inline-block;
+	text-align: center;
+}
+
+.ui-grid-triple-spread {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-template-rows: 1fr;
+	gap: 0px 0px;
+}
+
+.ui-grid-triple-spread > div {
+	text-align: center;
+}
+
+.ui-grid-triple-spread > div:first-child {
+	text-align: left;
+}
+
+.ui-grid-triple-spread > div:last-child {
+	text-align: right;
+}
+
+.ui-label.ui-label--account {
+	padding: 0 5px;
+	height: 18px;
+	line-height: 16px;
+	font-size: 0.625rem;
+	border: 1px solid #80e7c8;
+	border-radius: 4px;
+	text-transform: uppercase;
+	font-weight: bold;
+}
+
+.ui-label.ui-label--account.ui-label--account-free {
+	border-color: #666;
+	color: #666;
+}
+
+.ui-table {
+	border: 0;
+	border-spacing: 0;
+	font-size: .9rem;
+}
+
+.ui-table td,
+.ui-table .td,
+.ui-table th,
+.ui-table .th {
+	padding: 20px 30px;
+	line-height: 1.5rem;
+	vertical-align: top;
+}
+
+.ui-table th,
+.ui-table .th,
+.ui-table td:before,
+.ui-table .td:before {
+	color: #909090;
+}
+
+.ui-table th,
+.ui-table .th {
+	border-bottom: 2px solid #efefef;
+	font-weight: 700;
+	text-align: left;
+}
+
+.ui-table td:before,
+.ui-table .td:before {
+	display: block;
+	margin-bottom: 5px;
+}
+
+.ui-table.ui-table--stripped tr:nth-child(odd) td,
+.ui-table.ui-table--stripped .tr:nth-child(odd) .td {
+	background: #f9f9f9;
+}
+
+@media screen and (max-width: 480px) {
+	.ui-table.ui-table--mobile-transform tr {
+		padding: 10px 20px;
+		display: grid;
+		gap: 15px 0;
+		grid-template-columns: 1fr 1fr;
+		grid-auto-rows: auto;
+		grid-template-areas: '. .' '. .' '. .';
+	}
+
+	.ui-table.ui-table--mobile-transform tr:first-child {
+		display: none;
+	}
+
+	.ui-table.ui-table--mobile-transform tr:first-child + tr {
+		border: none;
+	}
+
+	.ui-table.ui-table--mobile-transform tr td:before {
+		content: attr(data-desc);
+		font-size: 1rem;
+	}
+
+	.ui-table.ui-table--mobile-transform tr + tr {
+		border-top: 1px solid #efefef;
+	}
+
+	.ui-table.ui-table--mobile-transform td,
+  .ui-table.ui-table--mobile-transform .td,
+  .ui-table.ui-table--mobile-transform th,
+  .ui-table.ui-table--mobile-transform .th {
+		line-height: 1.2rem;
+		padding: 0;
+	}
+
+	.ui-table.ui-table--mobile-transform.ui-table--stripped tr td {
+		background: none;
+	}
+}
+
+.ui-plot .ui-plot-title {
+	font-size: 1.375rem;
+	margin-bottom: 20px;
+	font-weight: 700;
+	display: block;
+}
+
+.ui-plot .ui-plot-subdesc {
+	font-weight: 600;
+	color: #909090;
+	font-size: 0.9375rem;
+	line-height: 1.2rem;
+	margin-bottom: 20px;
+}
+
+.ui-plot .ui-plot-legend {
+	justify-content: flex-start;
+	align-content: center;
+	align-items: center;
+	margin-bottom: 20px;
+}
+
+@media screen and (max-width: 480px) {
+	.ui-plot .ui-plot-legend {
+		display: block;
+	}
+}
+
+@media screen and (max-width: 480px) {
+	.ui-plot .ui-plot-legend .item + .item {
+		margin-top: 10px;
+	}
+}
+
+@media screen and (min-width: 481px) {
+	.ui-plot .ui-plot-legend .item + .item {
+		margin-left: 20px;
+	}
+}
+
+.ui-plot .ui-plot-legend .item > .flex {
+	justify-content: flex-start;
+	align-content: center;
+	align-items: center;
+}
+
+.ui-plot .ui-plot-legend .item > .flex .color {
+	width: 10px;
+	height: 10px;
+	border: 2px solid transparent;
+	border-radius: 50%;
+}
+
+.ui-plot .ui-plot-legend .item > .flex .title {
+	margin-left: .5rem;
+	color: #666;
+}
+
+.ui-plot .ui-plot-wrapper {
+	width: 100%;
+}
+
+.ui-small-prop {
+	font-weight: 700;
+}
+
+.ui-small-prop span {
+	display: block;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.ui-small-prop .value {
+	font-size: 1.25rem;
+	margin-bottom: 5px;
+}
+
+@media screen and (max-width: 480px) {
+	.ui-small-prop .value {
+		font-size: 1.125rem;
+	}
+}
+
+.ui-small-prop .label {
+	color: #909090;
+	text-transform: uppercase;
+	font-size: .75rem;
+}
+
+.ui-divider {
+	height: 1px;
+	position: relative;
+	margin: 20px 0;
+	width: 100%;
+	background: #d9d9d9;
+}
+
+.ui-divider:before {
+	width: 30px;
+	height: 12px;
+	line-height: 12px;
+	background: #ffffff;
+	position: absolute;
+	left: calc(35%);
+	text-align: center;
+	top: -6px;
+	font-size: 0.75rem;
+	font-weight: bold;
+	color: #909090;
+}
+
+.ui-divider.labelVisible:before {
+	content: attr(data-label);
+}
+
+.rent-estimator {
+	margin: 40px 0 50px;
+}
+
+@media screen and (max-width: 480px) {
+	.rent-estimator {
+		margin: 25px 0;
+	}
+}
+
+.rent-estimator .map {
+	position: relative;
+	border-radius: 8px;
+	overflow: hidden;
+	box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1);
+}
+
+.rent-estimator .google-map {
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.rent-estimator .google-map,
+.rent-estimator .google-map::v-deep > div {
+	width: 100%;
+	height: 100%;
+}
+
+@media screen and (max-width: 480px) {
+	.rent-estimator .wrapper {
+		max-width: none;
+	}
+}
+
+.rent-estimator .wrapper > h1 {
+	display: block;
+	text-align: center;
+	font-size: 2.625rem;
+	margin-bottom: 40px;
+	font-weight: 800;
+}
+
+@media screen and (max-width: 480px) {
+	.rent-estimator .wrapper > h1 {
+		padding: 0 20px;
+		margin-bottom: 25px;
+		font-size: 1.85rem;
+	}
+}
+
+.rent-estimator .wrapper > .search-mode-selector {
+	justify-content: center;
+	align-items: center;
+	margin-bottom: 30px;
+}
+
+@media screen and (max-width: 480px) {
+	.rent-estimator .wrapper > .search-mode-selector {
+		padding: 5px 0;
+		overflow-x: auto;
+		width: 100%;
+		justify-content: flex-start;
+	}
+}
+
+.rent-estimator .wrapper > .search-mode-selector .ui-radio-chip {
+	color: #909090;
+	font-weight: 700;
+	padding: 0 24px;
+	height: 40px;
+	line-height: 40px;
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	border-radius: 20px;
+	font-size: 1rem;
+	box-shadow: 0 0 0 1px #e5e5e5;
+	flex-shrink: 0;
+}
+
+@media screen and (max-width: 480px) {
+	.rent-estimator .wrapper > .search-mode-selector .ui-radio-chip {
+		padding: 0 10px;
+	}
+}
+
+.rent-estimator .wrapper > .search-mode-selector .ui-radio-chip:hover {
+	color: #666;
+	box-shadow: 0 0 0 1px #666;
+}
+
+.rent-estimator .wrapper > .search-mode-selector .ui-radio-chip.selected {
+	color: #222222;
+	box-shadow: 0 0 0 1px #EBEBEB;
+	background: #EBEBEB;
+}
+
+.rent-estimator .wrapper > .search-mode-selector .ui-radio-chip .svg-icon {
+	width: 20px;
+	min-width: 20px;
+	height: 20px;
+	min-height: 20px;
+	margin-right: 8px;
+}
+
+.rent-estimator .wrapper > .search {
+	display: grid;
+	grid-template-columns: repeat(5, 1fr);
+	grid-template-rows: repeat(2, 1fr);
+	gap: 20px;
+	grid-template-areas: "s s s s ." ". . . . .";
+}
+
+@media screen and (max-width: 480px) {
+	.rent-estimator .wrapper > .search {
+		grid-template-columns: 1fr;
+		grid-template-rows: 1fr;
+		grid-template-areas: none;
+		padding: 0 20px;
+	}
+}
+
+@media screen and (min-width: 481px) {
+	.rent-estimator .wrapper > .search .search-string {
+		grid-area: s;
+	}
+}
+
+.rent-estimator .wrapper > .search .search-box > span.label {
+	font-weight: 700;
+	margin-bottom: 10px;
+	display: block;
+}
+
+.rent-estimator .wrapper > .search .search-box > .btn-analyze {
+	width: 100%;
+	height: 45px;
+}
+
+.rent-estimator .wrapper > .ui-message-list {
+	margin-top: 20px;
+}
+
+@media screen and (max-width: 480px) {
+	.rent-estimator .wrapper > .ui-message-list {
+		padding: 0 20px;
+	}
+}
+
+.rent-estimator .wrapper > .ui-divider {
+	margin-top: 40px;
+	margin-bottom: 50px;
+}
+
+@media screen and (max-width: 480px) {
+	.rent-estimator .wrapper > .ui-divider {
+		margin: 30px auto 40px;
+		width: calc(60%);
+	}
+}
+
+.rent-estimator .wrapper > .tool-description {
+	justify-content: space-between;
+	align-items: center;
+}
+
+@media screen and (max-width: 480px) {
+	.rent-estimator .wrapper > .tool-description {
+		padding: 0 20px;
+		display: block;
+	}
+}
+
+.rent-estimator .wrapper > .tool-description > .text {
+	flex: 1;
+	padding-bottom: 20px;
+}
+
+@media screen and (max-width: 480px) {
+	.rent-estimator .wrapper > .tool-description > .text {
+		text-align: center;
+	}
+}
+
+.rent-estimator .wrapper > .tool-description > .text h2 {
+	font-size: 2.25rem;
+	font-weight: 800;
+	margin-bottom: 25px;
+	display: block;
+	line-height: 2.65rem;
+}
+
+@media screen and (max-width: 480px) {
+	.rent-estimator .wrapper > .tool-description > .text h2 {
+		font-size: 1.85rem;
+		line-height: 2rem;
+		margin-bottom: 1.25rem;
+	}
+}
+
+.rent-estimator .wrapper > .tool-description > .text p {
+	font-weight: 600;
+	font-size: 1.125rem;
+	line-height: 1.625rem;
+	color: #666;
+}
+
+.rent-estimator .wrapper > .tool-description > svg {
+	width: 300px;
+	min-width: 300px;
+	margin-left: 20px;
+}
+
+@media screen and (max-width: 480px) {
+	.rent-estimator .wrapper > .tool-description > svg {
+		width: 100%;
+		min-width: 0;
+		margin: 20px 0 0;
+	}
+}
+
+@media screen and (max-width: 480px) {
+	.rent-estimator .wrapper > .rent-estimator-results {
+		padding: 0 20px;
+	}
+}
+
+.rent-estimator .wrapper > .rent-estimator-results > .header {
+	justify-content: space-between;
+	align-content: center;
+	align-items: center;
+	margin-bottom: 40px;
+}
+
+@media screen and (max-width: 480px) {
+	.rent-estimator .wrapper > .rent-estimator-results > .header {
+		display: block;
+	}
+}
+
+.rent-estimator .wrapper > .rent-estimator-results > .header .address-row {
+	justify-content: flex-start;
+	align-content: center;
+	align-items: baseline;
+}
+
+@media screen and (max-width: 480px) {
+	.rent-estimator .wrapper > .rent-estimator-results > .header .address-row {
+		display: block;
+		margin-bottom: 20px;
+	}
+}
+
+.rent-estimator .wrapper > .rent-estimator-results > .header .address-row span {
+	display: block;
+}
+
+.rent-estimator .wrapper > .rent-estimator-results > .header .address-row .address {
+	font-weight: 700;
+	font-size: 1.875rem;
+	margin-right: 20px;
+}
+
+@media screen and (max-width: 480px) {
+	.rent-estimator .wrapper > .rent-estimator-results > .header .address-row .address {
+		font-size: 1.715rem;
+		margin: 0 0 5px;
+	}
+}
+
+.rent-estimator .wrapper > .rent-estimator-results > .header .address-row .more {
+	font-weight: 600;
+	font-size: 1.125rem;
+	color: #909090;
+}
+
+.rent-estimator .wrapper > .rent-estimator-results > .header .rent-estimator-actions {
+	justify-content: flex-end;
+	align-items: stretch;
+	align-content: stretch;
+}
+
+@media screen and (max-width: 480px) {
+	.rent-estimator .wrapper > .rent-estimator-results > .header .rent-estimator-actions {
+		margin: 20px 0;
+		width: 100%;
+		justify-content: flex-start;
+		align-items: center;
+		align-content: center;
+		overflow-x: auto;
+	}
+}
+
+.rent-estimator .wrapper > .rent-estimator-results > .header .rent-estimator-actions::v-deep .ui-drop-label {
+	box-shadow: none;
+	display: block;
+	color: #666;
+}
+
+.rent-estimator .wrapper > .rent-estimator-results > .header .rent-estimator-actions::v-deep .ui-drop.opened .ui-drop-label {
+	background: transparent;
+	color: #222222;
+}
+
+.rent-estimator .wrapper > .rent-estimator-results > .header .rent-estimator-actions::v-deep .ui-drop-container {
+	z-index: 5;
+	padding: 20px;
+}
+
+@media screen and (max-width: 480px) {
+	.rent-estimator .wrapper > .rent-estimator-results > .header .rent-estimator-actions::v-deep .ui-drop-container {
+		padding: 0;
+	}
+}
+
+.rent-estimator .wrapper > .rent-estimator-results > .header .rent-estimator-actions::v-deep .ui-drop-container .heading {
+	font-weight: 700;
+	margin-bottom: .5rem;
+}
+
+.rent-estimator .wrapper > .rent-estimator-results > .header .rent-estimator-actions .ui-btn-text-gray,
+.rent-estimator .wrapper > .rent-estimator-results > .header .rent-estimator-actions::v-deep .ui-drop-label {
+	font-weight: 500;
+	margin-left: 1rem;
+	text-align: center;
+	font-size: 0.75rem;
+	line-height: 1rem;
+	height: auto;
+	padding: 0 .5rem;
+}
+
+@media screen and (max-width: 480px) {
+	.rent-estimator .wrapper > .rent-estimator-results > .header .rent-estimator-actions .ui-btn-text-gray,
+  .rent-estimator .wrapper > .rent-estimator-results > .header .rent-estimator-actions::v-deep .ui-drop-label {
+		display: flex;
+		justify-content: flex-start;
+		align-items: center;
+		align-content: center;
+		white-space: nowrap;
+		height: 36px;
+		line-height: 36px;
+		font-weight: 700;
+		padding: 10px;
+		border-radius: 18px;
+		color: #222222;
+		border: 1px solid #d9d9d9;
+		margin: 0 8px 0 0;
+		font-size: 1rem;
+	}
+
+	.rent-estimator .wrapper > .rent-estimator-results > .header .rent-estimator-actions .ui-btn-text-gray:hover,
+  .rent-estimator .wrapper > .rent-estimator-results > .header .rent-estimator-actions::v-deep .ui-drop-label:hover,
+  .rent-estimator .wrapper > .rent-estimator-results > .header .rent-estimator-actions .ui-btn-text-gray:focus,
+  .rent-estimator .wrapper > .rent-estimator-results > .header .rent-estimator-actions::v-deep .ui-drop-label:focus,
+  .rent-estimator .wrapper > .rent-estimator-results > .header .rent-estimator-actions .ui-btn-text-gray:active,
+  .rent-estimator .wrapper > .rent-estimator-results > .header .rent-estimator-actions::v-deep .ui-drop-label:active {
+		background: #e3e3e3;
+	}
+}
+
+.rent-estimator .wrapper > .rent-estimator-results > .header .rent-estimator-actions .ui-btn-text-gray .svg-icon,
+.rent-estimator .wrapper > .rent-estimator-results > .header .rent-estimator-actions::v-deep .ui-drop-label .svg-icon {
+	width: 20px;
+	height: 20px;
+	display: block;
+	margin: 0 auto .5rem;
+}
+
+@media screen and (max-width: 480px) {
+	.rent-estimator .wrapper > .rent-estimator-results > .header .rent-estimator-actions .ui-btn-text-gray .svg-icon,
+  .rent-estimator .wrapper > .rent-estimator-results > .header .rent-estimator-actions::v-deep .ui-drop-label .svg-icon {
+		margin: 0 7px 0 0;
+	}
+}
+
+.rent-estimator .wrapper > .rent-estimator-results > .header .rent-estimator-actions > .mobile-mm:last-child {
+	width: 12px;
+	min-width: 12px;
+}
+
+.rent-estimator .wrapper > .rent-estimator-results .highlights {
+	justify-content: space-between;
+	align-items: stretch;
+	align-content: stretch;
+	margin-bottom: 50px;
+}
+
+.rent-estimator .wrapper > .rent-estimator-results .highlights .details {
+	width: 40%;
+	margin-right: 20px;
+}
+
+@media screen and (max-width: 480px) {
+	.rent-estimator .wrapper > .rent-estimator-results .highlights .details {
+		width: 100%;
+		margin: 0;
+		display: flex;
+		flex-wrap: nowrap;
+		flex-direction: column-reverse;
+		justify-content: stretch;
+		align-content: flex-start;
+	}
+}
+
+.rent-estimator .wrapper > .rent-estimator-results .highlights .details > .fin-table {
+	border: 1px solid #d9d9d9;
+	border-radius: 8px;
+	border-collapse: collapse;
+	table-layout: fixed;
+	border-style: hidden;
+	box-shadow: 0 0 0 1px #d9d9d9;
+	width: 100%;
+}
+
+.rent-estimator .wrapper > .rent-estimator-results .highlights .details > .fin-table td {
+	border: 1px solid #d9d9d9;
+	padding: 15px;
+	vertical-align: middle;
+}
+
+.rent-estimator .wrapper > .rent-estimator-results .highlights .details > .fin-table td.rich-prop {
+	text-align: center;
+}
+
+.rent-estimator .wrapper > .rent-estimator-results .highlights .details > .fin-table td.rich-prop .ui-small-prop {
+	display: inline-block;
+}
+
+.rent-estimator .wrapper > .rent-estimator-results .highlights .details > .fin-table td.rich-prop img {
+	margin-top: 10px;
+	display: block;
+	height: 1.125rem;
+	width: 100%;
+}
+
+.rent-estimator .wrapper > .rent-estimator-results .highlights .details .based-on {
+	display: block;
+	margin: 20px 0;
+	font-size: 0.875rem;
+	color: #909090;
+}
+
+.rent-estimator .wrapper > .rent-estimator-results .highlights .details > svg {
+	max-width: 300px;
+	width: 100%;
+}
+
+.rent-estimator .wrapper > .rent-estimator-results .highlights .map {
+	flex: 1;
+}
+
+.rent-estimator .wrapper > .rent-estimator-results > .plots {
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: flex-start;
+	align-content: flex-start;
+}
+
+.rent-estimator .wrapper > .rent-estimator-results > .plots .ui-plot {
+	width: calc(30%);
+	margin-bottom: 20px;
+	min-height: 40vh;
+}
+
+@media screen and (max-width: 480px) {
+	.rent-estimator .wrapper > .rent-estimator-results > .plots .ui-plot {
+		width: 100%;
+	}
+}
+
+.rent-estimator .wrapper > .rent-estimator-results .map-list {
+	margin: 50px 0 30px;
+	width: 100%;
+}
+
+@media screen and (max-width: 480px) {
+	.rent-estimator .wrapper > .rent-estimator-results .map-list {
+		margin: 30px 0;
+	}
+}
+
+.rent-estimator .wrapper > .rent-estimator-results .map-list > .map {
+	width: 100%;
+	height: 300px;
+	margin-bottom: 20px;
+}
+
+@media screen and (max-width: 480px) {
+	.rent-estimator .wrapper > .rent-estimator-results .map-list > .map {
+		height: 0;
+		padding-bottom: 100%;
+	}
+}
+
+.rent-estimator .wrapper > .rent-estimator-results .map-list > .markers-description {
+	justify-content: flex-start;
+	align-items: center;
+}
+
+@media screen and (max-width: 480px) {
+	.rent-estimator .wrapper > .rent-estimator-results .map-list > .markers-description {
+		flex-wrap: wrap;
+	}
+}
+
+.rent-estimator .wrapper > .rent-estimator-results .map-list > .markers-description .marker-info {
+	justify-content: flex-start;
+	align-items: center;
+	color: #666;
+	font-size: .875rem;
+}
+
+.rent-estimator .wrapper > .rent-estimator-results .map-list > .markers-description .marker-info .svg-icon {
+	width: 20px;
+	height: 20px;
+	margin-right: 5px;
+}
+
+@media screen and (min-width: 481px) {
+	.rent-estimator .wrapper > .rent-estimator-results .map-list > .markers-description .marker-info + .marker-info {
+		margin-left: 20px;
+	}
+}
+
+@media screen and (max-width: 480px) {
+	.rent-estimator .wrapper > .rent-estimator-results .map-list > .markers-description .marker-info {
+		margin-right: 15px;
+		margin-bottom: 15px;
+		font-size: 1rem;
+	}
+}
+
+.rent-estimator .wrapper > .rent-estimator-results .nearest-props .heading {
+	display: block;
+	font-weight: 700;
+	margin-bottom: 20px;
+	font-size: 1.375rem;
+}
+
+.rent-estimator .wrapper > .rent-estimator-results .nearest-props > .ui-table {
+	width: 100%;
+}
+
+.rent-estimator .wrapper > .rent-estimator-results .nearest-props > .ui-table tr td:first-child .svg-icon {
+	margin-right: 10px;
+	vertical-align: top;
+}
+
+@media screen and (max-width: 480px) {
+	.rent-estimator .wrapper > .rent-estimator-results .nearest-props > .ui-table tr {
+		padding: 25px 0;
+		grid-template-areas: "a a a a" ". . t t" ". . . .";
+	}
+
+	.rent-estimator .wrapper > .rent-estimator-results .nearest-props > .ui-table tr td:first-child {
+		grid-area: a;
+		display: flex;
+		justify-content: flex-start;
+		align-items: flex-start;
+		font-size: 1.143rem;
+		line-height: 1.285rem;
+	}
+
+	.rent-estimator .wrapper > .rent-estimator-results .nearest-props > .ui-table tr td:last-child {
+		grid-area: t;
+	}
+
+	.rent-estimator .wrapper > .rent-estimator-results .nearest-props > .ui-table tr td {
+		font-size: 1.07rem;
+	}
+}
+
+.rent-estimator .full-description {
+	margin-top: 50px;
+	margin-bottom: 70px;
+}
+
+@media screen and (max-width: 480px) {
+	.rent-estimator .full-description {
+		padding: 0 20px;
+	}
+}
+
+.rent-estimator .full-description span.header {
+	display: block;
+	margin-bottom: 20px;
+	font-weight: 700;
+	font-size: 1.125rem;
+}
+
+@media screen and (max-width: 480px) {
+	.rent-estimator .full-description span.header {
+		text-align: center;
+		font-size: 1.285rem;
+	}
+}
+
+.rent-estimator .full-description > p {
+	font-weight: 400;
+	line-height: 1.625rem;
+}
+
+@media screen and (max-width: 480px) {
+	.rent-estimator .full-description > p {
+		font-size: 1.14rem;
+	}
+}
