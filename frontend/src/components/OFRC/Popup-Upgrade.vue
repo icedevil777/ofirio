@@ -110,7 +110,7 @@ export default defineComponent({
       if (!AccountStore.Basis.isPremium)
         return {};
       
-      return PriceModel.find(pm => pm.type == AccountStore.Basis.dto?.subscription.period);
+      return PriceModel.find(pm => pm.type == AccountStore.Basis.dto?.subscription?.period);
     },
     canUpgrade() {
       return AccountStore.Basis.isPremium && !AccountStore.Basis.dto?.is_team && !AccountStore.Basis.dto?.subscription?.cancel_at_period_end;

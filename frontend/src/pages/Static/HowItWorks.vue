@@ -7,9 +7,9 @@
         <span>See How It Works</span>
     </UButton>
   </UPageHeader>
-  <UPopup ref="videoPopup" @stateChange="(state) => reloadVideo(state)">
+  <!-- <UPopup ref="videoPopup" @stateChange="(state) => reloadVideo(state)">
     <iframe ref="vimeoVideo" src="https://player.vimeo.com/video/567390590?title=0&byline=0&portrait=0" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
-  </UPopup>
+  </UPopup> -->
   <div class="steps-block wrapper">
     <div class="title-block">
       <h1 class="title">How It Works</h1>

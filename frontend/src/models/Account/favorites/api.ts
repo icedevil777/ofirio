@@ -25,11 +25,16 @@ export type TAccountDTO__FavoritesQty = {
   qty: number
 }
 
+let getUrl = ''
+if (location.hostname === 'localhost') {
+  getUrl = 'https://localhost'
+}
+
 export default {
   loadFavoritesList: function () {
-    return <AxiosRequestToAwaiting<TAccountDTO__FavoritesList>>of(axios.get(`/api/account/favorites`));
+    return <AxiosRequestToAwaiting<TAccountDTO__FavoritesList>>of(axios.get(`${getUrl}/api/account/favorites`));
   },
   getFavoritesQty: function () {
-    return <AxiosRequestToAwaiting<TAccountDTO__FavoritesQty>>of(axios.get(`/api/account/favorites_qty`));
+    return <AxiosRequestToAwaiting<TAccountDTO__FavoritesQty>>of(axios.get(`${getUrl}/api/account/favorites_qty`));
   }
 }

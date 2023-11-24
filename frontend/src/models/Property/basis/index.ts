@@ -98,8 +98,13 @@ export default class PropertyBasisModule {
     this.id = id;
 
     observe('ofirio-favorite-added', (upd_id:string) => {
-      if (upd_id == id && this._dto)
+      if (upd_id == id && this._dto) {
         this._dto.favorite = true;
+        console.log('this._dto.favorite', this._dto.favorite)
+      }
+
+        
+      
     });
     observe('ofirio-favorite-removed', (upd_id:string) => {
       if (upd_id == id && this._dto)

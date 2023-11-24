@@ -1,3 +1,6 @@
+from .settings_local import *
+import logging.config
+from corsheaders.defaults import default_headers
 import os
 from datetime import timedelta
 from pathlib import Path
@@ -47,21 +50,24 @@ INSTALLED_APPS = [
     'corsheaders',
     'drf_recaptcha',
 ]
-DATABASE_ROUTERS = ('search.dbrouters.DBRouter', 'api_property.dbrouters.DBRouter')
+DATABASE_ROUTERS = ('search.dbrouters.DBRouter',
+                    'api_property.dbrouters.DBRouter')
 
 DRF_RECAPTCHA_SECRET_KEY = 'secret'
-DRF_RECAPTCHA_ACTION_V3_SCORES = {"contact_agent_request": 0.6, "contact_us_request": 0.6}
+DRF_RECAPTCHA_ACTION_V3_SCORES = {
+    "contact_agent_request": 0.6, "contact_us_request": 0.6}
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 MIDDLEWARE = [
-    'corsheaders.middleware.CorsMiddleware',
     # 'corsheaders.middleware.CorsPostCsrfMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'djangoproject.middleware.JwtAuthenticationMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    "corsheaders.middleware.CorsMiddleware",
     'django.middleware.common.CommonMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',  # we still need it bcz of admin forms!
+    # we still need it bcz of admin forms!
+    'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
@@ -151,7 +157,6 @@ CSRF_COOKIE_SECURE = True
 COOKIE_SECRET = ''  # Need to be filled in settings_local
 
 # CORS
-from corsheaders.defaults import default_headers
 CORS_ALLOW_HEADERS = list(default_headers) + ['ofauth']
 
 
@@ -191,7 +196,6 @@ WP_AUTH_PASSWORD = ''
 JWT_REFRESH_SAMESITE = None
 
 
-import logging.config
 LOG_PATH = BASE_DIR / 'logs'
 LOGGING = {
     "version": 1,
@@ -320,7 +324,17 @@ LOGGING = {
 }
 logging.config.dictConfig(LOGGING)
 
-CSRF_TRUSTED_ORIGINS = ['https://localhost']
+CSRF_TRUSTED_ORIGINS = ['https://localhost', 'https://localhost:8080']
+CORS_ORIGIN_ALLOW_ALL = True
+
+CORS_ALLOW_METHODS = (
+    "DELETE",
+    "GET",
+    "OPTIONS",
+    "PATCH",
+    "POST",
+    "PUT",
+)
 
 
 # STATIC_URL = "static/"
@@ -330,5 +344,3 @@ CSRF_TRUSTED_ORIGINS = ['https://localhost']
 # ]
 
 # STATIC_ROOT = f"{BASE_DIR}/static",
-
-from .settings_local import *

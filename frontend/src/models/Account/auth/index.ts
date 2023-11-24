@@ -88,7 +88,7 @@ export default class AccountAuthModule {
 
   async login(email: string, password: string) {
     const [res, err] = await authApi.login({ email, password });
-
+    console.log('login res', res)
     if (err) {
       if (err.response?.status != 400) {
         console.error('Account:Auth :: Invalid response code');

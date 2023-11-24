@@ -249,3 +249,332 @@ TypeError: 'NoneType' object is not subscriptable
 2023-11-11 08:56:34 [WARNING ] (basehttp.log_message) "GET /api/account/social_urls HTTP/1.1" 404 16851
 2023-11-11 08:56:34 [WARNING ] (log.log_response) Not Found: /api/account/subscription
 2023-11-11 08:56:34 [WARNING ] (basehttp.log_message) "GET /api/account/subscription HTTP/1.1" 404 16854
+2023-11-22 05:50:37 [WARNING ] (log.log_response) Not Found: /
+2023-11-22 05:50:37 [WARNING ] (basehttp.log_message) "GET / HTTP/1.1" 404 16769
+2023-11-22 05:50:42 [WARNING ] (log.log_response) Unauthorized: /api/account
+2023-11-22 05:50:42 [WARNING ] (basehttp.log_message) "GET /api/account HTTP/1.1" 401 5121
+2023-11-22 05:50:45 [WARNING ] (log.log_response) Not Found: /api/account/
+2023-11-22 05:50:45 [WARNING ] (basehttp.log_message) "GET /api/account/ HTTP/1.1" 404 16823
+2023-11-22 05:50:47 [WARNING ] (log.log_response) Unauthorized: /api/account
+2023-11-22 05:50:47 [WARNING ] (basehttp.log_message) "GET /api/account HTTP/1.1" 401 5121
+2023-11-22 05:52:18 [WARNING ] (log.log_response) Method Not Allowed: /api/account/login
+2023-11-22 05:52:18 [WARNING ] (basehttp.log_message) "GET /api/account/login HTTP/1.1" 405 7747
+2023-11-22 05:52:30 [WARNING ] (log.log_response) Unauthorized: /api/account
+2023-11-22 05:52:30 [WARNING ] (basehttp.log_message) "GET /api/account HTTP/1.1" 401 5121
+2023-11-22 05:52:36 [WARNING ] (log.log_response) Method Not Allowed: /api/account/login
+2023-11-22 05:52:36 [WARNING ] (basehttp.log_message) "GET /api/account/login HTTP/1.1" 405 7747
+2023-11-22 06:02:26 [WARNING ] (log.log_response) Not Found: /api/csrf
+2023-11-22 06:02:26 [WARNING ] (basehttp.log_message) "GET /api/csrf HTTP/1.1" 404 16806
+2023-11-22 06:02:26 [WARNING ] (log.log_response) Unauthorized: /api/account
+2023-11-22 06:02:27 [WARNING ] (basehttp.log_message) "GET /api/account HTTP/1.1" 401 58
+2023-11-22 06:02:27 [WARNING ] (log.log_response) Not Found: /api/account/social_urls
+2023-11-22 06:02:27 [WARNING ] (basehttp.log_message) "GET /api/account/social_urls HTTP/1.1" 404 16851
+2023-11-22 06:02:27 [WARNING ] (log.log_response) Not Found: /api/account/subscription
+2023-11-22 06:02:27 [WARNING ] (basehttp.log_message) "GET /api/account/subscription HTTP/1.1" 404 16854
+2023-11-22 06:02:40 [WARNING ] (log.log_response) Not Found: /api/csrf
+2023-11-22 06:02:40 [WARNING ] (basehttp.log_message) "GET /api/csrf HTTP/1.1" 404 16806
+2023-11-22 06:02:40 [WARNING ] (log.log_response) Unauthorized: /api/account
+2023-11-22 06:02:40 [WARNING ] (basehttp.log_message) "GET /api/account HTTP/1.1" 401 58
+2023-11-22 06:02:40 [WARNING ] (log.log_response) Not Found: /api/account/social_urls
+2023-11-22 06:02:40 [WARNING ] (basehttp.log_message) "GET /api/account/social_urls HTTP/1.1" 404 16851
+2023-11-22 06:02:40 [WARNING ] (log.log_response) Not Found: /api/account/subscription
+2023-11-22 06:02:40 [WARNING ] (basehttp.log_message) "GET /api/account/subscription HTTP/1.1" 404 16854
+2023-11-22 06:03:23 [WARNING ] (log.log_response) Unauthorized: /api/account/login
+2023-11-22 06:03:23 [WARNING ] (basehttp.log_message) "POST /api/account/login HTTP/1.1" 401 79
+2023-11-22 06:03:43 [WARNING ] (log.log_response) Not Found: /api/csrf
+2023-11-22 06:03:43 [WARNING ] (basehttp.log_message) "GET /api/csrf HTTP/1.1" 404 16806
+2023-11-22 06:03:43 [WARNING ] (log.log_response) Unauthorized: /api/account
+2023-11-22 06:03:43 [WARNING ] (basehttp.log_message) "GET /api/account HTTP/1.1" 401 58
+2023-11-22 06:03:43 [WARNING ] (log.log_response) Not Found: /api/account/subscription
+2023-11-22 06:03:43 [WARNING ] (basehttp.log_message) "GET /api/account/subscription HTTP/1.1" 404 16854
+2023-11-22 06:05:56 [WARNING ] (log.log_response) Not Found: /api/csrf
+2023-11-22 06:05:56 [WARNING ] (basehttp.log_message) "GET /api/csrf HTTP/1.1" 404 16801
+2023-11-22 06:05:56 [WARNING ] (log.log_response) Unauthorized: /api/account
+2023-11-22 06:05:56 [WARNING ] (basehttp.log_message) "GET /api/account HTTP/1.1" 401 58
+2023-11-22 06:05:56 [WARNING ] (log.log_response) Not Found: /api/account/subscription
+2023-11-22 06:05:56 [WARNING ] (basehttp.log_message) "GET /api/account/subscription HTTP/1.1" 404 16849
+2023-11-22 06:10:36 [WARNING ] (log.log_response) Not Found: /api/account/login/
+2023-11-22 06:10:36 [WARNING ] (basehttp.log_message) "GET /api/account/login/ HTTP/1.1" 404 16836
+2023-11-22 06:10:38 [WARNING ] (log.log_response) Method Not Allowed: /api/account/login
+2023-11-22 06:10:38 [WARNING ] (basehttp.log_message) "GET /api/account/login HTTP/1.1" 405 7747
+2023-11-23 05:49:58 [WARNING ] (log.log_response) Not Found: /v1/get/user/
+2023-11-23 05:49:58 [WARNING ] (basehttp.log_message) "GET /v1/get/user/ HTTP/1.1" 404 16818
+2023-11-23 05:49:58 [WARNING ] (log.log_response) Not Found: /favicon.ico
+2023-11-23 06:05:31 [WARNING ] (log.log_response) Not Found: /
+2023-11-23 06:05:31 [WARNING ] (basehttp.log_message) "GET / HTTP/1.1" 404 16937
+2023-11-23 06:05:44 [WARNING ] (log.log_response) Not Found: /api/
+2023-11-23 06:05:44 [WARNING ] (basehttp.log_message) "GET /api/ HTTP/1.1" 404 16967
+2023-11-23 06:05:48 [WARNING ] (log.log_response) Not Found: /api/csrf
+2023-11-23 06:05:48 [WARNING ] (basehttp.log_message) "GET /api/csrf HTTP/1.1" 404 16979
+2023-11-23 06:05:52 [WARNING ] (log.log_response) Not Found: /api/csrf/
+2023-11-23 06:05:52 [WARNING ] (basehttp.log_message) "GET /api/csrf/ HTTP/1.1" 404 16982
+2023-11-23 06:06:19 [WARNING ] (log.log_response) Not Found: /api/csrf/
+2023-11-23 06:06:19 [WARNING ] (basehttp.log_message) "GET /api/csrf/ HTTP/1.1" 404 16981
+2023-11-23 06:06:21 [ERROR   ] (log.log_response) Internal Server Error: /api/csrf
+Traceback (most recent call last):
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/utils/deprecation.py", line 136, in __call__
+    response = self.process_response(request, response)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/middleware/clickjacking.py", line 27, in process_response
+    if response.get("X-Frame-Options") is not None:
+AttributeError: 'WSGIRequest' object has no attribute 'get'
+2023-11-23 06:06:21 [ERROR   ] (basehttp.log_message) "GET /api/csrf HTTP/1.1" 500 85622
+2023-11-23 06:12:55 [WARNING ] (log.log_response) Unauthorized: /api/account
+2023-11-23 06:12:55 [WARNING ] (basehttp.log_message) "GET /api/account HTTP/1.1" 401 58
+2023-11-23 06:12:55 [WARNING ] (log.log_response) Not Found: /api/account/social_urls
+2023-11-23 06:12:55 [WARNING ] (basehttp.log_message) "GET /api/account/social_urls HTTP/1.1" 404 17018
+2023-11-23 06:12:55 [WARNING ] (log.log_response) Not Found: /api/account/subscription
+2023-11-23 06:12:55 [WARNING ] (basehttp.log_message) "GET /api/account/subscription HTTP/1.1" 404 17021
+2023-11-23 06:13:09 [WARNING ] (log.log_response) Unauthorized: /api/account
+2023-11-23 06:13:09 [WARNING ] (basehttp.log_message) "GET /api/account HTTP/1.1" 401 58
+2023-11-23 06:13:09 [WARNING ] (log.log_response) Not Found: /api/account/social_urls
+2023-11-23 06:13:09 [WARNING ] (basehttp.log_message) "GET /api/account/social_urls HTTP/1.1" 404 17018
+2023-11-23 06:13:09 [WARNING ] (log.log_response) Not Found: /api/account/subscription
+2023-11-23 06:13:09 [WARNING ] (basehttp.log_message) "GET /api/account/subscription HTTP/1.1" 404 17021
+2023-11-23 06:13:41 [WARNING ] (log.log_response) Unauthorized: /api/account
+2023-11-23 06:13:41 [WARNING ] (basehttp.log_message) "GET /api/account HTTP/1.1" 401 58
+2023-11-23 06:13:41 [WARNING ] (log.log_response) Not Found: /api/account/subscription
+2023-11-23 06:13:41 [WARNING ] (basehttp.log_message) "GET /api/account/subscription HTTP/1.1" 404 17021
+2023-11-23 06:13:54 [WARNING ] (log.log_response) Unauthorized: /api/account
+2023-11-23 06:13:54 [WARNING ] (basehttp.log_message) "GET /api/account HTTP/1.1" 401 58
+2023-11-23 06:13:54 [WARNING ] (log.log_response) Not Found: /api/account/social_urls
+2023-11-23 06:13:54 [WARNING ] (basehttp.log_message) "GET /api/account/social_urls HTTP/1.1" 404 17018
+2023-11-23 06:13:54 [WARNING ] (log.log_response) Not Found: /api/account/subscription
+2023-11-23 06:13:54 [WARNING ] (basehttp.log_message) "GET /api/account/subscription HTTP/1.1" 404 17021
+2023-11-23 06:14:06 [WARNING ] (log.log_response) Unauthorized: /api/account
+2023-11-23 06:14:06 [WARNING ] (basehttp.log_message) "GET /api/account HTTP/1.1" 401 5121
+2023-11-23 06:14:09 [WARNING ] (log.log_response) Unauthorized: /api/account
+2023-11-23 06:14:09 [WARNING ] (basehttp.log_message) "GET /api/account HTTP/1.1" 401 5121
+2023-11-23 06:14:10 [WARNING ] (log.log_response) Unauthorized: /api/account
+2023-11-23 06:14:10 [WARNING ] (basehttp.log_message) "GET /api/account HTTP/1.1" 401 5121
+2023-11-23 06:14:46 [WARNING ] (log.log_response) Unauthorized: /api/account
+2023-11-23 06:14:46 [WARNING ] (basehttp.log_message) "GET /api/account HTTP/1.1" 401 5121
+2023-11-23 06:14:49 [WARNING ] (log.log_response) Unauthorized: /api/account
+2023-11-23 06:14:49 [WARNING ] (basehttp.log_message) "GET /api/account HTTP/1.1" 401 58
+2023-11-23 06:14:49 [WARNING ] (log.log_response) Not Found: /api/account/social_urls
+2023-11-23 06:14:49 [WARNING ] (basehttp.log_message) "GET /api/account/social_urls HTTP/1.1" 404 17018
+2023-11-23 06:14:49 [WARNING ] (log.log_response) Not Found: /api/account/subscription
+2023-11-23 06:14:49 [WARNING ] (basehttp.log_message) "GET /api/account/subscription HTTP/1.1" 404 17021
+2023-11-23 06:15:03 [WARNING ] (log.log_response) Unauthorized: /api/account
+2023-11-23 06:15:03 [WARNING ] (basehttp.log_message) "GET /api/account HTTP/1.1" 401 5121
+2023-11-23 06:23:33 [WARNING ] (log.log_response) Unauthorized: /api/account
+2023-11-23 06:23:33 [WARNING ] (basehttp.log_message) "GET /api/account HTTP/1.1" 401 58
+2023-11-23 06:23:34 [WARNING ] (log.log_response) Not Found: /api/account/subscription
+2023-11-23 06:23:34 [WARNING ] (basehttp.log_message) "GET /api/account/subscription HTTP/1.1" 404 17021
+2023-11-23 06:25:43 [WARNING ] (log.log_response) Unauthorized: /api/account
+2023-11-23 06:25:43 [WARNING ] (basehttp.log_message) "GET /api/account HTTP/1.1" 401 5121
+2023-11-23 06:25:48 [WARNING ] (log.log_response) Unauthorized: /api/account
+2023-11-23 06:25:48 [WARNING ] (basehttp.log_message) "GET /api/account HTTP/1.1" 401 5121
+2023-11-24 09:09:07 [WARNING ] (log.log_response) Unauthorized: /api/account
+2023-11-24 09:09:07 [WARNING ] (basehttp.log_message) "GET /api/account HTTP/1.1" 401 58
+2023-11-24 09:09:07 [WARNING ] (log.log_response) Not Found: /api/account/social_urls
+2023-11-24 09:09:07 [WARNING ] (basehttp.log_message) "GET /api/account/social_urls HTTP/1.1" 404 17018
+2023-11-24 09:09:07 [WARNING ] (log.log_response) Not Found: /api/account/subscription
+2023-11-24 09:09:07 [WARNING ] (basehttp.log_message) "GET /api/account/subscription HTTP/1.1" 404 17021
+2023-11-24 09:09:09 [WARNING ] (log.log_response) Unauthorized: /api/account
+2023-11-24 09:09:09 [WARNING ] (basehttp.log_message) "GET /api/account HTTP/1.1" 401 5121
+2023-11-24 09:09:39 [WARNING ] (log.log_response) Not Found: /api/account/social_urls
+2023-11-24 09:09:39 [WARNING ] (basehttp.log_message) "GET /api/account/social_urls HTTP/1.1" 404 17018
+2023-11-24 09:09:39 [WARNING ] (log.log_response) Not Found: /api/account/subscription
+2023-11-24 09:09:39 [WARNING ] (basehttp.log_message) "GET /api/account/subscription HTTP/1.1" 404 17021
+2023-11-24 09:09:51 [WARNING ] (log.log_response) Forbidden: /api/account/logout
+2023-11-24 09:09:51 [WARNING ] (basehttp.log_message) "POST /api/account/logout HTTP/1.1" 403 93
+2023-11-24 09:09:54 [WARNING ] (log.log_response) Forbidden: /api/account/logout
+2023-11-24 09:09:54 [WARNING ] (basehttp.log_message) "POST /api/account/logout HTTP/1.1" 403 93
+2023-11-24 09:09:58 [WARNING ] (log.log_response) Unauthorized: /api/account
+2023-11-24 09:09:58 [WARNING ] (basehttp.log_message) "GET /api/account HTTP/1.1" 401 5121
+2023-11-24 09:10:01 [WARNING ] (log.log_response) Unauthorized: /api/account
+2023-11-24 09:10:01 [WARNING ] (basehttp.log_message) "GET /api/account HTTP/1.1" 401 58
+2023-11-24 09:10:01 [WARNING ] (log.log_response) Not Found: /api/account/social_urls
+2023-11-24 09:10:01 [WARNING ] (basehttp.log_message) "GET /api/account/social_urls HTTP/1.1" 404 17018
+2023-11-24 09:10:02 [WARNING ] (log.log_response) Not Found: /api/account/subscription
+2023-11-24 09:10:02 [WARNING ] (basehttp.log_message) "GET /api/account/subscription HTTP/1.1" 404 17021
+2023-11-24 09:10:15 [WARNING ] (log.log_response) Unauthorized: /api/account
+2023-11-24 09:10:15 [WARNING ] (basehttp.log_message) "GET /api/account HTTP/1.1" 401 58
+2023-11-24 09:10:15 [WARNING ] (log.log_response) Not Found: /api/account/subscription
+2023-11-24 09:10:15 [WARNING ] (basehttp.log_message) "GET /api/account/subscription HTTP/1.1" 404 17021
+2023-11-24 09:10:32 [WARNING ] (log.log_response) Unauthorized: /api/account
+2023-11-24 09:10:32 [WARNING ] (basehttp.log_message) "GET /api/account HTTP/1.1" 401 58
+2023-11-24 09:10:32 [WARNING ] (log.log_response) Not Found: /api/account/subscription
+2023-11-24 09:10:32 [WARNING ] (basehttp.log_message) "GET /api/account/subscription HTTP/1.1" 404 17021
+2023-11-24 09:11:12 [WARNING ] (log.log_response) Unauthorized: /api/account
+2023-11-24 09:11:12 [WARNING ] (basehttp.log_message) "GET /api/account HTTP/1.1" 401 5121
+2023-11-24 09:11:13 [WARNING ] (log.log_response) Unauthorized: /api/account
+2023-11-24 09:11:13 [WARNING ] (basehttp.log_message) "GET /api/account HTTP/1.1" 401 5121
+2023-11-24 09:14:38 [WARNING ] (log.log_response) Unauthorized: /api/account
+2023-11-24 09:14:38 [WARNING ] (log.log_response) Not Found: /api/account/social_urls
+2023-11-24 09:14:38 [WARNING ] (basehttp.log_message) "GET /api/account HTTP/1.1" 401 58
+2023-11-24 09:14:38 [WARNING ] (basehttp.log_message) "GET /api/account/social_urls HTTP/1.1" 404 17018
+2023-11-24 09:14:38 [WARNING ] (log.log_response) Not Found: /api/account/subscription
+2023-11-24 09:14:38 [WARNING ] (basehttp.log_message) "GET /api/account/subscription HTTP/1.1" 404 17021
+2023-11-24 09:16:00 [WARNING ] (log.log_response) Unauthorized: /api/account
+2023-11-24 09:16:00 [WARNING ] (basehttp.log_message) "GET /api/account HTTP/1.1" 401 58
+2023-11-24 09:16:00 [WARNING ] (log.log_response) Not Found: /api/account/social_urls
+2023-11-24 09:16:00 [WARNING ] (basehttp.log_message) "GET /api/account/social_urls HTTP/1.1" 404 17018
+2023-11-24 09:16:01 [WARNING ] (log.log_response) Not Found: /api/account/subscription
+2023-11-24 09:16:01 [WARNING ] (basehttp.log_message) "GET /api/account/subscription HTTP/1.1" 404 17021
+2023-11-24 09:16:32 [WARNING ] (log.log_response) Unauthorized: /api/account
+2023-11-24 09:16:32 [WARNING ] (basehttp.log_message) "GET /api/account HTTP/1.1" 401 58
+2023-11-24 09:16:32 [WARNING ] (log.log_response) Not Found: /api/account/social_urls
+2023-11-24 09:16:32 [WARNING ] (basehttp.log_message) "GET /api/account/social_urls HTTP/1.1" 404 17018
+2023-11-24 09:16:32 [WARNING ] (log.log_response) Not Found: /api/account/subscription
+2023-11-24 09:16:32 [WARNING ] (basehttp.log_message) "GET /api/account/subscription HTTP/1.1" 404 17021
+2023-11-24 09:16:40 [WARNING ] (log.log_response) Unauthorized: /api/account
+2023-11-24 09:16:40 [WARNING ] (basehttp.log_message) "GET /api/account HTTP/1.1" 401 58
+2023-11-24 09:16:40 [WARNING ] (log.log_response) Not Found: /api/account/social_urls
+2023-11-24 09:16:40 [WARNING ] (basehttp.log_message) "GET /api/account/social_urls HTTP/1.1" 404 17018
+2023-11-24 09:16:40 [WARNING ] (log.log_response) Not Found: /api/account/subscription
+2023-11-24 09:16:40 [WARNING ] (basehttp.log_message) "GET /api/account/subscription HTTP/1.1" 404 17021
+2023-11-24 09:17:03 [WARNING ] (log.log_response) Unauthorized: /api/account
+2023-11-24 09:17:03 [WARNING ] (basehttp.log_message) "GET /api/account HTTP/1.1" 401 58
+2023-11-24 09:17:03 [WARNING ] (log.log_response) Not Found: /api/account/subscription
+2023-11-24 09:17:03 [WARNING ] (basehttp.log_message) "GET /api/account/subscription HTTP/1.1" 404 17021
+2023-11-24 09:27:01 [WARNING ] (log.log_response) Unauthorized: /api/account
+2023-11-24 09:27:01 [WARNING ] (basehttp.log_message) "GET /api/account HTTP/1.1" 401 5121
+2023-11-24 11:09:15 [WARNING ] (log.log_response) Unauthorized: /api/account
+2023-11-24 11:09:15 [WARNING ] (log.log_response) Not Found: /api/account/social_urls
+2023-11-24 11:09:15 [WARNING ] (basehttp.log_message) "GET /api/account HTTP/1.1" 401 58
+2023-11-24 11:09:15 [WARNING ] (basehttp.log_message) "GET /api/account/social_urls HTTP/1.1" 404 17018
+2023-11-24 11:09:15 [WARNING ] (log.log_response) Not Found: /api/account/subscription
+2023-11-24 11:09:15 [WARNING ] (basehttp.log_message) "GET /api/account/subscription HTTP/1.1" 404 17021
+2023-11-24 11:10:10 [WARNING ] (log.log_response) Method Not Allowed: /api/account/session-login
+2023-11-24 11:10:10 [WARNING ] (basehttp.log_message) "GET /api/account/session-login HTTP/1.1" 405 7691
+2023-11-24 11:10:32 [WARNING ] (log.log_response) Forbidden: /api/account/session-login
+2023-11-24 11:10:32 [WARNING ] (basehttp.log_message) "POST /api/account/session-login HTTP/1.1" 403 4146
+2023-11-24 11:10:36 [WARNING ] (log.log_response) Forbidden: /api/account/session-login
+2023-11-24 11:10:36 [WARNING ] (basehttp.log_message) "POST /api/account/session-login HTTP/1.1" 403 4146
+2023-11-24 11:10:40 [WARNING ] (log.log_response) Method Not Allowed: /api/account/session-login
+2023-11-24 11:10:40 [WARNING ] (basehttp.log_message) "GET /api/account/session-login HTTP/1.1" 405 7936
+2023-11-24 11:10:43 [WARNING ] (log.log_response) Method Not Allowed: /api/account/session-login
+2023-11-24 11:10:43 [WARNING ] (basehttp.log_message) "GET /api/account/session-login HTTP/1.1" 405 7936
+2023-11-24 11:10:45 [WARNING ] (log.log_response) Unauthorized: /api/account/session-login
+2023-11-24 11:10:45 [WARNING ] (basehttp.log_message) "POST /api/account/session-login HTTP/1.1" 401 7983
+2023-11-24 11:13:24 [WARNING ] (log.log_response) Not Found: /api/account/social_urls
+2023-11-24 11:13:24 [WARNING ] (basehttp.log_message) "GET /api/account/social_urls HTTP/1.1" 404 17018
+2023-11-24 11:13:24 [WARNING ] (log.log_response) Not Found: /api/account/subscription
+2023-11-24 11:13:24 [WARNING ] (basehttp.log_message) "GET /api/account/subscription HTTP/1.1" 404 17021
+2023-11-24 11:13:32 [WARNING ] (log.log_response) Not Found: /api/account/social_urls
+2023-11-24 11:13:32 [WARNING ] (basehttp.log_message) "GET /api/account/social_urls HTTP/1.1" 404 17018
+2023-11-24 11:13:33 [WARNING ] (log.log_response) Not Found: /api/account/subscription
+2023-11-24 11:13:33 [WARNING ] (basehttp.log_message) "GET /api/account/subscription HTTP/1.1" 404 17021
+2023-11-24 11:13:42 [WARNING ] (log.log_response) Forbidden: /api/account/logout
+2023-11-24 11:13:42 [WARNING ] (basehttp.log_message) "POST /api/account/logout HTTP/1.1" 403 93
+2023-11-24 11:13:44 [WARNING ] (log.log_response) Not Found: /api/account/social_urls
+2023-11-24 11:13:44 [WARNING ] (basehttp.log_message) "GET /api/account/social_urls HTTP/1.1" 404 17018
+2023-11-24 11:13:44 [WARNING ] (log.log_response) Not Found: /api/account/subscription
+2023-11-24 11:13:44 [WARNING ] (basehttp.log_message) "GET /api/account/subscription HTTP/1.1" 404 17021
+2023-11-24 11:13:46 [WARNING ] (log.log_response) Not Found: /api/account/favorites
+2023-11-24 11:13:46 [WARNING ] (basehttp.log_message) "GET /api/account/favorites HTTP/1.1" 404 17012
+2023-11-24 11:13:55 [WARNING ] (log.log_response) Not Found: /api/account/favorites
+2023-11-24 11:13:55 [WARNING ] (basehttp.log_message) "GET /api/account/favorites HTTP/1.1" 404 17012
+2023-11-24 11:14:22 [WARNING ] (log.log_response) Not Found: /api/account/social_urls
+2023-11-24 11:14:22 [WARNING ] (basehttp.log_message) "GET /api/account/social_urls HTTP/1.1" 404 17018
+2023-11-24 11:14:22 [WARNING ] (log.log_response) Not Found: /api/account/subscription
+2023-11-24 11:14:22 [WARNING ] (basehttp.log_message) "GET /api/account/subscription HTTP/1.1" 404 17021
+2023-11-24 11:14:33 [WARNING ] (log.log_response) Not Found: /api/account/social_urls
+2023-11-24 11:14:33 [WARNING ] (basehttp.log_message) "GET /api/account/social_urls HTTP/1.1" 404 17018
+2023-11-24 11:23:52 [ERROR   ] (log.log_response) Internal Server Error: /api/account/social_urls
+Traceback (most recent call last):
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/views/generic/base.py", line 84, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/views/generic/base.py", line 119, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/account/views/csrf.py", line 25, in get
+    return JsonResponse({'key': urls}, safe=True)
+UnboundLocalError: local variable 'urls' referenced before assignment
+2023-11-24 11:23:52 [ERROR   ] (basehttp.log_message) "GET /api/account/social_urls HTTP/1.1" 500 94460
+2023-11-24 11:24:25 [WARNING ] (log.log_response) Not Found: /api/account/subscription
+2023-11-24 11:24:25 [WARNING ] (basehttp.log_message) "GET /api/account/subscription HTTP/1.1" 404 17211
+2023-11-24 11:24:32 [WARNING ] (log.log_response) Not Found: /api/account/subscription
+2023-11-24 11:24:32 [WARNING ] (basehttp.log_message) "GET /api/account/subscription HTTP/1.1" 404 17211
+2023-11-24 11:24:53 [WARNING ] (log.log_response) Not Found: /api/account/subscription
+2023-11-24 11:24:53 [WARNING ] (basehttp.log_message) "GET /api/account/subscription HTTP/1.1" 404 17211
+2023-11-24 11:24:56 [WARNING ] (log.log_response) Not Found: /api/account/subscription
+2023-11-24 11:24:56 [WARNING ] (basehttp.log_message) "GET /api/account/subscription HTTP/1.1" 404 17211
+2023-11-24 11:37:16 [WARNING ] (log.log_response) Not Found: /
+2023-11-24 11:37:16 [WARNING ] (basehttp.log_message) "GET / HTTP/1.1" 404 17316
+2023-11-24 11:37:16 [WARNING ] (log.log_response) Not Found: /favicon.ico
+2023-11-24 11:37:16 [WARNING ] (basehttp.log_message) "GET /favicon.ico HTTP/1.1" 404 17367
+2023-11-24 14:56:43 [ERROR   ] (basehttp.log_message) You're accessing the development server over HTTPS, but it only supports HTTP.
+
+2023-11-24 14:56:43 [ERROR   ] (basehttp.log_message) You're accessing the development server over HTTPS, but it only supports HTTP.
+
+2023-11-24 14:56:43 [ERROR   ] (basehttp.log_message) You're accessing the development server over HTTPS, but it only supports HTTP.
+
+2023-11-24 14:56:44 [ERROR   ] (basehttp.log_message) You're accessing the development server over HTTPS, but it only supports HTTP.
+
+2023-11-24 14:56:59 [ERROR   ] (basehttp.log_message) You're accessing the development server over HTTPS, but it only supports HTTP.
+
+2023-11-24 14:56:59 [ERROR   ] (basehttp.log_message) You're accessing the development server over HTTPS, but it only supports HTTP.
+
+2023-11-24 14:56:59 [ERROR   ] (basehttp.log_message) You're accessing the development server over HTTPS, but it only supports HTTP.
+
+2023-11-24 14:57:01 [ERROR   ] (basehttp.log_message) You're accessing the development server over HTTPS, but it only supports HTTP.
+
+2023-11-24 14:58:09 [ERROR   ] (basehttp.log_message) You're accessing the development server over HTTPS, but it only supports HTTP.
+
+2023-11-24 14:58:09 [ERROR   ] (basehttp.log_message) You're accessing the development server over HTTPS, but it only supports HTTP.
+
+2023-11-24 14:58:09 [ERROR   ] (basehttp.log_message) You're accessing the development server over HTTPS, but it only supports HTTP.
+
+2023-11-24 14:58:10 [ERROR   ] (basehttp.log_message) You're accessing the development server over HTTPS, but it only supports HTTP.
+
+2023-11-24 15:01:56 [ERROR   ] (basehttp.log_message) You're accessing the development server over HTTPS, but it only supports HTTP.
+
+2023-11-24 15:01:56 [ERROR   ] (basehttp.log_message) You're accessing the development server over HTTPS, but it only supports HTTP.
+
+2023-11-24 15:01:56 [ERROR   ] (basehttp.log_message) You're accessing the development server over HTTPS, but it only supports HTTP.
+
+2023-11-24 15:01:57 [ERROR   ] (basehttp.log_message) You're accessing the development server over HTTPS, but it only supports HTTP.
+
+2023-11-24 15:03:57 [ERROR   ] (basehttp.log_message) You're accessing the development server over HTTPS, but it only supports HTTP.
+
+2023-11-24 15:03:58 [ERROR   ] (basehttp.log_message) You're accessing the development server over HTTPS, but it only supports HTTP.
+
+2023-11-24 15:04:05 [ERROR   ] (basehttp.log_message) You're accessing the development server over HTTPS, but it only supports HTTP.
+
+2023-11-24 15:04:06 [ERROR   ] (basehttp.log_message) You're accessing the development server over HTTPS, but it only supports HTTP.
+
+2023-11-24 15:04:14 [ERROR   ] (basehttp.log_message) You're accessing the development server over HTTPS, but it only supports HTTP.
+
+2023-11-24 15:04:14 [ERROR   ] (basehttp.log_message) You're accessing the development server over HTTPS, but it only supports HTTP.
+
+2023-11-24 15:04:15 [ERROR   ] (basehttp.log_message) You're accessing the development server over HTTPS, but it only supports HTTP.
+
+2023-11-24 15:04:21 [ERROR   ] (basehttp.log_message) You're accessing the development server over HTTPS, but it only supports HTTP.
+
+2023-11-24 15:04:21 [ERROR   ] (basehttp.log_message) You're accessing the development server over HTTPS, but it only supports HTTP.
+
+2023-11-24 15:07:41 [ERROR   ] (basehttp.log_message) You're accessing the development server over HTTPS, but it only supports HTTP.
+
+2023-11-24 15:07:53 [ERROR   ] (basehttp.log_message) You're accessing the development server over HTTPS, but it only supports HTTP.
+
+2023-11-24 15:07:53 [ERROR   ] (basehttp.log_message) You're accessing the development server over HTTPS, but it only supports HTTP.
+
+2023-11-24 15:07:53 [ERROR   ] (basehttp.log_message) You're accessing the development server over HTTPS, but it only supports HTTP.
+
+2023-11-24 15:08:37 [ERROR   ] (basehttp.log_message) You're accessing the development server over HTTPS, but it only supports HTTP.
+
+2023-11-24 15:09:37 [ERROR   ] (basehttp.log_message) You're accessing the development server over HTTPS, but it only supports HTTP.
+
+2023-11-24 15:09:48 [ERROR   ] (basehttp.log_message) You're accessing the development server over HTTPS, but it only supports HTTP.
+
+2023-11-24 15:10:01 [ERROR   ] (basehttp.log_message) You're accessing the development server over HTTPS, but it only supports HTTP.
+
+2023-11-24 15:10:30 [ERROR   ] (basehttp.log_message) You're accessing the development server over HTTPS, but it only supports HTTP.
+
+2023-11-24 15:10:44 [ERROR   ] (basehttp.log_message) You're accessing the development server over HTTPS, but it only supports HTTP.
+
+2023-11-24 15:10:57 [ERROR   ] (basehttp.log_message) You're accessing the development server over HTTPS, but it only supports HTTP.
+
+2023-11-24 16:00:15 [WARNING ] (log.log_response) Forbidden: /api/search
+2023-11-24 16:00:15 [WARNING ] (basehttp.log_message) "POST /api/search HTTP/1.1" 403 93
+2023-11-24 16:00:15 [WARNING ] (log.log_response) Forbidden: /api/search/address-rect
+2023-11-24 16:00:15 [WARNING ] (basehttp.log_message) "POST /api/search/address-rect HTTP/1.1" 403 93
+2023-11-24 16:00:15 [WARNING ] (log.log_response) Forbidden: /api/search
+2023-11-24 16:00:15 [WARNING ] (basehttp.log_message) "POST /api/search HTTP/1.1" 403 93

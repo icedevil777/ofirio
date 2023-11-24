@@ -34,42 +34,47 @@ type TAccountDTO__Client_UpdatePassword = {
   password_new: string
 }
 
+let getUrl = ''
+if (location.hostname === 'localhost') {
+  getUrl = 'https://localhost'
+}
+
 export default {
 
   getAccount: function () {
-    return <AxiosRequestToAwaiting<TAccountBaseDTO>>of(axios.get('/api/account'));
+    return <AxiosRequestToAwaiting<TAccountBaseDTO>>of(axios.get(`${getUrl}/api/account`));
   },
 
   login: function (data:TAccountDTO__Client_Login) {
-    return <AxiosRequestToAwaiting<void>>of(axios.post('/api/account/login', data));
+    return <AxiosRequestToAwaiting<void>>of(axios.post(`${getUrl}/api/account/login`, data));
   },
 
   logout: function () {
-    return <AxiosRequestToAwaiting<void>>of(axios.post('/api/account/logout'));
+    return <AxiosRequestToAwaiting<void>>of(axios.post(`${getUrl}/api/account/logout`));
   },
 
   registerAccount: function (data:TAccountDTO__Client_Registration) {
-    return <AxiosRequestToAwaiting<void>>of(axios.post('/api/account/registration', data));
+    return <AxiosRequestToAwaiting<void>>of(axios.post(`${getUrl}/api/account/registration`, data));
   },
 
   initiatePasswordRestore: function (data:TAccountDTO__Client_RestorePassword) {
-    return <AxiosRequestToAwaiting<void>>of(axios.post('/api/account/restore_password', data));
+    return <AxiosRequestToAwaiting<void>>of(axios.post(`${getUrl}/api/account/restore_password`, data));
   },
 
   checkPasswordRestoreToken: function (data:TAccountDTO__Client_RestoreTokenCheck) {
-    return <AxiosRequestToAwaiting<void>>of(axios.post('/api/account/restore_password_check', data));
+    return <AxiosRequestToAwaiting<void>>of(axios.post(`${getUrl}/api/account/restore_password_check`, data));
   },
 
   completeRestorePassword: function (data:TAccountDTO__Client_RestorePasswordChange) {
-    return <AxiosRequestToAwaiting<void>>of(axios.post('/api/account/restore_password_change', data));
+    return <AxiosRequestToAwaiting<void>>of(axios.post(`${getUrl}/api/account/restore_password_change`, data));
   },
 
   updatePassword: function (data:TAccountDTO__Client_UpdatePassword) {
-    return <AxiosRequestToAwaiting<void>>of(axios.post(`/api/account/change_password`, data));
+    return <AxiosRequestToAwaiting<void>>of(axios.post(`${getUrl}/api/account/change_password`, data));
   },
 
   getSocialUrls: function () {
-    return <AxiosRequestToAwaiting<TAccountDTO__SocialUrls>>of(axios.get('/api/account/social_urls'));
+    return <AxiosRequestToAwaiting<TAccountDTO__SocialUrls>>of(axios.get(`${getUrl}/api/account/social_urls`));
   }
 
 }

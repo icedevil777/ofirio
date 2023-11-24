@@ -55,7 +55,7 @@ export default class AccountBasisModule {
   }
 
   public get isPremium() {
-    if (Account.Basis.dto?.subscription.status == 'active' || Account.Basis.dto?.subscription.status == 'trialing')
+    if (Account.Basis?.dto?.subscription?.status == 'active' || Account.Basis.dto?.subscription?.status == 'trialing')
       return true;
 
     return false;

@@ -144,9 +144,9 @@
       <span class="title">See How Ofirio Works</span>
       <span class="text">Learn how you can turn months of difficult research into just a few easy seconds with Ofirio</span>
     </div>
-    <div class="video-block">
+    <!-- <div class="video-block">
       <iframe src="https://player.vimeo.com/video/567390590?title=0&byline=0&portrait=0" width="672" height="378" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
-    </div>
+    </div> -->
   </div>
   <div class="how-ofirio-works-wrapper">
     <UStaticSidedBlock titleSide="left">

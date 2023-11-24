@@ -12,5 +12,7 @@ class AccountView(APIView):
     queryset = ''
 
     def get(self, request, *args, **kwargs):
+        print('request', request)
         serializer = self.serializer_class(request.user)
+        print('serializer', serializer.data)
         return Response(serializer.data, status=status.HTTP_200_OK)

@@ -174,7 +174,7 @@ export default class AccountSubscriptionsModule {
   }
 
   public isPayable(plan: TAccountDTO__Client_Subscription_Periods) {
-    const current:TAccountDTO__Client_Subscription_Periods | undefined = <TAccountDTO__Client_Subscription_Periods>Account.Basis.dto?.subscription.period;
+    const current:TAccountDTO__Client_Subscription_Periods | undefined = <TAccountDTO__Client_Subscription_Periods>Account.Basis?.dto?.subscription?.period;
 
     if (Account.Basis.isPremium === false)
       return true;

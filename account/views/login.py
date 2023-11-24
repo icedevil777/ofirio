@@ -1,6 +1,6 @@
 import logging
 from datetime import timedelta
-
+from django.core.cache import cache
 from django.conf import settings
 from django.contrib import auth, messages
 from django.utils import timezone
@@ -69,6 +69,8 @@ class JwtLoginView(TokenObtainPairView):
         access, refresh = tokens['access'], tokens['refresh']
         response = Response({'access': access}, status=status.HTTP_200_OK)
         set_jwt_cookies(response, access, refresh)
+        cache.set("access", access, timeout=None)
+
         return response
 
 

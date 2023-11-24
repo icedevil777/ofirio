@@ -21,7 +21,7 @@ urlpatterns = [
     path('', include('sale_estimator.urls')),
     path('', include('search.urls')),
     path('', include('reports.urls')),
-    path('adminRSPRJ/', admin.site.urls),
+    path('admin/', admin.site.urls),
     re_path(r'^ckeditor/', include('ckeditor_uploader.urls')),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) \
   + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

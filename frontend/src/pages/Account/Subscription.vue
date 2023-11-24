@@ -33,11 +33,11 @@
   </div>
 
 
-  <div class="account-internal-padding subs" v-if="Account.Basis.isPremium && !Account.Basis.dto?.subscription.cancel_at_period_end">
+  <div class="account-internal-padding subs" v-if="Account.Basis.isPremium && !Account.Basis?.dto?.subscription?.cancel_at_period_end">
     <h1 class="heading">My subscription</h1>
     <div class="account-sub-block">
       <span class="header">Current plan</span>
-      <span class="plan-name">{{ Account.Basis.dto?.subscription.plan }}</span>
+      <!-- <span class="plan-name">{{ Account.Basis?.dto?.subscription?.plan }}</span> -->
       <p class="text">Invest smarter, save time, and grow your wealth quickly</p>
       <UButton class="ui-btn ui-btn-bordered-green" @click="$root.$refs.popupUpgrade.open" v-if="Account.Subscriptions.isPayable('year')">Upgrade</UButton>
       <div class="payment-info flex">
@@ -60,7 +60,7 @@
     <h1 class="heading">My subscription</h1>
     <div class="account-sub-block">
       <span class="header">Subscription canceled</span>
-      <span class="plan-name">{{ Account.Basis.dto?.subscription.plan }}</span>
+      <span class="plan-name">{{ Account.Basis?.dto?.subscription?.plan }}</span>
       <p class="text">Invest smarter, save time, and grow your wealth quickly</p>
       <div class="payment-info flex">
         <div class="block" v-if="Account.Subscriptions.dto">

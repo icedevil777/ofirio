@@ -5,32 +5,33 @@
     <form class="login" v-if="state == 'login'" @submit.prevent.stop>
       <h1>Login to Account</h1>
       <div class="oauth flex">
-        <UButton class="ui-btn-iconic ui-btn-circle" @click="actionLoginSocial('facebook')"><UIcon name="facebook-circle"/>Facebook</UButton>
-        <UButton class="ui-btn-iconic ui-btn-circle" @click="actionLoginSocial('google')"><UIcon name="google"/>Google</UButton>
+        <UButton class="ui-btn-iconic ui-btn-circle" @click="actionLoginSocial('facebook')">
+          <UIcon name="facebook-circle" />Facebook
+        </UButton>
+        <UButton class="ui-btn-iconic ui-btn-circle" @click="actionLoginSocial('google')">
+          <UIcon name="google" />Google
+        </UButton>
       </div>
       <UDivider label="OR" />
-      <UFloatingInput v-model="authData.email" class="email" label="E-mail" type="email" required :scheme="validators.VEmail"/>
-      <UFloatingInput v-model="authData.password" class="password" label="Password" type="password" required :scheme="validators.VPassword"/>
+
+      <UFloatingInput v-model="authData.email" class="email" label="E-mail" type="email" required
+        :scheme="validators.VEmail" />
+      <UFloatingInput v-model="authData.password" class="password" label="Password" type="password" required
+        :scheme="validators.VPassword" />
       <div class="ui-text-right forgot-password">
         <UButton class="ui-btn-text ui-btn-text-gray" @click="setState('reset')">Forgot password?</UButton>
       </div>
-      <UButton
-        class="ui-btn ui-btn-green auth-popup-btn"
-        :busy="inProgressState"
-        @click="actionLogin"
-      >Login</UButton>
+      <UButton class="ui-btn ui-btn-green auth-popup-btn" :busy="inProgressState" @click="actionLogin">Login</UButton>
       <div class="ui-text-center not-a-member-yet">Not a member yet?</div>
-      <UButton
-        class="ui-btn ui-btn-bordered-green auth-popup-btn"
-        @click="setState('register')"
-      >Register for FREE</UButton>
+      <UButton class="ui-btn ui-btn-bordered-green auth-popup-btn" @click="setState('register')">Register for FREE
+      </UButton>
       <UDivider />
       <div class="ui-text-center terms">
         By login you agree to Ofirio’s
         <router-link :to="{ name: 'static-terms-and-conditions' }">
           <a @click="() => $root['ev-popup-login-close']()" class="ui-href ui-href-underline">Terms of Use</a>
         </router-link>
-        and<br> 
+        and<br>
         <router-link :to="{ name: 'static-privacy-policy' }">
           <a @click="() => $root['ev-popup-login-close']()" class="ui-href ui-href-underline">Privacy Policy</a>
         </router-link>
@@ -44,29 +45,35 @@
     <form class="register" v-if="state == 'register'" @submit.prevent.stop>
       <h1>Subscribe to Ofirio</h1>
       <div class="oauth flex">
-        <UButton class="ui-btn-iconic ui-btn-circle" @click="actionLoginSocial('facebook')"><UIcon name="facebook-circle"/>Facebook</UButton>
-        <UButton class="ui-btn-iconic ui-btn-circle" @click="actionLoginSocial('google')"><UIcon name="google"/>Google</UButton>
+        <UButton class="ui-btn-iconic ui-btn-circle" @click="actionLoginSocial('facebook')">
+          <UIcon name="facebook-circle" />Facebook
+        </UButton>
+        <UButton class="ui-btn-iconic ui-btn-circle" @click="actionLoginSocial('google')">
+          <UIcon name="google" />Google
+        </UButton>
       </div>
       <UDivider label="OR" />
-      <UFloatingInput v-model="authData.email" class="email" label="E-mail" type="email" required :scheme="validators.VEmail"/>
-      <UFloatingInput v-model="authData.password" class="password" label="Password" type="password" required :scheme="validators.VPassword"/>
+
+      <UFloatingInput v-model="authData.email" class="email" label="E-mail" type="email" required
+        :scheme="validators.VEmail" />
+      <UFloatingInput v-model="authData.password" class="password" label="Password" type="password" required
+        :scheme="validators.VPassword" />
       <PasswordStrength :passmodel="authData.password" />
       <div class="agreement-confirmation">
         <UCheckboxInput v-model="authData.agree">
           <span>
             I agree to OFIRIO
             <router-link :to="{ name: 'static-terms-and-conditions' }">
-              <a @click="() => $root['ev-popup-login-close']()" class="ui-href ui-href-underline">Terms &amp; Conditions</a>
+              <a @click="() => $root['ev-popup-login-close']()" class="ui-href ui-href-underline">Terms &amp;
+                Conditions</a>
             </router-link>
           </span>
         </UCheckboxInput>
       </div>
-      <UButton
-        class="ui-btn ui-btn-green auth-popup-btn"
-        :busy="inProgressState"
-        @click="actionRegister"
-      >Get Started</UButton>
-      <div class="ui-text-center already-a-member">Already a member? <span class="ui-href ui-href-underline" @click="setState('login')">Login</span></div>
+      <UButton class="ui-btn ui-btn-green auth-popup-btn" :busy="inProgressState" @click="actionRegister">Get Started
+      </UButton>
+      <div class="ui-text-center already-a-member">Already a member? <span class="ui-href ui-href-underline"
+          @click="setState('login')">Login</span></div>
       <UDivider class="hide-desktop" />
       <div class="secure-area">
         <UIcon name="lock-circle" /> Secure area
@@ -77,34 +84,30 @@
     <form class="reset" v-else-if="state == 'reset'" @submit.prevent.stop>
       <h1>Reset password</h1>
       <div class="desc">We'll send you a link to email so you can reset your password.</div>
-      <UFloatingInput v-model="authData.email" class="email" label="E-mail" type="email" required :scheme="validators.VEmail"/>
-      <UButton
-        class="ui-btn ui-btn-green btn-reset auth-popup-btn"
-        @click="actionResetPassword"
-      >Send an E-mail</UButton>
+      <UFloatingInput v-model="authData.email" class="email" label="E-mail" type="email" required
+        :scheme="validators.VEmail" />
+      <UButton class="ui-btn ui-btn-green btn-reset auth-popup-btn" @click="actionResetPassword">Send an E-mail</UButton>
       <div class="ui-text-center">
-        <UButton
-          class="ui-btn-text ui-btn-text-gray"
-          @click="setState()"
-        >Cancel</UButton>
+        <UButton class="ui-btn-text ui-btn-text-gray" @click="setState()">Cancel</UButton>
       </div>
     </form>
 
 
     <div class="reset-success" v-else-if="state == 'reset-success'">
       <h1>Reset password</h1>
-      <div class="desc">We emailed instructions to <b>{{ authData.email }}</b>. Didn't receive it? Check your spam folder or <span class="ui-href ui-href-underline" @click="setState('reset')">send the email again</span>.</div>
-      <div class="desc">Still having issues? Contact <a href="#" class="ui-href ui-href-underline">customer support</a>.</div>
-      <UButton
-        class="ui-btn ui-btn-green btn-back auth-popup-btn"
-        @click="setState()"
-      >Back to Login</UButton>
+      <div class="desc">We emailed instructions to <b>{{ authData.email }}</b>. Didn't receive it? Check your spam folder
+        or <span class="ui-href ui-href-underline" @click="setState('reset')">send the email again</span>.</div>
+      <div class="desc">Still having issues? Contact <a href="#" class="ui-href ui-href-underline">customer support</a>.
+      </div>
+      <UButton class="ui-btn ui-btn-green btn-back auth-popup-btn" @click="setState()">Back to Login</UButton>
     </div>
 
     <div class="email-validation-required" v-else-if="state == 'email-validation'">
       <h1>Email validation required</h1>
-      <div class="desc">We emailed a confirmation email to <b>{{ authData.email || Account.Basis.dto?.email }}</b>. Didn't receive it? Check your spam folder.</div>
-      <div class="desc">Still having issues? Contact <a href="#" class="ui-href ui-href-underline">customer support</a>.</div>
+      <div class="desc">We emailed a confirmation email to <b>{{ authData.email || Account.Basis.dto?.email }}</b>. Didn't
+        receive it? Check your spam folder.</div>
+      <div class="desc">Still having issues? Contact <a href="#" class="ui-href ui-href-underline">customer support</a>.
+      </div>
     </div>
 
 
@@ -118,7 +121,8 @@
   color: @col-text-gray-dark;
   line-height: 20px;
 
-  > div, > form {
+  >div,
+  >form {
     h1 {
       font-size: 2rem;
       font-weight: 800;
@@ -163,14 +167,17 @@
       }
     }
   }
+
   .ui-floating-input {
     display: block;
     margin-top: 20px;
     font-weight: 600;
   }
+
   .ui-divider {
     margin: 30px 0;
   }
+
   .auth-popup-btn {
     display: block;
     width: 100%;
@@ -179,6 +186,7 @@
     padding-bottom: 0;
     margin: 20px 0;
   }
+
   .desc {
     line-height: inherit;
     margin: 20px 0;
@@ -189,38 +197,56 @@
     .forgot-password {
       margin: 10px 0 20px;
       font-size: 0.875rem;
-      
+
       .ui-button {
         font-weight: normal;
         text-decoration: underline;
       }
     }
+
     // .agreement-confirmation {
-      // .ui-href { margin-left: 10px;}
+    // .ui-href { margin-left: 10px;}
     // }
     .terms {
       font-size: 0.875rem;
       line-height: 18px;
     }
   }
+
   .reset {
-    .ui-btn-text-gray { text-decoration: underline; }
+    .ui-btn-text-gray {
+      text-decoration: underline;
+    }
   }
+
   .reset-success {
-    .desc b { color: @col-text-dark; }
-    .ui-href-underline { cursor: pointer; }
+    .desc b {
+      color: @col-text-dark;
+    }
+
+    .ui-href-underline {
+      cursor: pointer;
+    }
   }
+
   .register {
-    .no-credit-card { font-weight: 600; }
+    .no-credit-card {
+      font-weight: 600;
+    }
+
     .password-strength {
       margin-bottom: 20px;
     }
-    .ui-href-underline { cursor: pointer; }
+
+    .ui-href-underline {
+      cursor: pointer;
+    }
   }
+
   .secure-area {
     @h: 18px;
     @col: #767676;
-    
+
     color: @col;
     line-height: @h;
     font-size: 0.875rem;
@@ -236,10 +262,12 @@
       margin-right: @h/2;
       vertical-align: middle;
     }
+
     @media @mobile {
       display: block;
     }
   }
+
   @media @mobile {
     padding: 55px 20px 20px;
     // min-height: 100vh;
@@ -261,7 +289,7 @@ import CSRFTokenService from '@/services/CSRFToken.service';
 import { VAuthData, VEmail, VPassword } from '@/models/yups.model';
 import { observe } from '@/services/LocalstorageWatcher.service';
 
-type AuthState = 'login'|'register'|'reset'|'reset-success'|'email-validation';
+type AuthState = 'login' | 'register' | 'reset' | 'reset-success' | 'email-validation';
 
 export default defineComponent({
   components: {
@@ -332,7 +360,7 @@ export default defineComponent({
           this.$emit('login-success');
         }, (err) => this.processServerMessages(err));
 
-      }).catch((ex:any) => {
+      }).catch((ex: any) => {
         this.inProgressState = false;
         (<any>this.$refs).messageList.push({ message: ex.message, type: 'error' });
       });
@@ -345,7 +373,7 @@ export default defineComponent({
       this.inProgressState = true;
 
       VAuthData.validate(this.authData).then(() => {
-        
+
         if (!this.authData.agree)
           throw new Error('You must accept our Terms & Conditions');
 
@@ -357,7 +385,7 @@ export default defineComponent({
           this.authData.email = email;
         }, (err) => this.processServerMessages(err));
 
-      }).catch((ex:any) => {
+      }).catch((ex: any) => {
         this.inProgressState = false;
         (<any>this.$refs).messageList.push({ message: ex.message, type: 'error' });
       });
@@ -377,7 +405,7 @@ export default defineComponent({
           this.authData.email = email;
         }, (err) => this.processServerMessages(err));
 
-      }).catch((ex:any) => {
+      }).catch((ex: any) => {
         this.inProgressState = false;
         (<any>this.$refs).messageList.push({ message: ex.message, type: 'error' });
       });
@@ -393,10 +421,10 @@ export default defineComponent({
         return (<any>this.$refs).messageList.push({ type: 'error', message: 'Login by social account is temporarily inaccessible' });
 
       let loginPopover = window.open(AccountStore.Auth.socialLoginUrls[type], '_blank', 'toolbar=no,location=no,status=no,menubar=no,scrollbars=yes,resizable=yes');
-      
+
       let watchSuccess = observe('ofirio-account-social-logged-in', async () => {
         watchSuccess();
-        
+
         await CSRFTokenService.refreshCSRFToken();
         this.Account.Auth.loadAccountDTO().then(() => {
           window.dataLayer = window.dataLayer || [];
@@ -427,6 +455,6 @@ export default defineComponent({
 
 
   }
-  
+
 })
 </script>

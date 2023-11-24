@@ -1,7 +1,7 @@
 <template>
   <div class="wrapper" v-if="false">
     <span class="page-title">Blog</span>
-    {{ Account.Basis.dto.subscription }}
+    <!-- {{ Account.Basis.dto.subscription }} -->
     <div class="unlock">
       <UnlockAnalytics style="width: 150px" />
     </div>

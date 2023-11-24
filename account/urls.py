@@ -32,4 +32,9 @@ urlpatterns = [
 
     path('api/account/limits-left', views.LimitsLeftView.as_view(), name='limits_left'),
     path('api/subscription/limits-left', views.LimitsLeftView.as_view(), name='old_limits_left'),  # deprecated
+
+    path('api/csrf', views.GetCSRF.as_view(), name='get_csrf'),
+    path('api/account/social_urls', views.SocialUrls.as_view(), name='social_urls'),
+    path('api/account/subscription', views.Subscription.as_view(), name='subscription'),
+    
 ]

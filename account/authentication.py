@@ -15,7 +15,7 @@ from rest_framework_simplejwt.settings import api_settings as jwt_settings
 
 import common.tasks as tasks
 from common.utils import encrypt
-
+import redis
 
 User = get_user_model()
 logger = logging.getLogger(__name__)
@@ -146,6 +146,7 @@ def set_jwt_cookies(response, access=None, refresh=None):
     if access is not None:
         encrypted_access = encrypt(access, settings.COOKIE_SECRET)
         access_cookie_data = get_access_jwt_cookie_data()
+        print('access_cookie_data', access_cookie_data)
         response.set_cookie('access', encrypted_access, **access_cookie_data)
         if settings.DEBUG:
             localhost_access_cookie_data = {**access_cookie_data, 'domain': '127.0.0.1'}
@@ -154,6 +155,9 @@ def set_jwt_cookies(response, access=None, refresh=None):
     if refresh is not None:
         response.set_cookie('refresh', refresh, **get_refresh_jwt_cookie_data())
 
+    print('cookies', response.cookies)
+    print('get', response.get)
+    # redis
     return response
 
 

@@ -15,17 +15,22 @@ export type TReportDTO__ReportLink = {
 }
 
 
+let getUrl = ''
+if (location.hostname === 'localhost') {
+  getUrl = 'https://localhost'
+}
 
 export default {
+
   loadReportsList: function () {
-    return <AxiosRequestToAwaiting<TReportDTO__ListItem[]>>of(axios.get(`/api/report/reports`));
+    return <AxiosRequestToAwaiting<TReportDTO__ListItem[]>>of(axios.get(`${getUrl}/api/report/reports`));
   },
 
   reportRentAnal: function (data: TRentEstimate_Query) {
-    return <AxiosRequestToAwaiting<TReportDTO__ReportLink>>of(axios.post(`/api/report/rent_analyzer`, data));
+    return <AxiosRequestToAwaiting<TReportDTO__ReportLink>>of(axios.post(`${getUrl}/api/report/rent_analyzer`, data));
   },
 
   reportProperty: function (data: TPropertyDTO__Client_Calculator) {
-    return <AxiosRequestToAwaiting<TReportDTO__ReportLink>>of(axios.post(`/api/report/property`, data));
+    return <AxiosRequestToAwaiting<TReportDTO__ReportLink>>of(axios.post(`${getUrl}/api/report/property`, data));
   }
 }
