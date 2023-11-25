@@ -69,7 +69,7 @@ class JwtLoginView(TokenObtainPairView):
         access, refresh = tokens['access'], tokens['refresh']
         response = Response({'access': access}, status=status.HTTP_200_OK)
         set_jwt_cookies(response, access, refresh)
-        cache.set("access", access, timeout=None)
+        # cache.set("access", access, timeout=None)
 
         return response
 

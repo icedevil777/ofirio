@@ -46,6 +46,7 @@ export default {
   },
 
   login: function (data:TAccountDTO__Client_Login) {
+    console.log('login data', data)
     return <AxiosRequestToAwaiting<void>>of(axios.post(`${getUrl}/api/account/login`, data));
   },
 

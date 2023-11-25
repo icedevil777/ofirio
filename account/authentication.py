@@ -146,17 +146,17 @@ def set_jwt_cookies(response, access=None, refresh=None):
     if access is not None:
         encrypted_access = encrypt(access, settings.COOKIE_SECRET)
         access_cookie_data = get_access_jwt_cookie_data()
-        print('access_cookie_data', access_cookie_data)
+        # print('access_cookie_data', access_cookie_data)
         response.set_cookie('access', encrypted_access, **access_cookie_data)
         if settings.DEBUG:
-            localhost_access_cookie_data = {**access_cookie_data, 'domain': '127.0.0.1'}
+            localhost_access_cookie_data = {**access_cookie_data, 'domain': 'localhost'}
             response.set_cookie('access_local', encrypted_access, **localhost_access_cookie_data)
 
     if refresh is not None:
         response.set_cookie('refresh', refresh, **get_refresh_jwt_cookie_data())
 
     print('cookies', response.cookies)
-    print('get', response.get)
+
     # redis
     return response
 

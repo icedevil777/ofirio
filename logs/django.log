@@ -578,3 +578,1520 @@ UnboundLocalError: local variable 'urls' referenced before assignment
 2023-11-24 16:00:15 [WARNING ] (basehttp.log_message) "POST /api/search/address-rect HTTP/1.1" 403 93
 2023-11-24 16:00:15 [WARNING ] (log.log_response) Forbidden: /api/search
 2023-11-24 16:00:15 [WARNING ] (basehttp.log_message) "POST /api/search HTTP/1.1" 403 93
+2023-11-25 08:02:32 [WARNING ] (log.log_response) Forbidden: /api/search
+2023-11-25 08:02:32 [WARNING ] (basehttp.log_message) "POST /api/search HTTP/1.1" 403 93
+2023-11-25 08:03:21 [WARNING ] (log.log_response) Forbidden: /api/search
+2023-11-25 08:03:21 [WARNING ] (basehttp.log_message) "POST /api/search HTTP/1.1" 403 93
+2023-11-25 08:07:30 [WARNING ] (log.log_response) Forbidden: /api/search
+2023-11-25 08:07:30 [WARNING ] (basehttp.log_message) "POST /api/search HTTP/1.1" 403 93
+2023-11-25 08:07:31 [WARNING ] (log.log_response) Forbidden: /api/search
+2023-11-25 08:07:31 [WARNING ] (basehttp.log_message) "POST /api/search HTTP/1.1" 403 93
+2023-11-25 08:07:34 [WARNING ] (log.log_response) Forbidden: /api/search
+2023-11-25 08:07:34 [WARNING ] (basehttp.log_message) "POST /api/search HTTP/1.1" 403 93
+2023-11-25 08:07:34 [WARNING ] (log.log_response) Forbidden: /api/search
+2023-11-25 08:07:34 [WARNING ] (basehttp.log_message) "POST /api/search HTTP/1.1" 403 93
+2023-11-25 08:07:34 [WARNING ] (log.log_response) Forbidden: /api/search
+2023-11-25 08:07:34 [WARNING ] (basehttp.log_message) "POST /api/search HTTP/1.1" 403 93
+2023-11-25 08:07:34 [WARNING ] (log.log_response) Forbidden: /api/search
+2023-11-25 08:07:34 [WARNING ] (basehttp.log_message) "POST /api/search HTTP/1.1" 403 93
+2023-11-25 08:07:44 [WARNING ] (log.log_response) Forbidden: /api/search
+2023-11-25 08:07:44 [WARNING ] (basehttp.log_message) "POST /api/search HTTP/1.1" 403 93
+2023-11-25 08:08:46 [WARNING ] (log.log_response) Method Not Allowed: /api/search
+2023-11-25 08:08:46 [WARNING ] (basehttp.log_message) "GET /api/search HTTP/1.1" 405 25995
+2023-11-25 08:09:27 [WARNING ] (log.log_response) Not Found: /api/subscription/start
+2023-11-25 08:09:27 [WARNING ] (basehttp.log_message) "POST /api/subscription/start HTTP/1.1" 404 17398
+2023-11-25 08:09:45 [WARNING ] (log.log_response) Forbidden: /api/search
+2023-11-25 08:09:45 [WARNING ] (basehttp.log_message) "POST /api/search HTTP/1.1" 403 93
+2023-11-25 08:09:45 [WARNING ] (log.log_response) Forbidden: /api/search/address-rect
+2023-11-25 08:09:45 [WARNING ] (basehttp.log_message) "POST /api/search/address-rect HTTP/1.1" 403 93
+2023-11-25 08:09:45 [WARNING ] (log.log_response) Forbidden: /api/search
+2023-11-25 08:09:45 [WARNING ] (basehttp.log_message) "POST /api/search HTTP/1.1" 403 93
+2023-11-25 08:10:03 [WARNING ] (log.log_response) Forbidden: /api/search
+2023-11-25 08:10:03 [WARNING ] (basehttp.log_message) "POST /api/search HTTP/1.1" 403 93
+2023-11-25 08:11:00 [WARNING ] (log.log_response) Forbidden: /api/search
+2023-11-25 08:11:00 [WARNING ] (basehttp.log_message) "POST /api/search HTTP/1.1" 403 93
+2023-11-25 08:11:30 [WARNING ] (log.log_response) Method Not Allowed: /api/search
+2023-11-25 08:11:30 [WARNING ] (basehttp.log_message) "GET /api/search HTTP/1.1" 405 25995
+2023-11-25 08:12:15 [WARNING ] (log.log_response) Forbidden: /api/search
+2023-11-25 08:12:15 [WARNING ] (basehttp.log_message) "POST /api/search HTTP/1.1" 403 93
+2023-11-25 08:15:13 [ERROR   ] (log.log_response) Internal Server Error: /api/account
+Traceback (most recent call last):
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/views/generic/base.py", line 84, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 492, in dispatch
+    request = self.initialize_request(request, *args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 394, in initialize_request
+    authenticators=self.get_authenticators(),
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 272, in get_authenticators
+    return [auth() for auth in self.authentication_classes]
+TypeError: 'type' object is not iterable
+2023-11-25 08:15:13 [ERROR   ] (basehttp.log_message) "GET /api/account HTTP/1.1" 500 103641
+2023-11-25 08:15:13 [ERROR   ] (log.log_response) Internal Server Error: /api/search
+Traceback (most recent call last):
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/views/generic/base.py", line 84, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 492, in dispatch
+    request = self.initialize_request(request, *args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 394, in initialize_request
+    authenticators=self.get_authenticators(),
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 272, in get_authenticators
+    return [auth() for auth in self.authentication_classes]
+TypeError: 'type' object is not iterable
+2023-11-25 08:15:13 [ERROR   ] (basehttp.log_message) "POST /api/search HTTP/1.1" 500 103756
+2023-11-25 08:15:37 [ERROR   ] (log.log_response) Internal Server Error: /api/search
+Traceback (most recent call last):
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/views/generic/base.py", line 84, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 492, in dispatch
+    request = self.initialize_request(request, *args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 394, in initialize_request
+    authenticators=self.get_authenticators(),
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 272, in get_authenticators
+    return [auth() for auth in self.authentication_classes]
+TypeError: 'type' object is not iterable
+2023-11-25 08:15:37 [ERROR   ] (basehttp.log_message) "GET /api/search HTTP/1.1" 500 103317
+2023-11-25 08:15:56 [ERROR   ] (log.log_response) Internal Server Error: /api/account
+Traceback (most recent call last):
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/views/generic/base.py", line 84, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 492, in dispatch
+    request = self.initialize_request(request, *args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 394, in initialize_request
+    authenticators=self.get_authenticators(),
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 272, in get_authenticators
+    return [auth() for auth in self.authentication_classes]
+TypeError: 'type' object is not iterable
+2023-11-25 08:15:56 [ERROR   ] (basehttp.log_message) "GET /api/account HTTP/1.1" 500 103579
+2023-11-25 08:15:59 [WARNING ] (log.log_response) Not Found: /api
+2023-11-25 08:15:59 [WARNING ] (basehttp.log_message) "GET /api HTTP/1.1" 404 17340
+2023-11-25 08:16:15 [ERROR   ] (log.log_response) Internal Server Error: /api/search
+Traceback (most recent call last):
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/views/generic/base.py", line 84, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 492, in dispatch
+    request = self.initialize_request(request, *args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 394, in initialize_request
+    authenticators=self.get_authenticators(),
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 272, in get_authenticators
+    return [auth() for auth in self.authentication_classes]
+TypeError: 'type' object is not iterable
+2023-11-25 08:16:15 [ERROR   ] (basehttp.log_message) "GET /api/search HTTP/1.1" 500 103562
+2023-11-25 08:16:25 [WARNING ] (log.log_response) Method Not Allowed: /api/search
+2023-11-25 08:16:25 [WARNING ] (basehttp.log_message) "GET /api/search HTTP/1.1" 405 25995
+2023-11-25 08:16:36 [WARNING ] (log.log_response) Unauthorized: /api/account/login
+2023-11-25 08:16:36 [WARNING ] (basehttp.log_message) "POST /api/account/login HTTP/1.1" 401 79
+2023-11-25 08:16:52 [WARNING ] (log.log_response) Forbidden: /api/search
+2023-11-25 08:16:52 [WARNING ] (basehttp.log_message) "POST /api/search HTTP/1.1" 403 93
+2023-11-25 08:16:53 [WARNING ] (log.log_response) Method Not Allowed: /api/search
+2023-11-25 08:16:53 [WARNING ] (basehttp.log_message) "GET /api/search HTTP/1.1" 405 25995
+2023-11-25 08:17:09 [WARNING ] (log.log_response) Forbidden: /api/search
+2023-11-25 08:17:09 [WARNING ] (basehttp.log_message) "POST /api/search HTTP/1.1" 403 93
+2023-11-25 08:26:31 [WARNING ] (log.log_response) Forbidden: /api/search
+2023-11-25 08:26:31 [WARNING ] (basehttp.log_message) "POST /api/search HTTP/1.1" 403 93
+2023-11-25 08:28:01 [WARNING ] (log.log_response) Unauthorized: /api/account
+2023-11-25 08:28:01 [WARNING ] (basehttp.log_message) "GET /api/account HTTP/1.1" 401 58
+2023-11-25 08:28:19 [WARNING ] (log.log_response) Unauthorized: /api/account
+2023-11-25 08:28:19 [WARNING ] (basehttp.log_message) "GET /api/account HTTP/1.1" 401 58
+2023-11-25 08:28:32 [WARNING ] (log.log_response) Unauthorized: /api/account
+2023-11-25 08:28:32 [WARNING ] (basehttp.log_message) "GET /api/account HTTP/1.1" 401 58
+2023-11-25 08:28:55 [WARNING ] (log.log_response) Unauthorized: /api/account
+2023-11-25 08:28:55 [WARNING ] (basehttp.log_message) "GET /api/account HTTP/1.1" 401 5121
+2023-11-25 08:29:42 [ERROR   ] (log.log_response) Internal Server Error: /api/account/login
+Traceback (most recent call last):
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/views/generic/base.py", line 84, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/account/views/login.py", line 71, in post
+    set_jwt_cookies(response, access, refresh)
+  File "/home/gregory/VSCodeProjects/ofirio/account/authentication.py", line 147, in set_jwt_cookies
+    encrypted_access = encrypt(access, settings.COOKIE_SECRET)
+  File "/home/gregory/VSCodeProjects/ofirio/common/utils.py", line 250, in encrypt
+    key, iv = _decompose_secret(secret)
+  File "/home/gregory/VSCodeProjects/ofirio/common/utils.py", line 239, in _decompose_secret
+    raise ValueError('Secret must be exactly 32 chars')
+ValueError: Secret must be exactly 32 chars
+2023-11-25 08:29:42 [ERROR   ] (basehttp.log_message) "POST /api/account/login HTTP/1.1" 500 129106
+2023-11-25 08:29:54 [ERROR   ] (log.log_response) Internal Server Error: /api/account/login
+Traceback (most recent call last):
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/views/generic/base.py", line 84, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/account/views/login.py", line 71, in post
+    set_jwt_cookies(response, access, refresh)
+  File "/home/gregory/VSCodeProjects/ofirio/account/authentication.py", line 147, in set_jwt_cookies
+    encrypted_access = encrypt(access, settings.COOKIE_SECRET)
+  File "/home/gregory/VSCodeProjects/ofirio/common/utils.py", line 250, in encrypt
+    key, iv = _decompose_secret(secret)
+  File "/home/gregory/VSCodeProjects/ofirio/common/utils.py", line 239, in _decompose_secret
+    raise ValueError('Secret must be exactly 32 chars')
+ValueError: Secret must be exactly 32 chars
+2023-11-25 08:29:54 [ERROR   ] (basehttp.log_message) "POST /api/account/login HTTP/1.1" 500 129138
+2023-11-25 08:38:27 [WARNING ] (log.log_response) Unauthorized: /api/account
+2023-11-25 08:38:27 [WARNING ] (basehttp.log_message) "GET /api/account HTTP/1.1" 401 58
+2023-11-25 08:38:55 [ERROR   ] (log.log_response) Internal Server Error: /api/account/login
+Traceback (most recent call last):
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/views/generic/base.py", line 84, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/account/views/login.py", line 71, in post
+    set_jwt_cookies(response, access, refresh)
+  File "/home/gregory/VSCodeProjects/ofirio/account/authentication.py", line 147, in set_jwt_cookies
+    encrypted_access = encrypt(access, settings.COOKIE_SECRET)
+  File "/home/gregory/VSCodeProjects/ofirio/common/utils.py", line 250, in encrypt
+    key, iv = _decompose_secret(secret)
+  File "/home/gregory/VSCodeProjects/ofirio/common/utils.py", line 239, in _decompose_secret
+    raise ValueError('Secret must be exactly 32 chars')
+ValueError: Secret must be exactly 32 chars
+2023-11-25 08:38:55 [ERROR   ] (basehttp.log_message) "POST /api/account/login HTTP/1.1" 500 129138
+2023-11-25 08:42:25 [WARNING ] (log.log_response) Unauthorized: /api/account
+2023-11-25 08:42:25 [WARNING ] (basehttp.log_message) "GET /api/account HTTP/1.1" 401 58
+2023-11-25 08:42:30 [WARNING ] (log.log_response) Forbidden: /api/search
+2023-11-25 08:42:30 [WARNING ] (basehttp.log_message) "POST /api/search HTTP/1.1" 403 93
+2023-11-25 08:42:43 [WARNING ] (log.log_response) Unauthorized: /api/account
+2023-11-25 08:42:43 [WARNING ] (basehttp.log_message) "GET /api/account HTTP/1.1" 401 58
+2023-11-25 08:43:30 [WARNING ] (log.log_response) Unauthorized: /api/account
+2023-11-25 08:43:30 [WARNING ] (basehttp.log_message) "GET /api/account HTTP/1.1" 401 5121
+2023-11-25 08:53:23 [WARNING ] (log.log_response) Forbidden: /api/search
+2023-11-25 08:53:23 [WARNING ] (basehttp.log_message) "POST /api/search HTTP/1.1" 403 93
+2023-11-25 08:53:30 [WARNING ] (log.log_response) Forbidden: /api/account/logout
+2023-11-25 08:53:30 [WARNING ] (basehttp.log_message) "POST /api/account/logout HTTP/1.1" 403 93
+2023-11-25 08:57:37 [ERROR   ] (log.log_response) Internal Server Error: /api/csrf
+Traceback (most recent call last):
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/views/generic/base.py", line 84, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/views/generic/base.py", line 119, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/account/views/csrf.py", line 13, in get
+    token = get_token()
+TypeError: get_token() missing 1 required positional argument: 'request'
+2023-11-25 08:57:37 [ERROR   ] (basehttp.log_message) "GET /api/csrf HTTP/1.1" 500 95427
+2023-11-25 09:00:22 [WARNING ] (log.log_response) Unauthorized: /api/account
+2023-11-25 09:00:22 [WARNING ] (basehttp.log_message) "GET /api/account HTTP/1.1" 401 58
+2023-11-25 09:00:26 [WARNING ] (log.log_response) Unauthorized: /api/account
+2023-11-25 09:00:26 [WARNING ] (basehttp.log_message) "GET /api/account HTTP/1.1" 401 58
+2023-11-25 09:00:43 [WARNING ] (log.log_response) Unauthorized: /api/account
+2023-11-25 09:00:43 [WARNING ] (basehttp.log_message) "GET /api/account HTTP/1.1" 401 58
+2023-11-25 09:00:47 [WARNING ] (log.log_response) Unauthorized: /api/account
+2023-11-25 09:00:47 [WARNING ] (basehttp.log_message) "GET /api/account HTTP/1.1" 401 58
+2023-11-25 09:01:07 [WARNING ] (log.log_response) Unauthorized: /api/account
+2023-11-25 09:01:07 [WARNING ] (basehttp.log_message) "GET /api/account HTTP/1.1" 401 58
+2023-11-25 09:25:37 [ERROR   ] (log.log_response) Internal Server Error: /api/csrf
+Traceback (most recent call last):
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/views/generic/base.py", line 84, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/views/generic/base.py", line 119, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/account/views/csrf.py", line 10, in get
+    print('requestCOOKIES', request.COOKIES.vulue)
+AttributeError: 'dict' object has no attribute 'vulue'
+2023-11-25 09:25:37 [ERROR   ] (basehttp.log_message) "GET /api/csrf HTTP/1.1" 500 95159
+2023-11-25 09:25:48 [ERROR   ] (log.log_response) Internal Server Error: /api/csrf
+Traceback (most recent call last):
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/views/generic/base.py", line 84, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/views/generic/base.py", line 119, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/account/views/csrf.py", line 10, in get
+    print('requestCOOKIES', request.COOKIES.value)
+AttributeError: 'dict' object has no attribute 'value'
+2023-11-25 09:25:48 [ERROR   ] (basehttp.log_message) "GET /api/csrf HTTP/1.1" 500 95159
+2023-11-25 09:26:23 [ERROR   ] (log.log_response) Internal Server Error: /api/csrf
+Traceback (most recent call last):
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/views/generic/base.py", line 84, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/views/generic/base.py", line 119, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/account/views/csrf.py", line 10, in get
+    print('requestCOOKIES', request.COOKIES.value)
+AttributeError: 'dict' object has no attribute 'value'
+2023-11-25 09:26:23 [ERROR   ] (basehttp.log_message) "GET /api/csrf HTTP/1.1" 500 95217
+2023-11-25 09:26:23 [WARNING ] (log.log_response) Unauthorized: /api/account
+2023-11-25 09:26:23 [WARNING ] (basehttp.log_message) "GET /api/account HTTP/1.1" 401 58
+2023-11-25 09:26:35 [ERROR   ] (log.log_response) Internal Server Error: /api/csrf
+Traceback (most recent call last):
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/views/generic/base.py", line 84, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/views/generic/base.py", line 119, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/account/views/csrf.py", line 10, in get
+    print('requestCOOKIES', request.COOKIES.value)
+AttributeError: 'dict' object has no attribute 'value'
+2023-11-25 09:26:35 [ERROR   ] (basehttp.log_message) "GET /api/csrf HTTP/1.1" 500 95217
+2023-11-25 09:26:35 [WARNING ] (log.log_response) Unauthorized: /api/account
+2023-11-25 09:26:35 [WARNING ] (basehttp.log_message) "GET /api/account HTTP/1.1" 401 58
+2023-11-25 09:26:37 [ERROR   ] (log.log_response) Internal Server Error: /api/csrf
+Traceback (most recent call last):
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/views/generic/base.py", line 84, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/views/generic/base.py", line 119, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/account/views/csrf.py", line 10, in get
+    print('requestCOOKIES', request.COOKIES.value)
+AttributeError: 'dict' object has no attribute 'value'
+2023-11-25 09:26:37 [ERROR   ] (basehttp.log_message) "GET /api/csrf HTTP/1.1" 500 95154
+2023-11-25 09:26:38 [ERROR   ] (log.log_response) Internal Server Error: /api/csrf
+Traceback (most recent call last):
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/views/generic/base.py", line 84, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/views/generic/base.py", line 119, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/account/views/csrf.py", line 10, in get
+    print('requestCOOKIES', request.COOKIES.value)
+AttributeError: 'dict' object has no attribute 'value'
+2023-11-25 09:26:38 [ERROR   ] (basehttp.log_message) "GET /api/csrf HTTP/1.1" 500 95154
+2023-11-25 09:26:47 [ERROR   ] (log.log_response) Internal Server Error: /api/csrf
+Traceback (most recent call last):
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/views/generic/base.py", line 84, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/views/generic/base.py", line 119, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/account/views/csrf.py", line 15, in get
+    return JsonResponse(request.COOKIES, safe=True)
+AttributeError: 'dict' object has no attribute 'value'
+2023-11-25 09:26:47 [ERROR   ] (basehttp.log_message) "GET /api/csrf HTTP/1.1" 500 95439
+2023-11-25 09:26:48 [ERROR   ] (log.log_response) Internal Server Error: /api/csrf
+Traceback (most recent call last):
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/views/generic/base.py", line 84, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/views/generic/base.py", line 119, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/account/views/csrf.py", line 15, in get
+    return JsonResponse(request.COOKIES, safe=True)
+AttributeError: 'dict' object has no attribute 'value'
+2023-11-25 09:26:48 [ERROR   ] (basehttp.log_message) "GET /api/csrf HTTP/1.1" 500 95439
+2023-11-25 09:26:49 [ERROR   ] (log.log_response) Internal Server Error: /api/csrf
+Traceback (most recent call last):
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/views/generic/base.py", line 84, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/views/generic/base.py", line 119, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/account/views/csrf.py", line 15, in get
+    return JsonResponse(request.COOKIES, safe=True)
+AttributeError: 'dict' object has no attribute 'value'
+2023-11-25 09:26:49 [ERROR   ] (basehttp.log_message) "GET /api/csrf HTTP/1.1" 500 95439
+2023-11-25 09:27:09 [WARNING ] (log.log_response) Unauthorized: /api/account
+2023-11-25 09:27:09 [WARNING ] (basehttp.log_message) "GET /api/account HTTP/1.1" 401 58
+2023-11-25 09:28:19 [WARNING ] (log.log_response) Unauthorized: /api/account
+2023-11-25 09:28:19 [WARNING ] (basehttp.log_message) "GET /api/account HTTP/1.1" 401 58
+2023-11-25 09:30:51 [WARNING ] (log.log_response) Unauthorized: /api/account
+2023-11-25 09:30:51 [WARNING ] (basehttp.log_message) "GET /api/account HTTP/1.1" 401 5121
+2023-11-25 09:30:54 [WARNING ] (log.log_response) Unauthorized: /api/account
+2023-11-25 09:30:54 [WARNING ] (basehttp.log_message) "GET /api/account HTTP/1.1" 401 5121
+2023-11-25 09:31:00 [WARNING ] (log.log_response) Unauthorized: /api/account
+2023-11-25 09:31:00 [WARNING ] (basehttp.log_message) "GET /api/account HTTP/1.1" 401 58
+2023-11-25 09:31:05 [WARNING ] (log.log_response) Unauthorized: /api/account
+2023-11-25 09:31:05 [WARNING ] (basehttp.log_message) "GET /api/account HTTP/1.1" 401 5121
+2023-11-25 10:03:44 [WARNING ] (log.log_response) Unauthorized: /api/account
+2023-11-25 10:03:44 [WARNING ] (basehttp.log_message) "GET /api/account HTTP/1.1" 401 58
+2023-11-25 10:04:57 [WARNING ] (log.log_response) Unauthorized: /api/account
+2023-11-25 10:04:57 [WARNING ] (basehttp.log_message) "GET /api/account HTTP/1.1" 401 58
+2023-11-25 10:06:04 [WARNING ] (log.log_response) Unauthorized: /api/account
+2023-11-25 10:06:04 [WARNING ] (basehttp.log_message) "GET /api/account HTTP/1.1" 401 58
+2023-11-25 10:08:53 [WARNING ] (log.log_response) Unauthorized: /api/account
+2023-11-25 10:08:53 [WARNING ] (basehttp.log_message) "GET /api/account HTTP/1.1" 401 58
+2023-11-25 10:09:16 [WARNING ] (log.log_response) Unauthorized: /api/account
+2023-11-25 10:09:16 [WARNING ] (basehttp.log_message) "GET /api/account HTTP/1.1" 401 58
+2023-11-25 10:09:59 [WARNING ] (log.log_response) Unauthorized: /api/account
+2023-11-25 10:09:59 [WARNING ] (basehttp.log_message) "GET /api/account HTTP/1.1" 401 58
+2023-11-25 10:10:07 [WARNING ] (log.log_response) Unauthorized: /api/account
+2023-11-25 10:10:07 [WARNING ] (basehttp.log_message) "GET /api/account HTTP/1.1" 401 58
+2023-11-25 10:10:09 [WARNING ] (log.log_response) Unauthorized: /api/account
+2023-11-25 10:10:09 [WARNING ] (basehttp.log_message) "GET /api/account HTTP/1.1" 401 58
+2023-11-25 10:10:44 [WARNING ] (log.log_response) Unauthorized: /api/account
+2023-11-25 10:10:44 [WARNING ] (basehttp.log_message) "GET /api/account HTTP/1.1" 401 58
+2023-11-25 10:11:03 [WARNING ] (log.log_response) Unauthorized: /api/account
+2023-11-25 10:11:03 [WARNING ] (basehttp.log_message) "GET /api/account HTTP/1.1" 401 58
+2023-11-25 10:11:19 [WARNING ] (log.log_response) Unauthorized: /api/account
+2023-11-25 10:11:19 [WARNING ] (basehttp.log_message) "GET /api/account HTTP/1.1" 401 58
+2023-11-25 10:12:36 [WARNING ] (log.log_response) Unauthorized: /api/account
+2023-11-25 10:12:36 [WARNING ] (basehttp.log_message) "GET /api/account HTTP/1.1" 401 58
+2023-11-25 10:13:18 [WARNING ] (log.log_response) Unauthorized: /api/account
+2023-11-25 10:13:18 [WARNING ] (basehttp.log_message) "GET /api/account HTTP/1.1" 401 58
+2023-11-25 10:13:22 [WARNING ] (log.log_response) Unauthorized: /api/account
+2023-11-25 10:13:22 [WARNING ] (basehttp.log_message) "POST /api/account HTTP/1.1" 401 58
+2023-11-25 10:13:25 [WARNING ] (log.log_response) Unauthorized: /api/account
+2023-11-25 10:13:25 [WARNING ] (basehttp.log_message) "POST /api/account HTTP/1.1" 401 58
+2023-11-25 10:13:40 [WARNING ] (log.log_response) Unauthorized: /api/account
+2023-11-25 10:13:40 [WARNING ] (basehttp.log_message) "POST /api/account HTTP/1.1" 401 58
+2023-11-25 10:15:54 [WARNING ] (log.log_response) Unauthorized: /api/account
+2023-11-25 10:15:54 [WARNING ] (basehttp.log_message) "POST /api/account HTTP/1.1" 401 58
+2023-11-25 10:16:18 [WARNING ] (log.log_response) Unauthorized: /api/account
+2023-11-25 10:16:18 [WARNING ] (basehttp.log_message) "POST /api/account HTTP/1.1" 401 58
+2023-11-25 10:16:23 [WARNING ] (log.log_response) Unauthorized: /api/account
+2023-11-25 10:16:23 [WARNING ] (basehttp.log_message) "POST /api/account HTTP/1.1" 401 58
+2023-11-25 10:16:35 [WARNING ] (log.log_response) Unauthorized: /api/account
+2023-11-25 10:16:35 [WARNING ] (basehttp.log_message) "GET /api/account HTTP/1.1" 401 58
+2023-11-25 10:16:55 [WARNING ] (log.log_response) Unauthorized: /api/account
+2023-11-25 10:16:55 [WARNING ] (basehttp.log_message) "GET /api/account HTTP/1.1" 401 58
+2023-11-25 10:17:22 [WARNING ] (log.log_response) Not Found: /api/token
+2023-11-25 10:17:22 [WARNING ] (basehttp.log_message) "GET /api/token HTTP/1.1" 404 17358
+2023-11-25 10:17:33 [WARNING ] (log.log_response) Not Found: /api/logen
+2023-11-25 10:17:33 [WARNING ] (basehttp.log_message) "GET /api/logen HTTP/1.1" 404 17358
+2023-11-25 10:17:38 [WARNING ] (log.log_response) Not Found: /api/login
+2023-11-25 10:17:38 [WARNING ] (basehttp.log_message) "GET /api/login HTTP/1.1" 404 17358
+2023-11-25 10:17:49 [WARNING ] (log.log_response) Method Not Allowed: /api/account/login
+2023-11-25 10:17:49 [WARNING ] (basehttp.log_message) "GET /api/account/login HTTP/1.1" 405 7747
+2023-11-25 10:18:15 [WARNING ] (log.log_response) Bad Request: /api/account/login
+2023-11-25 10:18:15 [WARNING ] (basehttp.log_message) "POST /api/account/login HTTP/1.1" 400 76
+2023-11-25 10:18:42 [WARNING ] (log.log_response) Not Found: /api/refresh
+2023-11-25 10:18:42 [WARNING ] (basehttp.log_message) "GET /api/refresh HTTP/1.1" 404 17364
+2023-11-25 10:18:55 [WARNING ] (log.log_response) Bad Request: /api/account/refresh
+2023-11-25 10:18:55 [WARNING ] (basehttp.log_message) "POST /api/account/refresh HTTP/1.1" 400 43
+2023-11-25 10:19:29 [WARNING ] (log.log_response) Bad Request: /api/account/refresh
+2023-11-25 10:19:29 [WARNING ] (basehttp.log_message) "POST /api/account/refresh HTTP/1.1" 400 43
+2023-11-25 10:20:04 [WARNING ] (log.log_response) Not Found: /api/refresh
+2023-11-25 10:20:04 [WARNING ] (basehttp.log_message) "GET /api/refresh HTTP/1.1" 404 17364
+2023-11-25 10:20:09 [WARNING ] (log.log_response) Method Not Allowed: /api/account/refresh
+2023-11-25 10:20:09 [WARNING ] (basehttp.log_message) "GET /api/account/refresh HTTP/1.1" 405 7478
+2023-11-25 10:20:36 [WARNING ] (log.log_response) Unauthorized: /api/account
+2023-11-25 10:20:36 [WARNING ] (basehttp.log_message) "GET /api/account HTTP/1.1" 401 58
+2023-11-25 10:21:28 [WARNING ] (log.log_response) Unauthorized: /api/account
+2023-11-25 10:21:28 [WARNING ] (basehttp.log_message) "POST /api/account HTTP/1.1" 401 58
+2023-11-25 10:21:42 [WARNING ] (log.log_response) Unauthorized: /api/account
+2023-11-25 10:21:42 [WARNING ] (basehttp.log_message) "POST /api/account?token=eyJhbGciOiJIUzI1NiJ9.e30.vEYyI5h1B6YlrgtcwPOIuLricoadL_pWRGuxyTFlg7A HTTP/1.1" 401 58
+2023-11-25 10:21:50 [WARNING ] (log.log_response) Unauthorized: /api/account
+2023-11-25 10:21:50 [WARNING ] (basehttp.log_message) "POST /api/account HTTP/1.1" 401 58
+2023-11-25 10:21:53 [WARNING ] (log.log_response) Unauthorized: /api/account
+2023-11-25 10:21:53 [WARNING ] (basehttp.log_message) "POST /api/account?token=eyJhbGciOiJIUzI1NiJ9.e30.vEYyI5h1B6YlrgtcwPOIuLricoadL_pWRGuxyTFlg7A HTTP/1.1" 401 58
+2023-11-25 10:23:17 [WARNING ] (log.log_response) Unauthorized: /api/account
+2023-11-25 10:23:17 [WARNING ] (basehttp.log_message) "GET /api/account HTTP/1.1" 401 58
+2023-11-25 10:29:01 [WARNING ] (log.log_response) Not Found: /api/account/дщпшт
+2023-11-25 10:29:01 [WARNING ] (basehttp.log_message) "GET /api/account/%D0%B4%D1%89%D0%BF%D1%88%D1%82 HTTP/1.1" 404 17417
+2023-11-25 10:29:05 [WARNING ] (log.log_response) Unauthorized: /api/account
+2023-11-25 10:29:05 [WARNING ] (basehttp.log_message) "GET /api/account HTTP/1.1" 401 5121
+2023-11-25 10:44:18 [WARNING ] (log.log_response) Unauthorized: /api/account
+2023-11-25 10:44:18 [WARNING ] (basehttp.log_message) "GET /api/account HTTP/1.1" 401 58
+2023-11-25 10:46:24 [WARNING ] (log.log_response) Not Found: /api/refrash
+2023-11-25 10:46:24 [WARNING ] (basehttp.log_message) "GET /api/refrash HTTP/1.1" 404 17364
+2023-11-25 10:46:39 [WARNING ] (log.log_response) Not Found: /api/account/refrash
+2023-11-25 10:46:39 [WARNING ] (basehttp.log_message) "GET /api/account/refrash HTTP/1.1" 404 17388
+2023-11-25 10:47:30 [WARNING ] (log.log_response) Method Not Allowed: /api/account/refresh
+2023-11-25 10:47:30 [WARNING ] (basehttp.log_message) "GET /api/account/refresh HTTP/1.1" 405 7478
+2023-11-25 10:47:46 [WARNING ] (log.log_response) Unauthorized: /api/account
+2023-11-25 10:47:46 [WARNING ] (basehttp.log_message) "GET /api/account HTTP/1.1" 401 58
+2023-11-25 10:51:55 [WARNING ] (log.log_response) Unauthorized: /api/account
+2023-11-25 10:51:55 [WARNING ] (basehttp.log_message) "GET /api/account HTTP/1.1" 401 58
+2023-11-25 10:52:18 [WARNING ] (log.log_response) Unauthorized: /api/account
+2023-11-25 10:52:18 [WARNING ] (basehttp.log_message) "GET /api/account HTTP/1.1" 401 58
+2023-11-25 10:55:13 [WARNING ] (log.log_response) Unauthorized: /api/account
+2023-11-25 10:55:13 [WARNING ] (basehttp.log_message) "GET /api/account HTTP/1.1" 401 58
+2023-11-25 10:56:32 [WARNING ] (log.log_response) Unauthorized: /api/account
+2023-11-25 10:56:32 [WARNING ] (basehttp.log_message) "GET /api/account HTTP/1.1" 401 58
+2023-11-25 10:56:52 [WARNING ] (log.log_response) Unauthorized: /api/account
+2023-11-25 10:56:52 [WARNING ] (basehttp.log_message) "GET /api/account HTTP/1.1" 401 58
+2023-11-25 10:57:51 [WARNING ] (log.log_response) Unauthorized: /api/account
+2023-11-25 10:57:51 [WARNING ] (basehttp.log_message) "GET /api/account?token=eyJhbGciOiJIUzI1NiJ9.e30.QfFP6JLWfHj3TxRp3JPuPVSCK43YYLov6GiMbu85xHU HTTP/1.1" 401 58
+2023-11-25 11:01:42 [WARNING ] (log.log_response) Unauthorized: /api/account
+2023-11-25 11:01:42 [WARNING ] (basehttp.log_message) "GET /api/account?token=eyJhbGciOiJIUzI1NiJ9.e30.QfFP6JLWfHj3TxRp3JPuPVSCK43YYLov6GiMbu85xHU HTTP/1.1" 401 58
+2023-11-25 11:01:46 [WARNING ] (log.log_response) Unauthorized: /api/account
+2023-11-25 11:01:46 [WARNING ] (basehttp.log_message) "GET /api/account?token=eyJhbGciOiJIUzI1NiJ9.e30.0xRQ4K7gJ3w1vgwMcfOLBqwHJ61liNq-1Nh4d-7nDik HTTP/1.1" 401 58
+2023-11-25 11:03:45 [WARNING ] (log.log_response) Unauthorized: /api/account
+2023-11-25 11:03:45 [WARNING ] (basehttp.log_message) "GET /api/account HTTP/1.1" 401 58
+2023-11-25 11:04:14 [WARNING ] (log.log_response) Unauthorized: /api/account
+2023-11-25 11:04:14 [WARNING ] (basehttp.log_message) "GET /api/account HTTP/1.1" 401 58
+2023-11-25 11:04:23 [WARNING ] (log.log_response) Unauthorized: /api/account
+2023-11-25 11:04:23 [WARNING ] (basehttp.log_message) "GET /api/account HTTP/1.1" 401 58
+2023-11-25 11:04:26 [WARNING ] (log.log_response) Unauthorized: /api/account
+2023-11-25 11:04:26 [WARNING ] (basehttp.log_message) "GET /api/account?token=eyJhbGciOiJIUzI1NiJ9.e30.QfFP6JLWfHj3TxRp3JPuPVSCK43YYLov6GiMbu85xHU HTTP/1.1" 401 58
+2023-11-25 11:05:36 [WARNING ] (log.log_response) Not Found: /api/account/дщпшт
+2023-11-25 11:05:36 [WARNING ] (basehttp.log_message) "GET /api/account/%D0%B4%D1%89%D0%BF%D1%88%D1%82 HTTP/1.1" 404 17417
+2023-11-25 11:05:40 [WARNING ] (log.log_response) Not Found: /api/account/
+2023-11-25 11:05:40 [WARNING ] (basehttp.log_message) "GET /api/account/ HTTP/1.1" 404 17367
+2023-11-25 11:05:42 [WARNING ] (log.log_response) Not Found: /api/account/
+2023-11-25 11:05:42 [WARNING ] (basehttp.log_message) "GET /api/account/ HTTP/1.1" 404 17367
+2023-11-25 11:05:45 [WARNING ] (log.log_response) Unauthorized: /api/account
+2023-11-25 11:05:45 [WARNING ] (basehttp.log_message) "GET /api/account HTTP/1.1" 401 5121
+2023-11-25 11:29:42 [WARNING ] (log.log_response) Not Found: /api/account/refrash
+2023-11-25 11:29:42 [WARNING ] (basehttp.log_message) "GET /api/account/refrash HTTP/1.1" 404 17388
+2023-11-25 11:29:50 [WARNING ] (log.log_response) Method Not Allowed: /api/account/refresh
+2023-11-25 11:29:50 [WARNING ] (basehttp.log_message) "GET /api/account/refresh HTTP/1.1" 405 7478
+2023-11-25 11:31:43 [WARNING ] (log.log_response) Bad Request: /api/account/refresh
+2023-11-25 11:31:43 [WARNING ] (basehttp.log_message) "POST /api/account/refresh HTTP/1.1" 400 43
+2023-11-25 11:31:49 [WARNING ] (log.log_response) Bad Request: /api/account/login
+2023-11-25 11:31:49 [WARNING ] (basehttp.log_message) "POST /api/account/login HTTP/1.1" 400 37
+2023-11-25 11:32:10 [WARNING ] (log.log_response) Bad Request: /api/account/login
+2023-11-25 11:32:10 [WARNING ] (basehttp.log_message) "POST /api/account/login HTTP/1.1" 400 109
+2023-11-25 11:32:36 [WARNING ] (log.log_response) Bad Request: /api/account/login
+2023-11-25 11:32:36 [WARNING ] (basehttp.log_message) "POST /api/account/login HTTP/1.1" 400 109
+2023-11-25 11:34:40 [WARNING ] (log.log_response) Unauthorized: /api/account
+2023-11-25 11:34:40 [WARNING ] (basehttp.log_message) "GET /api/account HTTP/1.1" 401 58
+2023-11-25 11:35:33 [WARNING ] (log.log_response) Unauthorized: /api/account
+2023-11-25 11:35:33 [WARNING ] (basehttp.log_message) "GET /api/account HTTP/1.1" 401 58
+2023-11-25 11:35:55 [WARNING ] (log.log_response) Unauthorized: /api/account
+2023-11-25 11:35:55 [WARNING ] (basehttp.log_message) "GET /api/account HTTP/1.1" 401 58
+2023-11-25 11:35:57 [WARNING ] (log.log_response) Unauthorized: /api/account
+2023-11-25 11:35:57 [WARNING ] (basehttp.log_message) "GET /api/account HTTP/1.1" 401 58
+2023-11-25 11:36:31 [WARNING ] (log.log_response) Unauthorized: /api/account
+2023-11-25 11:36:31 [WARNING ] (basehttp.log_message) "GET /api/account HTTP/1.1" 401 58
+2023-11-25 11:36:40 [WARNING ] (log.log_response) Unauthorized: /api/account
+2023-11-25 11:36:40 [WARNING ] (basehttp.log_message) "GET /api/account HTTP/1.1" 401 58
+2023-11-25 11:38:40 [WARNING ] (log.log_response) Unauthorized: /api/account
+2023-11-25 11:38:40 [WARNING ] (basehttp.log_message) "GET /api/account HTTP/1.1" 401 58
+2023-11-25 11:38:46 [WARNING ] (log.log_response) Unauthorized: /api/account
+2023-11-25 11:38:46 [WARNING ] (basehttp.log_message) "POST /api/account HTTP/1.1" 401 58
+2023-11-25 11:38:49 [WARNING ] (log.log_response) Unauthorized: /api/account
+2023-11-25 11:38:49 [WARNING ] (basehttp.log_message) "GET /api/account HTTP/1.1" 401 58
+2023-11-25 11:39:06 [WARNING ] (log.log_response) Unauthorized: /api/account
+2023-11-25 11:39:06 [WARNING ] (basehttp.log_message) "GET /api/account HTTP/1.1" 401 5121
+2023-11-25 11:39:08 [WARNING ] (log.log_response) Unauthorized: /api/account
+2023-11-25 11:39:08 [WARNING ] (basehttp.log_message) "GET /api/account HTTP/1.1" 401 5121
+2023-11-25 11:39:11 [WARNING ] (log.log_response) Unauthorized: /api/account
+2023-11-25 11:39:11 [WARNING ] (basehttp.log_message) "GET /api/account?format=api HTTP/1.1" 401 5154
+2023-11-25 11:39:13 [WARNING ] (log.log_response) Unauthorized: /api/account
+2023-11-25 11:39:13 [WARNING ] (basehttp.log_message) "GET /api/account?format=api HTTP/1.1" 401 5154
+2023-11-25 11:39:15 [WARNING ] (log.log_response) Unauthorized: /api/account
+2023-11-25 11:39:15 [WARNING ] (basehttp.log_message) "GET /api/account?format=json HTTP/1.1" 401 58
+2023-11-25 11:39:19 [WARNING ] (log.log_response) Unauthorized: /api/account
+2023-11-25 11:39:19 [WARNING ] (basehttp.log_message) "GET /api/account HTTP/1.1" 401 5121
+2023-11-25 11:46:53 [WARNING ] (log.log_response) Unauthorized: /api/account
+2023-11-25 11:46:53 [WARNING ] (basehttp.log_message) "GET /api/account HTTP/1.1" 401 5121
+2023-11-25 11:46:54 [WARNING ] (log.log_response) Unauthorized: /api/account
+2023-11-25 11:46:54 [WARNING ] (basehttp.log_message) "GET /api/account HTTP/1.1" 401 5121
+2023-11-25 11:47:09 [WARNING ] (log.log_response) Unauthorized: /api/account
+2023-11-25 11:47:09 [WARNING ] (basehttp.log_message) "GET /api/account HTTP/1.1" 401 5121
+2023-11-25 12:24:55 [ERROR   ] (log.log_response) Internal Server Error: /api/account
+Traceback (most recent call last):
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/fields.py", line 446, in get_attribute
+    return get_attribute(instance, self.source_attrs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/fields.py", line 96, in get_attribute
+    instance = getattr(instance, attr)
+AttributeError: 'AnonymousUser' object has no attribute 'email'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/views/generic/base.py", line 84, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/account/views/account.py", line 17, in get
+    print('serializer', serializer.data)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/serializers.py", line 555, in data
+    ret = super().data
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/serializers.py", line 253, in data
+    self._data = self.to_representation(self.instance)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/serializers.py", line 509, in to_representation
+    attribute = field.get_attribute(instance)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/fields.py", line 479, in get_attribute
+    raise type(exc)(msg)
+AttributeError: Got AttributeError when attempting to get a value for field `email` on serializer `AccountSerializer`.
+The serializer field might be named incorrectly and not match any attribute or key on the `AnonymousUser` instance.
+Original exception text was: 'AnonymousUser' object has no attribute 'email'.
+2023-11-25 12:24:55 [ERROR   ] (basehttp.log_message) "GET /api/account HTTP/1.1" 500 144637
+2023-11-25 12:25:49 [WARNING ] (log.log_response) Unauthorized: /api/account
+2023-11-25 12:25:49 [WARNING ] (basehttp.log_message) "GET /api/account HTTP/1.1" 401 58
+2023-11-25 12:30:50 [WARNING ] (log.log_response) Unauthorized: /api/account
+2023-11-25 12:30:50 [WARNING ] (basehttp.log_message) "GET /api/account HTTP/1.1" 401 58
+2023-11-25 12:34:56 [WARNING ] (log.log_response) Unauthorized: /api/account
+2023-11-25 12:34:56 [WARNING ] (basehttp.log_message) "GET /api/account HTTP/1.1" 401 58
+2023-11-25 12:35:03 [WARNING ] (log.log_response) Unauthorized: /api/account
+2023-11-25 12:35:03 [WARNING ] (basehttp.log_message) "GET /api/account HTTP/1.1" 401 58
+2023-11-25 12:35:19 [WARNING ] (log.log_response) Unauthorized: /api/account
+2023-11-25 12:35:19 [WARNING ] (basehttp.log_message) "GET /api/account HTTP/1.1" 401 58
+2023-11-25 12:37:17 [WARNING ] (log.log_response) Unauthorized: /api/account
+2023-11-25 12:37:17 [WARNING ] (basehttp.log_message) "GET /api/account HTTP/1.1" 401 58
+2023-11-25 12:49:36 [ERROR   ] (log.log_response) Internal Server Error: /api/account
+Traceback (most recent call last):
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/views/generic/base.py", line 84, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/account/views/account.py", line 19, in get
+    return Response('serializer.data', safe=False)
+TypeError: __init__() got an unexpected keyword argument 'safe'
+2023-11-25 12:49:36 [ERROR   ] (basehttp.log_message) "GET /api/account HTTP/1.1" 500 113845
+2023-11-25 12:49:44 [ERROR   ] (log.log_response) Internal Server Error: /api/account
+Traceback (most recent call last):
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/views/generic/base.py", line 84, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/account/views/account.py", line 19, in get
+    return Response('serializer.data', save=False)
+TypeError: __init__() got an unexpected keyword argument 'save'
+2023-11-25 12:49:44 [ERROR   ] (basehttp.log_message) "GET /api/account HTTP/1.1" 500 113845
+2023-11-25 12:50:06 [ERROR   ] (log.log_response) Internal Server Error: /api/account
+Traceback (most recent call last):
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/views/generic/base.py", line 84, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/account/views/account.py", line 19, in get
+    return Response('serializer.data', save=False)
+TypeError: __init__() got an unexpected keyword argument 'save'
+2023-11-25 12:50:06 [ERROR   ] (basehttp.log_message) "GET /api/account HTTP/1.1" 500 113850
+2023-11-25 13:00:48 [ERROR   ] (log.log_response) Internal Server Error: /api/account
+Traceback (most recent call last):
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/views/generic/base.py", line 84, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/account/views/account.py", line 17, in get
+    if request.COOKIES['access']:
+KeyError: 'access'
+2023-11-25 13:00:48 [ERROR   ] (basehttp.log_message) "GET /api/account HTTP/1.1" 500 114270
+2023-11-25 13:00:58 [ERROR   ] (log.log_response) Internal Server Error: /api/account
+Traceback (most recent call last):
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/jwt/api_jws.py", line 257, in _load
+    signing_input, crypto_segment = jwt.rsplit(b".", 1)
+ValueError: not enough values to unpack (expected 2, got 1)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/views/generic/base.py", line 84, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/account/views/account.py", line 20, in get
+    jwt.decode(access, SECRET_KEY, algorithms=["HS256"])
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/jwt/api_jwt.py", line 210, in decode
+    decoded = self.decode_complete(
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/jwt/api_jwt.py", line 151, in decode_complete
+    decoded = api_jws.decode_complete(
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/jwt/api_jws.py", line 198, in decode_complete
+    payload, signing_input, header, signature = self._load(jwt)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/jwt/api_jws.py", line 260, in _load
+    raise DecodeError("Not enough segments") from err
+jwt.exceptions.DecodeError: Not enough segments
+2023-11-25 13:00:58 [ERROR   ] (basehttp.log_message) "GET /api/account HTTP/1.1" 500 145806
+2023-11-25 13:26:39 [ERROR   ] (log.log_response) Internal Server Error: /api/account
+Traceback (most recent call last):
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/jwt/api_jws.py", line 257, in _load
+    signing_input, crypto_segment = jwt.rsplit(b".", 1)
+ValueError: not enough values to unpack (expected 2, got 1)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/views/generic/base.py", line 84, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/account/views/account.py", line 20, in get
+    jwt.decode(access, "secret", algorithms=["HS256"])
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/jwt/api_jwt.py", line 210, in decode
+    decoded = self.decode_complete(
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/jwt/api_jwt.py", line 151, in decode_complete
+    decoded = api_jws.decode_complete(
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/jwt/api_jws.py", line 198, in decode_complete
+    payload, signing_input, header, signature = self._load(jwt)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/jwt/api_jws.py", line 260, in _load
+    raise DecodeError("Not enough segments") from err
+jwt.exceptions.DecodeError: Not enough segments
+2023-11-25 13:26:39 [ERROR   ] (basehttp.log_message) "GET /api/account HTTP/1.1" 500 145451
+2023-11-25 13:27:42 [ERROR   ] (log.log_response) Internal Server Error: /api/account
+Traceback (most recent call last):
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/jwt/api_jws.py", line 257, in _load
+    signing_input, crypto_segment = jwt.rsplit(b".", 1)
+ValueError: not enough values to unpack (expected 2, got 1)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/views/generic/base.py", line 84, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/account/views/account.py", line 21, in get
+    jwt.decode(access, "secret", algorithms=["HS256"])
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/jwt/api_jwt.py", line 210, in decode
+    decoded = self.decode_complete(
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/jwt/api_jwt.py", line 151, in decode_complete
+    decoded = api_jws.decode_complete(
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/jwt/api_jws.py", line 198, in decode_complete
+    payload, signing_input, header, signature = self._load(jwt)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/jwt/api_jws.py", line 260, in _load
+    raise DecodeError("Not enough segments") from err
+jwt.exceptions.DecodeError: Not enough segments
+2023-11-25 13:27:42 [ERROR   ] (basehttp.log_message) "GET /api/account HTTP/1.1" 500 145456
+2023-11-25 13:27:54 [ERROR   ] (log.log_response) Internal Server Error: /api/account
+Traceback (most recent call last):
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/jwt/api_jws.py", line 257, in _load
+    signing_input, crypto_segment = jwt.rsplit(b".", 1)
+ValueError: not enough values to unpack (expected 2, got 1)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/views/generic/base.py", line 84, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/account/views/account.py", line 21, in get
+    jwt.decode(access, "secret", algorithms=["HS256"])
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/jwt/api_jwt.py", line 210, in decode
+    decoded = self.decode_complete(
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/jwt/api_jwt.py", line 151, in decode_complete
+    decoded = api_jws.decode_complete(
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/jwt/api_jws.py", line 198, in decode_complete
+    payload, signing_input, header, signature = self._load(jwt)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/jwt/api_jws.py", line 260, in _load
+    raise DecodeError("Not enough segments") from err
+jwt.exceptions.DecodeError: Not enough segments
+2023-11-25 13:27:54 [ERROR   ] (basehttp.log_message) "GET /api/account HTTP/1.1" 500 145456
+2023-11-25 13:28:08 [ERROR   ] (log.log_response) Internal Server Error: /api/account
+Traceback (most recent call last):
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/views/generic/base.py", line 84, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/account/views/account.py", line 18, in get
+    access = request.COOKIES.access
+AttributeError: 'dict' object has no attribute 'access'
+2023-11-25 13:28:08 [ERROR   ] (basehttp.log_message) "GET /api/account HTTP/1.1" 500 117254
+2023-11-25 13:28:20 [ERROR   ] (log.log_response) Internal Server Error: /api/account
+Traceback (most recent call last):
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/views/generic/base.py", line 84, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/account/views/account.py", line 21, in get
+    jwt.decode(access, "secret", algorithms=["HS256"])
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/jwt/api_jwt.py", line 210, in decode
+    decoded = self.decode_complete(
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/jwt/api_jwt.py", line 151, in decode_complete
+    decoded = api_jws.decode_complete(
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/jwt/api_jws.py", line 198, in decode_complete
+    payload, signing_input, header, signature = self._load(jwt)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/jwt/api_jws.py", line 254, in _load
+    raise DecodeError(f"Invalid token type. Token must be a {bytes}")
+jwt.exceptions.DecodeError: Invalid token type. Token must be a <class 'bytes'>
+2023-11-25 13:28:20 [ERROR   ] (basehttp.log_message) "GET /api/account HTTP/1.1" 500 146533
+2023-11-25 13:28:57 [ERROR   ] (log.log_response) Internal Server Error: /api/account
+Traceback (most recent call last):
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/jwt/api_jws.py", line 257, in _load
+    signing_input, crypto_segment = jwt.rsplit(b".", 1)
+ValueError: not enough values to unpack (expected 2, got 1)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/views/generic/base.py", line 84, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/account/views/account.py", line 21, in get
+    jwt.decode(access, "secret", algorithms=["HS256"])
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/jwt/api_jwt.py", line 210, in decode
+    decoded = self.decode_complete(
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/jwt/api_jwt.py", line 151, in decode_complete
+    decoded = api_jws.decode_complete(
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/jwt/api_jws.py", line 198, in decode_complete
+    payload, signing_input, header, signature = self._load(jwt)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/jwt/api_jws.py", line 260, in _load
+    raise DecodeError("Not enough segments") from err
+jwt.exceptions.DecodeError: Not enough segments
+2023-11-25 13:28:57 [ERROR   ] (basehttp.log_message) "GET /api/account HTTP/1.1" 500 145456
+2023-11-25 13:29:41 [ERROR   ] (log.log_response) Internal Server Error: /api/account
+Traceback (most recent call last):
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/jwt/api_jws.py", line 257, in _load
+    signing_input, crypto_segment = jwt.rsplit(b".", 1)
+ValueError: not enough values to unpack (expected 2, got 1)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/views/generic/base.py", line 84, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/account/views/account.py", line 21, in get
+    dict = jwt.decode(access, "secret", algorithms=["HS256"])
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/jwt/api_jwt.py", line 210, in decode
+    decoded = self.decode_complete(
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/jwt/api_jwt.py", line 151, in decode_complete
+    decoded = api_jws.decode_complete(
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/jwt/api_jws.py", line 198, in decode_complete
+    payload, signing_input, header, signature = self._load(jwt)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/jwt/api_jws.py", line 260, in _load
+    raise DecodeError("Not enough segments") from err
+jwt.exceptions.DecodeError: Not enough segments
+2023-11-25 13:29:41 [ERROR   ] (basehttp.log_message) "GET /api/account HTTP/1.1" 500 145399
+2023-11-25 13:29:44 [ERROR   ] (log.log_response) Internal Server Error: /api/account
+Traceback (most recent call last):
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/jwt/api_jws.py", line 257, in _load
+    signing_input, crypto_segment = jwt.rsplit(b".", 1)
+ValueError: not enough values to unpack (expected 2, got 1)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/views/generic/base.py", line 84, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/account/views/account.py", line 21, in get
+    dict = jwt.decode(access, "secret", algorithms=["HS256"])
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/jwt/api_jwt.py", line 210, in decode
+    decoded = self.decode_complete(
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/jwt/api_jwt.py", line 151, in decode_complete
+    decoded = api_jws.decode_complete(
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/jwt/api_jws.py", line 198, in decode_complete
+    payload, signing_input, header, signature = self._load(jwt)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/jwt/api_jws.py", line 260, in _load
+    raise DecodeError("Not enough segments") from err
+jwt.exceptions.DecodeError: Not enough segments
+2023-11-25 13:29:44 [ERROR   ] (basehttp.log_message) "GET /api/account HTTP/1.1" 500 145399
+2023-11-25 13:30:16 [ERROR   ] (log.log_response) Internal Server Error: /api/account
+Traceback (most recent call last):
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/jwt/api_jws.py", line 257, in _load
+    signing_input, crypto_segment = jwt.rsplit(b".", 1)
+ValueError: not enough values to unpack (expected 2, got 1)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/views/generic/base.py", line 84, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/account/views/account.py", line 21, in get
+    dict = jwt.decode(access, "secret", algorithms=["HS256"])
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/jwt/api_jwt.py", line 210, in decode
+    decoded = self.decode_complete(
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/jwt/api_jwt.py", line 151, in decode_complete
+    decoded = api_jws.decode_complete(
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/jwt/api_jws.py", line 198, in decode_complete
+    payload, signing_input, header, signature = self._load(jwt)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/jwt/api_jws.py", line 260, in _load
+    raise DecodeError("Not enough segments") from err
+jwt.exceptions.DecodeError: Not enough segments
+2023-11-25 13:30:16 [ERROR   ] (basehttp.log_message) "GET /api/account HTTP/1.1" 500 145336
+2023-11-25 13:31:07 [ERROR   ] (log.log_response) Internal Server Error: /api/account
+Traceback (most recent call last):
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/jwt/api_jws.py", line 257, in _load
+    signing_input, crypto_segment = jwt.rsplit(b".", 1)
+ValueError: not enough values to unpack (expected 2, got 1)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/views/generic/base.py", line 84, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/account/views/account.py", line 21, in get
+    dict = jwt.decode(access, "secret", algorithms=["HS256"])
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/jwt/api_jwt.py", line 210, in decode
+    decoded = self.decode_complete(
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/jwt/api_jwt.py", line 151, in decode_complete
+    decoded = api_jws.decode_complete(
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/jwt/api_jws.py", line 198, in decode_complete
+    payload, signing_input, header, signature = self._load(jwt)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/jwt/api_jws.py", line 260, in _load
+    raise DecodeError("Not enough segments") from err
+jwt.exceptions.DecodeError: Not enough segments
+2023-11-25 13:31:07 [ERROR   ] (basehttp.log_message) "GET /api/account HTTP/1.1" 500 145336
+2023-11-25 13:33:39 [ERROR   ] (log.log_response) Internal Server Error: /api/account
+Traceback (most recent call last):
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/views/generic/base.py", line 84, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/account/views/account.py", line 22, in get
+    dict = jwt.decode(access, "secret", algorithms=["HS256"])
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/jwt/api_jwt.py", line 210, in decode
+    decoded = self.decode_complete(
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/jwt/api_jwt.py", line 151, in decode_complete
+    decoded = api_jws.decode_complete(
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/jwt/api_jws.py", line 209, in decode_complete
+    self._verify_signature(signing_input, header, signature, key, algorithms)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/jwt/api_jws.py", line 310, in _verify_signature
+    raise InvalidSignatureError("Signature verification failed")
+jwt.exceptions.InvalidSignatureError: Signature verification failed
+2023-11-25 13:33:39 [ERROR   ] (basehttp.log_message) "GET /api/account HTTP/1.1" 500 143385
+2023-11-25 13:33:50 [ERROR   ] (log.log_response) Internal Server Error: /api/account
+Traceback (most recent call last):
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/views/generic/base.py", line 84, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/account/views/account.py", line 22, in get
+    dict = jwt.decode(access, "secret", algorithms=["HS256"])
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/jwt/api_jwt.py", line 210, in decode
+    decoded = self.decode_complete(
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/jwt/api_jwt.py", line 151, in decode_complete
+    decoded = api_jws.decode_complete(
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/jwt/api_jws.py", line 209, in decode_complete
+    self._verify_signature(signing_input, header, signature, key, algorithms)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/jwt/api_jws.py", line 310, in _verify_signature
+    raise InvalidSignatureError("Signature verification failed")
+jwt.exceptions.InvalidSignatureError: Signature verification failed
+2023-11-25 13:33:50 [ERROR   ] (basehttp.log_message) "GET /api/account HTTP/1.1" 500 143385
+2023-11-25 13:34:40 [ERROR   ] (log.log_response) Internal Server Error: /api/account
+Traceback (most recent call last):
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/views/generic/base.py", line 84, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/account/views/account.py", line 22, in get
+    dict = jwt.decode(access, "secret", algorithms=["HS256"])
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/jwt/api_jwt.py", line 210, in decode
+    decoded = self.decode_complete(
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/jwt/api_jwt.py", line 151, in decode_complete
+    decoded = api_jws.decode_complete(
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/jwt/api_jws.py", line 209, in decode_complete
+    self._verify_signature(signing_input, header, signature, key, algorithms)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/jwt/api_jws.py", line 310, in _verify_signature
+    raise InvalidSignatureError("Signature verification failed")
+jwt.exceptions.InvalidSignatureError: Signature verification failed
+2023-11-25 13:34:40 [ERROR   ] (basehttp.log_message) "GET /api/account HTTP/1.1" 500 143385
+2023-11-25 13:34:47 [ERROR   ] (log.log_response) Internal Server Error: /api/account
+Traceback (most recent call last):
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/views/generic/base.py", line 84, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/account/views/account.py", line 22, in get
+    dict = jwt.decode(access, "secret", algorithms=["HS256"])
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/jwt/api_jwt.py", line 210, in decode
+    decoded = self.decode_complete(
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/jwt/api_jwt.py", line 151, in decode_complete
+    decoded = api_jws.decode_complete(
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/jwt/api_jws.py", line 209, in decode_complete
+    self._verify_signature(signing_input, header, signature, key, algorithms)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/jwt/api_jws.py", line 310, in _verify_signature
+    raise InvalidSignatureError("Signature verification failed")
+jwt.exceptions.InvalidSignatureError: Signature verification failed
+2023-11-25 13:34:47 [ERROR   ] (basehttp.log_message) "GET /api/account HTTP/1.1" 500 143385
+2023-11-25 13:34:49 [ERROR   ] (log.log_response) Internal Server Error: /api/account
+Traceback (most recent call last):
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/views/generic/base.py", line 84, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/account/views/account.py", line 22, in get
+    dict = jwt.decode(access, "secret", algorithms=["HS256"])
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/jwt/api_jwt.py", line 210, in decode
+    decoded = self.decode_complete(
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/jwt/api_jwt.py", line 151, in decode_complete
+    decoded = api_jws.decode_complete(
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/jwt/api_jws.py", line 209, in decode_complete
+    self._verify_signature(signing_input, header, signature, key, algorithms)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/jwt/api_jws.py", line 310, in _verify_signature
+    raise InvalidSignatureError("Signature verification failed")
+jwt.exceptions.InvalidSignatureError: Signature verification failed
+2023-11-25 13:34:49 [ERROR   ] (basehttp.log_message) "GET /api/account HTTP/1.1" 500 143385
+2023-11-25 13:34:50 [ERROR   ] (log.log_response) Internal Server Error: /api/account
+Traceback (most recent call last):
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/views/generic/base.py", line 84, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/account/views/account.py", line 22, in get
+    dict = jwt.decode(access, "secret", algorithms=["HS256"])
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/jwt/api_jwt.py", line 210, in decode
+    decoded = self.decode_complete(
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/jwt/api_jwt.py", line 151, in decode_complete
+    decoded = api_jws.decode_complete(
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/jwt/api_jws.py", line 209, in decode_complete
+    self._verify_signature(signing_input, header, signature, key, algorithms)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/jwt/api_jws.py", line 310, in _verify_signature
+    raise InvalidSignatureError("Signature verification failed")
+jwt.exceptions.InvalidSignatureError: Signature verification failed
+2023-11-25 13:34:50 [ERROR   ] (basehttp.log_message) "GET /api/account HTTP/1.1" 500 143385
+2023-11-25 13:35:52 [ERROR   ] (log.log_response) Internal Server Error: /api/account
+Traceback (most recent call last):
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/jwt/api_jws.py", line 257, in _load
+    signing_input, crypto_segment = jwt.rsplit(b".", 1)
+ValueError: not enough values to unpack (expected 2, got 1)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/views/generic/base.py", line 84, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/account/views/account.py", line 21, in get
+    dict = jwt.decode(access, "secret", algorithms=["HS256"])
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/jwt/api_jwt.py", line 210, in decode
+    decoded = self.decode_complete(
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/jwt/api_jwt.py", line 151, in decode_complete
+    decoded = api_jws.decode_complete(
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/jwt/api_jws.py", line 198, in decode_complete
+    payload, signing_input, header, signature = self._load(jwt)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/jwt/api_jws.py", line 260, in _load
+    raise DecodeError("Not enough segments") from err
+jwt.exceptions.DecodeError: Not enough segments
+2023-11-25 13:35:52 [ERROR   ] (basehttp.log_message) "GET /api/account HTTP/1.1" 500 145470
+2023-11-25 13:36:17 [ERROR   ] (log.log_response) Internal Server Error: /api/account
+Traceback (most recent call last):
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/jwt/api_jws.py", line 257, in _load
+    signing_input, crypto_segment = jwt.rsplit(b".", 1)
+ValueError: not enough values to unpack (expected 2, got 1)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/views/generic/base.py", line 84, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/account/views/account.py", line 21, in get
+    dict = jwt.decode(access, "secret", algorithms=["HS256"])
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/jwt/api_jwt.py", line 210, in decode
+    decoded = self.decode_complete(
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/jwt/api_jwt.py", line 151, in decode_complete
+    decoded = api_jws.decode_complete(
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/jwt/api_jws.py", line 198, in decode_complete
+    payload, signing_input, header, signature = self._load(jwt)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/jwt/api_jws.py", line 260, in _load
+    raise DecodeError("Not enough segments") from err
+jwt.exceptions.DecodeError: Not enough segments
+2023-11-25 13:36:17 [ERROR   ] (basehttp.log_message) "GET /api/account HTTP/1.1" 500 145336
+2023-11-25 13:38:51 [ERROR   ] (log.log_response) Internal Server Error: /api/account
+Traceback (most recent call last):
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/jwt/api_jws.py", line 257, in _load
+    signing_input, crypto_segment = jwt.rsplit(b".", 1)
+ValueError: not enough values to unpack (expected 2, got 1)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/views/generic/base.py", line 84, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/account/views/account.py", line 21, in get
+    dict = jwt.decode(access, "secret", algorithms=["HS256"])
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/jwt/api_jwt.py", line 210, in decode
+    decoded = self.decode_complete(
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/jwt/api_jwt.py", line 151, in decode_complete
+    decoded = api_jws.decode_complete(
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/jwt/api_jws.py", line 198, in decode_complete
+    payload, signing_input, header, signature = self._load(jwt)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/jwt/api_jws.py", line 260, in _load
+    raise DecodeError("Not enough segments") from err
+jwt.exceptions.DecodeError: Not enough segments
+2023-11-25 13:38:51 [ERROR   ] (basehttp.log_message) "GET /api/account HTTP/1.1" 500 145140
+2023-11-25 13:40:45 [ERROR   ] (log.log_response) Internal Server Error: /api/account
+Traceback (most recent call last):
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/views/generic/base.py", line 84, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/account/views/account.py", line 21, in get
+    dict = jwt.decode(refresh, "secret", algorithms=["HS256"])
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/jwt/api_jwt.py", line 210, in decode
+    decoded = self.decode_complete(
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/jwt/api_jwt.py", line 151, in decode_complete
+    decoded = api_jws.decode_complete(
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/jwt/api_jws.py", line 209, in decode_complete
+    self._verify_signature(signing_input, header, signature, key, algorithms)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/jwt/api_jws.py", line 310, in _verify_signature
+    raise InvalidSignatureError("Signature verification failed")
+jwt.exceptions.InvalidSignatureError: Signature verification failed
+2023-11-25 13:40:45 [ERROR   ] (basehttp.log_message) "GET /api/account HTTP/1.1" 500 141224
+2023-11-25 13:42:00 [ERROR   ] (log.log_response) Internal Server Error: /api/account
+Traceback (most recent call last):
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/views/generic/base.py", line 84, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/account/views/account.py", line 21, in get
+    dict = jwt.decode(refresh, "secret", algorithms=["HS256"])
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/jwt/api_jwt.py", line 210, in decode
+    decoded = self.decode_complete(
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/jwt/api_jwt.py", line 151, in decode_complete
+    decoded = api_jws.decode_complete(
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/jwt/api_jws.py", line 209, in decode_complete
+    self._verify_signature(signing_input, header, signature, key, algorithms)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/jwt/api_jws.py", line 310, in _verify_signature
+    raise InvalidSignatureError("Signature verification failed")
+jwt.exceptions.InvalidSignatureError: Signature verification failed
+2023-11-25 13:42:00 [ERROR   ] (basehttp.log_message) "GET /api/account HTTP/1.1" 500 141225
+2023-11-25 13:42:02 [ERROR   ] (log.log_response) Internal Server Error: /api/account
+Traceback (most recent call last):
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/views/generic/base.py", line 84, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/account/views/account.py", line 21, in get
+    dict = jwt.decode(refresh, "secret", algorithms=["HS256"])
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/jwt/api_jwt.py", line 210, in decode
+    decoded = self.decode_complete(
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/jwt/api_jwt.py", line 151, in decode_complete
+    decoded = api_jws.decode_complete(
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/jwt/api_jws.py", line 209, in decode_complete
+    self._verify_signature(signing_input, header, signature, key, algorithms)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/jwt/api_jws.py", line 310, in _verify_signature
+    raise InvalidSignatureError("Signature verification failed")
+jwt.exceptions.InvalidSignatureError: Signature verification failed
+2023-11-25 13:42:02 [ERROR   ] (basehttp.log_message) "GET /api/account HTTP/1.1" 500 141225
+2023-11-25 13:42:03 [ERROR   ] (log.log_response) Internal Server Error: /api/account
+Traceback (most recent call last):
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/views/generic/base.py", line 84, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/account/views/account.py", line 21, in get
+    dict = jwt.decode(refresh, "secret", algorithms=["HS256"])
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/jwt/api_jwt.py", line 210, in decode
+    decoded = self.decode_complete(
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/jwt/api_jwt.py", line 151, in decode_complete
+    decoded = api_jws.decode_complete(
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/jwt/api_jws.py", line 209, in decode_complete
+    self._verify_signature(signing_input, header, signature, key, algorithms)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/jwt/api_jws.py", line 310, in _verify_signature
+    raise InvalidSignatureError("Signature verification failed")
+jwt.exceptions.InvalidSignatureError: Signature verification failed
+2023-11-25 13:42:03 [ERROR   ] (basehttp.log_message) "GET /api/account HTTP/1.1" 500 141225

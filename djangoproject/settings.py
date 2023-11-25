@@ -31,6 +31,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
+    'rest_framework_simplejwt',
 
     'blog.apps.BlogConfig',
     'account.apps.AccountConfig',
@@ -76,6 +77,7 @@ MIDDLEWARE = [
 REST_FRAMEWORK = {
     "DEFAULT_AUTHENTICATION_CLASSES": (
         "account.authentication.SessionAuthentication",
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
     ),
 }
 
@@ -131,8 +133,8 @@ USE_L10N = True
 USE_TZ = True
 
 PROJECT_NAME = 'Ofirio'
-PROJECT_SCHEME = 'http://'
-PROJECT_DOMAIN = 'localhost:8006'
+PROJECT_SCHEME = 'https://'
+PROJECT_DOMAIN = 'localhost'
 PROJECT_BACK_EMAIL = 'Ofirio <andrew@rigelstorm.com>'
 HELP_EMAIL = 'help@ofirio.com'
 INTERCOM_TOKEN = ''
@@ -154,7 +156,7 @@ SITEMAPS_DIR_SRP = BASE_DIR / 'static_django' / 'sitemaps-srp'
 SESSION_COOKIE_HTTPONLY = True
 SESSION_COOKIE_SECURE = True
 CSRF_COOKIE_SECURE = True
-COOKIE_SECRET = ''  # Need to be filled in settings_local
+COOKIE_SECRET = 'hdjsyrmdjfnryhfndlfhndyetsnfohdn'  # Need to be filled in settings_local
 
 # CORS
 CORS_ALLOW_HEADERS = list(default_headers) + ['ofauth']

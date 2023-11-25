@@ -1,16 +1,18 @@
 from django.http import JsonResponse
 from django.views import View
 from django.core.cache import cache
-
+from django.middleware.csrf import get_token
 
 class GetCSRF(View):
 
     def get(self, request):
 
-        access = cache.get("access")
-        print(access)
-        access = 'ty2DDGGfi8MyDGRfLXLbtDzR4GWWzV91ZP8MyYfucTZGU7BpkrYPizani0eDiA2G'
-        return JsonResponse({'key': access}, safe=True)
+        # print('requestCOOKIES', request.COOKIES)
+
+        # token = get_token(request)
+        # print('token', token)
+        # access = cache.get("access")
+        return JsonResponse(request.COOKIES, safe=True)
 
 
 class SocialUrls(View):
