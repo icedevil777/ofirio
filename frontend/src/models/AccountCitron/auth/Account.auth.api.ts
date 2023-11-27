@@ -47,7 +47,7 @@ export default {
   },
 
   login: function (data: TAccountDTO__Client_Login) {
-    return <AxiosRequestToAwaiting<void>>of(axios.post(`${getUrl}/api/account/login`, data));
+    return <AxiosRequestToAwaiting<void>>of(axios.post(`${getUrl}/api/account/session-login`, data));
   },
 
   logout: function () {

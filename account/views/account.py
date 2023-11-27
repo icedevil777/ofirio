@@ -8,15 +8,18 @@ from account.serializers import AccountSerializer
 
 
 class AccountView(APIView):
-        
-    authentication_classes = []
+    permission_classes = IsAuthenticated,
     serializer_class = AccountSerializer
     queryset = ''
 
     def get(self, request, *args, **kwargs):
-        if request.COOKIES['refresh']:
-            refresh = request.COOKIES['refresh']
-            print('refresh', refresh)
+        serializer = self.serializer_class(request.user)
+        return Response(serializer.data, status=status.HTTP_200_OK)
+
+    # def get(self, request, *args, **kwargs):
+        # if request.COOKIES['refresh']:
+        #     refresh = request.COOKIES['refresh']
+        #     print('refresh', refresh)
 
             # dict = jwt.decode(refresh, "secret", algorithms=['RS256'])
             # print('dict', dict)
@@ -24,5 +27,5 @@ class AccountView(APIView):
            
         # serializer = self.serializer_class( )
         # print('serializer', serializer.data)
-        return Response('serializer.data')
+
         # return Response(serializer.data, status=status.HTTP_200_OK)

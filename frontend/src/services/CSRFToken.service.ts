@@ -5,7 +5,7 @@ let CSRF_TOKEN_URL = '/api/csrf';
 const CSRF_TOKEN_REFRESH_TIME = 2 /*h*/ * 60 /*m*/ * 60 /*s*/ * 1000 /*ms*/;
 
 let refreshTimer:undefined | number = undefined;
-type TCSRFToken = { token: string }
+type TCSRFToken = { csrftoken: string }
 
 if (location.hostname === 'localhost') {
   CSRF_TOKEN_URL = 'https://localhost/api/csrf'
@@ -28,13 +28,15 @@ async function refreshCSRFToken() {
   if (err)
     return "Location.reload()";
 
-  axios.defaults.headers.common['x-csrftoken'] = tokenData.data.token;
+  axios.defaults.headers.common['x-csrftoken'] = tokenData.data.csrftoken;
 
   if (refreshTimer)
     clearTimeout(refreshTimer);
 
   refreshTimer = window.setTimeout(refreshCSRFToken, CSRF_TOKEN_REFRESH_TIME);
-  return tokenData.data.token;
+
+  
+  return tokenData.data.csrftoken;
 }
 
 export default {
