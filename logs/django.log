@@ -3592,3 +3592,2388 @@ Traceback (most recent call last):
     raise ConnectionError(str(exc)) from exc
 kombu.exceptions.OperationalError: [Errno 111] Connection refused
 2023-11-27 12:03:31 [ERROR   ] (basehttp.log_message) "POST /api/search HTTP/1.1" 500 298950
+2023-11-27 13:35:54 [ERROR   ] (log.log_response) Internal Server Error: /api/search
+Traceback (most recent call last):
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/utils/functional.py", line 32, in __call__
+    return self.__value__
+AttributeError: 'ChannelPromise' object has no attribute '__value__'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/connection.py", line 472, in _reraise_as_library_errors
+    yield
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/connection.py", line 459, in _ensure_connection
+    return retry_over_time(
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/utils/functional.py", line 318, in retry_over_time
+    return fun(*args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/connection.py", line 934, in _connection_factory
+    self._connection = self._establish_connection()
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/connection.py", line 860, in _establish_connection
+    conn = self.transport.establish_connection()
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/transport/pyamqp.py", line 203, in establish_connection
+    conn.connect()
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/amqp/connection.py", line 324, in connect
+    self.transport.connect()
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/amqp/transport.py", line 129, in connect
+    self._connect(self.host, self.port, self.connect_timeout)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/amqp/transport.py", line 184, in _connect
+    self.sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/views/generic/base.py", line 84, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/common/cache.py", line 57, in wrapper
+    response = method(view, request, *args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/search/views/search.py", line 61, in post
+    tasks.track_search.delay(user.email, self.serializer.data)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/celery/app/task.py", line 444, in delay
+    return self.apply_async(args, kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/celery/app/task.py", line 594, in apply_async
+    return app.send_task(
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/celery/app/base.py", line 799, in send_task
+    amqp.send_task_message(P, name, message, **options)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/celery/app/amqp.py", line 518, in send_task_message
+    ret = producer.publish(
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/messaging.py", line 186, in publish
+    return _publish(
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/connection.py", line 556, in _ensured
+    return fun(*args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/messaging.py", line 195, in _publish
+    channel = self.channel
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/messaging.py", line 218, in _get_channel
+    channel = self._channel = channel()
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/utils/functional.py", line 34, in __call__
+    value = self.__value__ = self.__contract__()
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/messaging.py", line 234, in <lambda>
+    channel = ChannelPromise(lambda: connection.default_channel)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/connection.py", line 953, in default_channel
+    self._ensure_connection(**conn_opts)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/connection.py", line 459, in _ensure_connection
+    return retry_over_time(
+  File "/usr/lib/python3.8/contextlib.py", line 131, in __exit__
+    self.gen.throw(type, value, traceback)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/connection.py", line 476, in _reraise_as_library_errors
+    raise ConnectionError(str(exc)) from exc
+kombu.exceptions.OperationalError: [Errno 111] Connection refused
+2023-11-27 13:35:54 [ERROR   ] (basehttp.log_message) "POST /api/search HTTP/1.1" 500 291649
+2023-11-27 13:35:54 [WARNING ] (log.log_response) Bad Request: /api/search/address-rect
+2023-11-27 13:35:54 [WARNING ] (basehttp.log_message) "POST /api/search/address-rect HTTP/1.1" 400 122
+2023-11-27 13:36:00 [ERROR   ] (log.log_response) Internal Server Error: /api/search
+Traceback (most recent call last):
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/utils/functional.py", line 32, in __call__
+    return self.__value__
+AttributeError: 'ChannelPromise' object has no attribute '__value__'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/connection.py", line 472, in _reraise_as_library_errors
+    yield
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/connection.py", line 459, in _ensure_connection
+    return retry_over_time(
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/utils/functional.py", line 318, in retry_over_time
+    return fun(*args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/connection.py", line 934, in _connection_factory
+    self._connection = self._establish_connection()
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/connection.py", line 860, in _establish_connection
+    conn = self.transport.establish_connection()
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/transport/pyamqp.py", line 203, in establish_connection
+    conn.connect()
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/amqp/connection.py", line 324, in connect
+    self.transport.connect()
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/amqp/transport.py", line 129, in connect
+    self._connect(self.host, self.port, self.connect_timeout)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/amqp/transport.py", line 184, in _connect
+    self.sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/views/generic/base.py", line 84, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/common/cache.py", line 57, in wrapper
+    response = method(view, request, *args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/search/views/search.py", line 61, in post
+    tasks.track_search.delay(user.email, self.serializer.data)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/celery/app/task.py", line 444, in delay
+    return self.apply_async(args, kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/celery/app/task.py", line 594, in apply_async
+    return app.send_task(
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/celery/app/base.py", line 799, in send_task
+    amqp.send_task_message(P, name, message, **options)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/celery/app/amqp.py", line 518, in send_task_message
+    ret = producer.publish(
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/messaging.py", line 186, in publish
+    return _publish(
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/connection.py", line 556, in _ensured
+    return fun(*args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/messaging.py", line 195, in _publish
+    channel = self.channel
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/messaging.py", line 218, in _get_channel
+    channel = self._channel = channel()
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/utils/functional.py", line 34, in __call__
+    value = self.__value__ = self.__contract__()
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/messaging.py", line 234, in <lambda>
+    channel = ChannelPromise(lambda: connection.default_channel)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/connection.py", line 953, in default_channel
+    self._ensure_connection(**conn_opts)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/connection.py", line 459, in _ensure_connection
+    return retry_over_time(
+  File "/usr/lib/python3.8/contextlib.py", line 131, in __exit__
+    self.gen.throw(type, value, traceback)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/connection.py", line 476, in _reraise_as_library_errors
+    raise ConnectionError(str(exc)) from exc
+kombu.exceptions.OperationalError: [Errno 111] Connection refused
+2023-11-27 13:36:00 [ERROR   ] (basehttp.log_message) "POST /api/search HTTP/1.1" 500 291959
+2023-11-27 13:36:04 [WARNING ] (log.log_response) Unauthorized: /api/account
+2023-11-27 13:36:04 [WARNING ] (basehttp.log_message) "GET /api/account HTTP/1.1" 401 58
+2023-11-27 13:36:33 [ERROR   ] (log.log_response) Internal Server Error: /api/search
+Traceback (most recent call last):
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/utils/functional.py", line 32, in __call__
+    return self.__value__
+AttributeError: 'ChannelPromise' object has no attribute '__value__'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/connection.py", line 472, in _reraise_as_library_errors
+    yield
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/connection.py", line 459, in _ensure_connection
+    return retry_over_time(
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/utils/functional.py", line 318, in retry_over_time
+    return fun(*args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/connection.py", line 934, in _connection_factory
+    self._connection = self._establish_connection()
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/connection.py", line 860, in _establish_connection
+    conn = self.transport.establish_connection()
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/transport/pyamqp.py", line 203, in establish_connection
+    conn.connect()
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/amqp/connection.py", line 324, in connect
+    self.transport.connect()
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/amqp/transport.py", line 129, in connect
+    self._connect(self.host, self.port, self.connect_timeout)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/amqp/transport.py", line 184, in _connect
+    self.sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/views/generic/base.py", line 84, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/common/cache.py", line 57, in wrapper
+    response = method(view, request, *args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/search/views/search.py", line 61, in post
+    tasks.track_search.delay(user.email, self.serializer.data)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/celery/app/task.py", line 444, in delay
+    return self.apply_async(args, kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/celery/app/task.py", line 594, in apply_async
+    return app.send_task(
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/celery/app/base.py", line 799, in send_task
+    amqp.send_task_message(P, name, message, **options)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/celery/app/amqp.py", line 518, in send_task_message
+    ret = producer.publish(
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/messaging.py", line 186, in publish
+    return _publish(
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/connection.py", line 556, in _ensured
+    return fun(*args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/messaging.py", line 195, in _publish
+    channel = self.channel
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/messaging.py", line 218, in _get_channel
+    channel = self._channel = channel()
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/utils/functional.py", line 34, in __call__
+    value = self.__value__ = self.__contract__()
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/messaging.py", line 234, in <lambda>
+    channel = ChannelPromise(lambda: connection.default_channel)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/connection.py", line 953, in default_channel
+    self._ensure_connection(**conn_opts)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/connection.py", line 459, in _ensure_connection
+    return retry_over_time(
+  File "/usr/lib/python3.8/contextlib.py", line 131, in __exit__
+    self.gen.throw(type, value, traceback)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/connection.py", line 476, in _reraise_as_library_errors
+    raise ConnectionError(str(exc)) from exc
+kombu.exceptions.OperationalError: [Errno 111] Connection refused
+2023-11-27 13:36:33 [ERROR   ] (basehttp.log_message) "POST /api/search HTTP/1.1" 500 291649
+2023-11-27 13:36:33 [WARNING ] (log.log_response) Bad Request: /api/search/address-rect
+2023-11-27 13:36:33 [WARNING ] (basehttp.log_message) "POST /api/search/address-rect HTTP/1.1" 400 122
+2023-11-27 13:36:39 [ERROR   ] (log.log_response) Internal Server Error: /api/search
+Traceback (most recent call last):
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/utils/functional.py", line 32, in __call__
+    return self.__value__
+AttributeError: 'ChannelPromise' object has no attribute '__value__'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/connection.py", line 472, in _reraise_as_library_errors
+    yield
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/connection.py", line 459, in _ensure_connection
+    return retry_over_time(
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/utils/functional.py", line 318, in retry_over_time
+    return fun(*args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/connection.py", line 934, in _connection_factory
+    self._connection = self._establish_connection()
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/connection.py", line 860, in _establish_connection
+    conn = self.transport.establish_connection()
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/transport/pyamqp.py", line 203, in establish_connection
+    conn.connect()
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/amqp/connection.py", line 324, in connect
+    self.transport.connect()
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/amqp/transport.py", line 129, in connect
+    self._connect(self.host, self.port, self.connect_timeout)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/amqp/transport.py", line 184, in _connect
+    self.sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/views/generic/base.py", line 84, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/common/cache.py", line 57, in wrapper
+    response = method(view, request, *args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/search/views/search.py", line 61, in post
+    tasks.track_search.delay(user.email, self.serializer.data)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/celery/app/task.py", line 444, in delay
+    return self.apply_async(args, kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/celery/app/task.py", line 594, in apply_async
+    return app.send_task(
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/celery/app/base.py", line 799, in send_task
+    amqp.send_task_message(P, name, message, **options)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/celery/app/amqp.py", line 518, in send_task_message
+    ret = producer.publish(
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/messaging.py", line 186, in publish
+    return _publish(
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/connection.py", line 556, in _ensured
+    return fun(*args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/messaging.py", line 195, in _publish
+    channel = self.channel
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/messaging.py", line 218, in _get_channel
+    channel = self._channel = channel()
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/utils/functional.py", line 34, in __call__
+    value = self.__value__ = self.__contract__()
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/messaging.py", line 234, in <lambda>
+    channel = ChannelPromise(lambda: connection.default_channel)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/connection.py", line 953, in default_channel
+    self._ensure_connection(**conn_opts)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/connection.py", line 459, in _ensure_connection
+    return retry_over_time(
+  File "/usr/lib/python3.8/contextlib.py", line 131, in __exit__
+    self.gen.throw(type, value, traceback)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/connection.py", line 476, in _reraise_as_library_errors
+    raise ConnectionError(str(exc)) from exc
+kombu.exceptions.OperationalError: [Errno 111] Connection refused
+2023-11-27 13:36:39 [ERROR   ] (basehttp.log_message) "POST /api/search HTTP/1.1" 500 291960
+2023-11-27 13:38:30 [ERROR   ] (log.log_response) Internal Server Error: /api/search
+Traceback (most recent call last):
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/utils/functional.py", line 32, in __call__
+    return self.__value__
+AttributeError: 'ChannelPromise' object has no attribute '__value__'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/connection.py", line 472, in _reraise_as_library_errors
+    yield
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/connection.py", line 459, in _ensure_connection
+    return retry_over_time(
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/utils/functional.py", line 318, in retry_over_time
+    return fun(*args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/connection.py", line 934, in _connection_factory
+    self._connection = self._establish_connection()
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/connection.py", line 860, in _establish_connection
+    conn = self.transport.establish_connection()
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/transport/pyamqp.py", line 203, in establish_connection
+    conn.connect()
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/amqp/connection.py", line 324, in connect
+    self.transport.connect()
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/amqp/transport.py", line 129, in connect
+    self._connect(self.host, self.port, self.connect_timeout)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/amqp/transport.py", line 184, in _connect
+    self.sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/views/generic/base.py", line 84, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/common/cache.py", line 57, in wrapper
+    response = method(view, request, *args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/search/views/search.py", line 61, in post
+    tasks.track_search.delay(user.email, self.serializer.data)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/celery/app/task.py", line 444, in delay
+    return self.apply_async(args, kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/celery/app/task.py", line 594, in apply_async
+    return app.send_task(
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/celery/app/base.py", line 799, in send_task
+    amqp.send_task_message(P, name, message, **options)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/celery/app/amqp.py", line 518, in send_task_message
+    ret = producer.publish(
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/messaging.py", line 186, in publish
+    return _publish(
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/connection.py", line 556, in _ensured
+    return fun(*args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/messaging.py", line 195, in _publish
+    channel = self.channel
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/messaging.py", line 218, in _get_channel
+    channel = self._channel = channel()
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/utils/functional.py", line 34, in __call__
+    value = self.__value__ = self.__contract__()
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/messaging.py", line 234, in <lambda>
+    channel = ChannelPromise(lambda: connection.default_channel)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/connection.py", line 953, in default_channel
+    self._ensure_connection(**conn_opts)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/connection.py", line 459, in _ensure_connection
+    return retry_over_time(
+  File "/usr/lib/python3.8/contextlib.py", line 131, in __exit__
+    self.gen.throw(type, value, traceback)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/connection.py", line 476, in _reraise_as_library_errors
+    raise ConnectionError(str(exc)) from exc
+kombu.exceptions.OperationalError: [Errno 111] Connection refused
+2023-11-27 13:38:30 [ERROR   ] (basehttp.log_message) "POST /api/search HTTP/1.1" 500 291954
+2023-11-27 13:38:50 [ERROR   ] (log.log_response) Internal Server Error: /api/search
+Traceback (most recent call last):
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/utils/functional.py", line 32, in __call__
+    return self.__value__
+AttributeError: 'ChannelPromise' object has no attribute '__value__'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/connection.py", line 472, in _reraise_as_library_errors
+    yield
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/connection.py", line 459, in _ensure_connection
+    return retry_over_time(
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/utils/functional.py", line 318, in retry_over_time
+    return fun(*args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/connection.py", line 934, in _connection_factory
+    self._connection = self._establish_connection()
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/connection.py", line 860, in _establish_connection
+    conn = self.transport.establish_connection()
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/transport/pyamqp.py", line 203, in establish_connection
+    conn.connect()
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/amqp/connection.py", line 324, in connect
+    self.transport.connect()
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/amqp/transport.py", line 129, in connect
+    self._connect(self.host, self.port, self.connect_timeout)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/amqp/transport.py", line 184, in _connect
+    self.sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/views/generic/base.py", line 84, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/common/cache.py", line 57, in wrapper
+    response = method(view, request, *args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/search/views/search.py", line 61, in post
+    tasks.track_search.delay(user.email, self.serializer.data)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/celery/app/task.py", line 444, in delay
+    return self.apply_async(args, kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/celery/app/task.py", line 594, in apply_async
+    return app.send_task(
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/celery/app/base.py", line 799, in send_task
+    amqp.send_task_message(P, name, message, **options)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/celery/app/amqp.py", line 518, in send_task_message
+    ret = producer.publish(
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/messaging.py", line 186, in publish
+    return _publish(
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/connection.py", line 556, in _ensured
+    return fun(*args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/messaging.py", line 195, in _publish
+    channel = self.channel
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/messaging.py", line 218, in _get_channel
+    channel = self._channel = channel()
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/utils/functional.py", line 34, in __call__
+    value = self.__value__ = self.__contract__()
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/messaging.py", line 234, in <lambda>
+    channel = ChannelPromise(lambda: connection.default_channel)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/connection.py", line 953, in default_channel
+    self._ensure_connection(**conn_opts)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/connection.py", line 459, in _ensure_connection
+    return retry_over_time(
+  File "/usr/lib/python3.8/contextlib.py", line 131, in __exit__
+    self.gen.throw(type, value, traceback)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/connection.py", line 476, in _reraise_as_library_errors
+    raise ConnectionError(str(exc)) from exc
+kombu.exceptions.OperationalError: [Errno 111] Connection refused
+2023-11-27 13:38:50 [ERROR   ] (basehttp.log_message) "POST /api/search HTTP/1.1" 500 291954
+2023-11-27 13:39:08 [WARNING ] (log.log_response) Method Not Allowed: /api/search
+2023-11-27 13:39:08 [WARNING ] (basehttp.log_message) "GET /api/search HTTP/1.1" 405 25995
+2023-11-27 13:49:31 [ERROR   ] (log.log_response) Internal Server Error: /api/account
+Traceback (most recent call last):
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/contrib/sessions/backends/base.py", line 187, in _get_session
+    return self._session_cache
+AttributeError: 'SessionStore' object has no attribute '_session_cache'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+psycopg2.errors.UndefinedTable: relation "django_session" does not exist
+LINE 1: ...ession_data", "django_session"."expire_date" FROM "django_se...
+                                                             ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/views/generic/base.py", line 84, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 497, in dispatch
+    self.initial(request, *args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 414, in initial
+    self.perform_authentication(request)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 324, in perform_authentication
+    request.user
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/request.py", line 227, in user
+    self._authenticate()
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/request.py", line 380, in _authenticate
+    user_auth_tuple = authenticator.authenticate(self)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/authentication.py", line 127, in authenticate
+    if not user or not user.is_active:
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/utils/functional.py", line 258, in inner
+    self._setup()
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/utils/functional.py", line 398, in _setup
+    self._wrapped = self._setupfunc()
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/contrib/auth/middleware.py", line 25, in <lambda>
+    request.user = SimpleLazyObject(lambda: get_user(request))
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/contrib/auth/middleware.py", line 11, in get_user
+    request._cached_user = auth.get_user(request)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/contrib/auth/__init__.py", line 191, in get_user
+    user_id = _get_user_session_key(request)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/contrib/auth/__init__.py", line 60, in _get_user_session_key
+    return get_user_model()._meta.pk.to_python(request.session[SESSION_KEY])
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/contrib/sessions/backends/base.py", line 53, in __getitem__
+    return self._session[key]
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/contrib/sessions/backends/base.py", line 192, in _get_session
+    self._session_cache = self.load()
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/contrib/sessions/backends/db.py", line 42, in load
+    s = self._get_session_from_db()
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/contrib/sessions/backends/db.py", line 32, in _get_session_from_db
+    return self.model.objects.get(
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/db/models/query.py", line 492, in get
+    num = len(clone)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/db/models/query.py", line 302, in __len__
+    self._fetch_all()
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/db/models/query.py", line 1507, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/db/models/query.py", line 57, in __iter__
+    results = compiler.execute_sql(
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/db/models/sql/compiler.py", line 1361, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/db/backends/utils.py", line 103, in execute
+    return super().execute(sql, params)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/db/backends/utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+django.db.utils.ProgrammingError: relation "django_session" does not exist
+LINE 1: ...ession_data", "django_session"."expire_date" FROM "django_se...
+                                                             ^
+
+2023-11-27 13:49:31 [ERROR   ] (basehttp.log_message) "GET /api/account HTTP/1.1" 500 236768
+2023-11-27 13:49:32 [ERROR   ] (log.log_response) Internal Server Error: /api/search
+Traceback (most recent call last):
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/contrib/sessions/backends/base.py", line 187, in _get_session
+    return self._session_cache
+AttributeError: 'SessionStore' object has no attribute '_session_cache'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+psycopg2.errors.UndefinedTable: relation "django_session" does not exist
+LINE 1: ...ession_data", "django_session"."expire_date" FROM "django_se...
+                                                             ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/views/generic/base.py", line 84, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 497, in dispatch
+    self.initial(request, *args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 414, in initial
+    self.perform_authentication(request)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 324, in perform_authentication
+    request.user
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/request.py", line 227, in user
+    self._authenticate()
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/request.py", line 380, in _authenticate
+    user_auth_tuple = authenticator.authenticate(self)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/authentication.py", line 127, in authenticate
+    if not user or not user.is_active:
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/utils/functional.py", line 258, in inner
+    self._setup()
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/utils/functional.py", line 398, in _setup
+    self._wrapped = self._setupfunc()
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/contrib/auth/middleware.py", line 25, in <lambda>
+    request.user = SimpleLazyObject(lambda: get_user(request))
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/contrib/auth/middleware.py", line 11, in get_user
+    request._cached_user = auth.get_user(request)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/contrib/auth/__init__.py", line 191, in get_user
+    user_id = _get_user_session_key(request)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/contrib/auth/__init__.py", line 60, in _get_user_session_key
+    return get_user_model()._meta.pk.to_python(request.session[SESSION_KEY])
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/contrib/sessions/backends/base.py", line 53, in __getitem__
+    return self._session[key]
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/contrib/sessions/backends/base.py", line 192, in _get_session
+    self._session_cache = self.load()
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/contrib/sessions/backends/db.py", line 42, in load
+    s = self._get_session_from_db()
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/contrib/sessions/backends/db.py", line 32, in _get_session_from_db
+    return self.model.objects.get(
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/db/models/query.py", line 492, in get
+    num = len(clone)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/db/models/query.py", line 302, in __len__
+    self._fetch_all()
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/db/models/query.py", line 1507, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/db/models/query.py", line 57, in __iter__
+    results = compiler.execute_sql(
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/db/models/sql/compiler.py", line 1361, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/db/backends/utils.py", line 103, in execute
+    return super().execute(sql, params)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/db/backends/utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+django.db.utils.ProgrammingError: relation "django_session" does not exist
+LINE 1: ...ession_data", "django_session"."expire_date" FROM "django_se...
+                                                             ^
+
+2023-11-27 13:49:32 [ERROR   ] (basehttp.log_message) "POST /api/search HTTP/1.1" 500 236862
+2023-11-27 13:49:56 [ERROR   ] (log.log_response) Internal Server Error: /api/account/session-login
+Traceback (most recent call last):
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/contrib/sessions/backends/base.py", line 187, in _get_session
+    return self._session_cache
+AttributeError: 'SessionStore' object has no attribute '_session_cache'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+psycopg2.errors.UndefinedTable: relation "django_session" does not exist
+LINE 1: ...ession_data", "django_session"."expire_date" FROM "django_se...
+                                                             ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/views/generic/base.py", line 84, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 497, in dispatch
+    self.initial(request, *args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 414, in initial
+    self.perform_authentication(request)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 324, in perform_authentication
+    request.user
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/request.py", line 227, in user
+    self._authenticate()
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/request.py", line 380, in _authenticate
+    user_auth_tuple = authenticator.authenticate(self)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/authentication.py", line 127, in authenticate
+    if not user or not user.is_active:
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/utils/functional.py", line 258, in inner
+    self._setup()
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/utils/functional.py", line 398, in _setup
+    self._wrapped = self._setupfunc()
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/contrib/auth/middleware.py", line 25, in <lambda>
+    request.user = SimpleLazyObject(lambda: get_user(request))
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/contrib/auth/middleware.py", line 11, in get_user
+    request._cached_user = auth.get_user(request)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/contrib/auth/__init__.py", line 191, in get_user
+    user_id = _get_user_session_key(request)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/contrib/auth/__init__.py", line 60, in _get_user_session_key
+    return get_user_model()._meta.pk.to_python(request.session[SESSION_KEY])
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/contrib/sessions/backends/base.py", line 53, in __getitem__
+    return self._session[key]
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/contrib/sessions/backends/base.py", line 192, in _get_session
+    self._session_cache = self.load()
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/contrib/sessions/backends/db.py", line 42, in load
+    s = self._get_session_from_db()
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/contrib/sessions/backends/db.py", line 32, in _get_session_from_db
+    return self.model.objects.get(
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/db/models/query.py", line 492, in get
+    num = len(clone)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/db/models/query.py", line 302, in __len__
+    self._fetch_all()
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/db/models/query.py", line 1507, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/db/models/query.py", line 57, in __iter__
+    results = compiler.execute_sql(
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/db/models/sql/compiler.py", line 1361, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/db/backends/utils.py", line 103, in execute
+    return super().execute(sql, params)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/db/backends/utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+django.db.utils.ProgrammingError: relation "django_session" does not exist
+LINE 1: ...ession_data", "django_session"."expire_date" FROM "django_se...
+                                                             ^
+
+2023-11-27 13:49:56 [ERROR   ] (basehttp.log_message) "POST /api/account/session-login HTTP/1.1" 500 237437
+2023-11-27 13:50:07 [ERROR   ] (log.log_response) Internal Server Error: /api/account/session-login
+Traceback (most recent call last):
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/contrib/sessions/backends/base.py", line 187, in _get_session
+    return self._session_cache
+AttributeError: 'SessionStore' object has no attribute '_session_cache'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+psycopg2.errors.UndefinedTable: relation "django_session" does not exist
+LINE 1: ...ession_data", "django_session"."expire_date" FROM "django_se...
+                                                             ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/views/generic/base.py", line 84, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 497, in dispatch
+    self.initial(request, *args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 414, in initial
+    self.perform_authentication(request)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 324, in perform_authentication
+    request.user
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/request.py", line 227, in user
+    self._authenticate()
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/request.py", line 380, in _authenticate
+    user_auth_tuple = authenticator.authenticate(self)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/authentication.py", line 127, in authenticate
+    if not user or not user.is_active:
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/utils/functional.py", line 258, in inner
+    self._setup()
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/utils/functional.py", line 398, in _setup
+    self._wrapped = self._setupfunc()
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/contrib/auth/middleware.py", line 25, in <lambda>
+    request.user = SimpleLazyObject(lambda: get_user(request))
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/contrib/auth/middleware.py", line 11, in get_user
+    request._cached_user = auth.get_user(request)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/contrib/auth/__init__.py", line 191, in get_user
+    user_id = _get_user_session_key(request)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/contrib/auth/__init__.py", line 60, in _get_user_session_key
+    return get_user_model()._meta.pk.to_python(request.session[SESSION_KEY])
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/contrib/sessions/backends/base.py", line 53, in __getitem__
+    return self._session[key]
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/contrib/sessions/backends/base.py", line 192, in _get_session
+    self._session_cache = self.load()
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/contrib/sessions/backends/db.py", line 42, in load
+    s = self._get_session_from_db()
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/contrib/sessions/backends/db.py", line 32, in _get_session_from_db
+    return self.model.objects.get(
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/db/models/query.py", line 492, in get
+    num = len(clone)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/db/models/query.py", line 302, in __len__
+    self._fetch_all()
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/db/models/query.py", line 1507, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/db/models/query.py", line 57, in __iter__
+    results = compiler.execute_sql(
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/db/models/sql/compiler.py", line 1361, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/db/backends/utils.py", line 103, in execute
+    return super().execute(sql, params)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/db/backends/utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+django.db.utils.ProgrammingError: relation "django_session" does not exist
+LINE 1: ...ession_data", "django_session"."expire_date" FROM "django_se...
+                                                             ^
+
+2023-11-27 13:50:07 [ERROR   ] (basehttp.log_message) "POST /api/account/session-login HTTP/1.1" 500 237428
+2023-11-27 13:50:10 [ERROR   ] (log.log_response) Internal Server Error: /api/account
+Traceback (most recent call last):
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/contrib/sessions/backends/base.py", line 187, in _get_session
+    return self._session_cache
+AttributeError: 'SessionStore' object has no attribute '_session_cache'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+psycopg2.errors.UndefinedTable: relation "django_session" does not exist
+LINE 1: ...ession_data", "django_session"."expire_date" FROM "django_se...
+                                                             ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/views/generic/base.py", line 84, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 497, in dispatch
+    self.initial(request, *args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 414, in initial
+    self.perform_authentication(request)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 324, in perform_authentication
+    request.user
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/request.py", line 227, in user
+    self._authenticate()
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/request.py", line 380, in _authenticate
+    user_auth_tuple = authenticator.authenticate(self)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/authentication.py", line 127, in authenticate
+    if not user or not user.is_active:
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/utils/functional.py", line 258, in inner
+    self._setup()
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/utils/functional.py", line 398, in _setup
+    self._wrapped = self._setupfunc()
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/contrib/auth/middleware.py", line 25, in <lambda>
+    request.user = SimpleLazyObject(lambda: get_user(request))
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/contrib/auth/middleware.py", line 11, in get_user
+    request._cached_user = auth.get_user(request)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/contrib/auth/__init__.py", line 191, in get_user
+    user_id = _get_user_session_key(request)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/contrib/auth/__init__.py", line 60, in _get_user_session_key
+    return get_user_model()._meta.pk.to_python(request.session[SESSION_KEY])
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/contrib/sessions/backends/base.py", line 53, in __getitem__
+    return self._session[key]
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/contrib/sessions/backends/base.py", line 192, in _get_session
+    self._session_cache = self.load()
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/contrib/sessions/backends/db.py", line 42, in load
+    s = self._get_session_from_db()
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/contrib/sessions/backends/db.py", line 32, in _get_session_from_db
+    return self.model.objects.get(
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/db/models/query.py", line 492, in get
+    num = len(clone)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/db/models/query.py", line 302, in __len__
+    self._fetch_all()
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/db/models/query.py", line 1507, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/db/models/query.py", line 57, in __iter__
+    results = compiler.execute_sql(
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/db/models/sql/compiler.py", line 1361, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/db/backends/utils.py", line 103, in execute
+    return super().execute(sql, params)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/db/backends/utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+django.db.utils.ProgrammingError: relation "django_session" does not exist
+LINE 1: ...ession_data", "django_session"."expire_date" FROM "django_se...
+                                                             ^
+
+2023-11-27 13:50:10 [ERROR   ] (basehttp.log_message) "GET /api/account HTTP/1.1" 500 236768
+2023-11-27 13:50:11 [ERROR   ] (log.log_response) Internal Server Error: /api/search
+Traceback (most recent call last):
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/contrib/sessions/backends/base.py", line 187, in _get_session
+    return self._session_cache
+AttributeError: 'SessionStore' object has no attribute '_session_cache'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+psycopg2.errors.UndefinedTable: relation "django_session" does not exist
+LINE 1: ...ession_data", "django_session"."expire_date" FROM "django_se...
+                                                             ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/views/generic/base.py", line 84, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 497, in dispatch
+    self.initial(request, *args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 414, in initial
+    self.perform_authentication(request)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 324, in perform_authentication
+    request.user
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/request.py", line 227, in user
+    self._authenticate()
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/request.py", line 380, in _authenticate
+    user_auth_tuple = authenticator.authenticate(self)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/authentication.py", line 127, in authenticate
+    if not user or not user.is_active:
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/utils/functional.py", line 258, in inner
+    self._setup()
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/utils/functional.py", line 398, in _setup
+    self._wrapped = self._setupfunc()
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/contrib/auth/middleware.py", line 25, in <lambda>
+    request.user = SimpleLazyObject(lambda: get_user(request))
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/contrib/auth/middleware.py", line 11, in get_user
+    request._cached_user = auth.get_user(request)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/contrib/auth/__init__.py", line 191, in get_user
+    user_id = _get_user_session_key(request)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/contrib/auth/__init__.py", line 60, in _get_user_session_key
+    return get_user_model()._meta.pk.to_python(request.session[SESSION_KEY])
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/contrib/sessions/backends/base.py", line 53, in __getitem__
+    return self._session[key]
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/contrib/sessions/backends/base.py", line 192, in _get_session
+    self._session_cache = self.load()
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/contrib/sessions/backends/db.py", line 42, in load
+    s = self._get_session_from_db()
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/contrib/sessions/backends/db.py", line 32, in _get_session_from_db
+    return self.model.objects.get(
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/db/models/query.py", line 492, in get
+    num = len(clone)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/db/models/query.py", line 302, in __len__
+    self._fetch_all()
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/db/models/query.py", line 1507, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/db/models/query.py", line 57, in __iter__
+    results = compiler.execute_sql(
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/db/models/sql/compiler.py", line 1361, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/db/backends/utils.py", line 103, in execute
+    return super().execute(sql, params)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/db/backends/utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+django.db.utils.ProgrammingError: relation "django_session" does not exist
+LINE 1: ...ession_data", "django_session"."expire_date" FROM "django_se...
+                                                             ^
+
+2023-11-27 13:50:11 [ERROR   ] (basehttp.log_message) "POST /api/search HTTP/1.1" 500 236862
+2023-11-27 13:50:22 [ERROR   ] (log.log_response) Internal Server Error: /api/account/session-login
+Traceback (most recent call last):
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/contrib/sessions/backends/base.py", line 187, in _get_session
+    return self._session_cache
+AttributeError: 'SessionStore' object has no attribute '_session_cache'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+psycopg2.errors.UndefinedTable: relation "django_session" does not exist
+LINE 1: ...ession_data", "django_session"."expire_date" FROM "django_se...
+                                                             ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/views/generic/base.py", line 84, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 497, in dispatch
+    self.initial(request, *args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 414, in initial
+    self.perform_authentication(request)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 324, in perform_authentication
+    request.user
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/request.py", line 227, in user
+    self._authenticate()
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/request.py", line 380, in _authenticate
+    user_auth_tuple = authenticator.authenticate(self)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/authentication.py", line 127, in authenticate
+    if not user or not user.is_active:
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/utils/functional.py", line 258, in inner
+    self._setup()
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/utils/functional.py", line 398, in _setup
+    self._wrapped = self._setupfunc()
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/contrib/auth/middleware.py", line 25, in <lambda>
+    request.user = SimpleLazyObject(lambda: get_user(request))
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/contrib/auth/middleware.py", line 11, in get_user
+    request._cached_user = auth.get_user(request)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/contrib/auth/__init__.py", line 191, in get_user
+    user_id = _get_user_session_key(request)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/contrib/auth/__init__.py", line 60, in _get_user_session_key
+    return get_user_model()._meta.pk.to_python(request.session[SESSION_KEY])
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/contrib/sessions/backends/base.py", line 53, in __getitem__
+    return self._session[key]
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/contrib/sessions/backends/base.py", line 192, in _get_session
+    self._session_cache = self.load()
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/contrib/sessions/backends/db.py", line 42, in load
+    s = self._get_session_from_db()
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/contrib/sessions/backends/db.py", line 32, in _get_session_from_db
+    return self.model.objects.get(
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/db/models/query.py", line 492, in get
+    num = len(clone)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/db/models/query.py", line 302, in __len__
+    self._fetch_all()
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/db/models/query.py", line 1507, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/db/models/query.py", line 57, in __iter__
+    results = compiler.execute_sql(
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/db/models/sql/compiler.py", line 1361, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/db/backends/utils.py", line 103, in execute
+    return super().execute(sql, params)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/db/backends/utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+django.db.utils.ProgrammingError: relation "django_session" does not exist
+LINE 1: ...ession_data", "django_session"."expire_date" FROM "django_se...
+                                                             ^
+
+2023-11-27 13:50:22 [ERROR   ] (basehttp.log_message) "POST /api/account/session-login HTTP/1.1" 500 237437
+2023-11-27 13:50:37 [ERROR   ] (log.log_response) Internal Server Error: /api/account/session-login
+Traceback (most recent call last):
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/contrib/sessions/backends/base.py", line 187, in _get_session
+    return self._session_cache
+AttributeError: 'SessionStore' object has no attribute '_session_cache'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+psycopg2.errors.UndefinedTable: relation "django_session" does not exist
+LINE 1: ...ession_data", "django_session"."expire_date" FROM "django_se...
+                                                             ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/views/generic/base.py", line 84, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 497, in dispatch
+    self.initial(request, *args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 414, in initial
+    self.perform_authentication(request)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 324, in perform_authentication
+    request.user
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/request.py", line 227, in user
+    self._authenticate()
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/request.py", line 380, in _authenticate
+    user_auth_tuple = authenticator.authenticate(self)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/authentication.py", line 127, in authenticate
+    if not user or not user.is_active:
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/utils/functional.py", line 258, in inner
+    self._setup()
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/utils/functional.py", line 398, in _setup
+    self._wrapped = self._setupfunc()
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/contrib/auth/middleware.py", line 25, in <lambda>
+    request.user = SimpleLazyObject(lambda: get_user(request))
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/contrib/auth/middleware.py", line 11, in get_user
+    request._cached_user = auth.get_user(request)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/contrib/auth/__init__.py", line 191, in get_user
+    user_id = _get_user_session_key(request)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/contrib/auth/__init__.py", line 60, in _get_user_session_key
+    return get_user_model()._meta.pk.to_python(request.session[SESSION_KEY])
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/contrib/sessions/backends/base.py", line 53, in __getitem__
+    return self._session[key]
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/contrib/sessions/backends/base.py", line 192, in _get_session
+    self._session_cache = self.load()
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/contrib/sessions/backends/db.py", line 42, in load
+    s = self._get_session_from_db()
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/contrib/sessions/backends/db.py", line 32, in _get_session_from_db
+    return self.model.objects.get(
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/db/models/query.py", line 492, in get
+    num = len(clone)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/db/models/query.py", line 302, in __len__
+    self._fetch_all()
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/db/models/query.py", line 1507, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/db/models/query.py", line 57, in __iter__
+    results = compiler.execute_sql(
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/db/models/sql/compiler.py", line 1361, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/db/backends/utils.py", line 103, in execute
+    return super().execute(sql, params)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/db/backends/utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+django.db.utils.ProgrammingError: relation "django_session" does not exist
+LINE 1: ...ession_data", "django_session"."expire_date" FROM "django_se...
+                                                             ^
+
+2023-11-27 13:50:37 [ERROR   ] (basehttp.log_message) "POST /api/account/session-login HTTP/1.1" 500 237375
+2023-11-27 13:51:00 [ERROR   ] (log.log_response) Internal Server Error: /api/account/registration
+Traceback (most recent call last):
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/contrib/sessions/backends/base.py", line 187, in _get_session
+    return self._session_cache
+AttributeError: 'SessionStore' object has no attribute '_session_cache'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+psycopg2.errors.UndefinedTable: relation "django_session" does not exist
+LINE 1: ...ession_data", "django_session"."expire_date" FROM "django_se...
+                                                             ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/views/generic/base.py", line 84, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 497, in dispatch
+    self.initial(request, *args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 414, in initial
+    self.perform_authentication(request)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 324, in perform_authentication
+    request.user
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/request.py", line 227, in user
+    self._authenticate()
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/request.py", line 380, in _authenticate
+    user_auth_tuple = authenticator.authenticate(self)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/authentication.py", line 127, in authenticate
+    if not user or not user.is_active:
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/utils/functional.py", line 258, in inner
+    self._setup()
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/utils/functional.py", line 398, in _setup
+    self._wrapped = self._setupfunc()
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/contrib/auth/middleware.py", line 25, in <lambda>
+    request.user = SimpleLazyObject(lambda: get_user(request))
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/contrib/auth/middleware.py", line 11, in get_user
+    request._cached_user = auth.get_user(request)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/contrib/auth/__init__.py", line 191, in get_user
+    user_id = _get_user_session_key(request)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/contrib/auth/__init__.py", line 60, in _get_user_session_key
+    return get_user_model()._meta.pk.to_python(request.session[SESSION_KEY])
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/contrib/sessions/backends/base.py", line 53, in __getitem__
+    return self._session[key]
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/contrib/sessions/backends/base.py", line 192, in _get_session
+    self._session_cache = self.load()
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/contrib/sessions/backends/db.py", line 42, in load
+    s = self._get_session_from_db()
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/contrib/sessions/backends/db.py", line 32, in _get_session_from_db
+    return self.model.objects.get(
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/db/models/query.py", line 492, in get
+    num = len(clone)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/db/models/query.py", line 302, in __len__
+    self._fetch_all()
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/db/models/query.py", line 1507, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/db/models/query.py", line 57, in __iter__
+    results = compiler.execute_sql(
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/db/models/sql/compiler.py", line 1361, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/db/backends/utils.py", line 103, in execute
+    return super().execute(sql, params)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/db/backends/utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+django.db.utils.ProgrammingError: relation "django_session" does not exist
+LINE 1: ...ession_data", "django_session"."expire_date" FROM "django_se...
+                                                             ^
+
+2023-11-27 13:51:00 [ERROR   ] (basehttp.log_message) "POST /api/account/registration HTTP/1.1" 500 237405
+2023-11-27 13:51:28 [ERROR   ] (log.log_response) Internal Server Error: /api/account
+Traceback (most recent call last):
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/contrib/sessions/backends/base.py", line 187, in _get_session
+    return self._session_cache
+AttributeError: 'SessionStore' object has no attribute '_session_cache'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+psycopg2.errors.UndefinedTable: relation "django_session" does not exist
+LINE 1: ...ession_data", "django_session"."expire_date" FROM "django_se...
+                                                             ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/views/generic/base.py", line 84, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 497, in dispatch
+    self.initial(request, *args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 414, in initial
+    self.perform_authentication(request)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 324, in perform_authentication
+    request.user
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/request.py", line 227, in user
+    self._authenticate()
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/request.py", line 380, in _authenticate
+    user_auth_tuple = authenticator.authenticate(self)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/authentication.py", line 127, in authenticate
+    if not user or not user.is_active:
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/utils/functional.py", line 258, in inner
+    self._setup()
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/utils/functional.py", line 398, in _setup
+    self._wrapped = self._setupfunc()
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/contrib/auth/middleware.py", line 25, in <lambda>
+    request.user = SimpleLazyObject(lambda: get_user(request))
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/contrib/auth/middleware.py", line 11, in get_user
+    request._cached_user = auth.get_user(request)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/contrib/auth/__init__.py", line 191, in get_user
+    user_id = _get_user_session_key(request)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/contrib/auth/__init__.py", line 60, in _get_user_session_key
+    return get_user_model()._meta.pk.to_python(request.session[SESSION_KEY])
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/contrib/sessions/backends/base.py", line 53, in __getitem__
+    return self._session[key]
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/contrib/sessions/backends/base.py", line 192, in _get_session
+    self._session_cache = self.load()
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/contrib/sessions/backends/db.py", line 42, in load
+    s = self._get_session_from_db()
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/contrib/sessions/backends/db.py", line 32, in _get_session_from_db
+    return self.model.objects.get(
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/db/models/query.py", line 492, in get
+    num = len(clone)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/db/models/query.py", line 302, in __len__
+    self._fetch_all()
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/db/models/query.py", line 1507, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/db/models/query.py", line 57, in __iter__
+    results = compiler.execute_sql(
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/db/models/sql/compiler.py", line 1361, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/db/backends/utils.py", line 103, in execute
+    return super().execute(sql, params)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/db/backends/utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+django.db.utils.ProgrammingError: relation "django_session" does not exist
+LINE 1: ...ession_data", "django_session"."expire_date" FROM "django_se...
+                                                             ^
+
+2023-11-27 13:51:28 [ERROR   ] (basehttp.log_message) "GET /api/account HTTP/1.1" 500 236706
+2023-11-27 13:52:11 [ERROR   ] (log.log_response) Internal Server Error: /api/account/registration
+Traceback (most recent call last):
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/contrib/sessions/backends/base.py", line 187, in _get_session
+    return self._session_cache
+AttributeError: 'SessionStore' object has no attribute '_session_cache'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+psycopg2.errors.UndefinedTable: relation "django_session" does not exist
+LINE 1: ...ession_data", "django_session"."expire_date" FROM "django_se...
+                                                             ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/views/generic/base.py", line 84, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 497, in dispatch
+    self.initial(request, *args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 414, in initial
+    self.perform_authentication(request)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 324, in perform_authentication
+    request.user
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/request.py", line 227, in user
+    self._authenticate()
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/request.py", line 380, in _authenticate
+    user_auth_tuple = authenticator.authenticate(self)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/authentication.py", line 127, in authenticate
+    if not user or not user.is_active:
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/utils/functional.py", line 258, in inner
+    self._setup()
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/utils/functional.py", line 398, in _setup
+    self._wrapped = self._setupfunc()
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/contrib/auth/middleware.py", line 25, in <lambda>
+    request.user = SimpleLazyObject(lambda: get_user(request))
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/contrib/auth/middleware.py", line 11, in get_user
+    request._cached_user = auth.get_user(request)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/contrib/auth/__init__.py", line 191, in get_user
+    user_id = _get_user_session_key(request)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/contrib/auth/__init__.py", line 60, in _get_user_session_key
+    return get_user_model()._meta.pk.to_python(request.session[SESSION_KEY])
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/contrib/sessions/backends/base.py", line 53, in __getitem__
+    return self._session[key]
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/contrib/sessions/backends/base.py", line 192, in _get_session
+    self._session_cache = self.load()
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/contrib/sessions/backends/db.py", line 42, in load
+    s = self._get_session_from_db()
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/contrib/sessions/backends/db.py", line 32, in _get_session_from_db
+    return self.model.objects.get(
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/db/models/query.py", line 492, in get
+    num = len(clone)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/db/models/query.py", line 302, in __len__
+    self._fetch_all()
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/db/models/query.py", line 1507, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/db/models/query.py", line 57, in __iter__
+    results = compiler.execute_sql(
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/db/models/sql/compiler.py", line 1361, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/db/backends/utils.py", line 103, in execute
+    return super().execute(sql, params)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/db/backends/utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+django.db.utils.ProgrammingError: relation "django_session" does not exist
+LINE 1: ...ession_data", "django_session"."expire_date" FROM "django_se...
+                                                             ^
+
+2023-11-27 13:52:11 [ERROR   ] (basehttp.log_message) "POST /api/account/registration HTTP/1.1" 500 237414
+2023-11-27 13:57:45 [WARNING ] (log.log_response) Unauthorized: /api/account
+2023-11-27 13:57:45 [WARNING ] (basehttp.log_message) "GET /api/account HTTP/1.1" 401 58
+2023-11-27 13:58:07 [ERROR   ] (log.log_response) Internal Server Error: /api/account/registration
+Traceback (most recent call last):
+  File "/home/gregory/VSCodeProjects/ofirio/account/views/registration.py", line 39, in post
+    user = User.objects.get(email=email)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/db/models/query.py", line 496, in get
+    raise self.model.DoesNotExist(
+account.models.custom_user.CustomUser.DoesNotExist: CustomUser matching query does not exist.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/utils/functional.py", line 32, in __call__
+    return self.__value__
+AttributeError: 'ChannelPromise' object has no attribute '__value__'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/connection.py", line 472, in _reraise_as_library_errors
+    yield
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/connection.py", line 459, in _ensure_connection
+    return retry_over_time(
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/utils/functional.py", line 318, in retry_over_time
+    return fun(*args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/connection.py", line 934, in _connection_factory
+    self._connection = self._establish_connection()
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/connection.py", line 860, in _establish_connection
+    conn = self.transport.establish_connection()
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/transport/pyamqp.py", line 203, in establish_connection
+    conn.connect()
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/amqp/connection.py", line 324, in connect
+    self.transport.connect()
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/amqp/transport.py", line 129, in connect
+    self._connect(self.host, self.port, self.connect_timeout)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/amqp/transport.py", line 184, in _connect
+    self.sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/views/generic/base.py", line 84, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/account/views/registration.py", line 45, in post
+    user = User.objects.create_user(**serializer.validated_data)
+  File "/home/gregory/VSCodeProjects/ofirio/account/models/custom_user.py", line 35, in create_user
+    account.models.EmailSettings.objects.create(user=user)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/db/models/query.py", line 514, in create
+    obj.save(force_insert=True, using=self.db)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/db/models/base.py", line 806, in save
+    self.save_base(
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/db/models/base.py", line 872, in save_base
+    post_save.send(
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/dispatch/dispatcher.py", line 176, in send
+    return [
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/dispatch/dispatcher.py", line 177, in <listcomp>
+    (receiver, receiver(signal=self, sender=sender, **named))
+  File "/home/gregory/VSCodeProjects/ofirio/account/signals.py", line 36, in post_email_settings_save
+    tasks.track_email_settings.delay(instance.user.id)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/celery/app/task.py", line 444, in delay
+    return self.apply_async(args, kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/celery/app/task.py", line 594, in apply_async
+    return app.send_task(
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/celery/app/base.py", line 799, in send_task
+    amqp.send_task_message(P, name, message, **options)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/celery/app/amqp.py", line 518, in send_task_message
+    ret = producer.publish(
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/messaging.py", line 186, in publish
+    return _publish(
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/connection.py", line 556, in _ensured
+    return fun(*args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/messaging.py", line 195, in _publish
+    channel = self.channel
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/messaging.py", line 218, in _get_channel
+    channel = self._channel = channel()
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/utils/functional.py", line 34, in __call__
+    value = self.__value__ = self.__contract__()
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/messaging.py", line 234, in <lambda>
+    channel = ChannelPromise(lambda: connection.default_channel)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/connection.py", line 953, in default_channel
+    self._ensure_connection(**conn_opts)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/connection.py", line 459, in _ensure_connection
+    return retry_over_time(
+  File "/usr/lib/python3.8/contextlib.py", line 131, in __exit__
+    self.gen.throw(type, value, traceback)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/connection.py", line 476, in _reraise_as_library_errors
+    raise ConnectionError(str(exc)) from exc
+kombu.exceptions.OperationalError: [Errno 111] Connection refused
+2023-11-27 13:58:07 [ERROR   ] (basehttp.log_message) "POST /api/account/registration HTTP/1.1" 500 304638
+2023-11-27 13:58:25 [WARNING ] (log.log_response) Unauthorized: /api/account
+2023-11-27 13:58:25 [WARNING ] (basehttp.log_message) "GET /api/account HTTP/1.1" 401 58
+2023-11-27 13:58:45 [WARNING ] (log.log_response) Bad Request: /api/account/registration
+2023-11-27 13:58:45 [WARNING ] (basehttp.log_message) "POST /api/account/registration HTTP/1.1" 400 98
+2023-11-27 13:59:21 [WARNING ] (log.log_response) Unauthorized: /api/account
+2023-11-27 13:59:21 [WARNING ] (basehttp.log_message) "GET /api/account HTTP/1.1" 401 58
+2023-11-27 13:59:43 [ERROR   ] (log.log_response) Internal Server Error: /api/search
+Traceback (most recent call last):
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/utils/functional.py", line 32, in __call__
+    return self.__value__
+AttributeError: 'ChannelPromise' object has no attribute '__value__'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/connection.py", line 472, in _reraise_as_library_errors
+    yield
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/connection.py", line 459, in _ensure_connection
+    return retry_over_time(
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/utils/functional.py", line 318, in retry_over_time
+    return fun(*args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/connection.py", line 934, in _connection_factory
+    self._connection = self._establish_connection()
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/connection.py", line 860, in _establish_connection
+    conn = self.transport.establish_connection()
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/transport/pyamqp.py", line 203, in establish_connection
+    conn.connect()
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/amqp/connection.py", line 324, in connect
+    self.transport.connect()
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/amqp/transport.py", line 129, in connect
+    self._connect(self.host, self.port, self.connect_timeout)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/amqp/transport.py", line 184, in _connect
+    self.sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/views/generic/base.py", line 84, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/common/cache.py", line 57, in wrapper
+    response = method(view, request, *args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/search/views/search.py", line 61, in post
+    tasks.track_search.delay(user.email, self.serializer.data)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/celery/app/task.py", line 444, in delay
+    return self.apply_async(args, kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/celery/app/task.py", line 594, in apply_async
+    return app.send_task(
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/celery/app/base.py", line 799, in send_task
+    amqp.send_task_message(P, name, message, **options)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/celery/app/amqp.py", line 518, in send_task_message
+    ret = producer.publish(
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/messaging.py", line 186, in publish
+    return _publish(
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/connection.py", line 556, in _ensured
+    return fun(*args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/messaging.py", line 195, in _publish
+    channel = self.channel
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/messaging.py", line 218, in _get_channel
+    channel = self._channel = channel()
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/utils/functional.py", line 34, in __call__
+    value = self.__value__ = self.__contract__()
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/messaging.py", line 234, in <lambda>
+    channel = ChannelPromise(lambda: connection.default_channel)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/connection.py", line 953, in default_channel
+    self._ensure_connection(**conn_opts)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/connection.py", line 459, in _ensure_connection
+    return retry_over_time(
+  File "/usr/lib/python3.8/contextlib.py", line 131, in __exit__
+    self.gen.throw(type, value, traceback)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/connection.py", line 476, in _reraise_as_library_errors
+    raise ConnectionError(str(exc)) from exc
+kombu.exceptions.OperationalError: [Errno 111] Connection refused
+2023-11-27 13:59:43 [ERROR   ] (basehttp.log_message) "POST /api/search HTTP/1.1" 500 290770
+2023-11-27 13:59:43 [WARNING ] (log.log_response) Bad Request: /api/search/address-rect
+2023-11-27 13:59:43 [WARNING ] (basehttp.log_message) "POST /api/search/address-rect HTTP/1.1" 400 122
+2023-11-27 13:59:50 [ERROR   ] (log.log_response) Internal Server Error: /api/search
+Traceback (most recent call last):
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/utils/functional.py", line 32, in __call__
+    return self.__value__
+AttributeError: 'ChannelPromise' object has no attribute '__value__'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/connection.py", line 472, in _reraise_as_library_errors
+    yield
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/connection.py", line 459, in _ensure_connection
+    return retry_over_time(
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/utils/functional.py", line 318, in retry_over_time
+    return fun(*args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/connection.py", line 934, in _connection_factory
+    self._connection = self._establish_connection()
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/connection.py", line 860, in _establish_connection
+    conn = self.transport.establish_connection()
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/transport/pyamqp.py", line 203, in establish_connection
+    conn.connect()
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/amqp/connection.py", line 324, in connect
+    self.transport.connect()
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/amqp/transport.py", line 129, in connect
+    self._connect(self.host, self.port, self.connect_timeout)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/amqp/transport.py", line 184, in _connect
+    self.sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/views/generic/base.py", line 84, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/common/cache.py", line 57, in wrapper
+    response = method(view, request, *args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/search/views/search.py", line 61, in post
+    tasks.track_search.delay(user.email, self.serializer.data)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/celery/app/task.py", line 444, in delay
+    return self.apply_async(args, kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/celery/app/task.py", line 594, in apply_async
+    return app.send_task(
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/celery/app/base.py", line 799, in send_task
+    amqp.send_task_message(P, name, message, **options)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/celery/app/amqp.py", line 518, in send_task_message
+    ret = producer.publish(
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/messaging.py", line 186, in publish
+    return _publish(
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/connection.py", line 556, in _ensured
+    return fun(*args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/messaging.py", line 195, in _publish
+    channel = self.channel
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/messaging.py", line 218, in _get_channel
+    channel = self._channel = channel()
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/utils/functional.py", line 34, in __call__
+    value = self.__value__ = self.__contract__()
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/messaging.py", line 234, in <lambda>
+    channel = ChannelPromise(lambda: connection.default_channel)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/connection.py", line 953, in default_channel
+    self._ensure_connection(**conn_opts)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/connection.py", line 459, in _ensure_connection
+    return retry_over_time(
+  File "/usr/lib/python3.8/contextlib.py", line 131, in __exit__
+    self.gen.throw(type, value, traceback)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/connection.py", line 476, in _reraise_as_library_errors
+    raise ConnectionError(str(exc)) from exc
+kombu.exceptions.OperationalError: [Errno 111] Connection refused
+2023-11-27 13:59:50 [ERROR   ] (basehttp.log_message) "POST /api/search HTTP/1.1" 500 291083
+2023-11-27 14:00:07 [ERROR   ] (log.log_response) Internal Server Error: /api/search
+Traceback (most recent call last):
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/utils/functional.py", line 32, in __call__
+    return self.__value__
+AttributeError: 'ChannelPromise' object has no attribute '__value__'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/connection.py", line 472, in _reraise_as_library_errors
+    yield
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/connection.py", line 459, in _ensure_connection
+    return retry_over_time(
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/utils/functional.py", line 318, in retry_over_time
+    return fun(*args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/connection.py", line 934, in _connection_factory
+    self._connection = self._establish_connection()
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/connection.py", line 860, in _establish_connection
+    conn = self.transport.establish_connection()
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/transport/pyamqp.py", line 203, in establish_connection
+    conn.connect()
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/amqp/connection.py", line 324, in connect
+    self.transport.connect()
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/amqp/transport.py", line 129, in connect
+    self._connect(self.host, self.port, self.connect_timeout)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/amqp/transport.py", line 184, in _connect
+    self.sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/views/generic/base.py", line 84, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/common/cache.py", line 57, in wrapper
+    response = method(view, request, *args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/search/views/search.py", line 61, in post
+    tasks.track_search.delay(user.email, self.serializer.data)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/celery/app/task.py", line 444, in delay
+    return self.apply_async(args, kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/celery/app/task.py", line 594, in apply_async
+    return app.send_task(
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/celery/app/base.py", line 799, in send_task
+    amqp.send_task_message(P, name, message, **options)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/celery/app/amqp.py", line 518, in send_task_message
+    ret = producer.publish(
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/messaging.py", line 186, in publish
+    return _publish(
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/connection.py", line 556, in _ensured
+    return fun(*args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/messaging.py", line 195, in _publish
+    channel = self.channel
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/messaging.py", line 218, in _get_channel
+    channel = self._channel = channel()
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/utils/functional.py", line 34, in __call__
+    value = self.__value__ = self.__contract__()
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/messaging.py", line 234, in <lambda>
+    channel = ChannelPromise(lambda: connection.default_channel)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/connection.py", line 953, in default_channel
+    self._ensure_connection(**conn_opts)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/connection.py", line 459, in _ensure_connection
+    return retry_over_time(
+  File "/usr/lib/python3.8/contextlib.py", line 131, in __exit__
+    self.gen.throw(type, value, traceback)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/connection.py", line 476, in _reraise_as_library_errors
+    raise ConnectionError(str(exc)) from exc
+kombu.exceptions.OperationalError: [Errno 111] Connection refused
+2023-11-27 14:00:07 [ERROR   ] (basehttp.log_message) "POST /api/search HTTP/1.1" 500 291083
+2023-11-27 14:00:28 [ERROR   ] (log.log_response) Internal Server Error: /api/search
+Traceback (most recent call last):
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/utils/functional.py", line 32, in __call__
+    return self.__value__
+AttributeError: 'ChannelPromise' object has no attribute '__value__'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/connection.py", line 472, in _reraise_as_library_errors
+    yield
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/connection.py", line 459, in _ensure_connection
+    return retry_over_time(
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/utils/functional.py", line 318, in retry_over_time
+    return fun(*args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/connection.py", line 934, in _connection_factory
+    self._connection = self._establish_connection()
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/connection.py", line 860, in _establish_connection
+    conn = self.transport.establish_connection()
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/transport/pyamqp.py", line 203, in establish_connection
+    conn.connect()
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/amqp/connection.py", line 324, in connect
+    self.transport.connect()
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/amqp/transport.py", line 129, in connect
+    self._connect(self.host, self.port, self.connect_timeout)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/amqp/transport.py", line 184, in _connect
+    self.sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/views/generic/base.py", line 84, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/common/cache.py", line 57, in wrapper
+    response = method(view, request, *args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/search/views/search.py", line 61, in post
+    tasks.track_search.delay(user.email, self.serializer.data)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/celery/app/task.py", line 444, in delay
+    return self.apply_async(args, kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/celery/app/task.py", line 594, in apply_async
+    return app.send_task(
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/celery/app/base.py", line 799, in send_task
+    amqp.send_task_message(P, name, message, **options)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/celery/app/amqp.py", line 518, in send_task_message
+    ret = producer.publish(
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/messaging.py", line 186, in publish
+    return _publish(
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/connection.py", line 556, in _ensured
+    return fun(*args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/messaging.py", line 195, in _publish
+    channel = self.channel
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/messaging.py", line 218, in _get_channel
+    channel = self._channel = channel()
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/utils/functional.py", line 34, in __call__
+    value = self.__value__ = self.__contract__()
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/messaging.py", line 234, in <lambda>
+    channel = ChannelPromise(lambda: connection.default_channel)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/connection.py", line 953, in default_channel
+    self._ensure_connection(**conn_opts)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/connection.py", line 459, in _ensure_connection
+    return retry_over_time(
+  File "/usr/lib/python3.8/contextlib.py", line 131, in __exit__
+    self.gen.throw(type, value, traceback)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/connection.py", line 476, in _reraise_as_library_errors
+    raise ConnectionError(str(exc)) from exc
+kombu.exceptions.OperationalError: [Errno 111] Connection refused
+2023-11-27 14:00:28 [ERROR   ] (basehttp.log_message) "POST /api/search HTTP/1.1" 500 290895
+2023-11-27 14:00:28 [WARNING ] (log.log_response) Bad Request: /api/search/address-rect
+2023-11-27 14:00:28 [WARNING ] (basehttp.log_message) "POST /api/search/address-rect HTTP/1.1" 400 122
+2023-11-27 14:00:34 [ERROR   ] (log.log_response) Internal Server Error: /api/search
+Traceback (most recent call last):
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/utils/functional.py", line 32, in __call__
+    return self.__value__
+AttributeError: 'ChannelPromise' object has no attribute '__value__'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/connection.py", line 472, in _reraise_as_library_errors
+    yield
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/connection.py", line 459, in _ensure_connection
+    return retry_over_time(
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/utils/functional.py", line 318, in retry_over_time
+    return fun(*args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/connection.py", line 934, in _connection_factory
+    self._connection = self._establish_connection()
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/connection.py", line 860, in _establish_connection
+    conn = self.transport.establish_connection()
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/transport/pyamqp.py", line 203, in establish_connection
+    conn.connect()
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/amqp/connection.py", line 324, in connect
+    self.transport.connect()
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/amqp/transport.py", line 129, in connect
+    self._connect(self.host, self.port, self.connect_timeout)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/amqp/transport.py", line 184, in _connect
+    self.sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/views/generic/base.py", line 84, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/common/cache.py", line 57, in wrapper
+    response = method(view, request, *args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/search/views/search.py", line 61, in post
+    tasks.track_search.delay(user.email, self.serializer.data)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/celery/app/task.py", line 444, in delay
+    return self.apply_async(args, kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/celery/app/task.py", line 594, in apply_async
+    return app.send_task(
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/celery/app/base.py", line 799, in send_task
+    amqp.send_task_message(P, name, message, **options)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/celery/app/amqp.py", line 518, in send_task_message
+    ret = producer.publish(
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/messaging.py", line 186, in publish
+    return _publish(
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/connection.py", line 556, in _ensured
+    return fun(*args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/messaging.py", line 195, in _publish
+    channel = self.channel
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/messaging.py", line 218, in _get_channel
+    channel = self._channel = channel()
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/utils/functional.py", line 34, in __call__
+    value = self.__value__ = self.__contract__()
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/messaging.py", line 234, in <lambda>
+    channel = ChannelPromise(lambda: connection.default_channel)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/connection.py", line 953, in default_channel
+    self._ensure_connection(**conn_opts)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/connection.py", line 459, in _ensure_connection
+    return retry_over_time(
+  File "/usr/lib/python3.8/contextlib.py", line 131, in __exit__
+    self.gen.throw(type, value, traceback)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/connection.py", line 476, in _reraise_as_library_errors
+    raise ConnectionError(str(exc)) from exc
+kombu.exceptions.OperationalError: [Errno 111] Connection refused
+2023-11-27 14:00:34 [ERROR   ] (basehttp.log_message) "POST /api/search HTTP/1.1" 500 291082
+2023-11-27 14:02:53 [ERROR   ] (log.log_response) Internal Server Error: /api/search
+Traceback (most recent call last):
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/utils/functional.py", line 32, in __call__
+    return self.__value__
+AttributeError: 'ChannelPromise' object has no attribute '__value__'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/connection.py", line 472, in _reraise_as_library_errors
+    yield
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/connection.py", line 459, in _ensure_connection
+    return retry_over_time(
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/utils/functional.py", line 318, in retry_over_time
+    return fun(*args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/connection.py", line 934, in _connection_factory
+    self._connection = self._establish_connection()
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/connection.py", line 860, in _establish_connection
+    conn = self.transport.establish_connection()
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/transport/pyamqp.py", line 203, in establish_connection
+    conn.connect()
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/amqp/connection.py", line 324, in connect
+    self.transport.connect()
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/amqp/transport.py", line 129, in connect
+    self._connect(self.host, self.port, self.connect_timeout)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/amqp/transport.py", line 184, in _connect
+    self.sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/views/generic/base.py", line 84, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/search/views/search.py", line 60, in post
+    tasks.track_search.delay(user.email, self.serializer.data)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/celery/app/task.py", line 444, in delay
+    return self.apply_async(args, kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/celery/app/task.py", line 594, in apply_async
+    return app.send_task(
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/celery/app/base.py", line 799, in send_task
+    amqp.send_task_message(P, name, message, **options)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/celery/app/amqp.py", line 518, in send_task_message
+    ret = producer.publish(
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/messaging.py", line 186, in publish
+    return _publish(
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/connection.py", line 556, in _ensured
+    return fun(*args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/messaging.py", line 195, in _publish
+    channel = self.channel
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/messaging.py", line 218, in _get_channel
+    channel = self._channel = channel()
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/utils/functional.py", line 34, in __call__
+    value = self.__value__ = self.__contract__()
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/messaging.py", line 234, in <lambda>
+    channel = ChannelPromise(lambda: connection.default_channel)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/connection.py", line 953, in default_channel
+    self._ensure_connection(**conn_opts)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/connection.py", line 459, in _ensure_connection
+    return retry_over_time(
+  File "/usr/lib/python3.8/contextlib.py", line 131, in __exit__
+    self.gen.throw(type, value, traceback)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/connection.py", line 476, in _reraise_as_library_errors
+    raise ConnectionError(str(exc)) from exc
+kombu.exceptions.OperationalError: [Errno 111] Connection refused
+2023-11-27 14:02:53 [ERROR   ] (basehttp.log_message) "POST /api/search HTTP/1.1" 500 286036
+2023-11-27 14:06:10 [ERROR   ] (log.log_response) Internal Server Error: /api/search
+Traceback (most recent call last):
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/utils/functional.py", line 32, in __call__
+    return self.__value__
+AttributeError: 'ChannelPromise' object has no attribute '__value__'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/connection.py", line 472, in _reraise_as_library_errors
+    yield
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/connection.py", line 459, in _ensure_connection
+    return retry_over_time(
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/utils/functional.py", line 318, in retry_over_time
+    return fun(*args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/connection.py", line 934, in _connection_factory
+    self._connection = self._establish_connection()
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/connection.py", line 860, in _establish_connection
+    conn = self.transport.establish_connection()
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/transport/pyamqp.py", line 203, in establish_connection
+    conn.connect()
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/amqp/connection.py", line 324, in connect
+    self.transport.connect()
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/amqp/transport.py", line 129, in connect
+    self._connect(self.host, self.port, self.connect_timeout)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/amqp/transport.py", line 184, in _connect
+    self.sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/views/generic/base.py", line 84, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/search/views/search.py", line 60, in post
+    tasks.track_search.delay(user.email, self.serializer.data)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/celery/app/task.py", line 444, in delay
+    return self.apply_async(args, kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/celery/app/task.py", line 594, in apply_async
+    return app.send_task(
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/celery/app/base.py", line 799, in send_task
+    amqp.send_task_message(P, name, message, **options)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/celery/app/amqp.py", line 518, in send_task_message
+    ret = producer.publish(
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/messaging.py", line 186, in publish
+    return _publish(
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/connection.py", line 556, in _ensured
+    return fun(*args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/messaging.py", line 195, in _publish
+    channel = self.channel
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/messaging.py", line 218, in _get_channel
+    channel = self._channel = channel()
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/utils/functional.py", line 34, in __call__
+    value = self.__value__ = self.__contract__()
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/messaging.py", line 234, in <lambda>
+    channel = ChannelPromise(lambda: connection.default_channel)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/connection.py", line 953, in default_channel
+    self._ensure_connection(**conn_opts)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/connection.py", line 459, in _ensure_connection
+    return retry_over_time(
+  File "/usr/lib/python3.8/contextlib.py", line 131, in __exit__
+    self.gen.throw(type, value, traceback)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/connection.py", line 476, in _reraise_as_library_errors
+    raise ConnectionError(str(exc)) from exc
+kombu.exceptions.OperationalError: [Errno 111] Connection refused
+2023-11-27 14:06:10 [ERROR   ] (basehttp.log_message) "POST /api/search HTTP/1.1" 500 286036
+2023-11-27 14:06:20 [WARNING ] (log.log_response) Method Not Allowed: /api/search
+2023-11-27 14:06:20 [WARNING ] (basehttp.log_message) "GET /api/search HTTP/1.1" 405 25995
+2023-11-27 14:06:49 [ERROR   ] (log.log_response) Internal Server Error: /api/search
+Traceback (most recent call last):
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/utils/functional.py", line 32, in __call__
+    return self.__value__
+AttributeError: 'ChannelPromise' object has no attribute '__value__'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/connection.py", line 472, in _reraise_as_library_errors
+    yield
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/connection.py", line 459, in _ensure_connection
+    return retry_over_time(
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/utils/functional.py", line 318, in retry_over_time
+    return fun(*args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/connection.py", line 934, in _connection_factory
+    self._connection = self._establish_connection()
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/connection.py", line 860, in _establish_connection
+    conn = self.transport.establish_connection()
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/transport/pyamqp.py", line 203, in establish_connection
+    conn.connect()
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/amqp/connection.py", line 324, in connect
+    self.transport.connect()
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/amqp/transport.py", line 129, in connect
+    self._connect(self.host, self.port, self.connect_timeout)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/amqp/transport.py", line 184, in _connect
+    self.sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/views/generic/base.py", line 84, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/search/views/search.py", line 60, in post
+    tasks.track_search.delay(user.email, self.serializer.data)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/celery/app/task.py", line 444, in delay
+    return self.apply_async(args, kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/celery/app/task.py", line 594, in apply_async
+    return app.send_task(
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/celery/app/base.py", line 799, in send_task
+    amqp.send_task_message(P, name, message, **options)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/celery/app/amqp.py", line 518, in send_task_message
+    ret = producer.publish(
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/messaging.py", line 186, in publish
+    return _publish(
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/connection.py", line 556, in _ensured
+    return fun(*args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/messaging.py", line 195, in _publish
+    channel = self.channel
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/messaging.py", line 218, in _get_channel
+    channel = self._channel = channel()
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/utils/functional.py", line 34, in __call__
+    value = self.__value__ = self.__contract__()
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/messaging.py", line 234, in <lambda>
+    channel = ChannelPromise(lambda: connection.default_channel)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/connection.py", line 953, in default_channel
+    self._ensure_connection(**conn_opts)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/connection.py", line 459, in _ensure_connection
+    return retry_over_time(
+  File "/usr/lib/python3.8/contextlib.py", line 131, in __exit__
+    self.gen.throw(type, value, traceback)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/connection.py", line 476, in _reraise_as_library_errors
+    raise ConnectionError(str(exc)) from exc
+kombu.exceptions.OperationalError: [Errno 111] Connection refused
+2023-11-27 14:06:49 [ERROR   ] (basehttp.log_message) "POST /api/search HTTP/1.1" 500 291553
+2023-11-27 14:41:16 [ERROR   ] (log.log_response) Internal Server Error: /api/search
+Traceback (most recent call last):
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/utils/functional.py", line 32, in __call__
+    return self.__value__
+AttributeError: 'ChannelPromise' object has no attribute '__value__'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/connection.py", line 472, in _reraise_as_library_errors
+    yield
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/connection.py", line 459, in _ensure_connection
+    return retry_over_time(
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/utils/functional.py", line 318, in retry_over_time
+    return fun(*args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/connection.py", line 934, in _connection_factory
+    self._connection = self._establish_connection()
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/connection.py", line 860, in _establish_connection
+    conn = self.transport.establish_connection()
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/transport/pyamqp.py", line 203, in establish_connection
+    conn.connect()
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/amqp/connection.py", line 324, in connect
+    self.transport.connect()
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/amqp/transport.py", line 129, in connect
+    self._connect(self.host, self.port, self.connect_timeout)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/amqp/transport.py", line 184, in _connect
+    self.sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/django/views/generic/base.py", line 84, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/search/views/search.py", line 60, in post
+    tasks.track_search.delay(user.email, self.serializer.data)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/celery/app/task.py", line 444, in delay
+    return self.apply_async(args, kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/celery/app/task.py", line 594, in apply_async
+    return app.send_task(
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/celery/app/base.py", line 799, in send_task
+    amqp.send_task_message(P, name, message, **options)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/celery/app/amqp.py", line 518, in send_task_message
+    ret = producer.publish(
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/messaging.py", line 186, in publish
+    return _publish(
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/connection.py", line 556, in _ensured
+    return fun(*args, **kwargs)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/messaging.py", line 195, in _publish
+    channel = self.channel
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/messaging.py", line 218, in _get_channel
+    channel = self._channel = channel()
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/utils/functional.py", line 34, in __call__
+    value = self.__value__ = self.__contract__()
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/messaging.py", line 234, in <lambda>
+    channel = ChannelPromise(lambda: connection.default_channel)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/connection.py", line 953, in default_channel
+    self._ensure_connection(**conn_opts)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/connection.py", line 459, in _ensure_connection
+    return retry_over_time(
+  File "/usr/lib/python3.8/contextlib.py", line 131, in __exit__
+    self.gen.throw(type, value, traceback)
+  File "/home/gregory/VSCodeProjects/ofirio/.venv/lib/python3.8/site-packages/kombu/connection.py", line 476, in _reraise_as_library_errors
+    raise ConnectionError(str(exc)) from exc
+kombu.exceptions.OperationalError: [Errno 111] Connection refused
+2023-11-27 14:41:16 [ERROR   ] (basehttp.log_message) "POST /api/search HTTP/1.1" 500 285791

@@ -1,4 +1,3 @@
-from .settings_local import *
 import logging.config
 from corsheaders.defaults import default_headers
 import os
@@ -175,7 +174,7 @@ KLAVIYO_ALERTS_RENT_LIST_ID = ''
 KLAVIYO_ALERTS_SALE_LIST_ID = ''
 KLAVIYO_URL = 'https://a.klaviyo.com/'
 # set to False to stop tracking users
-KLAVIYO_ENABLED = True
+KLAVIYO_ENABLED = False
 
 PDF_BACKEND = 'common.pdf.mock_generate_pdf'
 
@@ -338,7 +337,7 @@ CORS_ALLOW_METHODS = (
     "PUT",
 )
 
-
+from .settings_local import *
 # STATIC_URL = "static/"
 
 # STATICFILES_DIRS = [

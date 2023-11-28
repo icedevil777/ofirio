@@ -36,18 +36,14 @@ EMAIL_HOST_PASSWORD = '-'
 EMAIL_USE_TLS = True
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    },
-    'prop_db': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'prop_db',
-        'USER': 'prop_db',
-        'PASSWORD': '102030',
-        'HOST': 'localhost',
-        'PORT': '5432',
-    },
+    "default": {
+        "ENGINE": "django.db.backends.postgresql",
+        "NAME": "ofirio",
+        "USER": "ice",
+        "PASSWORD": "ice",
+        "HOST": "localhost",
+        "PORT": "5432",
+    }
 }
 
 # If you want to use local Redis as a cache
