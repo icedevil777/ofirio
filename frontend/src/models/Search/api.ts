@@ -121,6 +121,7 @@ export type TSearchResults__Server = Omit<TSearchResults, 'map'> & { map: { item
 
 export default {
   search: function (data:TSearchRequest) {
+    console.log('data:TSearchRequest', data)
     return <AxiosRequestToAwaiting<TSearchResults__Server>>of(axios.post('/api/search', data));
   },
 

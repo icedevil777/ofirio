@@ -42,7 +42,6 @@ INSTALLED_APPS = [
     # 'common',
 
     'ofirio_common.apps.OfirioCommonConfig',
-
     'crispy_forms',
     'widget_tweaks',
     'ckeditor',
@@ -174,7 +173,7 @@ KLAVIYO_ALERTS_RENT_LIST_ID = ''
 KLAVIYO_ALERTS_SALE_LIST_ID = ''
 KLAVIYO_URL = 'https://a.klaviyo.com/'
 # set to False to stop tracking users
-KLAVIYO_ENABLED = False
+KLAVIYO_ENABLED = True
 
 PDF_BACKEND = 'common.pdf.mock_generate_pdf'
 

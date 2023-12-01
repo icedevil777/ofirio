@@ -191,14 +191,16 @@ def _pair_close_points(points, treshold, diagonal_by=None):
 
 
 def request_elastic(body, index=EsIndex.SEARCH_INVEST):
-    # logger.warning(body)  # to easily debug the requests
+    print('body', body)  # to easily debug the requests
+    print('index', index)
     try:
         elastic = get_elastic_search()
+        print('elastic', elastic)
         resp = elastic.search(index=index, body=body)
         return resp
     except Exception as exc:
         logger.exception(exc)
-        raise exceptions.ValidationError(f'{exc}')
+        raise exceptions.ValidationError(f'dick {exc}')
 
 
 def round_distance(dist):

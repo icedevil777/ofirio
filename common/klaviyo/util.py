@@ -113,6 +113,7 @@ def track_search_address(email, search_data):
 
 
 def track_search(email, search_data):
+    print('ku.track_search')
     track(email, 'Searched data', search_data)
 
 

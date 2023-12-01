@@ -53,6 +53,7 @@ def track_search_address(*a, **kw):
 
 @shared_task
 def track_search(*a, **kw):
+    print('track_search')
     ku.track_search(*a, **kw)
 
 @shared_task

@@ -1,3 +1,5 @@
 from django.contrib import admin
 
-# Register your models here.
+from search.models import PlaceStat, SpinTextCache
+
+# admin.site.register(SpinTextCache, PlaceStat)

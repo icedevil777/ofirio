@@ -52,21 +52,33 @@ class Search(APIView):
     def post(self, request, *args, **kwargs):
         user = request.user
         self.serializer = self.serializer_class(data=request.data)
+        # print('self.serializer', self.serializer)
         self.access_status = get_access_status(user)
         is_valid, data, code = self.validate()
+
         if not is_valid:
             return Response(data, status=code)
 
         if user.is_authenticated:
-            tasks.track_search.delay(user.email, self.serializer.data)
+            print('user.is_authenticated')
+            # tasks.track_search.delay(user.email, self.serializer.data)
 
         self.es_constructor = ElasticConstructor(self.serializer)
+        
+        
+
         center, geo_shape = self.get_geo_shape()
+
+        print('center', center)
+
         favorite_ids = self.get_favorite_ids(user)
+
 
         # main response
         data = self.get_main_response(geo_shape, user, favorite_ids)
+        print('data', data)
         total = data['search']['total']
+        print('total', total)
         bounds = data['bounds']
 
         # map response
@@ -74,10 +86,12 @@ class Search(APIView):
             data['map'] = self.get_map_response(
                 total, geo_shape, user, favorite_ids, bounds
             )
+
         # similar nearby
         if total <= 10:
             exclude_ids = [x['prop_id'] for x in data['search']['items']]
-            sim_nearby = self.get_sim_nearby(bounds, favorite_ids, center, exclude_ids)
+            sim_nearby = self.get_sim_nearby(
+                bounds, favorite_ids, center, exclude_ids)
             if sim_nearby['items']:
                 data['sim_nearby'] = sim_nearby
 
@@ -87,11 +101,13 @@ class Search(APIView):
         """
         Construct basis of the response data
         """
+        
         index = self.serializer.validated_data['index']
 
         # insights data needed for widget_info and seo bottom_text
         try:
             insights_data = InsightsHandler(self.es_constructor).get_insights(index)
+                
         except NotFound:
             insights_data = {}
 
@@ -118,6 +134,7 @@ class Search(APIView):
             # this is old implementation of bottom text generation:
             # 'overview': get_overview(self.serializer.validated_data, total),
         }
+        print('data', data)
         return data
 
     def get_sim_nearby(self, bounds, favorite_ids, center, exclude_ids):
@@ -141,8 +158,10 @@ class Search(APIView):
                 map_item = self._construct_item(
                     src, favorite_ids, index=index, for_map=True)
 
-                item['center_distance'] = map_item['center_distance'] = round_distance(distance)
-                max_distance = distance if (distance or 0) > max_distance else max_distance
+                item['center_distance'] = map_item['center_distance'] = round_distance(
+                    distance)
+                max_distance = distance if (
+                    distance or 0) > max_distance else max_distance
 
                 items.append(item)
                 map_items.append(map_item)
@@ -170,7 +189,7 @@ class Search(APIView):
             map_response = es_grid_centroid_to_geojson(cluster_buckets)
 
         else:  # form regular items
-            map_results, _, _ = self.request_es_items(map_body, index, user, 
+            map_results, _, _ = self.request_es_items(map_body, index, user,
                                                       favorite_ids, for_map=True)
             map_response = es_items_to_nested_geojson(map_results)
 
@@ -208,7 +227,8 @@ class Search(APIView):
 
         if bounds is None:  # then geocode and get bounds from the returned location
             data = self.serializer.validated_data
-            address = ' '.join([data['zip'], data['city'], data['county'], data['state_id']])
+            address = ' '.join(
+                [data['zip'], data['city'], data['county'], data['state_id']])
             with connections['prop_db_rw'].cursor() as cursor:
                 location = geocode(cursor, address=address)
                 bounds = get_rect_from_google_location(location)
@@ -236,6 +256,8 @@ class Search(APIView):
         lat = lon = geo_shape = None
         data = self.serializer.validated_data
         cursor = connections['prop_db'].cursor()
+
+        print('cursor', cursor)
         type_ = data['type']
         state_id = data['state_id']
 
@@ -329,7 +351,8 @@ class Search(APIView):
             item['status'] = source.get('status')
             item['list_date'] = source['list_date']
             item['update_date'] = source.get('update_date')
-            item['badges'] = get_badges_search(source.get('badges'), source['list_date'])
+            item['badges'] = get_badges_search(
+                source.get('badges'), source['list_date'])
             item['prop_type2'] = source['prop_type2']
             item['cleaned_prop_type'] = source['cleaned_prop_type']
             item['city'] = source['city']
@@ -340,7 +363,8 @@ class Search(APIView):
             item['pet_friendly'] = source['pet_friendly']
             item['parking'] = source['parking']
             # item['laundry'] = 'laundry' in source['cleaned_amenities']
-            item['listing_office'] = format_listing_office(source.get('listing_office'), source.get('status'))
+            item['listing_office'] = format_listing_office(
+                source.get('listing_office'), source.get('status'))
 
         # place field only for Invest to reduce response size
         if index == PropEsIndex.SEARCH_INVEST:
@@ -350,12 +374,15 @@ class Search(APIView):
             if paid or not source.get('is_high_cap_rate'):
                 item['is_blurred'] = False
                 item['predicted_rent'] = source.get('predicted_rent')
-                item['cash_on_cash'] = source.get(composite_fields['cash_on_cash'])
-                item['total_return'] = source.get(composite_fields['total_return'])
+                item['cash_on_cash'] = source.get(
+                    composite_fields['cash_on_cash'])
+                item['total_return'] = source.get(
+                    composite_fields['total_return'])
                 item['cap_rate'] = source.get(composite_fields['cap_rate'])
 
         if index in (PropEsIndex.SEARCH_INVEST, PropEsIndex.SEARCH_BUY):
-            item['rebate'] = get_rebate_for_view(source['zip'], item['price'], off_market=False)
+            item['rebate'] = get_rebate_for_view(
+                source['zip'], item['price'], off_market=False)
 
         return item
 
@@ -363,7 +390,8 @@ class Search(APIView):
         """
         Construct cluster ES body, request Elastic, and group resulting clusters
         """
-        cluster_body = self.construct_cluster_body(map_body, bounds, zoom, viewport)
+        cluster_body = self.construct_cluster_body(
+            map_body, bounds, zoom, viewport)
         cluster_results = request_elastic(cluster_body, index)
         cluster_buckets = cluster_results['aggregations']['cluster_agg']['buckets']
 
@@ -377,7 +405,8 @@ class Search(APIView):
             diagonal_by = None
             treshold = 0.1
 
-        buckets = self.group_close_cluster_buckets(cluster_buckets, treshold, diagonal_by)
+        buckets = self.group_close_cluster_buckets(
+            cluster_buckets, treshold, diagonal_by)
         return buckets
 
     def group_close_cluster_buckets(self, cluster_buckets, treshold, diagonal_by=None):
@@ -400,8 +429,10 @@ class Search(APIView):
             lons = []
             for bucket in point_buckets:
                 point_total += bucket['doc_count']
-                lats.extend([bucket['min_lat']['value'], bucket['max_lat']['value']])
-                lons.extend([bucket['min_lon']['value'], bucket['max_lon']['value']])
+                lats.extend([bucket['min_lat']['value'],
+                            bucket['max_lat']['value']])
+                lons.extend([bucket['min_lon']['value'],
+                            bucket['max_lon']['value']])
 
             bucket['centroid_agg']['location']['lat'] = point[0]
             bucket['centroid_agg']['location']['lon'] = point[1]
@@ -427,7 +458,8 @@ class Search(APIView):
         if not self.serializer.is_valid():
             messages.error(self.request, 'Error! Incorrect Search Query')
             is_valid = False
-            data = {'errors': self.serializer.errors, 'server_messages': get_msg_json(self.request)}
+            data = {'errors': self.serializer.errors,
+                    'server_messages': get_msg_json(self.request)}
             code = status.HTTP_400_BAD_REQUEST
 
         # all *registered* users are allowed to use all filters and sorting
@@ -465,7 +497,8 @@ class Search(APIView):
             'size': MAP_ITEMS_LIMIT,
             'from': 0,  # search always from 0
             'query': self.es_constructor.get_es_query(),
-            'sort': {'default_sort': {'order': 'desc'}},  # only default sort for map
+            # only default sort for map
+            'sort': {'default_sort': {'order': 'desc'}},
             'aggs': {},
         }
         return body
@@ -511,5 +544,6 @@ class Search(APIView):
         """
         ids = []
         if user.is_authenticated:
-            ids = FavoriteProperty.objects.filter(user=user).values_list('prop_id', flat=True)
+            ids = FavoriteProperty.objects.filter(
+                user=user).values_list('prop_id', flat=True)
         return ids

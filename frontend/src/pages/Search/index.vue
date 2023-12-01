@@ -130,6 +130,7 @@
           <span class="description">Adjust the filters or expand your search to see results</span>
         </div>
         <template v-for="p of searchResults?.value?.search.items || 20" :key="p">
+          {{ searchResults }}
           <UPreloader mode="propertyCard" :activation="!firstExtended">
             <Property--Card :valueMode="customization.values.priceMode" :mode="viewMode == 'grid' ? 'card' : 'line'" :property="p" :financialProps="financialData"/>
           </UPreloader>

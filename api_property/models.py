@@ -81,4 +81,4 @@ class Building(models.Model):
 
     class Meta:
         db_table = 'buildings'
-        managed = False
+        managed = True

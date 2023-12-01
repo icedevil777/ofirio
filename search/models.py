@@ -10,7 +10,7 @@ class SpinTextCache(models.Model):
 
     class Meta:
         db_table = 'spin_text_cache'
-        managed = False
+        managed = True
 
 
 class PlaceStat(models.Model):
@@ -19,4 +19,4 @@ class PlaceStat(models.Model):
 
     class Meta:
         db_table = 'place_stat'
-        managed = False
+        managed = True
